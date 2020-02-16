@@ -1,6 +1,6 @@
 "use strict";
 
-const itemNames = ["Camisa", "Pantalon", "Calcetines"];
+const itemNames = ['Camisa', 'Pantalon', 'Calcetines'];
 const itemPrices = [13, 27, 100];
 
 class Item {
@@ -9,8 +9,8 @@ class Item {
     this.price = price;
   }
   /* static getItemsList(names, prices) {
-      return names.map(new Item(name, prices[i]));
-    } */
+    return names.map(new Item(name, prices[i]));
+  } */
 }
 
 class CartItem {
@@ -21,7 +21,7 @@ class CartItem {
   increase() {
     this.units++;
   }
-  addToCart() {}
+  addToCart() { }
 }
 
 class User {
@@ -29,7 +29,22 @@ class User {
   constructor(name) {
     this.name = name;
   }
-  fillCart() {}
+  fillCart() { }
+}
+
+class Shop(){
+  constructor(name)
+  checkout(Cart)
+  console.log(Cart);
+  for (const item of cart) {
+    console.log(`item:${cartitem.item.name}${units}${price}`);
+  }
+  totalUnits(){
+
+  }
+  PaymentAddress(){
+
+  }
 }
 
 const myItem = new Item(itemNames, itemPrices);
