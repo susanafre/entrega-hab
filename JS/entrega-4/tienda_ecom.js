@@ -1,16 +1,24 @@
-"use strict";
+'use strict';
 
 const itemNames = ['Camisa', 'Pantalon', 'Calcetines'];
 const itemPrices = [13, 27, 100];
+
+//###############################
+//------CLASS ITEM --------------
+//###############################
+
+//con getItemsList creamos un array con name y price
 
 class Item {
   constructor(name, price) {
     this.name = name;
     this.price = price;
   }
-  /* static getItemsList(names, prices) {
-    return names.map(new Item(name, prices[i]));
-  } */
+  static getItemsList(names, prices) {
+    return names.map((name, index) => {
+      return new Item(name, prices[index]);
+    });
+  }
 }
 
 class CartItem {
@@ -29,27 +37,35 @@ class User {
   constructor(name) {
     this.name = name;
   }
+
   fillCart() { }
 }
 
-class Shop(){
+class Shop {
   constructor(name)
-  checkout(Cart)
-  console.log(Cart);
-  for (const item of cart) {
+  checkout(cart)
+  console.log(cart);
+  for(const item of cart) {
     console.log(`item:${cartitem.item.name}${units}${price}`);
   }
-  totalUnits(){
+  totalUnits() {
 
   }
-  PaymentAddress(){
+  PaymentAddress() {
 
   }
 }
 
-const myItem = new Item(itemNames, itemPrices);
+//myCatalogue devuelve el array con nombre y precio de los artículos
 
-console.log(myItem);
-
-const myCatalogue = new Item(itemNames, itemPrices);
+const myCatalogue = Item.getItemsList(itemNames, itemPrices);
 console.log(myCatalogue);
+
+//creamos un nombre de usuario
+
+const myUser = new User('Susana');
+console.log(myUser);
+
+myUser.addToCart(myCatalogue[1])
+
+
