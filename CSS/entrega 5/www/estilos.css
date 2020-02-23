@@ -1,0 +1,30 @@
+html {
+  font-family: sans-serif;
+}
+
+header {
+  background-image: url(vacaprincipal.jpg);
+  opacity: 0.7;
+  background-repeat: round;
+  height: 600px;
+
+
+  div.enlaces1 a {
+  text-decoration: none;
+  color: black;
+  font-size: 15px;
+  
+}
+div.enlaces2 a {
+  background: black;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  
+}
+nav h1 {
+  color: black;
+  font-weight: bold;
+  font-size: 60px;
+  
+}

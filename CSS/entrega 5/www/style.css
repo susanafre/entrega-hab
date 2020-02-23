@@ -1,0 +1,142 @@
+html {
+  max-width: 1000px;
+  font-family: sans-serif;
+}
+
+header {
+  background-image: url(vacaprincipal.jpg);
+  opacity: 0.7;
+  background-repeat: round;
+  height: 600px;
+}
+header ul {
+  color: black;
+  list-style: none;
+  display: inline;
+  font-weight: bold;
+}
+
+ul li.punto1 {
+  float: left;
+  margin: 30px;
+}
+
+ul li.punto2 {
+  float: left;
+  margin: 30px;
+}
+header h1 {
+  color: white;
+  font-weight: bold;
+  font-size: 60px;
+  display: inline;
+  padding-top: 20px;
+  margin-left: 2rem;
+}
+
+header a.comprar {
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+  display: inline;
+  float: right;
+  margin: 16px;
+  padding: 0.5rem;
+}
+
+article {
+  background: #e67e22;
+  margin-top: 0;
+  padding: 2rem;
+}
+article h1 {
+  color: white;
+  font-weight: bold;
+  font-size: 40px;
+}
+div.texto1 {
+  columns: 2;
+  font-weight: bold;
+}
+
+img {
+  width: 100%;
+  height: 300px;
+}
+
+td {
+  padding: 0.5rem;
+}
+
+tr.tipovaca {
+  background: black;
+  color: white;
+  font-weight: bold;
+  font-size: 60px;
+  margin-bottom: 0;
+}
+
+tr.descripvaca {
+  background: black;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+tr.comprarvaca {
+  background: grey;
+  color: black;
+  font-weight: bold;
+  font-size: 30px;
+  text-align: center;
+}
+
+form {
+  background: white;
+  height: 400px;
+}
+
+h2.tituloform {
+  color: #e67e22;
+  font-size: 40px;
+}
+label.name {
+  font-weight: bold;
+}
+input.name {
+  background: #e67e22;
+  border: 1px solid black;
+}
+
+label.address {
+  font-weight: bold;
+}
+input.address {
+  background: #e67e22;
+  border: 1px solid black;
+}
+label.provincia {
+  font-weight: bold;
+}
+label.comments {
+  font-weight: bold;
+}
+textarea.comments {
+  background: #e67e22;
+  border: 1px solid black;
+}
+label.newsletter {
+  font-weight: bold;
+}
+button {
+  background: black;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 10px;
+}
+footer {
+  background: #e67e22;
+  height: 600px;
+}
