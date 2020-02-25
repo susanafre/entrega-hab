@@ -1,5 +1,4 @@
 html {
-  max-width: 1000px;
   font-family: sans-serif;
 }
 
@@ -60,13 +59,15 @@ div.texto1 {
   font-weight: bold;
 }
 
+table {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto auto;
+}
+
 img {
   width: 100%;
   height: 300px;
-}
-
-td {
-  padding: 0.5rem;
 }
 
 tr.tipovaca {
@@ -74,27 +75,27 @@ tr.tipovaca {
   color: white;
   font-weight: bold;
   font-size: 60px;
-  margin-bottom: 0;
 }
 
-tr.descripvaca {
+tr.descripvaca td {
   background: black;
   color: white;
   font-weight: bold;
   font-size: 20px;
 }
 
-tr.comprarvaca {
+tr.comprarvaca td {
   background: grey;
   color: black;
   font-weight: bold;
   font-size: 30px;
   text-align: center;
+  margin: 0;
+  padding: 2rem;
 }
 
 form {
   background: white;
-  height: 400px;
 }
 
 h2.tituloform {
@@ -107,6 +108,7 @@ label.name {
 input.name {
   background: #e67e22;
   border: 1px solid black;
+  margin: 2rem;
 }
 
 label.address {
@@ -118,6 +120,7 @@ input.address {
 }
 label.provincia {
   font-weight: bold;
+  margin-top: 2rem;
 }
 label.comments {
   font-weight: bold;
@@ -125,9 +128,11 @@ label.comments {
 textarea.comments {
   background: #e67e22;
   border: 1px solid black;
+  margin: 2rem;
 }
 label.newsletter {
   font-weight: bold;
+  margin-top: 2rem;
 }
 button {
   background: black;
@@ -135,8 +140,17 @@ button {
   font-weight: bold;
   font-size: 20px;
   padding: 10px;
+  margin: 2rem;
 }
 footer {
   background: #e67e22;
-  height: 600px;
+}
+
+@media (min-width: 1000px) {
+  header {
+    background-image: url(vacasecundaria.jpg);
+    opacity: 0.7;
+    background-repeat: round;
+    height: 600px;
+  }
 }
