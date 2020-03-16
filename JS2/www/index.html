@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="CSS/style.css" />
+  <title>Document</title>
+</head>
+
+<body>
+  <header>
+
+    <h1>Conversor</h1>
+  </header>
+
+
+  <fieldset>
+
+    <!--campo para introducir cantidad-->
+    <form name="conversor" class="conversor">
+      <label for="number">Quiero convertir</label>
+      <input type="number" id="numberone" placeholder="Introduzca cantidad" value=0 name="numberone" />
+
+
+      <!--escogemos la moneda origen-->
+
+      <label for="monedauno" class="monedaorigen">Moneda</label>
+      <select class="operador1" name="operador" id="operador">
+          
+      </select>
+
+
+      <!--escogemos la moneda destino-->
+
+      <label for="monedados" class="monedadestino">A ...</label>
+      <select class="operador" name="operador" id="operador">
+          
+      </select>
+
+
+      <!--campo botón-->
+
+  </fieldset>
+  <button type="button" id="convert">Convertir</button>
+  </form>
+
+  <!--campo de texto donde se mostrarán las unidades convertidas-->
+  <form action="" class="campofinal">
+    <label for="number"></label>
+    <input type="number" id="destinynumber" value=0 name="destinynumber" />
+  </form>
+
+  <script type="module" src="JS/main.js"></script>
+</body>
+
+</html>

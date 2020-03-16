@@ -4,153 +4,68 @@ html {
 
 header {
   background-image: url(vacaprincipal.jpg);
-  opacity: 0.7;
-  background-repeat: round;
-  height: 600px;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
 }
+
 header ul {
-  color: black;
   list-style: none;
-  display: inline;
+
   font-weight: bold;
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-ul li.punto1 {
-  float: left;
-  margin: 30px;
+li a {
+  text-decoration: none;
+  color: black;
 }
 
-ul li.punto2 {
-  float: left;
-  margin: 30px;
-}
 header h1 {
+  color: white;
+  font-size: 30px;
+  text-align: center;
+}
+
+.comprar {
+  background: black;
+  color: white;
+  padding: 1rem;
+  font-weight: bold;
+  justify-content: flex-end;
+  text-align: center;
+}
+
+section {
+  background: orange;
+  padding: 2rem 2rem;
+}
+section h1 {
   color: white;
   font-weight: bold;
   font-size: 60px;
-  display: inline;
-  padding-top: 20px;
-  margin-left: 2rem;
 }
-
-header a.comprar {
-  background-color: black;
-  color: white;
-  font-weight: bold;
-  font-size: 30px;
-  display: inline;
-  float: right;
-  margin: 16px;
-  padding: 0.5rem;
-}
-
-article {
-  background: #e67e22;
-  margin-top: 0;
-  padding: 2rem;
-}
-article h1 {
-  color: white;
-  font-weight: bold;
-  font-size: 40px;
-}
-div.texto1 {
-  columns: 2;
+section > p {
   font-weight: bold;
 }
 
 table {
   display: grid;
-  grid-template-columns: auto auto auto;
-  grid-template-rows: auto auto auto auto;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
 }
-
-img {
-  width: 100%;
-  height: 300px;
+.imagen1 {
+  background-image: url(vaca1.jpg);
 }
-
-tr.tipovaca {
-  background: black;
-  color: white;
-  font-weight: bold;
-  font-size: 60px;
+.imagen2 {
+  background-image: url(vaca2.jpg);
 }
-
-tr.descripvaca td {
-  background: black;
-  color: white;
-  font-weight: bold;
-  font-size: 20px;
-}
-
-tr.comprarvaca td {
-  background: grey;
-  color: black;
-  font-weight: bold;
-  font-size: 30px;
-  text-align: center;
-  margin: 0;
-  padding: 2rem;
-}
-
-form {
-  background: white;
-}
-
-h2.tituloform {
-  color: #e67e22;
-  font-size: 40px;
-}
-label.name {
-  font-weight: bold;
-}
-input.name {
-  background: #e67e22;
-  border: 1px solid black;
-  margin: 2rem;
-}
-
-label.address {
-  font-weight: bold;
-}
-input.address {
-  background: #e67e22;
-  border: 1px solid black;
-}
-label.provincia {
-  font-weight: bold;
-  margin-top: 2rem;
-}
-label.comments {
-  font-weight: bold;
-}
-textarea.comments {
-  background: #e67e22;
-  border: 1px solid black;
-  margin: 2rem;
-}
-label.newsletter {
-  font-weight: bold;
-  margin-top: 2rem;
-}
-button {
-  background: black;
-  color: white;
-  font-weight: bold;
-  font-size: 20px;
-  padding: 10px;
-  margin: 2rem;
-}
-footer {
-  background: #e67e22;
-}
-
-@media (min-width: 1000px) {
-  header {
-    background-image: url(vacasecundaria.jpg);
-    opacity: 0.7;
-    background-repeat: round;
-    height: 600px;
-  }
+.imagen3 {
+  background-image: url(vaca3.jpg);
 }
