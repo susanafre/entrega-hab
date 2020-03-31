@@ -1,6 +1,6 @@
-'use strict';
+"use strict";
 
-const itemNames = ['Camisa', 'Pantalon', 'Calcetines'];
+const itemNames = ["Camisa", "Pantalon", "Calcetines"];
 const itemPrices = [13, 27, 100];
 
 //###############################
@@ -21,38 +21,24 @@ class Item {
   }
 }
 
-class CartItem {
-  constructor(item) {
-    this.item = item;
-  }
-
-  increase() {
-    this.units++;
-  }
-  addToCart() { }
-}
-
 class User {
-  #cart = [];
+  cart = [];
+  name;
   constructor(name) {
     this.name = name;
   }
-
-  fillCart() { }
+  addToCart(item) {
+    this.cart.push(item);
+  }
 }
 
-class Shop {
-  constructor(name)
-  checkout(cart)
-  console.log(cart);
-  for(const item of cart) {
-    console.log(`item:${cartitem.item.name}${units}${price}`);
+class CartItem {
+  ammount = 1;
+  constructor(item) {
+    this.item = item;
   }
-  totalUnits() {
-
-  }
-  PaymentAddress() {
-
+  increase() {
+    this.ammount++;
   }
 }
 
@@ -61,11 +47,7 @@ class Shop {
 const myCatalogue = Item.getItemsList(itemNames, itemPrices);
 console.log(myCatalogue);
 
-//creamos un nombre de usuario
-
-const myUser = new User('Susana');
+const myUser = new User("Susana");
 console.log(myUser);
 
-myUser.addToCart(myCatalogue[1])
-
-
+const myCart = myUser.addToCart(myCatalogue[2]);
