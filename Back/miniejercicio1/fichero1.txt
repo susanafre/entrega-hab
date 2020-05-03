@@ -1,0 +1,1247 @@
+Miguel de Cervantes
+EL INGENIOSO
+HIDALGO
+DON QUIJOTE
+DE LA MANCHA
+dQ1
+					
+Texto preparado por Enrique Suárez Figaredo
+Lemir 19 (2015) - Textos - Conmemoración IV Cen-
+tenario de la Segunda Parte del Quijote: 1-4782 Lemir 19 (2015) - Textos
+D
+Miguel de Cervantes Saavedra
+SOBRE ESTA EDICIÓN
+IEZ años han transcurrido desde la publicación de mi dQ (Eds. Carena, Bar-
+celona, 2004). En ese tiempo había evitado caer en la tentación de volver al
+Quijote: no hay nada peor que hacerte esclavo de tu criatura. Eso sí: fui to-
+mando notas para una futura revisión, pero a mi ritmo, consciente de que cuando volviese
+a él habría de ser para revisarlo de cabo a rabo: o todo o nada. Así estaban las cosas cuan-
+do, acercándose el IV Centenario de la publicación de la Segunda Parte del Quijote (1615)
+y el de la muerte de Cervantes (1616), me dije «ahora o nunca» y decidí aplicarme ipso
+facto a lo que había pospuesto sine die.
+Por fortuna, he podido hacerlo en pocos meses, y ello sin pisar una biblioteca, sin sa-
+lir de casa, sin levantarme de la silla. Hoy se pueden consultar on line las reproducciones
+fotográficas de las ediciones contemporáneas básicas (las tres de Madrid, las dos de Lis-
+boa, las de Valencia, Bruselas...), también las posteriores más elaboradas (Londres-1738,
+RAE-1780 y 1819...), además de las Anotaciones de Bowle, el Comentario de Clemencín,
+las dos ediciones de Hartzenbusch y sus 1633 Notas..., incluso infinitos artículos de re-
+vistas relativos a Cervantes y al Quijote y completas colecciones de imágenes. Aparte de
+eso, la web de la RAE ofrece herramientas de gran ayuda, como el acceso a multitud de
+diccionarios (incluso anteriores al de Autoridades) y la búsqueda de concordancias en
+el CORDE (Corpus Diacrónico del Español). Muchas de las facilidades que hoy ofrece
+Internet estaban en sus albores (en funcionalidad y contenidos) hace unos quince años,
+cuando empecé a preparar mi dQ de 2004.
+Así que ahora, con tanta comodidad y documentación, con las notas que tenía acu-
+muladas y diez años de experiencia a las espaldas, he dispuesto de más tranquilidad para
+la toma de decisiones en cuanto a la fijación del texto. La sintaxis de Cervantes tiene su
+qué, porque fue de aquellos de «escribo como hablo» (y a veces pienso que escribía en voz
+alta), y para subir a su montaña ha de llevarse la mochila muy pertrechada. Varios pasajesDon Quijote de la Mancha 1a Parte (ed. Enrique Suárez Figaredo)
+Lemir 19 (2015) - Textos
+3
+que en su día me parecieron confusos, incluso corruptos —como les pareció y parece a
+muchos editores—, hoy son para mí claros, al punto de defender que han de dejarse como
+están, y por otro lado hay pasajes que hoy ya no he dudado en enmendar, por más que
+la alteración sea de tal calibre que produzca el rechazo de algún especialista. Y es que no
+basta estar familiarizado con los usos y abusos sintácticos del alcalaíno y sus contempo-
+ráneos: también con los procedimientos y artimañas de los operarios de las imprentas de
+aquel tiempo. Hay quien cree en los duendes de las imprentas: yo ni afirmo ni niego, sólo
+digo que los operarios de aquéllas se bastaban y sobraban para todo tipo de travesuras:
+algunas, burdas, y otras, casi indetectables; pero alguna parte de responsabilidad corres-
+pondería a los autores, pues los resultados finales evidencian que no siempre la imprenta
+recibía un manuscrito impecable, bien ordenado y con buena caligrafía, que facilitase la
+composición del libro, y el Quijote es el mejor ejemplo de ello. Por otro lado Cervantes, co-
+mo otros de nuestros clásicos castellanos, gustaba de salpicar el texto con composiciones
+poéticas y se las ingeniaba para poner en boca de algún personaje alguna que otra novelita
+intermedia de corte amoroso, aventurero o picaresco; y más aun: a veces no podía resis-
+tirse a discursear sobre algún asunto político-social o literario que le inquietase.
+Todo ello afecta a la fluidez en la lectura del Quijote, en especial la Primera Parte,
+donde los protagonistas desaparecen durante páginas y páginas y se observan clamorosos
+lapsus en el hilo argumental, resultantes de inserciones efectuadas a posteriori y por apli-
+cación manu militari de la ley del encaje. Los editores no solemos arreglar esos descalabros,
+porque supondría demasiada intervención en el texto, y así, esta edición electrónica se
+ciñe a lo acostumbrado. La ortografía se ha actualizado, pero no al extremo que restase
+encanto a un texto de cuatrocientos años, y se justifica en las notas la menor alteración
+aplicada al texto primitivo.
+— o O o —
+De los problemas textuales y de la trascendencia de la obra y autor ya prácticamente
+está todo dicho, de tiempo ha y por voces autorizadísimas. Además, cuando esta edición
+vea la luz ya estaremos en 2015, y ese año y el siguiente no faltarán eventos y voces que ha-
+blen y polemicen de todo. Mi objetivo ha sido ofrecer a los lectores un texto lo más limpio
+posible de erratas y manipulaciones. Para facilitar la maquetación, la estética y la lectura,
+he optado por colocar las notas al final del texto.
+													
+										
+E. S. F.
+Barcelona, junio 2014
+Imagen: http://fondos.wallpaperstock.net/consuegra-molinos-de-viento-wallpapers_w13984.html4 Lemir 19 (2015) - Textos
+	
+  
+Miguel de Cervantes Saavedra
+Portada de la editio princeps, modernizada la ortografía.Don Quijote de la Mancha 1a Parte (ed. Enrique Suárez Figaredo)
+Lemir 19 (2015) - Textos
+5
+TASA
+Y
+O Juan Gallo de Andrada, escribano de Cámara del Rey nuestro señor, de los
+que 1 residen en el su Consejo, 2 certifico y doy fee: 3 que, habiéndose visto por los
+señores dél 4 un libro intitulado El ingenioso hidalgo de la Mancha, compuesto por Miguel
+de Cervantes Saavedra, tasaron cada pliego del dicho libro a tres maravedís y medio, el
+cual tiene ochenta y tres pliegos, 5 que al dicho precio monta 6 el dicho libro docientos y
+noventa maravedís y medio, en que se ha de vender en papel, 7 y dieron licencia para que
+a este precio se pueda vender; y mandaron que esta Tasa se ponga al principio del dicho
+libro, y no se pueda vender sin ella. Y para que dello 8 conste di el presente 9 en Valladolid,
+a veinte días del mes de Diciembre de mil y seiscientos y cuatro años.
+Juan Gallo de Andrada
+TESTIMONIO DE LAS ERRATAS
+E
+STE Libro no tiene cosa digna que notar 10 que no corresponda a su original. En
+testimonio de lo haber correcto 11 di esta fee, en el Colegio de la Madre de Dios de
+los Teólogos de la Universidad de Alcalá, en primero de Diciembre de 1604 años.
+El Licenciado Francisco Murcia de la Llana
+APROBACIÓN
+P
+OR mandado de Vuestra Alteza he visto un libro llamado El ingenioso hidalgo de la
+Mancha, compuesto por Miguel de Cervantes Saavedra, y me parece, siendo dello
+Vuestra Alteza servido, que se le podrá dar licencia para imprimille, porque será de gusto
+y entretenimiento al pueblo, a lo cual en regla de buen gobierno se debe de tener atención,
+aliende de que no hallo en él cosa contra policía y buenas costumbres; y lo firmé de mi
+nombre en Valladolid, a XI de setiembre, 1604.
+Antonio de Herrera6 Lemir 19 (2015) - Textos
+P
+Miguel de Cervantes Saavedra
+EL REY
+OR cuanto por parte de vos, Miguel de Cervantes, nos fue fecha 12 relación que
+habíades 13 compuesto un libro intitulado El ingenioso hidalgo de la Mancha, el
+cual os había costado mucho trabajo y era muy útil y provechoso, y 14 nos pedis-
+tes y suplicastes os mandásemos dar 15 licencia y facultad para le poder imprimir, y pre-
+vilegio 16 por el tiempo que fuésemos servidos, o como la nuestra merced 17 fuese; lo cual
+visto por los del nuestro Consejo, por cuanto en el dicho libro se hicieron las diligencias
+que la premática 18 últimamente por Nós 19 fecha sobre la impresión de los libros dispone,
+fue acordado que debíamos mandar dar esta nuestra cédula para vos, en la dicha razón,
+y Nós tuvímoslo por bien. 20 Por la cual, por os hacer bien y merced, 21 os damos licencia
+y facultad para que vos, o la persona que vuestro poder hubiere, y no otra alguna, podáis
+imprimir el dicho libro, intitulado El ingenioso hidalgo de la Mancha, que de suso 22 se hace
+mención, en todos estos nuestros Reinos de Castilla por tiempo y espacio de diez años,
+que corran y se cuenten desde el dicho día de la data 23 desta nuestra cédula; so pena 24
+que la persona o personas que sin tener vuestro poder lo imprimiere o vendiere, o hiciere
+imprimir o vender, por el mesmo caso 25 pierda la impresión que hiciere, con los moldes y
+aparejos della, y más incurra en pena 26 de cincuenta mil maravedís cada vez que lo con-
+trario hiciere. La cual dicha pena sea la tercia 27 parte para la persona que lo acusare, y la
+otra tercia parte para nuestra Cámara, y la otra tercia parte para el juez que lo senten-
+ciare. Con tanto que 28 todas las veces que hubiéredes 29 de hacer imprimir el dicho libro
+durante el tiempo de los dichos diez años, le traigáis al nuestro Consejo juntamente con
+el original que en él fue visto, que va rubricado cada plana, y firmado al fin dél, de Juan
+Gallo de Andrada, nuestro escribano de Cámara, de los que en él residen, para saber si la
+dicha impresión está conforme el original, 30 o traigáis fe en pública forma de como 31 por
+Corretor 32 nombrado por nuestro mandado se vio y corrigió la dicha impresión por el
+original, y se imprimió conforme a él y quedan impresas las erratas por él apuntadas, para
+cada un libro de los que así fueren impresos, para que se tase el precio que por cada volu-
+men hubiéredes de haber. 33 Y mandamos al impresor que así imprimiere el dicho libro, no
+imprima el principio, ni el primer pliego dél, ni entregue más de un solo libro, con el origi-
+nal, al autor, o persona a cuya costa lo imprimiere, ni otro alguno, 34 para efeto 35 de la dicha
+correción y tasa, hasta que antes y primero el dicho libro esté corregido y tasado por los
+del nuestro Consejo; y estando hecho, y no de otra manera, pueda imprimir el dicho prin-
+cipio y primer pliego, y sucesivamente ponga esta nuestra cédula y la Aprobación, Tasa y
+Erratas, so pena de caer e incurrir en las penas contenidas en las leyes y premáticas destos
+nuestros Reinos. Y mandamos a los del nuestro Consejo, y a otras cualesquier justicias
+dellos, guarden y cumplan esta nuestra cédula y lo en ella contenido. Fecha en Valladolid,
+a veinte y seis días del mes de Setiembre de mil y seiscientos y cuatro años.
+YO EL REY
+Por mandado del Rey nuestro señor,
+									
+Juan de AmézquetaDon Quijote de la Mancha 1a Parte (ed. Enrique Suárez Figaredo)
+Lemir 19 (2015) - Textos
+7
+AL DUQUE DE BÉJAR,
+MARQUÉS DE GIBRALEÓN,
+Conde de Benalcázar y Bañares, Vizconde de la Puebla de Alcocer,
+Señor de las villas de Capilla, Curiel y Burguillos
+E
+N fe 1 del buen acogimiento y honra que hace vuestra Excelencia a toda suer-
+te de libros, como Príncipe tan inclinado a favorecer las buenas artes, mayor-
+mente las que por su nobleza no se abaten 2 al servicio y granjerías del vulgo, 3
+he determinado de sacar a luz 4 al Ingenioso hidalgo don Quijote de la Mancha al abrigo del
+clarísimo nombre de vuestra Excelencia, a quien, con el acatamiento que debo a tanta
+grandeza, suplico le reciba agradablemente en su protección, para que a su sombra, aun-
+que desnudo de aquel precioso ornamento de elegancia y erudición de que suelen andar
+vestidas las obras que se componen en las casas de los hombres que saben, ose parecer se-
+guramente en el juicio 5 de algunos que, no continiéndose 6 en los límites de su ignorancia,
+suelen condenar con más rigor y menos justicia los trabajos ajenos; 7 que, poniendo 8 los
+ojos la prudencia de vuestra Excelencia en mi buen deseo, fío 9 que no desdeñará la corte-
+dad de tan humilde servicio.
+Miguel de Cervantes Saavedra8 Lemir 19 (2015) - Textos
+D
+Miguel de Cervantes Saavedra
+PRÓLOGO
+ESOCUPADO Lector: sin juramento me podrás creer que quisiera que este
+Libro, como hijo del entendimiento, fuera el más hermoso, el más gallardo y
+más discreto 1 que pudiera imaginarse; pero no he podido yo contravenir al
+orden de Naturaleza: 2 que en ella cada cosa engendra su semejante. Y así, ¿qué podrá 3 en-
+gendrar el estéril y mal cultivado ingenio mío, sino la historia de un hijo seco, avellanado, 4
+antojadizo y lleno de pensamientos varios y nunca imaginados de otro alguno, bien como
+quien 5 se engendró en una cárcel, donde toda incomodidad tiene su asiento y donde todo
+triste ruido hace su habitación? El sosiego, el lugar apacible, la amenidad de los campos,
+la serenidad de los cielos, el murmurar de las fuentes, la quietud del espíritu, son grande
+parte 6 para que las Musas más estériles se muestren fecundas y ofrezcan partos al mundo
+que le colmen de maravilla y de contento.
+Acontece tener un padre un hijo feo y sin gracia alguna, y el amor que le tiene le pone
+una venda en los ojos para que no vea sus faltas; antes 7 las juzga por discreciones y linde-
+zas 8 y las cuenta a sus amigos por agudezas y donaires. Pero yo, que aunque parezco padre,
+soy padrastro de don Quijote, no quiero irme con la corriente del uso, 9 ni suplicarte, casi
+con las lágrimas en los ojos, como otros hacen, Lector carísimo, que perdones o disimules
+las faltas que en este mi hijo vieres; que 10 ni eres su pariente ni su amigo, y tienes tu alma
+en tu cuerpo y tu libre albedrío, como el más pintado, 11 y estás en tu casa, donde eres señor
+della como el Rey de sus alcabalas, 12 y sabes lo que comúnmente se dice, que debajo de mi
+manto al rey mato. 13 Todo lo cual te esenta 14 y hace libre de todo respecto 15 y obligación; y
+así puedes decir de la historia todo aquello que te pareciere, sin temor que te calunien 16
+por el mal ni te premien por el bien que dijeres della.
+Sólo quisiera dártela monda y desnuda, 17 sin el ornato 18 de prólogo, ni de la inumerabi-
+lidad y catálogo 19 de los acostumbrados sonetos, epigramas 20 y elogios que al principio de
+los libros suelen ponerse. Porque te sé decir 21 que, aunque me costó algún trabajo compo-
+nerla, ninguno tuve por mayor que hacer esta prefación 22 que vas leyendo. Muchas veces
+tomé la pluma para escribille, 23 y muchas la dejé, por no saber lo que escribiría; y estando
+una suspenso, 24 con el papel delante, la pluma en la oreja, el codo en el bufete 25 y la mano
+en la mejilla, pensando lo que diría, entró a deshora 26 un amigo mío, gracioso y bien en-
+tendido, el cual, viéndome tan imaginativo, me preguntó la causa; y no encubriéndosela
+yo, le dije que pensaba en el prólogo que había de hacer a la historia de don Quijote, y que
+me tenía de suerte, 27 que ni quería hacerle, ni menos sacar a luz 28 las hazañas de tan noble
+caballero, porque...
+—¿Cómo queréis vos 29 que no me tenga confuso el qué dirá el antiguo legislador que
+llaman vulgo cuando vea que al cabo de tantos años como ha 30 que duermo en el silencio
+del olvido salgo ahora, con todos mis años a cuestas, 31 con una leyenda 32 seca como un es-
+parto, ajena de invención, menguada de estilo, pobre de concetos y falta de toda erudición
+y doctrina, 33 sin acotaciones 34 en las márgenes y sin anotaciones en el fin del libro, como
+veo que están otros libros, aunque sean fabulosos y profanos, 35 tan llenos de sentencias 36Don Quijote de la Mancha 1a Parte (ed. Enrique Suárez Figaredo)
+Lemir 19 (2015) - Textos
+9
+de Aristóteles, de Platón y de toda la caterva 37 de filósofos, que admiran a los leyentes, y
+tienen a sus autores por 38 hombres leídos, eruditos y elocuentes? Pues ¿qué 39 cuando ci-
+tan la Divina Escritura? No dirán sino que son unos santos Tomases y otros doctores de
+la Iglesia, guardando en esto un decoro tan ingenioso, que en un renglón han pintado un
+enamorado destraído 40 y en otro hacen un sermoncico cristiano que es un contento y un
+regalo oílle o leelle. De todo esto ha de carecer mi libro, porque ni tengo qué acotar en el
+margen, ni qué anotar en el fin, ni menos sé qué autores sigo en él, para ponerlos al princi-
+pio, como hacen todos, por las letras del abecé, 41 comenzando en Aristóteles y acabando 42
+en Jenofonte 43 y en Zoilo, o Zeuxis, aunque fue maldiciente el uno y pintor el otro. Tam-
+bién ha de carecer mi libro de sonetos al principio, a lo menos de sonetos cuyos autores
+sean duques, marqueses, condes, obispos, damas o poetas celebérrimos. 44 Aunque si yo los
+pidiese a dos o tres oficiales 45 amigos, yo sé que me los darían, y tales, que no les igualasen
+los de aquellos que tienen más nombre en nuestra España.
+—En fin, señor y amigo mío —proseguí—, yo determino que el señor don Quijote se
+quede sepultado en sus archivos en la Mancha hasta que el Cielo depare quien le adorne
+de tantas cosas como le faltan, porque yo me hallo incapaz de remediarlas, por mi in-
+suficiencia y pocas letras, y porque naturalmente soy poltrón 46 y perezoso de andarme
+buscando autores que digan lo que yo me sé decir sin ellos. De aquí nace la suspensión y
+elevamiento, amigo, en que me hallastes: bastante causa 47 para ponerme en ella la que de
+mí habéis oído.
+Oyendo lo cual mi amigo, dándose una palmada en la frente y disparando en una carga
+de risa, 48 me dijo:
+—Por Dios, hermano, que agora 49 me acabo de desengañar de un engaño en que he
+estado todo el mucho tiempo que ha que os conozco, en el cual siempre os he tenido por
+discreto y prudente en todas vuestras aciones. Pero agora veo que estáis tan lejos de serlo
+como lo está el cielo de la tierra. ¿Cómo que 50 es posible que cosas de tan poco momento 51
+y tan fáciles de remediar puedan tener fuerzas de suspender y absortar 52 un ingenio tan
+maduro como el vuestro, y tan hecho 53 a romper y atropellar por otras dificultades ma-
+yores? A la fe, 54 esto no nace de falta de habilidad, sino de sobra de pereza y penuria de
+discurso. 55 ¿Queréis ver si es verdad lo que digo? Pues estadme atento y veréis cómo en
+un abrir y cerrar de ojos confundo 56 todas vuestras dificultades y remedio todas las faltas
+que decís que os suspenden y acobardan para dejar de sacar a la luz del mundo la historia
+de vuestro famoso don Quijote, luz y espejo 57 de toda la caballería andante.
+—Decid —le repliqué yo, oyendo lo que me decía—: ¿de qué modo pensáis llenar el
+vacío de mi temor y reducir a claridad 58 el caos de mi confusión?
+A lo cual él dijo:
+—Lo primero en que reparáis 59 de los sonetos, epigramas o elogios que os faltan para
+el principio, y que sean de personajes graves y de título, 60 se puede remediar en que 61 vos
+mesmo 62 toméis algún trabajo en hacerlos, y después los podéis bautizar y poner el nom-
+bre que quisiéredes, 63 ahijándolos al Preste Juan de las Indias o al Emperador de Trapison-
+da, 64 de quien yo sé que hay noticia 65 que fueron famosos poetas; y cuando no 66 lo hayan
+sido, y hubiere algunos pedantes 67 y bachilleres 68 que por detrás os muerdan y murmuren
+desta verdad, no se os dé dos maravedís; 69 porque ya que os averigüen la mentira, no os
+han de cortar la mano con que lo escribistes. En lo de citar en las márgenes los libros y10 Lemir 19 (2015) - Textos
+Miguel de Cervantes Saavedra
+autores de donde sacáredes las sentencias y dichos que pusiéredes en vuestra historia, no
+hay más sino hacer de manera que vengan a pelo 70 algunas sentencias, o latines, 71 que vos
+sepáis de memoria, o, a lo menos, que os cuesten poco trabajo el buscalle, como será poner,
+tratando de libertad y cautiverio:
+Non bene pro toto libertas venditur auro; 72
+y luego, 73 en el margen, citar a Horacio, o a quien lo dijo. Si tratáredes del poder de la
+muerte, acudir luego con:
+Pallida Mors æquo pulsat pede pauperum tabernas, regumque turres. 74
+Si de la amistad y amor que Dios manda que se tenga al enemigo, entraros luego al
+punto por la Escritura Divina, que lo podéis hacer con tantico de curiosidad, 75 y decir las
+palabras, por lo menos, del mismo Dios:
+Ego autem dico vobis, diligite inimicos vestros. 76
+Si tratáredes de malos pensamientos, acudid con el Evangelio: De corde exeunt cogita-
+tiones malae. 77 Si de la instabilidad 78 de los amigos, ahí está Catón, que os dará su dístico: 79
+Donec eris felix, multos numerabis amicos;
+tempora si fuerint nubila, solus eris. 80
+Y con estos latinicos, y otros tales, os tendrán siquiera 81 por gramático; que el serlo no
+es de poca honra y provecho el día de hoy. En lo que toca al 82 poner anotaciones al fin del
+libro, seguramente 83 lo podéis hacer desta manera: si nombráis algún gigante en vuestro
+libro, hacelde 84 que sea el gigante Golías, y con sólo esto, que os costará casi nada, tenéis
+una grande anotación, pues podéis poner: El gigante Golías, o Goliat, fue un filisteo a quien
+el pastor David mató de una gran pedrada en el valle de Terebinto, según se cuenta en el Libro de
+los Reyes, en el capítulo que vos halláredes que se escribe. Tras esto, para mostraros hom-
+bre erudito en letras humanas 85 y cosmógrafo, haced de modo como en vuestra historia
+se nombre el río Tajo, y vereisos luego 86 con otra famosa 87 anotación, poniendo: El río Ta-
+jo fue así dicho por un rey de las Españas; 88 tiene su nacimiento en tal lugar y muere en el mar
+Océano, besando los muros de la famosa ciudad de Lisboa, y es opinión que tiene las arenas de
+oro, etcétera. Si tratáredes de ladrones, yo os diré la historia de Caco, 89 que la sé de coro; 90
+si de mujeres rameras, ahí está el Obispo de Mondoñedo, 91 que os prestará a Lamia, Laida
+y Flora, cuya anotación os dará gran crédito; si de crueles, Ovidio os entregará a Medea;
+si de encantadores 92 y hechiceras, Homero tiene a Calipso, y Virgilio a Circe; si de capita-
+nes valerosos, el mesmo Julio César os prestará a sí mismo en sus Comentarios, y Plutarco
+os dará mil Alejandros. 93 Si tratáredes de amores, con dos onzas 94 que sepáis de la lengua
+toscana, toparéis con León Hebreo, 95 que os hincha las medidas. 96 Y si no queréis andaros
+por tierras estrañas, en vuestra casa tenéis a Fonseca, 97 Del amor de Dios, donde se cifra 98
+todo lo que vos y el más ingenioso acertare a desear 99 en tal materia. En resolución, no hay
+más sino que vos procuréis nombrar estos nombres, o tocar estas historias, en la vuestra,
+que aquí he dicho, y dejadme a mí el cargo de poner las anotaciones y acotaciones; que
+yo os voto a tal 100 de llenaros las márgenes y de gastar cuatro pliegos en el fin del libro.Don Quijote de la Mancha 1a Parte (ed. Enrique Suárez Figaredo)
+Lemir 19 (2015) - Textos
+11
+Vengamos ahora a la citación de los autores que los otros libros tienen, que en el vuestro
+os faltan. El remedio que esto tiene es muy fácil, porque no habéis de hacer otra cosa que
+buscar un libro que los acote todos, desde la A hasta la Z, como vos decís. Pues ese mismo
+abecedario pondréis vos en vuestro libro; que, puesto que 101 a la clara se vea la mentira,
+por la poca necesidad que vos teníades de aprovecharos dellos, no importa nada, y quizá
+alguno habrá tan simple 102 que crea que de todos os habéis aprovechado en la simple y
+sencilla historia vuestra. Y cuando no sirva de otra cosa, por lo menos servirá aquel largo
+catálogo 103 de autores a dar de improviso 104 autoridad al libro. Y más, que no habrá quien
+se ponga a averiguar si los seguistes o no los seguistes, no yéndole nada en ello; cuanto más
+que, si bien caigo en la cuenta, 105 este vuestro libro no tiene necesidad de ninguna cosa de
+aquellas que vos decís que le falta, 106 porque todo él es una invectiva 107 contra los libros
+de caballerías, de quien 108 nunca se acordó Aristóteles, ni dijo nada San Basilio, ni alcan-
+zó Cicerón. Ni caen debajo de la cuenta de sus fabulosos disparates las puntualidades de
+la verdad 109 ni las observaciones de la Astrología, ni le son de importancia las medidas
+geométricas ni la confutación 110 de los argumentos de quien se sirve la Retórica, ni tiene
+para qué predicar a ninguno 111 mezclando lo humano con lo divino, que es un género de
+mezcla 112 de quien no se ha de vestir ningún cristiano entendimiento. Sólo tiene que apro-
+vecharse de la imitación en lo que fuere escribiendo; que cuanto ella fuere más perfecta,
+tanto mejor será lo que se escribiere. Y pues esta vuestra escritura no mira a más que a
+deshacer la autoridad y cabida que en el mundo y en el vulgo 113 tienen los libros de caba-
+llerías, no hay para qué andéis mendigando sentencias de filósofos, consejos de la Divina
+Escritura, fábulas de poetas, oraciones de retóricos, milagros de santos, sino procurar que
+a la llana, con palabras significantes, 114 honestas y bien colocadas, salga vuestra oración y
+periodo 115 sonoro y festivo; pintando en todo lo que alcanzáredes y fuere posible, vuestra
+intención, dando a entender vuestros conceptos sin intricarlos y escurecerlos. 116 Procu-
+rad, también, que leyendo vuestra historia, el melancólico se mueva a risa, el risueño la
+acreciente, el simple 117 no se enfade, el discreto se admire de la invención, el grave no la
+desprecie ni el prudente deje de alabarla. En efecto, llevad la mira puesta a derribar la
+máquina mal fundada 118 destos caballerescos libros, aborrecidos de tantos y alabados de
+muchos más; que, si esto alcanzásedes, no habríades alcanzado poco.
+Con silencio grande estuve escuchando lo que mi amigo me decía, y de tal manera se
+imprimieron en mí sus razones, que, sin ponerlas en disputa, las aprobé por buenas, y de
+ellas mismas quise hacer este prólogo; en el cual verás, Lector suave, 119 la discreción de
+mi amigo, la buena ventura mía en hallar en tiempo tan necesitado tal consejero, y el ali-
+vio tuyo en hallar tan sincera y tan sin revueltas la historia del famoso don Quijote de la
+Mancha, de quien hay opinión por todos los habitadores del distrito del Campo de Mon-
+tiel que fue el más casto enamorado y el más valiente caballero que de muchos años a esta
+parte se vio en aquellos contornos. Yo no quiero encarecerte 120 el servicio que te hago en
+darte a conocer tan noble y tan honrado caballero, pero quiero que me agradezcas el co-
+nocimiento que tendrás del famoso Sancho Panza, su escudero, en quien, a mi parecer, te
+doy cifradas todas las gracias escuderiles que en la caterva de los libros vanos 121 de caba-
+llerías están esparcidas. Y con esto, Dios te dé salud, y a mí no olvide. Vale. 12212 Lemir 19 (2015) - Textos
+Miguel de Cervantes Saavedra
+AL LIBRO DE DON QUIJOTE
+DE LA MANCHA
+URGANDA LA DESCONOCIDA 1
+Si de llegarte a los bue-, 2
+libro, fueres con letu-, 3
+no te dirá el boquirru- 4
+que no pones bien los de-. 5
+Mas si el pan no se te cue- 6
+por ir a manos de idio-,
+verás, de manos a bo-, 7
+aun no dar una en el cla-; 8
+si bien se comen las ma- 9
+por mostrar que son curio-. 10
+Y, pues la espiriencia ense- 11
+que el que a buen árbol se arri- 12
+buena sombra le cobi-,
+en Béjar tu buena estre- 13
+un árbol real te ofre- 14
+que da Príncipes por fru-,
+en el cual floreció un Du-
+que es nuevo Alejandro Ma-; 15
+llega a su sombra: que a osa-
+favorece la Fortu-. 16
+De un noble hidalgo manche-
+contarás las aventu-,
+a quien ociosas letu-
+trastornaron la cabe-.
+Damas, armas, caballe- 17
+le provocaron de mo-
+que, cual Orlando furio-,
+templado a lo enamora-,
+alcanzó a fuerza de bra- 18
+a Dulcinea del Tobo-.
+No indiscretos hieroglí- 19
+estampes en el escu-;
+que, cuando es todo figu-,
+con ruines puntos se envi-. 20Don Quijote de la Mancha 1a Parte (ed. Enrique Suárez Figaredo)
+Si en la dirección te humi-, 21
+no dirá mofante algu-:
+¡Qué don Alvaro de Lu-,
+qué Aníbal el de Carta-,
+qué rey Francisco en Espa-
+se queja de la Fortu-! 22
+Pues al Cielo no le plu- 23
+que salieses tan ladi-
+como el negro Juan Lati-, 24
+hablar latines rehú-.
+No me despuntes de agu-, 25
+ni me alegues con filo-; 26
+porque torciendo la bo-,
+dirá el que entiende la le-, 27
+no un palmo de las ore-: 28
+¿Para qué conmigo flo-?
+No te metas en dibu-, 29
+ni en saber vidas aje-;
+que en lo que no va ni vie- 30
+pasar de largo es cordu-;
+que suelen en caperu-
+darles a los que grace-; 31
+mas tú quémate las ce- 32
+sólo en cobrar buena fa-; 33
+que el que imprime neceda-
+dalas a censo perpe-. 34
+Advierte que es desati-,
+siendo de vidrio el teja-, 35
+tomar piedras en las ma-
+para tirar al veci-.
+Deja que el hombre de jui-
+en las obras que compo-
+se vaya con pies de plo-;
+que el que saca a luz pape-
+para entretener donce-, 36
+escribe a tontas y a lo-. 37
+Lemir 19 (2015) - Textos
+1314 Lemir 19 (2015) - Textos
+Miguel de Cervantes Saavedra
+AMADÍS DE GAULA
+A DON QUIJOTE DE LA MANCHA
+Soneto
+Tú, que imitaste la llorosa vida
+que tuve, ausente y desdeñado, sobre
+el gran ribazo de la Peña Pobre, 38
+de alegre a penitencia reducida;
+tú, a quien los ojos dieron la bebida
+de abundante licor, aunque salobre, 39
+y, alzándote la plata, estaño y cobre, 40
+te dio la tierra en tierra la comida, 41
+vive seguro de que eternamente,
+en tanto, al menos, que en la cuarta esfera 42
+sus caballos aguije el rubio Apolo, 43
+tendrás claro renombre de valiente,
+tu patria será en todas la primera, 44
+tu sabio autor, al mundo único y solo. 45
+DON BELIANÍS DE GRECIA
+A DON QUIJOTE DE LA MANCHA
+Soneto
+Rompí, corté, abollé, y dije y hice 46
+más que en el orbe caballero andante;
+fui diestro, fui valiente, fui arrogante; 47
+mil agravios vengué, cien mil deshice.
+Hazañas di a la Fama que eternice;
+fui comedido y regalado amante; 48
+fue enano para mí todo gigante,
+y al duelo en cualquier punto satisfice.
+Tuve a mis pies postrada la Fortuna, 49
+y trajo del copete mi cordura
+a la calva Ocasión 50 al estricote. 51
+Mas, aunque sobre el cuerno de la Luna
+siempre se vio encumbrada mi ventura, 52
+tus proezas envidio, ¡oh gran Quijote!Don Quijote de la Mancha 1a Parte (ed. Enrique Suárez Figaredo)
+Lemir 19 (2015) - Textos
+LA SEÑORA ORIANA 53
+A DULCINEA DEL TOBOSO
+Soneto
+¡Oh, quién tuviera, hermosa Dulcinea,
+por más comodidad y más reposo,
+a Miraflores puesto en El Toboso, 54
+y trocara sus Londres con tu aldea! 55
+¡Oh, quién de tus deseos y librea 56
+alma y cuerpo adornara, y del famoso
+caballero, que hiciste venturoso,
+mirara alguna desigual pelea! 57
+¡Oh, quién tan castamente se escapara
+del señor Amadís, como tú hiciste
+del comedido hidalgo don Quijote!
+Que así, envidiada fuera, y no envidiara,
+y fuera alegre el tiempo que fue triste,
+y gozara los gustos sin escote. 58
+GANDALÍN, 59 ESCUDERO DE AMADÍS
+DE GAULA, A SANCHO PANZA,
+ESCUDERO DE DON QUIJOTE
+Soneto
+Salve, varón famoso, a quien Fortuna, 60
+cuando en el trato escuderil te puso,
+tan blanda y cuerdamente lo dispuso, 61
+que lo pasaste sin desgracia alguna.
+Ya la azada o la hoz poco repugna 62
+al andante ejercicio; ya está en uso
+la llaneza escudera, con que acuso 63
+al soberbio que intenta hollar la Luna. 64
+Envidio a tu jumento, y a tu nombre,
+y a tus alforjas igualmente envidio, 65
+que mostraron tu cuerda providencia. 66
+Salve otra vez, ¡oh Sancho!, tan buen hombre,
+que a solo tú nuestro español Ovidio
+con buzcorona te hace reverencia. 67
+1516 Lemir 19 (2015) - Textos
+Miguel de Cervantes Saavedra
+DEL DONOSO, POETA ENTREVERADO, 68
+A SANCHO PANZA Y ROCINANTE
+A Sancho Panza
+Soy Sancho Panza, escude-
+del manchego don Quijo-;
+puse pies en polvoro- 69
+por vivir a lo discre-; 70
+que el tácito Villadie- 71
+toda su razón de esta-
+cifró en una retira-,
+según siente Celesti-,
+libro, en mi opinión, divi-,
+si encubriera más lo huma-.
+A Rocinante
+Soy Rocinante el famo-,
+bisnieto del gran Babie-; 72
+por pecados de flaque- 73
+fui a poder de un don Quijo-. 74
+Parejas corrí a lo flo-; 75
+mas por uña de caba- 76
+no se me escapó ceba-;
+que esto saqué a Lazari- 77
+cuando, para hurtar el vi-
+al ciego, le di la pa-.Don Quijote de la Mancha 1a Parte (ed. Enrique Suárez Figaredo)
+Lemir 19 (2015) - Textos
+ORLANDO FURIOSO 78
+A DON QUIJOTE DE LA MANCHA
+Soneto
+Si no eres Par, tampoco le has tenido; 79
+que Par pudieras ser entre mil pares,
+ni puede haberle donde tú te hallares,
+invito vencedor, jamás vencido. 80
+Orlando soy, Quijote, que, perdido
+por Angélica, vi remotos mares, 81
+ofreciendo a la Fama en sus altares
+aquel valor que respetó el olvido.
+No puedo ser tu igual, que este decoro
+se debe a tus proezas y a tu fama,
+puesto que, como yo, perdiste el seso. 82
+Mas serlo has mío, si al soberbio moro 83
+y cita fiero domas, que hoy nos llama 84
+iguales en amor con mal suceso. 85
+EL CABALLERO DEL FEBO 86
+A DON QUIJOTE DE LA MANCHA
+Soneto
+A vuestra espada no igualó la mía,
+Febo español, curioso cortesano, 87
+ni a la alta gloria de valor mi mano,
+que rayo fue do nace y muere el día. 88
+Imperios desprecié; la monarquía
+que me ofreció el Oriente rojo en vano
+dejé, por ver el rostro soberano
+de Claridiana, aurora hermosa mía. 89
+Amela por milagro único y raro,
+y, ausente en su desgracia, el propio Infierno
+temió mi brazo, que domó su rabia.
+Mas vos, godo Quijote, ilustre y claro, 90
+por Dulcinea sois al mundo eterno, 91
+y ella, por vos, famosa, honesta y sabia.
+1718 Lemir 19 (2015) - Textos
+Miguel de Cervantes Saavedra
+DE SOLISDÁN 92 A DON QUIJOTE
+DE LA MANCHA
+S oneto
+Maguer, señor Quijote, que sandeces 93
+vos tengan el cerbelo derrumbado, 94
+nunca seréis de alguno reprochado
+por home de obras viles y soeces. 95
+Serán vuesas fazañas los joeces, 96
+pues tuertos desfaciendo habéis andado, 97
+siendo vegadas mil apaleado 98
+por follones cautivos y raheces. 99
+Y si la vuesa linda Dulcinea
+desaguisado contra vos comete, 100
+ni a vuesas cuitas muestra buen talante, 101
+en tal desmán, vueso conorte sea 102
+que Sancho Panza fue mal alcagüete, 103
+necio él, dura ella, y vos no amante.
+DIÁLOGO 104
+ENTRE BABIECA Y ROCINANTE
+Soneto
+¿Cómo estáis, Rocinante, tan delgado?
+Porque nunca se come, y se trabaja.
+Pues ¿qué es de la cebada y de la paja?
+No me deja mi amo ni un bocado.
+Andá, señor, que estáis muy mal criado, 105
+pues vuestra lengua de asno al amo ultraja.
+Asno se es de la cuna a la mortaja. 106
+¿Queréislo ver? Miraldo enamorado. 107
+¿Es necedad amar? No es gran prudencia.
+Metafísico estáis. Es que no como.
+Quejaos del escudero. No es bastante.
+¿Cómo me he de quejar en mi dolencia,
+si el amo y escudero o mayordomo
+son tan rocines como Rocinante?Don Quijote de la Mancha 1a Parte (ed. Enrique Suárez Figaredo)
+Lemir 19 (2015) - Textos
+19
+PRIMERA PARTE 1
+DEL INGENIOSO 2 HIDALGO 3
+DON QUIJOTE 4 DE LA MANCHA 5
+E
+Capítulo Primero
+Que trata de la condición y ejercicio 6 del famoso hidalgo
+don Quijote de la Mancha
+N un lugar 7 de la Mancha, de cuyo nombre no quiero acordarme, 8 no ha mucho
+tiempo 9 que vivía un hidalgo de los de lanza en astillero, 10 adarga 11 antigua, ro-
+cín 12 flaco y galgo corredor. Una olla de algo más vaca que carnero, 13 salpicón 14
+las más noches, duelos y quebrantos 15 los sábados, lantejas los viernes, 16 algún palomino
+de añadidura los domingos, consumían las tres partes 17 de su hacienda. El resto della con-
+cluían sayo 18 de velarte, 19 calzas 20 de velludo 21 para las fiestas, con sus pantuflos 22 de lo
+mesmo, y los días de entresemana se honraba con su vellorí 23 de lo más fino. Tenía en su
+casa una ama 24 que pasaba de los cuarenta y una sobrina que no llegaba a los veinte, y un
+mozo de campo y plaza 25 que así ensillaba el rocín como tomaba la podadera. Frisaba 26 la
+edad de nuestro hidalgo con los cincuenta años. Era de complexión recia, seco de carnes,
+enjuto 27 de rostro, gran madrugador y amigo de la caza. Quieren decir 28 que tenía el so-
+brenombre de Quijada, o Quesada, que en esto hay alguna diferencia en los autores que
+deste caso escriben, aunque por conjeturas verisímiles 29 se deja entender que se llamaba
+Quijana. 30 Pero esto importa poco a nuestro cuento: basta que en la narración dél no se
+salga un punto de la verdad.
+Es, pues, de saber que este sobredicho hidalgo, los ratos que estaba ocioso —que eran
+los más del año—, se daba a leer libros de caballerías, con tanta afición y gusto que olvidó
+casi de todo punto 31 el ejercicio de la caza, y aun la administración de su hacienda; y llegó
+a tanto su curiosidad y desatino en esto, que vendió muchas hanegas 32 de tierra de sem-
+bradura para comprar libros de caballerías en que leer, y así, llevó a su casa todos cuantos
+pudo haber 33 dellos. Y, de todos, ningunos le parecían tan bien 34 como los que compuso el
+famoso Feliciano de Silva, porque la claridad de su prosa y aquellas entricadas 35 razones
+suyas le parecían de perlas; 36 y más cuando llegaba a leer 37 aquellos requiebros 38 y cartas
+de desafíos, donde en muchas partes hallaba escrito: La razón de la sinrazón que a mi razón
+se hace, de tal manera mi razón enflaquece, que con razón me quejo de la vuestra fermosura. Y
+también cuando leía: ...los altos cielos que de vuestra divinidad divinamente con las estrellas os
+fortifican, y os hacen merecedora del merecimiento que merece la vuestra grandeza.
+Con estas razones perdía el pobre 39 caballero el juicio, y desvelábase 40 por entenderlas
+y desentrañarles el sentido, que no se lo sacara ni las entendiera el mesmo Aristóteles,20 Lemir 19 (2015) - Textos
+Miguel de Cervantes Saavedra
+si resucitara para solo ello. No estaba muy bien 41 con las heridas que don Belianís daba
+y recebía, 42 porque se imaginaba que por grandes maestros 43 que le hubiesen curado, no
+dejaría de tener el rostro y todo el cuerpo lleno de cicatrices y señales. Pero, con todo, ala-
+baba en su autor aquel acabar su libro con la promesa 44 de aquella inacabable aventura, y
+muchas veces le vino deseo de tomar la pluma y dalle fin al pie de la letra, 45 como allí se
+promete; y sin duda alguna lo hiciera y aun saliera con ello, si otros mayores y continuos
+pensamientos no se lo estorbaran. Tuvo muchas veces competencia 46 con el cura de su
+lugar —que era hombre docto, graduado en Cigüenza— 47 sobre cuál había sido mejor
+caballero: Palmerín de Ingalaterra o Amadís de Gaula. Mas maese 48 Nicolás, barbero del
+mesmo pueblo, decía que ninguno llegaba al Caballero del Febo, y que si alguno se le podía
+comparar era don Galaor, hermano de Amadís de Gaula, porque tenía muy acomodada 49
+condición para todo; que no era caballero melindroso, ni tan llorón 50 como su hermano,
+y que en lo de la valentía no le iba en zaga.
+En resolución, él se enfrascó 51 tanto en su letura, 52 que se le pasaban las noches leyen-
+do de claro en claro, y los días de turbio en turbio; 53 y así, del poco dormir y del mucho
+leer, se le secó el celebro de manera que vino a perder el juicio. Llenósele la fantasía 54 de
+todo aquello que leía en los libros, así de encantamentos como de pendencias, batallas,
+desafíos, heridas, requiebros, amores, tormentas y disparates imposibles: y asentósele de
+tal modo en la imaginación que era verdad toda aquella máquina de aquellas sonadas
+soñadas invenciones 55 que leía, que para él no había otra historia más cierta en el mundo.
+Decía él que el Cid 56 Ruy Díaz había sido muy buen caballero, pero que no tenía que ver 57
+con el Caballero de la Ardiente Espada, 58 que de solo un revés había partido por medio
+dos fieros y descomunales 59 gigantes. Mejor estaba 60 con Bernardo del Carpio, porque en
+Roncesvalles había muerto a Roldán el Encantado valiéndose de la industria 61 de Hércu-
+les, cuando ahogó a Anteo, el hijo de la Tierra, entre los brazos. 62 Decía mucho bien 63 del
+gigante Morgante, porque, con ser de aquella generación gigantea, que todos son sober-
+bios y descomedidos, 64 él solo era afable y bien criado. Pero sobre todos estaba bien 65 con
+Reinaldos de Montalbán, y más cuando le veía salir de su castillo y robar cuantos topa-
+ba, 66 y cuando en allende 67 robó aquel ídolo de Mahoma que era todo de oro, según dice
+su historia. Diera él, por dar una mano de coces 68 al traidor de Galalón, 69 al ama que tenía,
+y aun a su sobrina de añadidura.
+En efeto, 70 rematado ya su juicio, vino a dar en el más estraño pensamiento que jamás
+dio loco en el mundo; y fue que le pareció convenible y necesario, así para el aumento de
+su honra como para el servicio de su república, 71 hacerse caballero andante y irse por todo
+el mundo con sus armas 72 y caballo a buscar las aventuras y a ejercitarse en todo aquello
+que él había leído que los caballeros andantes se ejercitaban, deshaciendo todo género de
+agravio 73 y poniéndose en ocasiones y peligros donde, 74 acabándolos, cobrase eterno nom-
+bre y fama. Imaginábase el pobre ya coronado por el valor de su brazo, por lo menos del
+imperio de Trapisonda; y así, con estos tan agradables pensamientos, llevado del estraño
+gusto que en ellos sentía, se dio priesa a poner en efeto lo que deseaba.
+Y lo primero que hizo fue limpiar unas armas que habían sido de sus bisabuelos, que,
+tomadas de orín y llenas de moho, luengos siglos 75 había que estaban puestas y olvidadas
+en un rincón. Limpiolas y aderezolas lo mejor que pudo, pero vio que tenían una gran
+falta, y era que no tenían celada 76 de encaje, sino morrión simple; mas a esto suplió suDon Quijote de la Mancha 1a Parte (ed. Enrique Suárez Figaredo)
+Lemir 19 (2015) - Textos
+21
+industria, porque de cartones hizo un modo de media celada, que, encajada con el mo-
+rrión, hacían una apariencia de celada entera. Es verdad que para probar si era fuerte y
+podía estar al riesgo de una cuchillada sacó su espada y le dio dos golpes, y con el primero
+y en un punto deshizo lo que había hecho en una semana; y no dejó de parecerle mal la
+facilidad con que la había hecho pedazos, y por asegurarse deste peligro la tornó a hacer
+de nuevo poniéndole unas barras de hierro por de dentro, de tal manera que él quedó sa-
+tisfecho de su fortaleza, y sin querer hacer nueva experiencia della la diputó 77 y tuvo por
+celada finísima de encaje.
+Fue luego a ver su rocín, 78 y aunque tenía más cuartos 79 que un real y más tachas que el
+caballo de Gonela, que tantum pellis et ossa fuit, 80 le pareció que ni el Bucéfalo de Alejan-
+dro, ni Babieca el del Cid con él se igualaban. Cuatro días se le pasaron en imaginar qué
+nombre le pondría, porque —según se decía él a sí mesmo— no era razón que caballo de
+caballero tan famoso, y tan bueno él por sí, estuviese sin nombre conocido; y ansí, 81 pro-
+curaba acomodársele de manera que declarase quién había sido antes que fuese de caba-
+llero andante y lo que era entonces, pues estaba muy puesto en razón 82 que mudando su
+señor estado 83 mudase él también el nombre, y le 84 cobrase famoso y de estruendo, como
+convenía a la nueva orden y al nuevo ejercicio 85 que ya profesaba. Y así, después de mu-
+chos nombres que formó, borró y quitó, añadió, deshizo y tornó a hacer en su memoria e
+imaginación, al fin le vino a llamar Rocinante, 86 nombre, a su parecer, alto, sonoro y signi-
+ficativo de lo que había sido cuando fue rocín, antes de lo que ahora era: que era antes y
+primero de todos los rocines del mundo.
+Puesto nombre, y tan a su gusto, a su caballo, quiso ponérsele a sí mismo, y en este pen-
+samiento duró otros ocho días, y al cabo se vino a llamar don Quijote, de donde —como
+queda dicho— 87 tomaron ocasión los autores desta tan verdadera historia que sin duda
+se debía de llamar Quijada, y no Quesada, como otros quisieron decir. Pero acordándose
+que el valeroso Amadís no sólo se había contentado con llamarse Amadís a secas, 88 sino
+que añadió el nombre de su reino y patria, por hacerla 89 famosa, y se llamó Amadís de
+Gaula, así quiso, como buen caballero, añadir al suyo el nombre de la suya y llamarse don
+Quijote de la Mancha, con que a su parecer declaraba muy al vivo su linaje y patria, y la
+honraba con tomar el sobrenombre della.
+Limpias, pues, sus armas, hecho del morrión celada, puesto nombre a su rocín y con-
+firmándose 90 a sí mismo, se dio a entender 91 que no le faltaba otra cosa sino buscar una
+dama de quien enamorarse, porque el caballero andante sin amores era árbol sin hojas y
+sin fruto, y cuerpo sin alma. Decíase él: 92
+—Si yo, por malos de mis pecados o por mi buena suerte 93 me encuentro por ahí con
+algún gigante, como de ordinario les acontece a los caballeros andantes, y le derribo de un
+encuentro o le parto por mitad del cuerpo, o, finalmente, le venzo y le rindo, ¿no será bien
+tener a quien enviarle presentado, 94 y que entre y se hinque de rodillas ante mi dulce seño-
+ra y diga con voz humilde y rendida: 95 Yo, señora, soy el gigante Caraculiambro, 96 señor de la
+ínsula Malindrania, a quien venció en singular 97 batalla el jamás como se debe alabado caballero
+don Quijote de la Mancha, el cual me mandó que me presentase ante vuestra merced para que la
+vuestra grandeza disponga de mí a su talante?
+¡Oh, cómo se holgó 98 nuestro buen caballero cuando hubo hecho este discurso! Y más
+cuando halló a quien dar nombre de su dama; y fue, a lo que se cree, que en un lugar cerca22 Lemir 19 (2015) - Textos
+Miguel de Cervantes Saavedra
+del suyo había una moza labradora de muy buen parecer, de quien él un tiempo anduvo
+enamorado, aunque, según se entiende, ella jamás lo supo ni se dio cata dello. 99 Llamábase
+Aldonza 100 Lorenzo, y a ésta le pareció ser bien darle título de señora de sus pensamientos;
+y buscándole nombre que no desdijese 101 mucho del suyo y que tirase y se encaminase al
+de princesa y gran señora, vino a llamarla Dulcinea 102 del Toboso —porque era natural del
+Toboso—: 103 nombre, a su parecer, músico y peregrino 104 y significativo, como todos los
+demás que a él y a sus cosas había puesto.
+Capítulo II
+Que trata de la primera salida que de su tierra hizo el ingenioso don Quijote
+H
+ECHAS, pues, estas prevenciones, no quiso aguardar más tiempo a poner
+en efeto su pensamiento, apretándole 1 a ello la falta que él pensaba que ha-
+cía 2 en el mundo su tardanza, según eran los agravios que pensaba deshacer,
+tuertos que enderezar, 3 sinrazones que emendar 4 y abusos que mejorar y deudas que sa-
+tisfacer. Y así, sin dar parte 5 a persona alguna de su intención y sin que nadie le viese, una
+mañana, antes del día, que era uno de los calurosos del mes de Julio, se armó 6 de todas
+sus armas, subió sobre Rocinante, puesta su mal compuesta 7 celada, embrazó 8 su adarga,
+tomó su lanza y por la puerta falsa de un corral 9 salió al campo con grandísimo contento
+y alborozo 10 de ver con cuánta facilidad había dado principio a su buen deseo.
+Mas apenas se vio en el campo cuando le asaltó un pensamiento terrible, y tal, que por
+poco le hiciera dejar la comenzada empresa; y fue que le vino a la memoria que no era
+armado 11 caballero, y que, conforme a ley de caballería, ni podía ni debía tomar armas 12
+con ningún caballero; y puesto que lo fuera, había de llevar armas blancas, 13 como novel
+caballero, sin empresa 14 en el escudo, hasta que por su esfuerzo la ganase. Estos pensa-
+mientos le hicieron titubear en su propósito; mas pudiendo más su locura que otra razón
+alguna, propuso de hacerse armar caballero del primero que topase, a imitación de otros
+muchos que así lo hicieron, según él había leído en los libros que tal le tenían. 15 En lo de las
+armas blancas, pensaba limpiarlas de manera, en teniendo lugar, 16 que lo fuesen más que
+un arminio; 17 y con esto se quietó 18 y prosiguió su camino, sin llevar otro que aquel que su
+caballo quería, 19 creyendo que en aquello consistía la fuerza de las aventuras.
+Yendo, pues, caminando nuestro flamante 20 aventurero, iba hablando consigo mesmo,
+y diciendo:
+—¿Quién duda, sino que en los venideros tiempos, cuando salga a luz 21 la verdadera
+historia de mis famosos hechos, que el sabio que los escribiere no ponga, cuando llegue a
+contar esta mi primera salida tan de mañana, desta manera?: Apenas había el rubicundo
+Apolo 22 tendido por la faz de la ancha y espaciosa tierra las doradas hebras 23 de sus hermosos
+cabellos, y apenas los pequeños y pintados 24 pajarillos con sus arpadas 25 lenguas habían saludado
+con dulce y meliflua armonía la venida de la rosada Aurora, 26 que, dejando la blanda cama del
+celoso marido, por las puertas y balcones del manchego horizonte a los mortales 27 se mostraba,
+cuando el famoso caballero don Quijote de la Mancha, dejando las ociosas plumas, 28 subió sobre
+su famoso caballo Rocinante y comenzó a caminar por el antiguo y conocido Campo de Montiel.Don Quijote de la Mancha 1a Parte (ed. Enrique Suárez Figaredo)
+Lemir 19 (2015) - Textos
+23
+Y era la verdad que por él caminaba; y añadió diciendo:
+—Dichosa edad y siglo dichoso aquel adonde saldrán a luz las famosas hazañas mías,
+dignas de entallarse en bronces, esculpirse en mármoles y pintarse en tablas, 29 para me-
+moria en lo futuro. ¡Oh tú, sabio encantador, quienquiera que seas, a quien ha de tocar el
+ser coronista 30 desta peregrina historia! Ruégote que no te olvides de mi buen Rocinante,
+compañero eterno mío en todos mis caminos y carreras. 31
+Luego volvía diciendo, como si verdaderamente fuera enamorado:
+—¡Oh princesa Dulcinea, señora deste cautivo corazón! Mucho agravio me habedes
+fecho 32 en despedirme y reprocharme 33 con el riguroso afincamiento 34 de mandarme no
+parecer 35 ante la vuestra fermosura. Plégaos, señora, de membraros 36 deste vuestro sujeto
+corazón, que tantas cuitas por vuestro amor padece.
+Con estos iba ensartando 37 otros disparates, todos al modo de los que sus libros le ha-
+bían enseñado, imitando en cuanto podía su lenguaje. Con esto caminaba tan despacio, y
+el sol entraba tan apriesa 38 y con tanto ardor, que fuera bastante a derretirle los sesos, si
+algunos tuviera.
+Casi todo aquel día caminó sin acontecerle cosa que de contar fuese, de lo cual se des-
+esperaba, porque quisiera topar luego luego con quien hacer experiencia del valor de su
+fuerte brazo. Autores hay que dicen que la primera aventura que le avino 39 fue la del Puer-
+to Lápice, 40 otros dicen que la de los molinos de viento; pero lo que yo he podido averiguar
+en este caso, y lo que he hallado escrito en los anales 41 de la Mancha, es que él anduvo
+todo aquel día, y, al anochecer, su rocín y él se hallaron cansados y muertos de hambre,
+y que, mirando a todas partes por ver si descubriría 42 algún castillo o alguna majada 43 de
+pastores donde recogerse y adonde pudiese remediar su mucha hambre y necesidad, vio,
+no lejos del camino por donde iba, una venta, 44 que fue como si viera una estrella que, no a
+los portales, sino a los alcázares 45 de su redención le encaminaba. Diose priesa a caminar,
+y llegó a ella a tiempo que anochecía.
+Estaban acaso 46 a la puerta dos mujeres mozas, 47 destas que llaman del partido, 48 las
+cuales iban a Sevilla con unos arrieros 49 que en la venta aquella noche acertaron a hacer
+jornada; 50 y como a nuestro aventurero todo cuanto pensaba, veía o imaginaba le parecía
+ser hecho y pasar al modo de lo que había leído, luego que vio la venta se le representó que
+era un castillo con sus cuatro torres y chapiteles 51 de luciente plata, sin faltarle su puente
+levadiza y honda cava, 52 con todos aquellos adherentes que semejantes castillos se pintan.
+Fuese llegando 53 a la venta que a él le parecía castillo, y a poco trecho 54 della detuvo las
+riendas a Rocinante, esperando que algún enano se pusiese entre las almenas a dar señal
+con alguna trompeta de que llegaba caballero al castillo. Pero como vio que se tardaban y
+que Rocinante se daba priesa por llegar a la caballeriza, se llegó a la puerta de la venta y
+vio a las dos destraídas 55 mozas que allí estaban, que a él le parecieron dos hermosas don-
+cellas 56 o dos graciosas damas que delante de la puerta del castillo se estaban solazando. 57
+En esto sucedió acaso que un porquero que andaba recogiendo de unos rastrojos 58 una
+manada de puercos —que, sin perdón, 59 así se llaman— tocó un cuerno, a cuya señal ellos
+se recogen, y al instante se le representó a don Quijote lo que deseaba, que era que algún
+enano hacía señal de su venida; y así, con estraño contento llegó a la venta y a las damas.
+Las cuales como vieron venir un hombre de aquella suerte armado, y con lanza y adarga,
+llenas de miedo se iban a entrar en la venta; pero don Quijote coligiendo por su huida su24 Lemir 19 (2015) - Textos
+Miguel de Cervantes Saavedra
+miedo, alzándose la visera de papelón y descubriendo su seco y polvoroso rostro, con gen-
+til talante y voz reposada les dijo:
+—Non fuyan 60 las vuestras mercedes ni teman desaguisado alguno, ca a la orden de ca-
+ballería que profeso non toca ni atañe facerle a ninguno, cuanto más a tan altas doncellas
+como vuestras presencias demuestran.
+Mirábanle las mozas y andaban con los ojos buscándole el rostro, que la mala visera le
+encubría; mas como se oyeron llamar doncellas, cosa tan fuera de su profesión, no pudie-
+ron tener 61 la risa; y fue de manera que don Quijote vino a correrse 62 y a decirles:
+—Bien parece la mesura 63 en las fermosas, y es mucha sandez, 64 además, la risa que de
+leve causa 65 procede; pero non vos lo digo por que os acuitedes ni mostredes mal talante,
+que el mío non es de ál que de serviros.
+El lenguaje, no entendido de las señoras, y el mal talle 66 de nuestro caballero acrecen-
+taba en ellas la risa, y en él el enojo, y pasara muy adelante 67 si a aquel punto 68 no saliera
+el ventero —hombre que, por ser muy gordo, era muy pacífico—; el cual viendo aquella
+figura contrahecha 69 armada de armas tan desiguales como eran la brida, 70 lanza, adarga
+y coselete, 71 no estuvo en nada 72 en acompañar a las doncellas en las muestras de su con-
+tento. Mas, en efeto, temiendo la máquina de tantos pertrechos determinó de hablarle
+comedidamente, y así, le dijo:
+—Si vuestra merced, señor caballero, busca posada, amén 73 del lecho, porque en esta
+venta no hay ninguno, todo lo demás se hallará 74 en ella en mucha abundancia. 75
+Viendo don Quijote 76 la humildad del alcaide de la fortaleza, que tal le pareció a él el
+ventero y la venta, respondió:
+—Para mí, señor castellano, 77 cualquiera cosa basta, porque
+mis arreos 78 son las armas;
+mi descanso, el pelear, etcétera.
+Pensó el huésped 79 que el haberle llamado castellano había sido por haberle parecido
+de los sanos de Castilla, aunque él era andaluz, y de los de la Playa de Sanlúcar, no menos
+ladrón que Caco ni menos maleante 80 que estudiantado paje; 81 y así, le respondió:
+—Según eso, las camas de vuestra merced serán duras peñas, y su dormir, siempre velar; y
+siendo así bien se puede apear, con seguridad de hallar en esta choza ocasión y ocasiones
+para no dormir en todo un año, cuanto más en una noche.
+Y, diciendo esto, fue a tener el estribo a don Quijote, el cual se apeó con mucha difi-
+cultad y trabajo, como aquel que en todo aquel día no se había desayunado. Dijo luego al
+huésped que le tuviese mucho cuidado de su caballo, porque era la mejor pieza que comía
+pan 82 en el mundo. Mirole el ventero, y no le pareció tan bueno como don Quijote decía,
+ni aun la mitad; y acomodándole 83 en la caballeriza, volvió a ver lo que su huésped man-
+daba, al cual estaban desarmando las doncellas, que ya se habían reconciliado con él; las
+cuales, aunque le habían quitado el peto y el espaldar, jamás supieron ni pudieron desen-
+cajarle la gola ni quitalle la contrahecha celada, que traía atada con unas cintas verdes 84 y
+era menester cortarlas por no poderse quitar los ñudos; 85 mas él no lo quiso consentir en
+ninguna manera; y así, se quedó toda aquella noche con la celada puesta, que era la más
+graciosa y estraña figura que se pudiera pensar. Y al desarmarle, como él se imaginaba queDon Quijote de la Mancha 1a Parte (ed. Enrique Suárez Figaredo)
+Lemir 19 (2015) - Textos
+25
+aquellas traídas y llevadas 86 que le desarmaban eran algunas principales señoras y damas
+de aquel castillo, les dijo con mucho donaire:
+—Nunca fuera caballero
+de damas tan bien servido,
+como fuera don Quijote
+cuando de su aldea vino:
+doncellas curaban dél;
+princesas, del su rocino, 87
+o Rocinante, que este es el nombre, señoras mías, de mi caballo, y don Quijote de la Man-
+cha el mío; que puesto que no quisiera descubrirme fasta 88 que las fazañas fechas en vues-
+tro servicio y pro me descubrieran, la fuerza de acomodar al propósito presente este ro-
+mance viejo de Lanzarote ha sido causa que sepáis mi nombre antes de toda sazón; 89 pero
+tiempo vendrá en que las vuestras señorías me manden y yo obedezca, y el valor de mi
+brazo descubra el deseo que tengo de serviros.
+Las mozas, que no estaban hechas a oír semejantes retóricas, 90 no respondían palabra;
+sólo le preguntaron si quería comer alguna cosa.
+—Cualquiera yantaría 91 yo —respondió don Quijote—, porque a lo que entiendo me
+haría mucho al caso. 92
+A dicha 93 acertó a ser viernes aquel día, y no había en toda la venta sino unas raciones
+de un pescado que en Castilla llaman abadejo, y en Andalucía bacallao, y en otras partes
+curadillo, y en otras truchuela. Preguntáronle si por ventura comería su merced truchuela;
+que no había otro pescado que dalle a comer.
+—Como haya muchas truchuelas 94 —respondió don Quijote—, podrán servir de una
+trucha; porque eso se me da 95 que me den ocho reales en sencillos 96 que en una pieza de a
+ocho. Cuanto más que podría ser que fuesen estas truchuelas como la ternera, que es me-
+jor que la vaca, y el cabrito que el cabrón. Pero, sea lo que fuere, venga luego, que el trabajo
+y peso de las armas no se puede llevar sin el gobierno 97 de las tripas.
+Pusiéronle la mesa a la puerta de la venta, por el fresco, 98 y trújole 99 el huésped una
+porción del mal remojado y peor cocido bacallao y un pan tan negro y mugriento como
+sus armas; pero era materia de grande risa verle comer, porque, como tenía puesta la ce-
+lada y alzada 100 la visera, no podía poner nada en la boca con sus manos si otro no se lo
+daba y ponía, y ansí, una de aquellas señoras servía deste menester. Mas al darle de beber
+no fue posible, ni lo fuera si el ventero no horadara una caña, y puesto el un cabo 101 en la
+boca, por el otro le iba echando el vino; y todo esto lo recebía en paciencia, a trueco 102 de
+no romper las cintas de la celada.
+Estando en esto llegó acaso a la venta un castrador de puercos, y así como 103 llegó sonó
+su silbato de cañas 104 cuatro o cinco veces, con lo cual acabó de confirmar don Quijote
+que estaba en algún famoso castillo, y que le servían con su música, 105 y que el abadejo
+eran truchas; el pan, candeal, 106 y las rameras damas y el ventero castellano del castillo; y
+con esto daba por bien empleada su determinación y salida. Mas lo que más le fatigaba 107
+era el no verse armado caballero, por parecerle que no se podría poner legítimamente en
+aventura alguna sin recebir la orden de caballería.26 Lemir 19 (2015) - Textos
+Y
+Miguel de Cervantes Saavedra
+Capítulo III
+Donde se cuenta la graciosa manera que tuvo don Quijote
+en armarse caballero
+así, fatigado deste pensamiento, abrevió su venteril y limitada 1 cena. La cual
+acabada, llamó al ventero, y encerrándose con él en la caballeriza, se hincó 2 de
+rodillas ante él, diciéndole:
+—No me levantaré jamás de donde estoy, valeroso caballero, fasta que la vuestra cor-
+tesía me otorgue un don 3 que pedirle quiero, el cual redundará 4 en alabanza vuestra y en
+pro del género humano.
+El ventero que vio a su huésped a sus pies y oyó semejantes razones, estaba confuso
+mirándole, sin saber qué hacerse 5 ni decirle, y porfiaba 6 con él que se levantase, y jamás
+quiso, hasta que le hubo de decir que él le otorgaba el don que le pedía.
+—No esperaba yo menos de la gran magnificencia 7 vuestra, señor mío —respondió
+don Quijote—. Y así, os digo que el don que os he pedido y de vuestra liberalidad me ha
+sido otorgado es que mañana en aquel día 8 me habéis de armar caballero, y esta noche en
+la capilla deste vuestro castillo velaré las armas, 9 y mañana, como tengo dicho, se cumpli-
+rá lo que tanto deseo, para poder como se debe ir por todas las cuatro partes del mundo 10
+buscando las aventuras en pro de los menesterosos, 11 como está a cargo de la caballería
+y de los caballeros andantes, como yo soy, cuyo deseo a semejantes fazañas es inclinado.
+El ventero que, como está dicho, era un poco socarrón 12 y ya tenía algunos barruntos 13
+de la falta de juicio de su huésped, acabó de creerlo cuando acabó de oír semejantes razo-
+nes, y por tener qué reír aquella noche determinó de seguirle el humor, y así, le dijo que an-
+daba muy acertado en lo que deseaba y pedía, y que tal prosupuesto 14 era propio y natural
+de los caballeros tan principales como él parecía y como su gallarda presencia mostraba; y
+que él, ansimesmo 15 en los años de su mocedad 16 se había dado 17 a aquel honroso ejercicio,
+andando por diversas partes del mundo buscando sus aventuras, sin que hubiese dejado 18
+los Percheles de Málaga, islas de Riarán, 19 Compás de Sevilla, Azoguejo de Segovia, la Oli-
+vera de Valencia, Rondilla de Granada, Playa de Sanlúcar, Potro de Córdoba y las Ventillas
+de Toledo, y otras diversas partes donde había ejercitado la ligereza de sus pies, sutileza de
+sus manos, haciendo muchos tuertos, recuestando muchas viudas, deshaciendo algunas
+doncellas y engañando a algunos pupilos, 20 y finalmente, dándose a conocer por cuantas
+audiencias y tribunales hay casi en toda España; y que a lo último se había venido a recoger
+a aquel su castillo, donde vivía con su hacienda y con las ajenas, 21 recogiendo 22 en él a todos
+los caballeros andantes, de cualquiera calidad y condición que fuesen, sólo por la mucha
+afición 23 que les tenía y por que partiesen 24 con él de sus haberes 25 en pago de su buen deseo.
+Díjole también que en aquel su castillo no había capilla alguna donde poder velar las armas,
+porque estaba derribada para hacerla de nuevo; pero que en caso de necesidad él sabía que
+se podían velar dondequiera, y que aquella noche las podría velar en un patio del castillo;
+que a la mañana, siendo Dios servido, se harían las debidas ceremonias, de manera que él
+quedase armado caballero, y tan caballero, que no pudiese ser más en el mundo.
+Preguntole si traía dineros; respondió don Quijote que no traía blanca, 26 porque él
+nunca había leído en las historias de los caballeros andantes que ninguno los hubiese traí-Don Quijote de la Mancha 1a Parte (ed. Enrique Suárez Figaredo)
+Lemir 19 (2015) - Textos
+27
+do. A esto dijo el ventero que se engañaba; que, puesto caso que 27 en las historias no se
+escribía, por haberles parecido a los autores dellas que no era menester escrebir 28 una
+cosa tan clara y tan necesaria de traerse como eran dineros y camisas limpias, no por eso
+se había de creer que no los trujeron; y así, tuviese por cierto y averiguado que todos los
+caballeros andantes, de que tantos libros están llenos y atestados, llevaban bien herradas 29
+las bolsas por lo que pudiese sucederles, y que asimismo llevaban camisas y una arqueta
+pequeña llena de ungüentos 30 para curar las heridas que recebían, porque no todas veces
+en los campos y desiertos donde se combatían y salían heridos había quien los curase, si ya
+no era que tenían 31 algún sabio encantador por amigo, que luego los socorría trayendo por
+el aire en alguna nube alguna doncella o enano con alguna redoma 32 de agua de tal virtud
+que en gustando 33 alguna gota della luego al punto quedaban sanos de sus llagas y heridas,
+como si mal alguno hubiesen 34 tenido; mas que, en tanto que esto no hubiese, tuvieron los
+pasados caballeros por cosa acertada que sus escuderos fuesen proveídos de dineros y de
+otras cosas necesarias, como eran hilas y ungüentos para curarse; y cuando sucedía que
+los tales caballeros no tenían escuderos, que eran pocas y raras veces, ellos mesmos lo lle-
+vaban todo en unas alforjas 35 muy sutiles, que casi no se parecían, 36 a las ancas del caballo,
+como que era otra cosa de más importancia; porque, no siendo por ocasión semejante,
+esto de llevar alforjas no fue muy admitido entre los caballeros andantes. Y por esto le da-
+ba por consejo, pues aún no 37 se lo podía mandar como a su ahijado, 38 que tan presto 39 lo
+había de ser, que no caminase de allí adelante sin dineros y sin las prevenciones referidas,
+y que vería cuán bien se hallaba con ellas cuando menos se pensase.
+Prometiole don Quijote de hacer lo que se le aconsejaba con toda puntualidad. Y así,
+se dio luego orden como 40 velase las armas en un corral grande que a un lado de la venta
+estaba, y recogiéndolas don Quijote todas, las puso sobre una pila 41 que junto a un pozo
+estaba, y, embrazando su adarga, asió de su lanza y con gentil continente 42 se comenzó a
+pasear delante de la pila; y cuando comenzó el paseo comenzaba a cerrar la noche.
+Contó el ventero a todos cuantos estaban en la venta la locura de su huésped, la vela
+de las armas y la armazón 43 de caballería que esperaba. Admiráronse de tan estraño gé-
+nero de locura y fuéronselo a mirar desde lejos, y vieron que, con sosegado ademán, unas
+veces se paseaba; otras, arrimado a su lanza, ponía los ojos en las armas, sin quitarlos por
+un buen espacio 44 dellas.
+Acabó de cerrar la noche, pero con tanta claridad de la Luna, que podía competir con
+el que se la prestaba, de manera que cuanto el novel caballero hacía era bien visto de todos.
+Antojósele en esto a uno de los arrieros que estaban en la venta ir a dar agua a su recua, 45
+y fue menester quitar las armas de don Quijote, que estaban sobre la pila; el cual viéndole
+llegar, en voz alta le dijo:
+—¡Oh tú, quienquiera que seas, atrevido caballero que llegas a tocar las armas del más
+valeroso andante que jamás se ciñó espada: mira lo que haces, y no las toques si no quieres
+dejar la vida en pago de tu atrevimiento! 46
+No se curó 47 el arriero destas razones —y fuera mejor que se curara, porque fuera cu-
+rarse en salud—; antes, trabando 48 de las correas, las arrojó gran trecho de sí. Lo cual visto
+por don Quijote, alzó los ojos al cielo y, puesto el pensamiento —a lo que pareció— en su
+señora Dulcinea, dijo:28 Lemir 19 (2015) - Textos
+Miguel de Cervantes Saavedra
+—¡Acorredme, 49 señora mía, en esta primera afrenta 50 que a este vuestro avasallado 51
+pecho se le ofrece: no me desfallezca 52 en este primero trance vuestro favor y amparo!
+Y diciendo estas y otras semejantes razones, soltando la adarga alzó la lanza a dos
+manos, y dio con ella tan gran golpe al arriero en la cabeza, que le derribó en el suelo,
+tan maltrecho, 53 que si segundara con otro no tuviera necesidad de maestro que le cu-
+rara. Hecho esto, recogió sus armas y tornó a pasearse con el mismo reposo que prime-
+ro. Desde allí a poco, sin saberse lo que había pasado —porque aún estaba 54 aturdido el
+arriero—, llegó otro con la mesma intención de dar agua a sus mulos, y llegando a quitar
+las armas para desembarazar 55 la pila, sin hablar don Quijote palabra y sin pedir favor a
+nadie 56 soltó otra vez la adarga y alzó otra vez la lanza, y sin hacerla pedazos hizo más de
+tres la cabeza del segundo arriero, porque se la abrió por cuatro. Al ruido acudió toda la
+gente de la venta, y entre ellos el ventero. Viendo esto don Quijote, embrazó su adarga y,
+puesta mano a su espada, dijo:
+—¡Oh señora de la fermosura, esfuerzo y vigor del debilitado corazón mío, ahora es
+tiempo que vuelvas los ojos de tu grandeza a este tu cautivo caballero, que tamaña 57 aven-
+tura está atendiendo!
+Con esto cobró, a su parecer, tanto ánimo, que si le acometieran todos los arrieros
+del mundo no volviera el pie atrás. Los compañeros de los heridos que tales los vieron, 58
+comenzaron desde lejos a llover piedras sobre don Quijote, el cual lo mejor que podía se
+reparaba 59 con su adarga, y no se osaba apartar de la pila por no desamparar las armas. El
+ventero daba voces que le dejasen, porque ya les había dicho como era loco, 60 y que por
+loco se libraría 61 aunque los matase a todos. También don Quijote las daba, mayores, lla-
+mándolos de alevosos y traidores, y que el señor del castillo era un follón 62 y mal nacido
+caballero, pues de tal manera consentía que se tratasen los andantes caballeros, y que si él
+hubiera recebido la orden de caballería, que él le diera a entender su alevosía.
+—Pero de vosotros, soez y baja canalla, 63 no hago caso alguno. ¡Tirad, llegad, 64 venid y
+ofendedme en cuanto pudiéredes, que vosotros veréis el pago que lleváis de vuestra san-
+dez y demasía!
+Decía esto con tanto brío y denuedo, 65 que infundió un terrible temor en los que le aco-
+metían, y así por esto como por las persuasiones del ventero le dejaron de tirar, y él dejó reti-
+rar a los heridos y tornó a la vela de sus armas con la misma quietud y sosiego que primero.
+No le parecieron bien al ventero las burlas de su huésped, y determinó abreviar y darle
+la negra 66 orden de caballería luego, antes que otra desgracia sucediese. Y así, llegándose a
+él se desculpó de la insolencia que aquella gente baja con él había usado, sin que él supie-
+se cosa alguna, pero que bien castigados quedaban de su atrevimiento. Díjole como ya le
+había dicho que en aquel castillo no había capilla, y para lo que restaba de hacer tampoco
+era necesaria; que todo el toque de quedar armado caballero consistía en la pescozada y
+en el espaldarazo, 67 según él tenía noticia del ceremonial de la orden, y que aquello en mi-
+tad de un campo se podía hacer, y que ya había cumplido con lo que tocaba al velar de las
+armas, que con solas dos horas 68 de vela se cumplía, cuanto más que él había estado más
+de cuatro. Todo se lo creyó don Quijote; que él 69 estaba allí pronto para obedecerle, y que
+concluyese con la mayor brevedad que pudiese; porque si fuese otra vez acometido y se
+viese armado caballero, no pensaba dejar persona viva en el castillo, eceto 70 aquellas que
+él le mandase, a quien por su respeto dejaría.Don Quijote de la Mancha 1a Parte (ed. Enrique Suárez Figaredo)
+Lemir 19 (2015) - Textos
+29
+Advertido y medroso 71 desto el castellano, trujo luego un libro donde asentaba 72 la paja
+y cebada que daba a los arrieros, y con un cabo 73 de vela que le traía un muchacho, y con
+las dos ya dichas doncellas, se vino adonde don Quijote estaba, al cual mandó hincar de
+rodillas; y leyendo en su manual, como que decía alguna devota oración, en mitad de la
+leyenda 74 alzó la mano y diole sobre el cuello un buen golpe, y tras él, con su mesma espa-
+da, un gentil espaldarazo, 75 siempre murmurando entre dientes, como que rezaba. Hecho
+esto, mandó a una de aquellas damas que le ciñese la espada, 76 la cual lo hizo con mucha
+desenvoltura y discreción, 77 porque no fue menester poca para no reventar de risa a cada
+punto de las ceremonias; pero las proezas que ya habían visto del novel caballero les tenía
+la risa a raya. 78 Al ceñirle la espada, dijo la buena señora:
+—Dios haga a vuestra merced muy venturoso caballero y le dé ventura en lides.
+Don Quijote le preguntó cómo se llamaba, por que él supiese de allí adelante a quién
+quedaba obligado por la merced recebida, porque pensaba darle alguna parte de la honra
+que alcanzase por el valor de su brazo. Ella respondió con mucha humildad que se llama-
+ba la Tolosa y que era hija de un remendón 79 natural de Toledo, que vivía a las tendillas de
+Sancho Bienaya 80 y que dondequiera que ella estuviese le serviría y le tendría por señor.
+Don Quijote le replicó que, por su amor, le hiciese merced que de allí adelante se pusiese
+don 81 y se llamase doña Tolosa. Ella se lo prometió, y la otra le calzó la espuela, con la cual
+le pasó casi el mismo coloquio que con la de la espada: preguntole su nombre, y dijo que se
+llamaba la Molinera y que era hija de un honrado molinero de Antequera; a la cual tam-
+bién rogó don Quijote que se pusiese don y se llamase doña Molinera, ofreciéndole nuevos
+servicios y mercedes.
+Hechas, pues, de galope y apriesa 82 las hasta allí nunca vistas ceremonias, no vio la hora
+don Quijote de verse a caballo y salir buscando las aventuras; y ensillando luego a Roci-
+nante, subió en él, y abrazando 83 a su huésped, le dijo cosas tan estrañas agradeciéndole
+la merced de haberle armado caballero, que no es posible acertar a referirlas. El ventero,
+por verle ya fuera de la venta, con no menos retóricas, aunque con más breves palabras,
+respondió a las suyas; y sin pedirle 84 la costa de la posada 85 le dejó ir a la buen hora. 86
+L
+Capítulo IV
+De lo que le sucedió a nuestro caballero 1 cuando salió de la venta
+A del alba 2 sería cuando don Quijote salió de la venta, tan contento, tan gallar-
+do, tan alborozado por verse ya armado caballero, que el gozo le reventaba por
+las cinchas 3 del caballo. Mas viniéndole a la memoria los consejos de su huésped
+4
+cerca de las prevenciones tan necesarias que había de llevar consigo, especial 5 la de los di-
+neros y camisas, determinó volver a su casa y acomodarse 6 de todo, y de un escudero, ha-
+ciendo cuenta de recebir 7 a un labrador vecino suyo que era pobre y con hijos, pero muy a
+propósito para el oficio escuderil de la caballería. Con este pensamiento guió a Rocinante
+hacia su aldea, el cual casi conociendo la querencia, 8 con tanta gana comenzó a caminar,
+que parecía que no ponía los pies en el suelo.30 Lemir 19 (2015) - Textos
+Miguel de Cervantes Saavedra
+No había andado mucho cuando le pareció que a su diestra mano, de la espesura de
+un bosque que allí estaba, salían unas voces delicadas, como de persona que se quejaba; y
+apenas las hubo oído, cuando dijo:
+—Gracias doy al Cielo por la merced que me hace, pues tan presto me pone ocasiones
+delante donde yo pueda cumplir con lo que debo a mi profesión y donde pueda coger el
+fruto de mis buenos deseos. Estas voces, sin duda son de algún menesteroso o menestero-
+sa que ha menester 9 mi favor y ayuda.
+Y, volviendo las riendas, encaminó a Rocinante hacia donde le pareció que las voces sa-
+lían, y a pocos pasos que entró por el bosque vio atada una yegua a una encina, y atado en
+otra a un muchacho, desnudo de medio cuerpo arriba, hasta de edad de quince años, que
+era el que las voces daba, y no sin causa, porque le estaba dando con una pretina 10 muchos
+azotes un labrador de buen talle, 11 y cada azote le acompañaba con una reprehensión 12 y
+consejo; porque decía:
+—La lengua queda, y los ojos listos. 13
+Y el muchacho respondía:
+—No lo haré otra vez, señor mío; por la pasión de Dios, que no lo haré otra vez, y yo
+prometo de tener de aquí adelante más cuidado con el hato. 14
+Y viendo don Quijote lo que pasaba, con voz airada dijo:
+—Descortés caballero, mal parece tomaros 15 con quien defender no se puede; subid
+sobre vuestro caballo y tomad vuestra lanza —que también tenía una lanza arrimada 16 a
+la encina adonde estaba arrendada 17 la yegua—, que yo os haré conocer ser de cobardes
+lo que estáis haciendo.
+El labrador que vio sobre sí aquella figura llena de armas blandiendo la lanza sobre su
+rostro, túvose por muerto, y con buenas palabras respondió:
+—Señor caballero, este muchacho que estoy castigando es un mi criado 18 que me sirve
+de guardar una manada de ovejas que tengo en estos contornos, el cual es tan descuidado
+que cada día me falta una; y porque castigo su descuido, o bellaquería, 19 dice que lo hago de
+miserable, 20 por no pagalle la soldada 21 que le debo, y en Dios y en mi ánima 22 que miente.
+—¿Miente delante de mí, ruin villano? 23 —dijo don Quijote—. Por el Sol que nos alum-
+bra, que estoy por pasaros de parte a parte con esta lanza. Pagadle luego sin más réplica; si
+no, por el Dios que nos rige 24 que os concluya y aniquile en este punto. 25 ¡Desatadlo luego!
+El labrador bajó la cabeza y, sin responder palabra, desató a su criado, al cual preguntó don
+Quijote que cuánto le debía su amo; él dijo que nueve meses, a siete reales cada mes. Hizo la
+cuenta don Quijote y halló que montaban sesenta 26 y tres reales, y díjole al labrador que al
+momento los desembolsase, 27 si no quería morir por ello. Respondió el medroso villano que
+para el paso en que estaba y juramento que había hecho 28 —y aún no había jurado nada—,
+que no eran tantos, porque se le habían de descontar y recebir en cuenta 29 tres pares de zapa-
+tos que le había dado, y un real de dos sangrías 30 que le habían hecho estando enfermo.
+—Bien está todo eso —replicó don Quijote—; pero quédense los zapatos y las sangrías
+por los azotes que sin culpa le habéis dado; que si él rompió el cuero de los zapatos que
+vos pagastes, vos le habéis rompido el de su cuerpo; y si le sacó el barbero sangre estando
+enfermo, vos en sanidad se la habéis sacado; ansí que por esta parte no os debe nada.
+—El daño está, 31 señor caballero, en que no tengo aquí dineros: véngase Andrés con-
+migo a mi casa, que yo se los pagaré un real sobre otro. 32Don Quijote de la Mancha 1a Parte (ed. Enrique Suárez Figaredo)
+Lemir 19 (2015) - Textos
+31
+—¿Irme yo con él? —dijo el muchacho—. Mas... ¡Mal año! 33 No, señor, ni por pienso;
+porque en viéndose solo me desuelle 34 como a un sambartolomé.
+—No hará tal —replicó don Quijote—: basta que yo se lo mande para que me tenga
+respeto; y con que él me lo jure por la ley de caballería que ha recebido, le dejaré ir libre y
+aseguraré la paga.
+—Mire vuestra merced, señor, lo que dice —dijo el muchacho—; que este mi amo no
+es caballero ni ha recebido orden de caballería alguna; que es Juan Haldudo el rico, el ve-
+cino del Quintanar.
+—Importa poco eso —respondió don Quijote—; que Haldudos puede haber caballe-
+ros, cuanto más que cada uno es hijo de sus obras. 35
+—Así es verdad —dijo Andrés—; pero este mi amo ¿de qué obras es hijo, pues me nie-
+ga mi soldada y mi sudor y trabajo?
+—No niego, hermano Andrés —respondió el labrador—. Y hacedme placer de veniros
+conmigo; que yo juro por todas las órdenes que de caballerías hay en el mundo de pagaros,
+como tengo dicho, un real sobre otro, y aun sahumados. 36
+—Del sahumerio os hago gracia 37 —dijo don Quijote—: dádselos en reales, 38 que con
+eso me contento. Y mirad que lo cumpláis como lo habéis jurado; si no, por el mismo ju-
+ramento os juro de volver a buscaros y a castigaros, y que os tengo de hallar aunque os
+escondáis más que una lagartija. Y si queréis saber quién os manda esto, para quedar con
+más veras 39 obligado a cumplirlo, sabed que yo soy el valeroso don Quijote de la Mancha,
+el desfacedor de agravios y sinrazones. Y a Dios quedad; 40 y no se os parta de las mientes 41
+lo prometido y jurado, so pena de la pena pronunciada.
+Y en diciendo esto picó 42 a su Rocinante y en breve espacio se apartó dellos. Siguiole el
+labrador con los ojos, y cuando vio que había traspuesto 43 del bosque y que ya no parecía,
+volviose a su criado Andrés y díjole:
+—Venid acá, hijo mío, que os quiero pagar lo que os debo, como aquel desfacedor 44 de
+agravios me dejó mandado.
+—Eso juro yo —dijo Andrés—; y ¡cómo que andará 45 vuestra merced acertado en
+cumplir el mandamiento de aquel buen caballero, que mil años viva! Que según es de
+valeroso y de buen juez, ¡vive Roque 46 que si no me paga, que vuelva y ejecute lo que dijo!
+—También lo juro yo —dijo el labrador—; pero, por lo mucho que os quiero, quiero
+acrecentar la deuda, por acrecentar la paga.
+Y asiéndole del brazo, le tornó a atar a la encina, donde le dio tantos azotes que le dejó
+por muerto.
+—Llamad, señor Andrés, ahora —decía el labrador—, al desfacedor de agravios: veréis
+como no desface aquéste. 47 Aunque creo que no está acabado de hacer, porque me viene
+gana de desollaros vivo, como vos temíades.
+Pero al fin le desató, y le dio licencia que fuese a buscar su juez para que ejecutase la pro-
+nunciada sentencia. Andrés se partió algo mohíno, 48 jurando de ir a buscar al valeroso don
+Quijote de la Mancha 49 y contalle punto por punto lo que había pasado, y que se lo había de
+pagar con las setenas. 50 Pero, con todo esto, él se partió llorando y su amo se quedó riendo.
+Y desta manera deshizo el agravio el valeroso don Quijote, el cual contentísimo de lo
+sucedido, pareciéndole que había dado felicísimo y alto principio a sus caballerías, con
+gran satisfación de sí mismo iba caminando hacia su aldea, diciendo a media voz:32 Lemir 19 (2015) - Textos
+Miguel de Cervantes Saavedra
+—Bien te puedes llamar dichosa sobre cuantas hoy viven en la tierra, ¡oh sobre las
+bellas bella Dulcinea del Toboso!, pues te cupo en suerte 51 tener sujeto y rendido a toda
+tu voluntad e 52 talante a un tan valiente y tan nombrado caballero como lo es y será don
+Quijote de la Mancha; el cual, como todo el mundo sabe, ayer rescibió la orden de caballe-
+ría y hoy ha desfecho el mayor tuerto y agravio que formó la sinrazón y cometió la cruel-
+dad: hoy quitó el látigo 53 de la mano a aquel despiadado enemigo que tan sin ocasión 54
+vapulaba 55 a aquel delicado infante.
+En esto llegó a un camino que en cuatro se dividía, y luego se le vino a la imaginación
+las encrucijadas 56 donde los caballeros andantes se ponían a pensar cuál camino de aqué-
+llos tomarían, y por imitarlos estuvo un rato quedo; y al cabo de haberlo muy bien pen-
+sado soltó la rienda a Rocinante, dejando a la voluntad del rocín la suya, el cual siguió su
+primer intento, 57 que fue el irse camino de su caballeriza.
+Y habiendo andado como dos millas 58 descubrió don Quijote un grande tropel 59 de
+gente, que, como después se supo, eran unos mercaderes toledanos que iban a comprar
+seda a Murcia. Eran seis, y venían con sus quitasoles, 60 con otros cuatro criados a caballo
+y tres mozos de mulas 61 a pie. Apenas los divisó don Quijote cuando se imaginó ser cosa
+de nueva aventura, y por imitar en todo cuanto a él le parecía posible los pasos 62 que había
+leído en sus libros, le pareció venir allí de molde 63 uno que pensaba hacer. Y así, con gentil
+continente y denuedo se afirmó bien en los estribos, apretó la lanza, llegó la adarga al pe-
+cho, y puesto en la mitad del camino estuvo esperando que aquellos caballeros andantes
+llegasen —que ya él por tales los tenía y juzgaba—, y cuando llegaron a trecho que se pu-
+dieron ver y oír levantó don Quijote la voz, y con ademán arrogante dijo:
+—Todo el mundo se tenga 64 si todo el mundo no confiesa que no hay en el mundo todo
+doncella más hermosa que la emperatriz de la Mancha, la simpar 65 Dulcinea del Toboso.
+Paráronse los mercaderes al son destas razones 66 y a ver la estraña figura del que las
+decía, y por la figura y por las razones luego echaron de ver 67 la locura de su dueño; mas
+quisieron ver despacio en qué paraba aquella confesión que se les pedía, y uno dellos, que
+era un poco burlón y muy mucho discreto, le dijo:
+—Señor caballero, nosotros no conocemos quién sea esa buena señora 68 que decís;
+mostrádnosla, que si ella fuere de tanta hermosura como significáis, de buena gana y sin
+apremio 69 alguno confesaremos la verdad que por parte vuestra nos es pedida.
+—Si os la mostrara —replicó don Quijote—, ¿qué hiciérades vosotros en confesar una
+verdad tan notoria? La importancia está en que sin verla lo habéis de creer, confesar, afir-
+mar, jurar y defender. Donde no, 70 conmigo sois en batalla, gente descomunal y soberbia;
+que ahora vengáis uno a uno, como pide la orden de caballería, ora 71 todos juntos, como es
+costumbre y mala usanza de los de vuestra ralea, 72 aquí os aguardo y espero, confiado en
+la razón que de mi parte tengo.
+—Señor caballero —replicó el mercader—, suplico a vuestra merced, en nombre de to-
+dos estos príncipes que aquí estamos, que por que no encarguemos 73 nuestras conciencias
+confesando una cosa por nosotros jamás vista ni oída, y más siendo tan en perjuicio de las
+emperatrices y reinas del Alcarria y Estremadura, que vuestra merced sea servido de mos-
+trarnos algún retrato de esa señora, aunque sea tamaño como un grano de trigo, que por
+el hilo se sacará el ovillo, 74 y quedaremos con esto satisfechos y seguros, 75 y vuestra merced
+quedará contento y pagado. 76 Y aun creo que estamos ya tan de su parte, que aunque su re-Don Quijote de la Mancha 1a Parte (ed. Enrique Suárez Figaredo)
+Lemir 19 (2015) - Textos
+33
+trato nos muestre que es tuerta de un ojo y que del otro le mana bermellón 77 y piedra azu-
+fre, con todo eso, por complacer a vuestra merced diremos en su favor todo lo que quisiere.
+—¡No le mana, canalla infame! —respondió don Quijote encendido en cólera—. No le
+mana, digo, eso que decís, sino ámbar y algalia 78 entre algodones; y no es tuerta, ni corco-
+vada, 79 sino más derecha que un huso 80 de Guadarrama. Pero ¡vosotros pagaréis la grande
+blasfemia que habéis dicho contra tamaña beldad como es la de mi señora!
+Y en diciendo esto arremetió con la lanza baja contra el que lo había dicho, con tanta
+furia y enojo, que si la buena suerte no hiciera que en la mitad del camino tropezara y
+cayera Rocinante, lo pasara mal el atrevido mercader. Cayó Rocinante, y fue rodando su
+amo una buena pieza 81 por el campo; y queriéndose levantar, jamás pudo: tal embarazo 82
+le causaban la lanza, adarga, espuelas y celada, con el peso de las antiguas armas. Y entre
+tanto que pugnaba por levantarse y no podía, estaba diciendo:
+—¡Non fuyáis, gente cobarde! ¡Gente cautiva, atended; 83 que no por culpa mía, sino de
+mi caballo, estoy aquí tendido!
+Un mozo de mulas de los que allí venían, que no debía de ser muy bien intencionado,
+oyendo decir al pobre caído tantas arrogancias, no lo pudo sufrir sin darle la respuesta en
+las costillas. Y llegándose a él tomó la lanza, y después de haberla hecho pedazos, con uno
+dellos comenzó a dar a nuestro don Quijote tantos palos, que, a despecho y pesar de sus
+armas, 84 le molió como cibera. 85 Dábanle voces sus amos que no le diese tanto y que le de-
+jase; pero estaba ya el mozo picado 86 y no quiso dejar el juego hasta envidar todo el resto
+de su cólera; y acudiendo por 87 los demás trozos de la lanza, los acabó de deshacer sobre el
+miserable caído, que, con toda aquella tempestad de palos que sobre él llovía, 88 no cerraba
+la boca, amenazando al cielo y a la tierra y a los malandrines 89 que tal le paraban. 90
+Cansose el mozo, y los mercaderes siguieron su camino, llevando qué contar en todo
+él del pobre apaleado. El cual después que se vio solo, tornó a probar si podía levantarse;
+pero si no lo pudo hacer cuando sano y bueno, ¿cómo lo haría molido y casi deshecho? Y
+aun se tenía por dichoso, pareciéndole que aquella era propia desgracia de caballeros an-
+dantes, y toda la atribuía a la falta 91 de su caballo; y no era posible levantarse, según tenía
+brumado 92 todo el cuerpo.
+Capítulo V
+Donde se prosigue la narración de la desgracia de nuestro caballero
+V
+IENDO, pues, que, en efeto, no podía menearse, acordó de 1 acogerse a su or-
+dinario remedio, que era pensar en algún paso de sus libros, y trújole su locura
+a la memoria aquel de Valdovinos y del marqués de Mantua, cuando Carloto
+le dejó herido en la montiña: 2 historia sabida de los niños, no ignorada de los mozos, ce-
+lebrada y aun creída de los viejos, y, con todo esto, no más verdadera que los milagros de
+Mahoma. Ésta, pues, le pareció a él que le venía de molde para el paso en que se hallaba,
+y así, con muestras de grande sentimiento se comenzó a volcar 3 por la tierra y a decir con
+debilitado aliento lo mesmo que dicen decía el herido caballero del bosque:

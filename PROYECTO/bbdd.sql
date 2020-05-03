@@ -29,7 +29,7 @@ create database if not exists db_match_coder;
 
 use db_match_coder;
 
-create table if not exists Coders(
+create table if not exists coders(
 
 PK_coder int primary key auto_increment,
 name varchar(20) not null,
@@ -47,7 +47,7 @@ creation_date timestamp default current_timestamp(),
 modification_date timestamp default current_timestamp()
 );
 
-create table if not exists Companies(
+create table if not exists companies(
 
 PK_company int primary key auto_increment,
 name varchar(30) not null,
@@ -63,7 +63,7 @@ creation_date timestamp default current_timestamp(),
 modification_date timestamp default current_timestamp()
 );
 
-create table if not exists Projects(
+create table if not exists projects(
 
 PK_project int primary key auto_increment,
 name varchar(200) not null,
@@ -77,38 +77,38 @@ modification_date timestamp default current_timestamp(),
 FK_project_company int,
 constraint FK_project_company
 FOREIGN KEY (FK_project_company) 
-REFERENCES Companies(PK_company)
+REFERENCES companies(PK_company)
 on delete cascade
 
 );
 
 
-create table if not exists Candidatures(
+create table if not exists candidatures(
 
 PK_candidature int primary key auto_increment,
 candidature_date date not null,
-finished boolean default false,
+candidature_finished boolean default false,
 creation_date timestamp default current_timestamp(),
 modification_date timestamp default current_timestamp(),
 FK_candidature_coder int,
 
 constraint FK_candidature_coder
 FOREIGN KEY (FK_candidature_coder)
-REFERENCES Coders(PK_coder)
+REFERENCES coders(PK_coder)
 on delete cascade,
 
 FK_candidature_project int,
 
 constraint FK_candidature_project 
 FOREIGN KEY (FK_candidature_project )
-REFERENCES Projects(PK_project)
+REFERENCES projects(PK_project)
 on delete cascade
 
 );
 
 
 
-insert into Coders(name,surname,phone_number,province,email,username,language,technology,architecture) values 
+insert into coders(name,surname,phone_number,province,email,username,language,technology,architecture) values 
 ('Felipe','Dieguez Mozo',295296290,'A Coruña','enim@cubilia.com','FelipeDM','HTML, CSS, Javascript','Bootstrap','Front End'),
 ('Manuel','Goñi Portero',992749718,'Pontevedra','arcu.vel.quam@NulladignissimMaecenas.net','ManuelGM','SQL','MySQL Workbench','FrontEnd'),
 ('Milagros','Jaramillo Anguita',845552772,'A Coruña','elit.a.feugiat@interdumenim.edu','MilagrosJA','HTML, CSS, Javascript','React JS','Front End'),
@@ -153,7 +153,7 @@ insert into Coders(name,surname,phone_number,province,email,username,language,te
 ('María Rosa','De Los Reyes Conejero',669348766,'A Coruña','augue@non.co.uk','MariaRRC','Python','Django','Back End');
 
 
-insert into Companies(name,description,province,phone_number,email,username,web) values 
+insert into companies(name,description,province,phone_number,email,username,web) values 
 ('Dentipol','Clínica Odontológica','A Coruña',615890861,'kiseppotty-6384@yopmail.com','ekerfut5','www.dentipol.com'),
 ('Mis Rizos','Peluquería','Pontevedra',300956234,'jyrarrojix-6865@yopmail.com','croseman6','www.misrizos.com'),
 ('ConCos','Empresa conservera','Pontevedra',689976226,'esefisu-9205@yopmail.com','ksyson7','www.concossl.com'),
@@ -187,7 +187,7 @@ insert into Companies(name,description,province,phone_number,email,username,web)
 
 
 
-insert into Projects(name,description,delivery_date,language,technology,architecture,FK_project_company) values 
+insert into projects(name,description,delivery_date,language,technology,architecture,FK_project_company) values 
 ('Crear aplicación de recetas','','2020-12-31','HTML, CSS, Javascript','Angular','FrontEnd',4),
 ('Cambio de página web','','2020-10-20','HTML, CSS, Javascript','React JS','Front End',3),
 ('Crear base de datos de clientes','','2020-07-10','SQL','MySQL Workbench','FrontEnd',2),
@@ -206,7 +206,7 @@ insert into Projects(name,description,delivery_date,language,technology,architec
 
 
 
-insert into Candidatures(candidature_date,FK_candidature_coder,FK_candidature_project) values 
+insert into candidatures(candidature_date,FK_candidature_coder,FK_candidature_project) values 
 ('2020-04-18',1,4),
 ('2020-04-30',2,3),
 ('2020-05-04',3,2),

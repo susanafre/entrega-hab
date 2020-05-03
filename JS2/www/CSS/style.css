@@ -1,6 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: sans-serif;
-  background: lightcoral;
+  background-image: url(./fondo.jpg);
+  background-repeat: no-repeat;
   color: black;
   margin: 0;
   padding: 2rem;
@@ -27,8 +34,11 @@ button {
   border: none;
   font-weight: bold;
   padding: 0.5rem;
-  font-size: 20wpx;
+  font-size: 20px;
+  margin-top: 20px;
 }
 label {
+  margin: 15px;
   font-weight: bold;
+  display: grid;
 }
