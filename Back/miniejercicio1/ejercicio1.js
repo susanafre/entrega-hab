@@ -6,7 +6,7 @@ async function readFile(inputFile) {
     const file = path.resolve(__dirname, inputFile);
     const info = await fs.stat(file);
 
-    if (info.size < 1000) {
+    if (info.size < 10000) {
       const content = await fs.readFile(file);
 
       console.log(content.toString());

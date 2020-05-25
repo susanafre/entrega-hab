@@ -5,16 +5,19 @@ node todo.js --done=1 //Marcaría la tarea 1 como hecha
 node todo.js --undone=1 //Desmarcaría la tarea 1 como hecha
 node todo.js --clean //Borraria las tareas ya hechas
 
+//* node todo.js Comprar pan //Añadiria "comprar pan" al principio de la lista de tareas
+node todo.js Ir al dentista --priority //Añadiria con prioridad alta
+node todo.js --list //Listaría todas las tareas
+node todo.js --done=1 //Marcaría la tarea 1 como hecha
+node todo.js --undone=1 //Desmarcaría la tarea 1 como hecha
+node todo.js --clean //Borraria las tareas ya hechas
 //Cada tarea debe guardar el texto de la tarea, el estado y fecha añadida
 //Cuando se listen debe mostrar toda esa información
-
 //La lista de tareas debe guardarse en un archivo .tasks.json en el directorio personal del usuario.
-
 Modules:
 //minimist
 //fs-extra
 //date-fns
-
 //PARA NOTA:
 //La aplicación debería leer un archivo .env que tuviera una variable de entorno LANG=es/gl
 //en base a esa variable mostrar los textos de la aplicación
@@ -22,9 +25,13 @@ Modules:
 
 const minimist = require("minimist");
 const fs = require("fs-extra");
-const date = require("date-fns");
+//const date = require("date-fns");
 const path = require("path");
 const chalk = require("chalk");
+require("dotenv").config();
+const os = require("os");
+
+const todoFile = path.join(os.homedir(), process.env.TASKS_FILE);
 
 async function addTodo({ text, priority }) {
   try {
@@ -33,7 +40,7 @@ async function addTodo({ text, priority }) {
       priority = false;
     }
 
-    const listatarea = require("./tasks");
+    const listatarea = require(todoFile);
 
     listatarea.push({ text, priority, date });
 
@@ -43,7 +50,7 @@ async function addTodo({ text, priority }) {
       console.log("Done writing"); // Success
     });
 
-    const lista = await fs.readJson(".tasks.json");
+    const lista = await fs.readFile(todoFile, "utf-8");
 
     console.log(lista);
   } catch (error) {
