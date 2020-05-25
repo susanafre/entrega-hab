@@ -3,69 +3,165 @@ html {
 }
 
 header {
-  background-image: url(vacaprincipal.jpg);
+  min-height: 100vh;
+  background-image: url(./vacaprincipal.jpg);
   background-repeat: no-repeat;
-  opacity: 0.6;
-  width: 100%;
-  height: auto;
-  display: flex;
-  flex-direction: column;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.8;
+  padding: 0.5 rem;
 }
-
-header ul {
-  list-style: none;
-
-  font-weight: bold;
-  text-decoration: none;
+div {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  align-items: flex-start;
+}
+li {
+  list-style: none;
+  text-decoration: none;
+  display: inline;
+  padding: 5rem;
 }
 
-li a {
+li > a {
   text-decoration: none;
   color: black;
-}
-
-header h1 {
-  color: white;
-  font-size: 30px;
-  text-align: center;
-}
-
-.comprar {
-  background: black;
-  color: white;
-  padding: 1rem;
+  font-size: 20px;
   font-weight: bold;
-  justify-content: flex-end;
-  text-align: center;
+}
+
+div > h1 {
+  color: white;
+  font-size: 80px;
+  font-weight: bold;
+}
+
+div > a {
+  color: white;
+  background-color: black;
+  padding-top: 0.5rem;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  margin: 3rem;
+  font-weight: bold;
 }
 
 section {
-  background: orange;
-  padding: 2rem 2rem;
+  background-color: orange;
 }
-section h1 {
+
+section > div > h1 {
   color: white;
   font-weight: bold;
-  font-size: 60px;
+  font-size: 80px;
 }
-section > p {
+
+section > div > p {
+  padding: 2rem;
+}
+
+section > div {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  gap: 2rem;
   font-weight: bold;
+  grid-auto-flow: dense;
+  padding: 2rem;
 }
 
 table {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  padding: 2rem;
 }
-.imagen1 {
-  background-image: url(vaca1.jpg);
+
+td.imagen1 {
+  background-image: url(./vaca1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 300px;
 }
-.imagen2 {
-  background-image: url(vaca2.jpg);
+td.imagen2 {
+  background-image: url(./vaca2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 300px;
 }
-.imagen3 {
-  background-image: url(vaca3.jpg);
+td.imagen3 {
+  background-image: url(./vaca3.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+}
+
+tr.tipovaca {
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+}
+tr.descripvaca {
+  background-color: black;
+  color: white;
+}
+tr.comprarvaca {
+  background-color: grey;
+  color: black;
+  font-size: 30px;
+  font-weight: bold;
+}
+form {
+  background-color: white;
+  padding: 0;
+}
+
+.tituloform {
+  color: orange;
+  font-weight: bold;
+  font-size: 60px;
+}
+
+label.name {
+  font-weight: bold;
+}
+label.address {
+  font-weight: bold;
+}
+
+label.provincia {
+  font-weight: bold;
+}
+label.comments {
+  font-weight: bold;
+}
+label.newsletter {
+  font-weight: bold;
+}
+
+input.name {
+  background-color: orange;
+
+  border: 2px solid black;
+}
+input.address {
+  background-color: orange;
+  border: 2px solid black;
+}
+select.provincia {
+  background-color: orange;
+  border: 2px solid black;
+}
+textarea.comments {
+  background-color: orange;
+  border: 2px solid black;
+}
+
+button {
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  padding: 1rem;
+  margin-top: 1rem;
+  width: 200px;
 }

@@ -1,0 +1,71 @@
+html {
+  font-family: sans-serif;
+}
+
+header {
+  background-image: url(vacaprincipal.jpg);
+  background-repeat: no-repeat;
+  opacity: 0.6;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+header ul {
+  list-style: none;
+
+  font-weight: bold;
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+li a {
+  text-decoration: none;
+  color: black;
+}
+
+header h1 {
+  color: white;
+  font-size: 30px;
+  text-align: center;
+}
+
+.comprar {
+  background: black;
+  color: white;
+  padding: 1rem;
+  font-weight: bold;
+  justify-content: flex-end;
+  text-align: center;
+}
+
+section {
+  background: orange;
+  padding: 2rem 2rem;
+}
+section h1 {
+  color: white;
+  font-weight: bold;
+  font-size: 60px;
+}
+section > p {
+  font-weight: bold;
+}
+
+table {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+.imagen1 {
+  background-image: url(vaca1.jpg);
+}
+.imagen2 {
+  background-image: url(vaca2.jpg);
+}
+.imagen3 {
+  background-image: url(vaca3.jpg);
+}
