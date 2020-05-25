@@ -1,10 +1,7 @@
 //////////////Modules required////////////
 
 const { getConnection } = require("../../db");
-const {
-  searchSchema,
-  entrySchemaProject,
-} = require("../../validations/validations");
+const { entrySchemaProject } = require("../../validations/validations");
 const { formatDateToDB } = require("../helpers");
 
 /////////CREATEPROJECTS//////////////////////////////

@@ -51,9 +51,6 @@ async function userIsCoder(req, res, next) {
 
     const [coder] = result;
 
-    // comprobar que la fecha del token menor mayor que user.lastPasswordUpdate
-    // Tened en cuenta que el iat del token está guardado en segundos y node trabaja en
-    // milisegundos
     if (new Date(iat * 1000) < new Date(coder.lastPasswordUpdate)) {
       throw new Error(
         "This token is invalid, log in again or order to get a new one"
@@ -137,9 +134,6 @@ async function userIsCompany(req, res, next) {
       return next(error);
     }
 
-    // comprobar que la fecha del token menor mayor que user.lastPasswordUpdate
-    // Tened en cuenta que el iat del token está guardado en segundos y node trabaja en
-    // milisegundos
     if (new Date(iat * 1000) < new Date(company.lastPasswordUpdate)) {
       throw new Error(
         "This token is invalid. Please log in again to get a new one"

@@ -6,7 +6,7 @@ const bcrypt = require("bcrypt");
 //////////////Functions imported////////////
 
 const { getConnection } = require("../../db");
-const { entrySchemaUser } = require("../../validations/validations");
+const { entrySchemaCoder } = require("../../validations/validations");
 
 const {
   formatDateToDB,
@@ -22,7 +22,7 @@ async function createCoders(req, res, next) {
   let connection;
   try {
     //Validate body payload
-    await entrySchemaUser.validateAsync(req.body);
+    await entrySchemaCoder.validateAsync(req.body);
 
     //Create connection
     connection = await getConnection();

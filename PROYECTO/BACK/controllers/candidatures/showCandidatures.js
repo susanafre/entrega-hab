@@ -20,7 +20,7 @@ async function showCandidatures(req, res, next) {
     const [
       coder,
     ] = await connection.query(
-      "SELECT p.name,p.description,c.PK_coder,c.role,ca.PK_candidature from candidatures ca INNER JOIN projects p ON ca.FK_candidature_project=p.PK_project INNER JOIN coders c ON ca.FK_candidature_coder=c.PK_coder WHERE c.PK_coder=?",
+      "SELECT p.name,p.description,c.PK_coder,c.role,ca.PK_candidature from candidatures ca INNER JOIN projects p ON ca.FK_candidature_project=p.PK_project INNER JOIN coders c ON ca.FK_candidature_coder=c.PK_coder WHERE ca.candidature_finished=0 and c.PK_coder=?",
       [id]
     );
 

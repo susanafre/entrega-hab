@@ -10,13 +10,16 @@ const uuid = require("uuid");
 const crypto = require("crypto");
 const sgMail = require("@sendgrid/mail");
 
+//Path for uploaded images
 const imageUploadPath = path.join(__dirname, process.env.UPLOADS_DIR);
 
+///////////////FormatDateToDB//////////////////
 // Format a date to DB
 function formatDateToDB(creation_date) {
   return format(creation_date, "yyyy-MM-dd HH:mm:ss");
 }
 
+///////////////ProcessAndSavePhoto//////////////////
 // Save a photo and get filename
 async function processAndSavePhoto(uploadedImage) {
   // Random File name to be saved
@@ -42,11 +45,13 @@ async function processAndSavePhoto(uploadedImage) {
   return savedFileName;
 }
 
+///////////////DeletePhoto////////////
 // Delete a photo
 async function deletePhoto(imagePath) {
   await fs.unlink(path.join(imageUploadPath, imagePath));
 }
 
+/////////////generateError//////////////
 //Generate an error
 function generateError(message, code) {
   const error = new Error(message);
@@ -54,11 +59,13 @@ function generateError(message, code) {
   return error;
 }
 
+///////////////RandomString////////////////
 //Create a random string for activation code
 function randomString(size = 20) {
   return crypto.randomBytes(size).toString("hex").slice(0, size);
 }
 
+//////////SendEmailValidation//////////////////
 //email validation account
 async function sendEmailValidation({ email, title, content }) {
   sgMail.setApiKey(process.env.SENDGRID_KEY);
@@ -77,6 +84,7 @@ async function sendEmailValidation({ email, title, content }) {
   await sgMail.send(msg);
 }
 
+///////////////SendEmailCandidature/////////////////
 //send an email when a candidature is created
 async function sendEmailCandidature({ email, title, content }) {
   sgMail.setApiKey(process.env.SENDGRID_KEY);
@@ -87,7 +95,7 @@ async function sendEmailCandidature({ email, title, content }) {
     subject: title,
     text: content,
     html: `<div>
-    <h1>Has presentado tu candidatura al proyecto</h1>
+    <h1>You have applied the candidature for a project</h1>
     <p>${content}</p>
     </div>`,
   };
@@ -95,6 +103,7 @@ async function sendEmailCandidature({ email, title, content }) {
   await sgMail.send(msg);
 }
 
+///////////////SendEmailCloseCandidature////////////////
 //send email when the candidatures are closed
 async function sendEmailCloseCandidature({ email, title, content }) {
   sgMail.setApiKey(process.env.SENDGRID_KEY);
@@ -105,7 +114,7 @@ async function sendEmailCloseCandidature({ email, title, content }) {
     subject: title,
     text: content,
     html: `<div>
-    <h1>Ha finalizado el proceso</h1>
+    <h1>The process has been finished</h1>
     <p>${content}</p>
     </div>`,
   };

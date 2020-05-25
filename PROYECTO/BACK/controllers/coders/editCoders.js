@@ -5,7 +5,7 @@ require("dotenv").config();
 //////////////Functions imported////////////
 
 const { getConnection } = require("../../db");
-const { editSchemaUser } = require("../../validations/validations");
+const { editSchemaCoder } = require("../../validations/validations");
 
 const {
   formatDateToDB,
@@ -34,7 +34,7 @@ async function editCoders(req, res, next) {
     const { id } = req.params;
 
     //validate schema
-    await editSchemaUser.validateAsync(req.body);
+    await editSchemaCoder.validateAsync(req.body);
 
     connection = await getConnection();
 
@@ -51,7 +51,7 @@ async function editCoders(req, res, next) {
     }
 
     //Check if the user id is the same as the authorized
-    console.log(current[0].PK_coder);
+
     if (current[0].PK_coder !== req.auth.id && req.auth.role !== "admin") {
       throw generateError("You don't have privileges to edit this user", 401);
     }

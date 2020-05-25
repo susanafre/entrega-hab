@@ -2,9 +2,9 @@
 
 ## Descripción
 
-### Plataforma para que empresas publiquen proyectos en lo que necesiten desarrolladores(especificando arquitectura, lenguajes, herramientas...). Los desarrolladores seleccionarán los proyectos en los que participar.
+### Plataforma para que empresas publiquen proyectos en lo que necesiten desarrolladores (especificando arquitectura, lenguajes, herramientas...) . Los desarrolladores seleccionarán los proyectos en los que participar.
 
-### Pasos
+## Pasos
 
 Primero crearemos un archivo .env donde se añadirá la información de la base de datos, puertos y contraseñas...
 Crearemos el archivo db.js que creará las conexiones a la base de datos. En este caso hemos añadido un máximo de 10 usuarios.
@@ -20,7 +20,7 @@ Se crearán en la carpeta de controllers las funciones de cada ruta. Se han divi
 
 ### CODERS
 
-### POST - /coders/login - se ejecutará la función "loginCoders"
+#### POST - /coders/login - se ejecutará la función "loginCoders"
 
 La función loginCoders permite a los desarrolladores loguearse y devolverá un token válido. Si un usuario no está registrado saltará un error y si el usuario que intenta registrarse está registrado como empresa, saltará un mensaje para que se loguee como empresa.
 
@@ -36,7 +36,7 @@ Esta función permite ver el perfil a un desarrollador su propio perfil.
 
 Permite a los usuarios editar el perfil de usuario.
 
-### POST -/coders/:id/password - se ejecutará la función "changeCoderPassword"
+#### POST -/coders/:id/password - se ejecutará la función "changeCoderPassword"
 
 Esta función permite cambiar a los usuarios la contraseña actual. Para realizar la modificación es necesario repetir la nueva contraseña.
 
@@ -44,13 +44,13 @@ Esta función permite cambiar a los usuarios la contraseña actual. Para realiza
 
 Permite borrar el perfil de un desarrollador.
 
-### GET - /coders/:id/validate - se ejecutará la función "validateCoder"
+#### GET - /coders/:id/validate - se ejecutará la función "validateCoder"
 
 Permite validar y activar la cuenta de un usuario con lo que podrá hacer login una vez realizada esta acción.
 
 ### COMPANIES
 
-### POST - /companies/login - se ejecutará la función "loginCompanies"
+#### POST - /companies/login - se ejecutará la función "loginCompanies"
 
 La función loginCompanies permite loguearse a las empresas y devolverá un token válido. Si un usuario no está registrado saltará un error y si el usuario que intenta registrarse está registrado como desarrollador, saltará un mensaje para que se loguee como tal.
 
@@ -66,7 +66,7 @@ Permite a todos los usuarios (registrados o no) ver el perfil de una empresa.
 
 Permite editar el perfil de usuario de una empresa.
 
-### POST - /companies/:id/password - se ejecutará la función "changeCompanyPassword"
+#### POST - /companies/:id/password - se ejecutará la función "changeCompanyPassword"
 
 Permite cambiar la contraseña del perfil. Para realizar dicho cambio debe repetirse la nueva contraseña.
 
@@ -74,7 +74,7 @@ Permite cambiar la contraseña del perfil. Para realizar dicho cambio debe repet
 
 Permite borrar el perfil de una empresa.
 
-### GET - /companies/:id/validate - se ejecutará la función "validateCompany"
+#### GET - /companies/:id/validate - se ejecutará la función "validateCompany"
 
 Permite validar y activar la cuenta de una empresa para poder hacer log in posteriormente.
 
@@ -110,13 +110,17 @@ Permite a un desarrollador inscribirse y presentar una candidatura a un proyecto
 
 Permite a un desarrollador poder ver todas las candidaturas a las que se ha presentado.
 
-### GET - /companies/:id1/candidatures/:id2 - se ejecutará la función "SearchCandidatures"
+#### GET - /companies/:id1/candidatures/:id2 - se ejecutará la función "SearchCandidatures"
 
 Esta función permite a una empresa ver todas las candidaturas que se han hecho a un proyecto suyo.
 
 #### PUT - /companies/:id/candidatures - se ejecutará la función "closeAllCandidatures"
 
 Cambia a estado "cerrado" todas las candidaturas de un proyecto. Se enviará un mail a todos los candidatos informando del cierre de las candidaturas.
+
+#### PUT - /companies/:id1/candidatures/:id2/:id3 - se ejecutará la función "CloseCandidature"
+
+Esta función cambia a estado "cerrado" la candidatura de un usuario a un proyecto. Se enviará un mail al usuario informando del cierre de la candidatura.
 
 #### DELETE - /candidatures/:id - se ejecutará la función "deleteCandidatures"
 

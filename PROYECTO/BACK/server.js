@@ -16,7 +16,7 @@ const port = process.env.PORT;
 
 ////////////////EXPORT CONTROLLERS/////////////
 
-////USERS
+////CODERS
 
 const { loginCoders } = require("./controllers/coders/loginCoders");
 const { createCoders } = require("./controllers/coders/createCoders");
@@ -63,12 +63,16 @@ const {
   closeAllCandidatures,
 } = require("./controllers/candidatures/closeAllCandidatures");
 const {
+  closeCandidature,
+} = require("./controllers/candidatures/closeCandidature");
+const {
   deleteCandidatures,
 } = require("./controllers/candidatures/deleteCandidatures");
 
 const { userIsCoder, userIsCompany } = require("./middlewares/auth");
 
 ////////////////USED MIDDLEWARES/////////////////
+
 //Using morgan middleware as developer
 app.use(morgan("dev"));
 
@@ -115,9 +119,14 @@ app.post("/users/:id1/candidatures/:id2", userIsCoder, createCandidatures);
 app.get("/coders/:id/candidatures", userIsCoder, showCandidatures);
 app.get("/companies/:id1/candidatures/:id2", userIsCompany, searchCandidatures);
 app.put(
-  "/companies/:id1/candidatures/:id2",
+  "/companies/:id1/candidatures/:id2/all",
   userIsCompany,
   closeAllCandidatures
+);
+app.put(
+  "/companies/:id1/candidatures/:id2/:id3",
+  userIsCompany,
+  closeCandidature
 );
 app.delete("/coders/:id1/candidatures/:id2", userIsCoder, deleteCandidatures);
 

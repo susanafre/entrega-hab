@@ -30,6 +30,10 @@ async function deleteCoders(req, res, next) {
     }
     // Delete image if exists!
 
+    if (current[0].PK_coder !== req.auth.id && req.auth.role !== "admin") {
+      throw generateError("You don't have privileges to edit this user", 401);
+    }
+
     if (current.photo) {
       await deletePhoto(current.photo);
     }

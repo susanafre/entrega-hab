@@ -8,72 +8,18 @@ const searchSchema = Joi.string()
 
   .min(2)
   .required()
-  .error(new Error("El campo de búsqueda debe de ser de más de 2 caracteres"));
+  .error(new Error("This field must have more than 2 characters"));
 
 ///////Coders////
-const editSchemaUser = Joi.object().keys({
-  name: Joi.string()
-    .min(2)
-    .max(20)
-    .required()
-    .error(
-      new Error(
-        "El campo Nombre es obligatorio y debe tener al menos 2 caracteres"
-      )
-    ),
-  surname: Joi.string()
-    .min(2)
-    .max(40)
-    .required()
-    .error(
-      new Error(
-        "El campo Apellidos es obligatorio y debe tener al menos 2 caracteres"
-      )
-    ),
-  phone_number: Joi.string()
-    .min(9)
-    .required()
-    .max(13)
-    .error(
-      new Error(
-        "El campo Teléfono es obligatio y debe contener un mínimo de 9 caracteres"
-      )
-    ),
-  province: Joi.string()
-    .min(2)
-    .max(30)
-    .error(new Error("El campo Provincia debe contener al menos 2 caracteres")),
-  email: Joi.string()
-    .required()
-    .email()
-    .error(
-      new Error(
-        "El campo email es obligatorio y debe tener un formato correcto"
-      )
-    ),
-  photo: Joi.string(),
-  language: Joi.string()
-    .required()
-    .max(100)
-    .error(new Error('El campo "lenguage" es obligatorio')),
-  technology: Joi.string()
-    .required()
-    .max(100)
-    .error(new Error('El campo "tecnología" es obligatorio')),
-  architecture: Joi.string()
-    .required()
-    .max(100)
-    .error(new Error('El campo "arquitectura" es obligatorio')),
-});
 
-const entrySchemaUser = Joi.object().keys({
+const entrySchemaCoder = Joi.object().keys({
   name: Joi.string()
     .min(2)
     .max(20)
     .required()
     .error(
       new Error(
-        "El campo Nombre es obligatorio y debe tener al menos 2 caracteres"
+        "The field Name is required and must have more than 2 characters"
       )
     ),
   surname: Joi.string()
@@ -82,7 +28,7 @@ const entrySchemaUser = Joi.object().keys({
     .required()
     .error(
       new Error(
-        "El campo Apellidos es obligatorio y debe tener al menos 2 caracteres"
+        "The field Surname is required and must have more than 2 characters"
       )
     ),
   phone_number: Joi.string()
@@ -91,39 +37,129 @@ const entrySchemaUser = Joi.object().keys({
     .max(13)
     .error(
       new Error(
-        "El campo Teléfono es obligatio y debe contener un mínimo de 9 caracteres"
+        "The field Phone is required and must have more than 9 characters"
       )
     ),
   province: Joi.string()
     .min(2)
-    .error(new Error("El campo Provincia debe contener al menos 2 caracteres")),
+    .error(
+      new Error(
+        "The field Province is required and must have more than 2 characters"
+      )
+    ),
   email: Joi.string()
     .required()
     .email()
     .error(
-      new Error(
-        "El campo email es obligatorio y debe tener un formato correcto"
-      )
+      new Error("The field email is required and must have a correct format")
     ),
   photo: Joi.string(),
   language: Joi.string()
+    .min(2)
     .required()
     .max(100)
-    .error(new Error('El campo "lenguage" es obligatorio')),
+    .error(
+      new Error(
+        "The field Language is required and must have more than 2 characters"
+      )
+    ),
   technology: Joi.string()
+    .min(2)
     .required()
     .max(100)
-    .error(new Error('El campo "tecnología" es obligatorio')),
+    .error(
+      new Error(
+        "The field Technology is required and must have more than 2 characters"
+      )
+    ),
   architecture: Joi.string()
+    .min(2)
     .required()
     .max(100)
-    .error(new Error('El campo "arquitectura" es obligatorio')),
+    .error(
+      new Error(
+        "The field Architecture is required and must have more than 2 characters"
+      )
+    ),
   password: Joi.string()
     .min(6)
     .max(100)
     .required()
     .error(new Error("The password must have 6 characters or more.")),
 });
+
+const editSchemaCoder = Joi.object().keys({
+  name: Joi.string()
+    .min(2)
+    .max(20)
+    .required()
+    .error(
+      new Error(
+        "The field Name is required and must have more than 2 characters"
+      )
+    ),
+  surname: Joi.string()
+    .min(2)
+    .max(40)
+    .required()
+    .error(
+      new Error(
+        "The field Surname is required and must have more than 2 characters"
+      )
+    ),
+  phone_number: Joi.string()
+    .min(9)
+    .required()
+    .max(13)
+    .error(
+      new Error(
+        "The field Phone is required and must have more than 9 characters"
+      )
+    ),
+  province: Joi.string()
+    .min(2)
+    .max(30)
+    .error(
+      new Error(
+        "The field Province is required and must have more than 2 characters"
+      )
+    ),
+  email: Joi.string()
+    .required()
+    .email()
+    .error(
+      new Error("The field Email is required and must have a correct format")
+    ),
+  photo: Joi.string(),
+  language: Joi.string()
+    .required()
+    .min(2)
+    .max(100)
+    .error(
+      new Error(
+        "The field Language is required and must have more than 2 characters"
+      )
+    ),
+  technology: Joi.string()
+    .required()
+    .min(2)
+    .max(100)
+    .error(
+      new Error(
+        "The field Technology is required and must have more than 2 characters"
+      )
+    ),
+  architecture: Joi.string()
+    .required()
+    .min(2)
+    .max(100)
+    .error(
+      new Error(
+        "The field Architecture is required and must have more than 2 characters"
+      )
+    ),
+});
+
 ///////////////////Companies////////////////////////////////////////////////
 const entrySchemaCompany = Joi.object().keys({
   name: Joi.string()
@@ -132,13 +168,13 @@ const entrySchemaCompany = Joi.object().keys({
     .required()
     .error(
       new Error(
-        "El campo Nombre es obligatorio y debe tener al menos 2 caracteres"
+        "The field Name is required and must have more than 2 characters"
       )
     ),
   description: Joi.string()
     .min(20)
     .error(
-      new Error("El campo Descripción debe contener al menos 20 caracteres")
+      new Error("The field Description must have more than 20 characters")
     ),
   phone_number: Joi.string()
     .min(9)
@@ -146,24 +182,22 @@ const entrySchemaCompany = Joi.object().keys({
     .max(13)
     .error(
       new Error(
-        "El campo Teléfono es obligatio y debe contener un mínimo de 9 caracteres"
+        "The field Phone is required and must have more than 9 characters"
       )
     ),
   province: Joi.string()
     .min(2)
-    .error(new Error("El campo Provincia debe contener al menos 2 caracteres")),
+    .error(new Error("The field Province must have more than 2 characters")),
   email: Joi.string()
     .required()
     .email()
     .error(
-      new Error(
-        "El campo email es obligatorio y debe tener un formato correcto"
-      )
+      new Error("The field Email is required and must have a correct format")
     ),
 
   web: Joi.string()
     .uri()
-    .error(new Error("El campo Web debe tener el formato https://")),
+    .error(new Error("The field Web must have the following format: https://")),
   photo: Joi.string(),
   password: Joi.string()
     .min(6)
@@ -179,13 +213,13 @@ const editSchemaCompany = Joi.object().keys({
     .required()
     .error(
       new Error(
-        "El campo Nombre es obligatorio y debe tener al menos 2 caracteres"
+        "The field Name is required and must have more than 2 characters"
       )
     ),
   description: Joi.string()
     .min(20)
     .error(
-      new Error("El campo Descripción debe contener al menos 20 caracteres")
+      new Error("The field Description must have more than 20 characters")
     ),
   phone_number: Joi.string()
     .min(9)
@@ -193,24 +227,22 @@ const editSchemaCompany = Joi.object().keys({
     .max(13)
     .error(
       new Error(
-        "El campo Teléfono es obligatio y debe contener un mínimo de 9 caracteres"
+        "The field Phone is required and must have more than 9 characters"
       )
     ),
   province: Joi.string()
     .min(2)
-    .error(new Error("El campo Provincia debe contener al menos 2 caracteres")),
+    .error(new Error("The field Province must have more than 2 characters")),
   email: Joi.string()
     .required()
     .email()
     .error(
-      new Error(
-        "El campo email es obligatorio y debe tener un formato correcto"
-      )
+      new Error("The field Email is required and must have a correct format")
     ),
 
   web: Joi.string()
     .uri()
-    .error(new Error("El campo Web debe tener el formato https://")),
+    .error(new Error("The field Web must have the following format: https://")),
   photo: Joi.string(),
 });
 
@@ -224,13 +256,13 @@ const entrySchemaProject = Joi.object().keys({
     .required()
     .error(
       new Error(
-        "El campo Nombre es obligatorio y debe tener al menos 2 caracteres"
+        "The field Name is required and must have more than 2 characters"
       )
     ),
   description: Joi.string()
     .min(20)
     .error(
-      new Error("El campo Descripción debe contener al menos 20 caracteres")
+      new Error("The field Description must have more than 20 characters")
     ),
   delivery_date: Joi.date()
     .min(minDate)
@@ -238,27 +270,40 @@ const entrySchemaProject = Joi.object().keys({
     .required()
     .error(
       new Error(
-        "El campo Fecha debe ser mayor que la fecha actual y tener el siguiente formato yyyy-mm-dd"
+        "The field Delivery Date must be older the current date and must have the following format: yyyy-mm-dd"
       )
     ),
   province: Joi.string()
     .min(2)
-    .error(new Error("El campo Provincia debe contener al menos 2 caracteres")),
+    .error(new Error("The field Province must have more than 2 characters")),
   language: Joi.string()
+    .min(2)
     .required()
     .max(100)
-    .error(new Error('El campo "lenguage" es obligatorio')),
+    .error(
+      new Error(
+        "The field Language is required and must have more than 2 characters"
+      )
+    ),
   technology: Joi.string()
+    .min(2)
     .required()
     .max(100)
-    .error(new Error('El campo "tecnología" es obligatorio')),
+    .error(
+      new Error(
+        "The field Technology is required and must have more than 2 characters"
+      )
+    ),
   architecture: Joi.string()
+    .min(2)
     .required()
     .max(100)
-    .error(new Error('El campo "arquitectura" es obligatorio')),
+    .error(
+      new Error(
+        "The field Architecture is required and must have more than 2 characters"
+      )
+    ),
 });
-
-const entrySchemaCandidature = Joi.object().keys({});
 
 ///////////////////Login////////////////////////
 const loggedSchema = Joi.object().keys({
@@ -288,17 +333,17 @@ const editPasswordSchema = Joi.object().keys({
   newPasswordRepeat: Joi.string()
     .min(6)
     .max(100)
+    .required()
     .error(new Error("The password must have 6 characters or more.")),
 });
 
 module.exports = {
   searchSchema,
-  entrySchemaUser,
+  entrySchemaCoder,
   entrySchemaCompany,
   entrySchemaProject,
-  entrySchemaCandidature,
   loggedSchema,
   editPasswordSchema,
-  editSchemaUser,
+  editSchemaCoder,
   editSchemaCompany,
 };
