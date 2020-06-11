@@ -1,5 +1,7 @@
+// MÓDULOS REQUERIDOS
 const os = require("os");
 
+//CALCULAMOS LA MEMORIA OCUPADA Y SE LA RESTAMOS AL TOTAL DE MEMORIA
 function calculateFreeMem() {
   const total = (os.freemem() * 100) / os.totalmem();
 

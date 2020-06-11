@@ -10,23 +10,26 @@
 
   <body>
     <!--HEADER-->
+
+    <!-- El header tendrá un ul con dos enlaces, un h1 y otro enlace -->
+
     <header>
-      <div>
-        <ul>
-          <li><a href="">Lorem ipsum</a></li>
-          <li><a href="">Lorem ipsum</a></li>
-        </ul>
+      <ul>
+        <li><a href="">Lorem ipsum</a></li>
+        <li><a href="">Lorem ipsum</a></li>
+      </ul>
 
-        <h1>Vacas</h1>
+      <h1>Vacas</h1>
 
-        <a class="comprar">Comprar</a>
-      </div>
+      <a class="comprar">Comprar</a>
     </header>
 
     <!--SECTION-->
 
     <section>
-      <div>
+      <!-- Creamos un DIV que contiene la parte descriptiva -->
+
+      <div class="section">
         <h1>Lorem ipsum</h1>
 
         <p>
@@ -35,17 +38,23 @@
           eligendi reprehenderit vero quis molestiae commodi nam dignissimos.
           Delectus voluptatibus perferendis sunt adipisci ipsum rerum quisquam
           amet? Fugiat iusto inventore harum. Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Enim magnam rem recusandae assumenda
-          temporibus maxime illum, deserunt veritatis a doloremque impedit illo
-          quidem eum voluptatem reprehenderit commodi mollitia numquam fugit!
-          Neque libero veritatis aut earum laboriosam animi, atque facilis
-          tenetur!
+          consectetur adipisicing elit. Mollitia hic cupiditate nostrum.
+          Deleniti molestiae nisi laudantium perferendis corrupti. Voluptate
+          velit eligendi labore, molestiae omnis qui adipisci. Fuga officiis
+          mollitia ea consectetur repellendus sed cum assumenda dicta ipsum, et
+          odio reiciendis neque aliquid, accusamus nobis, repellat amet nulla
+          esse veritatis! Recusandae!
         </p>
 
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio aut
           alias blanditiis error ex fugit obcaecati, sapiente accusamus quis
-          unde?
+          unde? Lorem ipsum dolor sit amet consectetur adipisicing elit. Et
+          quasi vitae ad porro cumque nemo necessitatibus quaerat placeat
+          cupiditate vel possimus distinctio veniam nihil, eligendi voluptatibus
+          soluta non culpa! Delectus aliquid, sequi hic perferendis voluptas eum
+          vitae consectetur nam eius repellat cum expedita est sed cupiditate at
+          maxime, vel odio.
         </p>
 
         <p>
@@ -53,26 +62,32 @@
           Beatae incidunt facilis officiis laborum quia veniam delectus, ullam,
           impedit doloremque odio sapiente deserunt fugit nobis dolorem eos
           obcaecati perspiciatis id ipsam quisquam vel laboriosam? Facilis
-          suscipit inventore ea pariatur. Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Culpa quas voluptatem, sapiente reiciendis ea
-          cupiditate magni itaque vitae deserunt ipsam aliquam dolorem numquam
-          adipisci, omnis perspiciatis repudiandae, magnam laboriosam ducimus!
+          suscipit inventore ea pariatur.
         </p>
       </div>
+
       <!--TABLA-->
 
+      <!-- La tablas constará de 3 columnas con 4 filas cada una -->
+
       <table>
-        <tr>
+        <!-- Fila con imágenes de vacas -->
+
+        <tr class="imagenvacas">
           <td class="imagen1"></td>
           <td class="imagen2"></td>
           <td class="imagen3"></td>
         </tr>
+
+        <!-- Fila indicando el tipo de vaca -->
 
         <tr class="tipovaca">
           <th>Vaca 1</th>
           <th>Vaca 2</th>
           <th>Vaca 3</th>
         </tr>
+
+        <!-- Fila descriptiva de vacas -->
 
         <tr class="descripvaca">
           <td>
@@ -91,6 +106,9 @@
             dolorum illo dicta.
           </td>
         </tr>
+
+        <!-- Fila con enlace a COMPRAR -->
+
         <tr class="comprarvaca">
           <td><a class="compra1">Comprar</a></td>
           <td><a class="compra2">Comprar</a></td>
@@ -100,33 +118,48 @@
 
       <!--FOOTER CON FORMULARIO-->
 
+      <!-- El formulario contiene un h2, 2 label para nombre y dirección -->
+      <!-- un select para las provincias, un textarea y un checkbox -->
+
       <form>
         <fieldset>
           <legend>
+            <!-- H2 -->
+
             <h2 class="tituloform">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi,
               dignissimos?
             </h2>
           </legend>
 
+          <!-- LABEL NAME -->
+
           <label class="name" for="name">Nome e apelidos</label>
           <input class="name" type="text" name="name" id="name" />
+
+          <!-- LABEL ADDRESS -->
 
           <label class="address" for="address">Dirección:</label>
           <input class="address" type="text" name="address" id="address" />
 
+          <!-- SELECT PROVINCIA -->
+
           <p>
             <label class="provincia" for="provincia">Provincia</label>
+
             <select class="provincia" name="provincia" id="provincia">
-              <option value="acoruña">A Coruña</option>
+              <option value="acoruna">A Coruña</option>
               <option value="lugo">Lugo</option>
               <option value="ourense">Ourense</option>
               <option value="pontevedra">Pontevedra</option>
             </select>
           </p>
 
+          <!-- TEXTAREA -->
+
           <p>
             <label class="comments" for="comments">Comentarios:</label>
+
             <textarea
               class="comments"
               name="comments"
@@ -135,6 +168,8 @@
               rows="10"
             ></textarea>
           </p>
+
+          <!-- CHECKBOX -->
 
           <label class="newsletter" for="newsletter">Recibir Newsletter?</label>
           <input
@@ -146,7 +181,13 @@
           />
         </fieldset>
 
-        <button type="submit">Enviar</button>
+        <!-- BOTÓN -->
+
+        <!-- Se añade el botón de enviar el formulario, se contiene dentro de un div -->
+
+        <div class="button">
+          <button type="submit">Enviar</button>
+        </div>
       </form>
     </section>
   </body>

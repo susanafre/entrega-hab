@@ -1,6 +1,9 @@
+//MÓDULOS REQUERIDOS
+
 const fs = require("fs").promises;
 const path = require("path");
 
+//Lee Fichero
 async function readFile(inputFile) {
   try {
     const file = path.resolve(__dirname, inputFile);
@@ -9,6 +12,7 @@ async function readFile(inputFile) {
     if (info.size < 10000) {
       const content = await fs.readFile(file);
 
+      //Si el fichero pesa más de 10 KB no lo leerá y devolverá error
       console.log(content.toString());
     } else {
       console.log("El archivo es más grande de 10 KB");

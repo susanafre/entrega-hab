@@ -1,4 +1,6 @@
 "use strict";
+
+//VARIABLES
 //label // A...
 const destinyCoin = document.getElementsByClassName("monedadestino");
 //botón
@@ -16,10 +18,13 @@ item.text = "EUR";
 
 list.add(item, null);
 
+//FUNCIÓN DE CAMBIO
 function convertInto() {
   let cantidadCambio = quantityCoin.value;
 
   numberToShow.value = cantidadCambio;
+
+  //LLAMADA A LA API
 
   fetch("https://api.exchangerate-api.com/v4/latest/EUR")
     .then(function (response) {
@@ -33,6 +38,8 @@ function convertInto() {
 }
 
 convertInto();
+
+//EVENTO QUE EJECUTA LA FUNCIÓN DE CONVERTIR AL CLICKAR EN EL BOTÓN
 
 const handleClick = () => {
   let cantidadCambio = quantityCoin.value;

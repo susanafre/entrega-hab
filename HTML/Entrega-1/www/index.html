@@ -1,24 +1,40 @@
 <!DOCTYPE html>
 <html lang="es">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Ejercicio1" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Ejercicio 1</title>
   </head>
-  <body>###
+  <!-- EMPIEZA EL BODY -->
+  <body>
+
+    <!-- EMPIEZA EL HEADER -->
     <header>
+
+      <!-- CREAMOS UNA ZONA DE NAVEGACIÓN PARA LOS LINKS -->
+
       <nav>
         <a href="Lorem1">Lorem ipsum</a>
         <a href="Lorem2">Lorem ipsum</a>
       </nav>
 
+      <!-- H1 DEL HEADER -->
+
       <h1>Vacas</h1>
 
       <nav><a href="Comprar">Comprar</a></nav>
-
+      
+      <!-- AÑADIMOS LA IMAGEN QUE EN EL CSS SERÁ EL FONDO DEL HEADER -->
+      
       <p><img src="vacaprincipal.jpg" alt="imagen de una vaca" /></p>
+
+      <!-- /HEADER -->
+
     </header>
+
+    <!-- CREAMOS UN ARTICLE -->
 
     <article class="datos sobre vcas">
       <header>Lorem ipsum</header>
@@ -31,8 +47,13 @@
         iusto inventore harum.
       </p>
 
+      <!-- SECTION CON TABLA -->
+
       <section id="vaca1">
+
+        <!-- TABLA -->
         <table>
+          <!-- PRIMERA FILA CON IMÁGENES DE VACAS -->
           <tr>
             <td>
               <img
@@ -59,13 +80,13 @@
               />
             </td>
           </tr>
-
+          <!-- SEGUNDA FILA CON EL NOMBRE DE LAS VACAS -->
           <tr>
             <th>Vaca 1</th>
             <th>Vaca 2</th>
             <th>Vaca 3</th>
           </tr>
-
+          <!-- TERCERA FILA CON LA DESCRIPCIÓN DE LAS VACAS -->
           <tr>
             <td>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
@@ -83,6 +104,7 @@
               dolorum illo dicta.
             </td>
           </tr>
+          <!-- ZONA DE NAVEGACIÓN PARA COMPRAR -->
           <tr>
             <td>
               <nav><a href="comprar">Comprar</a></nav>
@@ -97,22 +119,39 @@
         </table>
       </section>
     </article>
+
+  <!-- AÑADIMOS UN FOOTER -->
+
     <footer>
+
+      <!-- CREAMOS UNA SECTION PARA AÑADIR EL FORMULARIO -->
       <section id="formulario vacas">
+        <!-- FORM -->
+
+        <!-- El formulario contiene un h2, una label para el nombre, otra para la dirección-->
+        <!-- también tiene un select para las provincias, un textarea para los comentarios y un checkbox -->
         <form>
           <fieldset>
             <legend>
+
+
               <h2>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi,
                 dignissimos?
               </h2>
             </legend>
 
+            <!-- SELECT NAME -->
+
             <label for="name">Nome e apelidos</label>
             <input type="text" name="name" id="name" />
 
+            <!-- SELECT ADDRESS -->
+
             <label for="address">Enderezo:</label>
             <input type="text" name="address" id="address" />
+
+            <!-- SELECT PROVINCIA -->
 
             <p>
               <label for="provincia">Provincia</label>
@@ -124,6 +163,8 @@
               </select>
             </p>
 
+            <!-- TEXTAREA -->
+
             <p>
               <label for="comments">Comentarios:</label>
               <textarea
@@ -134,6 +175,8 @@
               ></textarea>
             </p>
 
+            <!-- CHECKBOX -->
+
             <label for="newsletter">Recibir Newsletter?</label>
             <input
               type="checkbox"
@@ -142,7 +185,7 @@
               value="si"
             />
           </fieldset>
-
+          <!-- BOTÓN -->
           <button type="submit">Enviar</button>
         </form>
       </section>

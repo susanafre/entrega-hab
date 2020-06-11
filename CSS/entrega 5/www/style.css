@@ -1,167 +1,210 @@
-html {
+* {
   font-family: sans-serif;
 }
-
+/* ####### HEADER ######## */
 header {
-  min-height: 100vh;
-  background-image: url(./vacaprincipal.jpg);
+  background-image: url(vacaprincipal.jpg);
   background-repeat: no-repeat;
+  opacity: 0.7;
   background-size: cover;
-  background-position: center;
-  opacity: 0.8;
-  padding: 0.5 rem;
-}
-div {
+  height: 1000px;
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
 }
-li {
+/* UL */
+header ul {
   list-style: none;
-  text-decoration: none;
-  display: inline;
-  padding: 5rem;
-}
 
-li > a {
+  font-weight: bold;
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+/* UL LI */
+li {
+  padding: 2rem;
+}
+/* UL LI A */
+li a {
   text-decoration: none;
   color: black;
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 1rem;
 }
-
-div > h1 {
+/* H1 */
+header h1 {
   color: white;
-  font-size: 80px;
-  font-weight: bold;
+  font-size: 40px;
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 2rem;
 }
 
-div > a {
-  color: white;
-  background-color: black;
-  padding-top: 0.5rem;
-  padding-right: 0.5rem;
-  padding-left: 0.5rem;
-  margin: 3rem;
+/* COMPRAR */
+.comprar {
+  color: black;
+  font-size: 3rem;
+  padding: 1.5rem;
   font-weight: bold;
+  align-content: flex-start;
+  text-align: center;
 }
+/* /HEADER */
 
+/* ####### SECTION ######## */
 section {
-  background-color: orange;
+  background: orange;
+  padding: 2rem 2rem;
 }
 
-section > div > h1 {
-  color: white;
-  font-weight: bold;
-  font-size: 80px;
-}
+/* DIV SECTION */
 
-section > div > p {
+.section {
+  column-count: 2;
   padding: 2rem;
-}
-
-section > div {
-  display: grid;
-  grid-template-columns: repeat(2, 50%);
-  gap: 2rem;
+  text-align: justify;
   font-weight: bold;
-  grid-auto-flow: dense;
-  padding: 2rem;
 }
 
-table {
-  padding: 2rem;
-}
+/* H1 SECTION*/
 
-td.imagen1 {
-  background-image: url(./vaca1.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  height: 300px;
-}
-td.imagen2 {
-  background-image: url(./vaca2.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  height: 300px;
-}
-td.imagen3 {
-  background-image: url(./vaca3.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  height: 300px;
-}
-
-tr.tipovaca {
-  background-color: black;
+.section > h1 {
   color: white;
-  font-weight: bold;
-  font-size: 30px;
-}
-tr.descripvaca {
-  background-color: black;
-  color: white;
-}
-tr.comprarvaca {
-  background-color: grey;
-  color: black;
-  font-size: 30px;
-  font-weight: bold;
-}
-form {
-  background-color: white;
-  padding: 0;
-}
-
-.tituloform {
-  color: orange;
   font-weight: bold;
   font-size: 60px;
 }
-
-label.name {
-  font-weight: bold;
-}
-label.address {
+/* P SECTION*/
+.section > p {
   font-weight: bold;
 }
 
-label.provincia {
-  font-weight: bold;
-}
-label.comments {
-  font-weight: bold;
-}
-label.newsletter {
-  font-weight: bold;
+/* ######### TABLE ####### */
+
+table {
+  display: grid;
 }
 
-input.name {
-  background-color: orange;
+/* PRIMER TR */
 
-  border: 2px solid black;
-}
-input.address {
-  background-color: orange;
-  border: 2px solid black;
-}
-select.provincia {
-  background-color: orange;
-  border: 2px solid black;
-}
-textarea.comments {
-  background-color: orange;
-  border: 2px solid black;
+.imagenvacas {
+  height: 20rem;
+  width: 30rem;
 }
 
-button {
+/* BACKGROUND IMAGE DE LOS TDS DE LA TABLA */
+
+.imagen1 {
+  background-image: url(vaca1.jpg);
+}
+.imagen2 {
+  background-image: url(vaca2.jpg);
+}
+.imagen3 {
+  background-image: url(vaca3.jpg);
+}
+
+/* SEGUNDO TR */
+
+.tipovaca {
   background-color: black;
   color: white;
   font-weight: bold;
-  padding: 1rem;
-  margin-top: 1rem;
-  width: 200px;
+  font-size: 30px;
+}
+
+/* TH DENTRO DEL SEGUNDO TR */
+
+.tipovaca > th {
+  padding: 2rem;
+  margin: 0;
+}
+
+/* TERCER TR */
+
+.descripvaca {
+  background-color: black;
+  color: white;
+}
+
+/* TD DENTRO DE TR */
+
+.descripvaca > td {
+  margin: 0;
+  padding: 2rem;
+  font-weight: bold;
+}
+
+/* CUARTO TR */
+
+.comprarvaca {
+  background-color: gray;
+  text-align: center;
+  color: black;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+/* TD DENTRO DE TR */
+
+.comprarvaca > td {
+  padding: 2rem;
+  margin: 0;
+}
+
+/*  ######## FORM ####### */
+
+form {
+  background-color: white;
+  color: orange;
+  padding: 2rem;
+  font-weight: bold;
+  margin-top: 2rem;
+}
+
+/* FIELDSER */
+
+fieldset {
+  padding: 2rem;
+}
+
+/* H2 TITULOFORM */
+
+.tituloform {
+  font-size: 3rem;
+}
+
+/* INPUT */
+
+input {
+  background-color: orange;
+}
+
+/* SELECT */
+
+select {
+  background-color: orange;
+}
+
+/* TEXTAREA */
+
+textarea {
+  background-color: orange;
+  border: 2px solid black;
+}
+
+/* DIV DE BUTTON */
+
+.button {
+  padding: 2rem;
+}
+
+/* BUTTON */
+
+button {
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  font-size: 20px;
+  background-color: black;
+  color: white;
+  font-weight: bold;
 }
