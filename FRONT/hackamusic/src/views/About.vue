@@ -1,25 +1,26 @@
 <template>
   <div class="about">
     <!-- USAMOS VUE-HEADFUL PARA EL NOMBRE DE LAS PÁGINAS -->
-    <vue-headful
-      title="About Page"
-      description="About page of the musci platform"
-    />
+    <vue-headful title="About Page" description="About page of the musci platform" />
     <!--CREAMOS LA PÁGINA ABOUT -->
     <!-- SE LE AÑADE MENU Y FOOTER -->
 
     <MenuCustom></MenuCustom>
 
     <h1>¡Hola!</h1>
-    <img src="../image/emoji.gif" alt="emoji" />
+    <img src="../assets/emoji.gif" alt="emoji" />
     <p>
       Este proyecto ha sido creado por
-      <a href="https://www.linkedin.com/in/susanafragasoporte/">Susana Fraga</a>
+      <a
+        href="https://www.linkedin.com/in/susanafragasoporte/"
+      >Susana Fraga</a>
     </p>
     <p>
-      Ultilizando la API de Last FM
-      <a href="https://www.last.fm/api/account/create">API de Rick y Morty</a> ,
-      la librería AXIOS, SweetAlert y VueHeadful.
+      Ultilizando la
+      <a href="https://www.last.fm/api/account/create">API de Last FM</a> ,
+      <a href="https://www.npmjs.com/package/axios">la librería AXIOS,</a>
+      <a href="https://sweetalert2.github.io/">SweetAlert</a> y
+      <a href="https://www.npmjs.com/package/vue-headful">VueHeadful.</a>
     </p>
     <FooterCustom></FooterCustom>
   </div>
@@ -34,8 +35,8 @@ export default {
   name: "About",
   components: {
     MenuCustom,
-    FooterCustom,
-  },
+    FooterCustom
+  }
 };
 </script>
 

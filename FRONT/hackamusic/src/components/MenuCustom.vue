@@ -2,16 +2,19 @@
   <div>
     <div id="nav">
       <!-- ENLACE A LAS PÁGINAS SOLICITADAS MEDIANTE NAME -->
-      <router-link :to="{ name: 'Home' }">Home</router-link> 💿
-
-      <router-link :to="{ name: 'About' }">About</router-link>
+      <router-link :to="{ name: 'Home' }">Home</router-link>
+⭐
+      <router-link :to="{ name: 'About' }">About</router-link>⭐
+      <router-link :to="{ name: 'Toptracks' }">Top Tracks</router-link>
+⭐
+      <router-link :to="{ name: 'Topartists' }">Top Artists</router-link>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "MenuCustom",
+  name: "MenuCustom"
 };
 </script>
 

@@ -39,7 +39,7 @@ import api from "@/api/index.js";
 import TagsCard from "@/components/TagsCard.vue";
 import MenuCustom from "@/components/MenuCustom.vue";
 import FooterCustom from "@/components/FooterCustom.vue";
-import MenuTops from "@/components/MenuTops.vue";
+
 import ButtonCustom from "@/components/ButtonCustom.vue";
 //Llamamos a SWAL
 import Swal from "sweetalert2";
@@ -51,7 +51,7 @@ export default {
     TagsCard,
     MenuCustom,
     FooterCustom,
-    MenuTops,
+
     ButtonCustom
   },
   data() {
