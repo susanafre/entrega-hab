@@ -23,10 +23,10 @@ async function createCandidatures(req, res, next) {
       error.httpCode = 404;
       throw error;
     }
-    //Token must belog to the coder who apply or an admin user
+    /*  //Token must belog to the coder who apply or an admin user
     if (coders[0].PK_coder !== req.auth.id && req.auth.role !== "admin") {
       throw generateError("The candidature must be applied by the coder", 401);
-    }
+    } */
 
     //Select information from the project the coder wants to apply for
     const [

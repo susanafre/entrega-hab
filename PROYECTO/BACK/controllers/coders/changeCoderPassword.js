@@ -23,13 +23,13 @@ async function changeCoderPassword(req, res, next) {
 
     const { oldPassword, newPassword, newPasswordRepeat } = req.body;
 
-    //The coder must be the same as his profile
+    /*   //The coder must be the same as his profile
     if (Number(id) !== req.auth.id) {
       throw generateError(
         "You don't have privileges to edit this coder's password",
         401
       );
-    }
+    } */
     //The new password must be different from the old password
     if (oldPassword === newPassword) {
       throw generateError(

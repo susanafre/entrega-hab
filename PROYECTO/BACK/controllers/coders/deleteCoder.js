@@ -21,19 +21,19 @@ async function deleteCoders(req, res, next) {
     //Check if coder is on DB
     const [
       current,
-    ] = await connection.query("SELECT photo from coders where PK_coder=?", [
-      id,
-    ]);
+    ] = await connection.query("SELECT * from coders where PK_coder=?", [id]);
 
     if (!current.length) {
       throw generateError(`There is no entry with id ${id}`, 400);
     }
     // Delete image if exists!
 
+    /*  console.log("Esto es req.auth.id", req.auth.id);
+    console.log("esto es current PK Coder", current[0].PK_coder);
     if (current[0].PK_coder !== req.auth.id && req.auth.role !== "admin") {
       throw generateError("You don't have privileges to edit this user", 401);
     }
-
+ */
     if (current.photo) {
       await deletePhoto(current.photo);
     }

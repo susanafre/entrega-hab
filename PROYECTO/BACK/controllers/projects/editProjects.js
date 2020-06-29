@@ -36,10 +36,15 @@ async function editProjects(req, res, next) {
       error.httpCode = 404;
       throw error;
     }
-
+    /* if (
+      current[0].FK_project_company !== req.auth.id &&
+      req.auth.role !== "admin"
+    ) {
+      throw generateError("You don't have privileges to edit this user", 401);
+    } */
     const date = formatDateToDB(new Date());
     await connection.query(
-      "UPDATE projects SET name=?,description=?,province=?,delivery_date=?,language=?,technology=?,architecture=? WHERE FK_project_company=?",
+      "UPDATE projects SET name=?,description=?,province=?,delivery_date=?,language=?,technology=?,architecture=? WHERE PK_project=?",
       [
         name,
         description,

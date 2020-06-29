@@ -25,7 +25,7 @@ async function loginCompanies(req, res, next) {
     const [
       dbCompany,
     ] = await connection.query(
-      "SELECT PK_company, email, password, role from companies where email=? AND active=1",
+      "SELECT PK_company, email, password, role,name from companies where email=? AND active=1",
       [email]
     );
 
@@ -70,7 +70,12 @@ async function loginCompanies(req, res, next) {
     res.send({
       status: "ok",
       message: "Login succesful",
-      data: { token },
+      data: {
+        token: token,
+        role: company.role,
+        id: company.PK_company,
+        name: company.name,
+      },
     });
   } catch (error) {
     next(error);

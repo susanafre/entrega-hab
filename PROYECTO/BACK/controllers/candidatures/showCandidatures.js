@@ -9,7 +9,7 @@ const { getConnection } = require("../../db");
 const { generateError } = require("../helpers");
 
 ////////////SHOWCANDIDATURES//////////////
-//GET - /coders/:id/candidatures
+//GET - /coders/candidatures/:id
 
 async function showCandidatures(req, res, next) {
   let connection;
@@ -17,32 +17,45 @@ async function showCandidatures(req, res, next) {
     const { id } = req.params;
     connection = await getConnection();
     //Check if coder is on the DB
+
     const [
       coder,
-    ] = await connection.query(
-      "SELECT p.name,p.description,c.PK_coder,c.role,ca.PK_candidature from candidatures ca INNER JOIN projects p ON ca.FK_candidature_project=p.PK_project INNER JOIN coders c ON ca.FK_candidature_coder=c.PK_coder WHERE ca.candidature_finished=0 and c.PK_coder=?",
-      [id]
-    );
+    ] = await connection.query("SELECT * from coders where PK_coder=?", [id]);
 
-    if (!coder.length) {
+    if (!coder[0]) {
       const error = new Error(`The coder with id ${id} does not exist`);
       error.httpCode = 404;
       throw error;
     }
-    //Chec if the user is coder or admin
+
+    const [
+      candidature,
+    ] = await connection.query(
+      "SELECT p.name as name_project,p.description as description_project,ca.candidature_state as estado,c.PK_coder as PK_coder,c.role as role,ca.PK_candidature as PK_candidature, ca.FK_candidature_project as candidature from candidatures ca INNER JOIN projects p ON ca.FK_candidature_project=p.PK_project INNER JOIN coders c ON ca.FK_candidature_coder=c.PK_coder WHERE c.PK_coder=?",
+      [id]
+    );
+    console.log("Esto es Coder de Back", candidature);
+    if (!candidature.length) {
+      const error = new Error(
+        `The coder with id ${id} does not have candidatures`
+      );
+      error.httpCode = 404;
+      throw error;
+    }
+    /*  //Chec if the user is coder or admin
     if (coder[0].PK_coder !== req.auth.id && req.auth.role !== "admin") {
       throw generateError("You don't have privileges to see this user", 401);
-    }
+    } */
 
-    const payload = [];
+    /* const payload = [];
 
     for (const coders of coder) {
       payload.push(`name:${coders.name}, description: ${coders.description}`);
-    }
+    } */
 
     res.send({
       status: "ok",
-      data: payload,
+      data: candidature,
     });
   } catch (error) {
     next(error);

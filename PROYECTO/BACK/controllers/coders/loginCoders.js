@@ -24,7 +24,7 @@ async function loginCoders(req, res, next) {
     const [
       dbCoder,
     ] = await connection.query(
-      "SELECT PK_coder,email,password,role from coders where email=? AND active=1",
+      "SELECT PK_coder,email,password,role,name from coders where email=? AND active=1",
       [email]
     );
 
@@ -66,11 +66,19 @@ async function loginCoders(req, res, next) {
       expiresIn: "30d",
     });
 
+    console.log("Esto es el token:", token);
+    console.log("Esto es dbcoder", coder.role, coder.PK_coder, coder.name);
+
     // Create response
-    res.send({
+    res.json({
       status: "ok",
       message: "Login succesful",
-      data: { token },
+      data: {
+        token: token,
+        role: coder.role,
+        id: coder.PK_coder,
+        name: coder.name,
+      },
     });
   } catch (error) {
     next(error);

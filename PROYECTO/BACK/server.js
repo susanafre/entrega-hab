@@ -34,6 +34,7 @@ const { loginCompanies } = require("./controllers/companies/loginCompanies");
 const {
   changeCompanyPassword,
 } = require("./controllers/companies/changeCompanyPassword");
+const { viewCompanies } = require("./controllers/companies/viewCompanies");
 const { createCompanies } = require("./controllers/companies/createCompanies");
 const { editCompanies } = require("./controllers/companies/editCompanies");
 const { validateCompany } = require("./controllers/companies/validateCompany");
@@ -45,6 +46,7 @@ const { deleteCompanies } = require("./controllers/companies/deleteCompanies");
 const { createProjects } = require("./controllers/projects/createProjects");
 const { filterProjects } = require("./controllers/projects/filterProjects");
 const { searchProjects } = require("./controllers/projects/searchProjects");
+const { showProjects } = require("./controllers/projects/showProjects");
 const { editProjects } = require("./controllers/projects/editProjects");
 const { deleteProjects } = require("./controllers/projects/deleteProjects");
 
@@ -65,11 +67,36 @@ const {
 const {
   closeCandidature,
 } = require("./controllers/candidatures/closeCandidature");
+
+const {
+  interestedCandidature,
+} = require("./controllers/candidatures/interestedCandidatures");
+
 const {
   deleteCandidatures,
 } = require("./controllers/candidatures/deleteCandidatures");
 
 const { userIsCoder, userIsCompany } = require("./middlewares/auth");
+
+////////// ADMINISTRATOR FUNCTIONS
+
+const { seeAllCoders } = require("./controllers/administrator/seeAllCoders");
+const {
+  seeAllCompanies,
+} = require("./controllers/administrator/seeAllCompanies");
+const {
+  seeAllProjects,
+} = require("./controllers/administrator/seeAllProjects");
+const {
+  seeAllCandidatures,
+} = require("./controllers/administrator/seeAllCandidatures");
+const {
+  activateAccountCoder,
+} = require("./controllers/administrator/activateAccountCoder");
+
+const {
+  activateAccountCompany,
+} = require("./controllers/administrator/activateAccountCompany");
 
 ////////////////USED MIDDLEWARES/////////////////
 
@@ -90,45 +117,61 @@ app.use(cors());
 /*Coders*/
 app.post("/coders/login", loginCoders);
 app.post("/coders", createCoders);
-app.get("/coders/:id", userIsCoder, viewProfileCoder);
-app.put("/coders/:id", userIsCoder, editCoders);
-app.post("/coders/:id/password", userIsCoder, changeCoderPassword);
-app.delete("/coders/:id", userIsCoder, deleteCoders);
+app.get("/coders/:id", viewProfileCoder);
+app.put("/coders/:id", editCoders);
+app.post("/coders/:id/password", changeCoderPassword);
+app.delete("/coders/:id", deleteCoders);
 app.get("/coders/:id/validate", validateCoder);
 
 /*Companies */
 
 app.post("/companies/login", loginCompanies);
 app.post("/companies", createCompanies);
+app.get("/companies", viewCompanies);
 app.get("/companies/:id", searchCompanies);
-app.put("/companies/:id", userIsCompany, editCompanies);
-app.post("/companies/:id/password", userIsCompany, changeCompanyPassword);
-app.delete("/companies/:id", userIsCompany, deleteCompanies);
-app.get("/companies/:id/validate", userIsCompany, validateCompany);
+
+app.put("/companies/:id", editCompanies);
+app.post("/companies/:id/password", changeCompanyPassword);
+app.delete("/companies/:id", deleteCompanies);
+app.get("/companies/:id/validate", validateCompany);
 
 /*Projects*/
 
-app.post("/projects/:id", userIsCompany, createProjects);
+app.post("/projects/:id1", createProjects);
 app.get("/projects", filterProjects);
 app.get("/projects/:id", searchProjects);
-app.put("/projects/:id", userIsCompany, editProjects);
-app.delete("/projects/:id", userIsCompany, deleteProjects);
+app.get("/projects/companies/:id1", showProjects);
+app.put("/projects/:id", editProjects);
+app.delete("/projects/:id", deleteProjects);
 
 /*Candidature*/
-app.post("/users/:id1/candidatures/:id2", userIsCoder, createCandidatures);
-app.get("/coders/:id/candidatures", userIsCoder, showCandidatures);
-app.get("/companies/:id1/candidatures/:id2", userIsCompany, searchCandidatures);
+app.post("/users/:id1/candidatures/:id2", createCandidatures);
+app.get("/coders/candidatures/:id", showCandidatures);
+app.get("/companies/:id2/candidatures/:id1", searchCandidatures);
 app.put(
   "/companies/:id1/candidatures/:id2/all",
-  userIsCompany,
+
   closeAllCandidatures
 );
 app.put(
   "/companies/:id1/candidatures/:id2/:id3",
-  userIsCompany,
+
   closeCandidature
 );
-app.delete("/coders/:id1/candidatures/:id2", userIsCoder, deleteCandidatures);
+app.put(
+  "/companies/:id1/candidatures/interested/:id2/:id3",
+  interestedCandidature
+);
+app.delete("/coders/candidatures/:id1", deleteCandidatures);
+
+/* Administrator */
+
+app.get("/all/coders", seeAllCoders);
+app.get("/all/companies", seeAllCompanies);
+app.get("/all/projects", seeAllProjects);
+app.get("/all/candidatures", seeAllCandidatures);
+app.put("/account/coder/:id", activateAccountCoder);
+app.put("/account/company/:id", activateAccountCompany);
 
 //////////////ERRORS///////////////////
 //Error middleware
@@ -147,5 +190,5 @@ app.use((req, res) => {
 /////////////////PORT///////////////////
 //Port listening
 app.listen(port, () => {
-  console.log("Server connected");
+  console.log(`Server connected in ${port}`);
 });

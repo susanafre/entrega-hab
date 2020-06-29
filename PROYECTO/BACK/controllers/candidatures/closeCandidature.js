@@ -38,7 +38,7 @@ async function closeCandidature(req, res, next) {
       [id2, id1]
     );
 
-    if (
+    /* if (
       company[0].FK_project_company !== req.auth.id &&
       req.auth.role !== "admin"
     ) {
@@ -46,14 +46,14 @@ async function closeCandidature(req, res, next) {
         "You don't have privileges to change this information",
         401
       );
-    }
+    } */
 
     //Change the field candidature_finished
     const date = formatDateToDB(new Date());
     const [
       candidatures,
     ] = await connection.query(
-      "UPDATE candidatures SET candidature_finished=1,modification_date=? WHERE FK_candidature_coder=? and FK_candidature_project=?",
+      "UPDATE candidatures SET candidature_state='Cerrado',modification_date=? WHERE FK_candidature_coder=? and FK_candidature_project=?",
       [date, id3, id2]
     );
 

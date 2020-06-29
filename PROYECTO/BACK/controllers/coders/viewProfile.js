@@ -27,12 +27,13 @@ async function viewProfileCoder(req, res, next) {
 
     const [coderData] = coders;
 
-    //Check if the loged user is the same to see profile
+    /*  //Check if the loged user is the same to see profile
     if (coderData.PK_coder !== req.auth.id && req.auth.role !== "admin") {
       throw generateError("You don't have privileges to edit this user", 401);
-    }
+    } */
 
     const payload = {
+      id: coderData.PK_coder,
       name: coderData.name,
       surname: coderData.surname,
       phone_number: coderData.phone_number,

@@ -48,14 +48,14 @@ async function editCompanies(req, res, next) {
     if (!current.length) {
       throw generateError(`The entry with id ${id} does not exist`, 404);
     }
-    //Check if the user id is the same as the authorized
+    /* //Check if the user id is the same as the authorized
     if (current[0].PK_company !== req.auth.id && req.auth.role !== "admin") {
       throw generateError("You don't have privileges to edit this user", 401);
-    }
+    } */
 
     //Process photo
     let savedFileName;
-
+    console.log("Esto es req.files", req.files);
     if (req.files && req.files.photo) {
       try {
         savedFileName = await processAndSavePhoto(req.files.photo);

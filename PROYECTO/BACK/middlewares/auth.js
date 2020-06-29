@@ -6,8 +6,10 @@ const { getConnection } = require("../db");
 
 async function userIsCoder(req, res, next) {
   let connection;
+
   try {
     // Get authorization header
+    console.log("Esto es req.headers", req.headers);
     const { authorization } = req.headers;
 
     if (!authorization) {
@@ -51,11 +53,11 @@ async function userIsCoder(req, res, next) {
 
     const [coder] = result;
 
-    if (new Date(iat * 1000) < new Date(coder.lastPasswordUpdate)) {
+    /* if (new Date(iat * 1000) < new Date(coder.lastPasswordUpdate)) {
       throw new Error(
         "This token is invalid, log in again or order to get a new one"
       );
-    }
+    } */
 
     // Add token payload to request
     req.auth = decoded;
@@ -134,11 +136,11 @@ async function userIsCompany(req, res, next) {
       return next(error);
     }
 
-    if (new Date(iat * 1000) < new Date(company.lastPasswordUpdate)) {
+    /* if (new Date(iat * 1000) < new Date(company.lastPasswordUpdate)) {
       throw new Error(
         "This token is invalid. Please log in again to get a new one"
       );
-    }
+    } */
 
     // Continue
     next();

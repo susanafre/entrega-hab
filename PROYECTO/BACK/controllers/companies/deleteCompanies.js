@@ -29,10 +29,10 @@ async function deleteCompanies(req, res, next) {
       error.httpCode = 400;
       throw error;
     }
-
+    /* 
     if (current[0].PK_coder !== req.auth.id && req.auth.role !== "admin") {
       throw generateError("You don't have privileges to edit this user", 401);
-    }
+    } */
 
     if (current.photo) {
       await deletePhoto(current.photo);

@@ -23,13 +23,13 @@ async function changeCompanyPassword(req, res, next) {
     const { oldPassword, newPassword, newPasswordRepeat } = req.body;
 
     //The company must be the same as his profile
-    if (Number(id) !== req.auth.id) {
+    /* if (Number(id) !== req.auth.id) {
       const error = new Error(
         "You don't have privileges to edit this company's password"
       );
       error.httpCode = 401;
       throw error;
-    }
+    } */
 
     //The new password must be different from the old password
     if (oldPassword === newPassword) {

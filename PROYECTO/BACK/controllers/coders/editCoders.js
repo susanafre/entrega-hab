@@ -52,13 +52,15 @@ async function editCoders(req, res, next) {
 
     //Check if the user id is the same as the authorized
 
-    if (current[0].PK_coder !== req.auth.id && req.auth.role !== "admin") {
+    /* if (current[0].PK_coder !== req.auth.id && req.auth.role !== "admin") {
       throw generateError("You don't have privileges to edit this user", 401);
     }
-
+ */
     //Process Photo
 
     let savedFileName;
+
+    console.log("esto es req.files", req.files);
 
     if (req.files && req.files.photo) {
       try {

@@ -76,7 +76,7 @@ async function sendEmailValidation({ email, title, content }) {
     subject: title,
     text: content,
     html: `<div>
-    <h1>Validate your email</h1>
+    <h1>Valida tu cuenta de email</h1>
     <p>${content}</p>
     </div>`,
   };
@@ -95,7 +95,7 @@ async function sendEmailCandidature({ email, title, content }) {
     subject: title,
     text: content,
     html: `<div>
-    <h1>You have applied the candidature for a project</h1>
+    <h1>Has presentado tu candidatura a un proyecto</h1>
     <p>${content}</p>
     </div>`,
   };
@@ -114,7 +114,26 @@ async function sendEmailCloseCandidature({ email, title, content }) {
     subject: title,
     text: content,
     html: `<div>
-    <h1>The process has been finished</h1>
+    <h1>El proceso ha finalizado</h1>
+    <p>${content}</p>
+    </div>`,
+  };
+
+  await sgMail.send(msg);
+}
+
+///////////////SendEmailCloseCandidature////////////////
+//send email when the candidatures are closed
+async function sendEmailInterested({ email, title, content }) {
+  sgMail.setApiKey(process.env.SENDGRID_KEY);
+
+  const msg = {
+    to: email,
+    from: "sfraga2009@gmail.com",
+    subject: title,
+    text: content,
+    html: `<div>
+    <h1>La empresa está interesada en tu perfil</h1>
     <p>${content}</p>
     </div>`,
   };
@@ -131,4 +150,5 @@ module.exports = {
   sendEmailValidation,
   sendEmailCandidature,
   sendEmailCloseCandidature,
+  sendEmailInterested,
 };

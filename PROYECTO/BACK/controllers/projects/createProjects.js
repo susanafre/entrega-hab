@@ -9,7 +9,7 @@ const { formatDateToDB } = require("../helpers");
 async function createProjects(req, res, next) {
   let connection;
   try {
-    const { id } = req.params;
+    const { id1 } = req.params;
     const {
       name,
       description,
@@ -26,13 +26,12 @@ async function createProjects(req, res, next) {
     //Check if the company is on the DB
     const [
       current,
-    ] = await connection.query(
-      "SELECT * FROM projects p LEFT JOIN companies c ON p.FK_project_company = c.PK_company WHERE PK_company=?;",
-      [id]
-    );
+    ] = await connection.query("SELECT * FROM companies WHERE PK_company=?;", [
+      id1,
+    ]);
     console.log(current[0]);
     if (!current[0]) {
-      const error = new Error(`La empresa con id ${id} no existe`);
+      const error = new Error(`La empresa con id ${id1} no existe`);
       error.httpCode = 404;
       throw error;
     }

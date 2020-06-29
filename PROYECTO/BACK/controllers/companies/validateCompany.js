@@ -31,8 +31,7 @@ async function validateCompany(req, res, next) {
     }
 
     res.send({
-      status: "ok",
-      message: "User account validated, now you can login",
+      message: "Tu cuenta ha sido validada.Ya puedes hacer login.",
     });
   } catch (error) {
     next(error);

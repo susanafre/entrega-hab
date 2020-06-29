@@ -38,6 +38,8 @@ async function searchCompanies(req, res, next) {
       phone_number: companyData.phone_number,
       web: companyData.web,
       photo: companyData.photo,
+      role: companyData.role,
+      email: companyData.email,
     };
 
     res.send({
