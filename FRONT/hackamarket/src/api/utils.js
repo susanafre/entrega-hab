@@ -80,7 +80,7 @@ export function isTokenExpired(token) {
 
 export function isLoggedIn() {
   let authToken = getAuthToken();
-  return !!authToken && !isTokenExpired(authToken); //fuerza al resturn a devolver un true o un false
+  return !!authToken && !isTokenExpired(authToken); //fuerza al return a devolver un true o un false
 }
 
 // ########## FUNCIONES PARA COMPROBAR EL ROL DEL USUARIO #############
