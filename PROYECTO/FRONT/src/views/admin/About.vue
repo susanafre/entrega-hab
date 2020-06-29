@@ -60,7 +60,7 @@
 </template>
 
 <script>
-import MenuLoggedAdmin from "@/components/MenuLoggedAdmin.vue";
+import MenuLoggedAdmin from "../../components/menus/MenuLoggedAdmin.vue";
 import FooterCustom from "@/components/FooterCustom.vue";
 
 export default {

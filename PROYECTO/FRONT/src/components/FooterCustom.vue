@@ -1,8 +1,6 @@
 <template>
   <div class="footer">
-    <a href>Quienes somos</a>
-
-    <a href>RRSS</a>
+    <p>© Susana Fraga Rego</p>
   </div>
 </template>
 

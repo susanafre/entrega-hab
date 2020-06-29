@@ -203,7 +203,7 @@ import Swal from "sweetalert2";
 
 /* IMPORTAMOS COMPONENTES */
 import showProjects from "@/components/showProjects.vue";
-import MenuLoggedCompany from "@/components/MenuLoggedCompany.vue";
+import MenuLoggedCompany from "../../components/menus/MenuLoggedCompany.vue";
 import FooterCustom from "@/components/FooterCustom.vue";
 import closeCandidaturesCard from "@/components/closeCandidaturesCard.vue";
 

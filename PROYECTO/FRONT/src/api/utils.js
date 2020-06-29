@@ -10,6 +10,7 @@ const AUTH_TOKEN_KEY = "authorization";
 const ID = "id";
 const ROLE = "role";
 const NAME = "name";
+const PHOTO = "photo";
 
 /////////// LOGIN CODERS ///////////////
 
@@ -28,10 +29,15 @@ export function loginCoders(email, password) {
       getUserRole(res.data.data.role);
       getUserId(res.data.data.id);
       getUserName(res.data.data.name);
+      getUserPhoto(res.data.data.photo);
       resolve();
     } catch (err) {
-      console.log("Error en login:", err);
-      reject(err);
+      if (err.response) {
+        localStorage.setItem("error", err.response.data.message);
+        console.log(err.response.data.message);
+      }
+
+      console.log("Error en Login", err);
     }
   });
 }
@@ -53,10 +59,15 @@ export function loginCompanies(email, password) {
       getUserRole(res.data.data.role);
       getUserId(res.data.data.id);
       getUserName(res.data.data.name);
+      getUserPhoto(res.data.data.photo);
       resolve();
     } catch (err) {
-      console.log("Error en login:", err);
-      reject(err);
+      if (err.response) {
+        localStorage.setItem("error", err.response.data.message);
+        console.log(err.response.data.message);
+      }
+
+      console.log("Error en Login", err);
     }
   });
 }
@@ -84,6 +95,11 @@ export function getUserName(name) {
   return localStorage.setItem(NAME, name);
 }
 
+//GUARDAR FOTO EN LOCALSTORAGE
+export function getUserPhoto(photo) {
+  return localStorage.setItem(PHOTO, photo);
+}
+
 //LOGOUT
 
 export function clearLogin() {
@@ -108,6 +124,11 @@ export function clearName() {
 /* BORRAR ID DEL USUARIO */
 export function clearId() {
   return localStorage.removeItem(ID);
+}
+
+/* BORRAR FOTO DEL USUARIO */
+export function clearPhoto() {
+  return localStorage.removeItem(PHOTO);
 }
 
 //COGER EL TOKEN

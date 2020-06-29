@@ -1,6 +1,6 @@
 <template>
   <div class="menu">
-    <img class="logo" :src="require('../assets/logo_nombre.png')" alt="logo" />
+    <img class="logo" :src="require('../../assets/logo_nombre.png')" alt="logo" />
     <button>
       <router-link :to="{name:'Home'}">HOME</router-link>
     </button>
@@ -29,7 +29,7 @@
     </button>
 
     <button @click="logoutUserEvent()">LOG OUT</button>
-    <img class="user" :src="require('../assets/usuario.png')" alt="usuario" />
+    <img class="user" :src="require('../../assets/usuario.png')" alt="usuario" />
     <h1>{{ username }}</h1>
   </div>
 </template>
@@ -51,11 +51,11 @@ export default {
 <style scoped>
 @font-face {
   font-family: "serif";
-  src: url("../assets/LibreBaskerville-Regular.ttf");
+  src: url("../../assets/LibreBaskerville-Regular.ttf");
 }
 @font-face {
   font-family: "sansSerif";
-  src: url("../assets/Ubuntu-Regular.ttf");
+  src: url("../../assets/Ubuntu-Regular.ttf");
 }
 .menu {
   background-color: #142850;

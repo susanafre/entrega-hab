@@ -7,7 +7,7 @@
       CODERS
     </button>
 
-    <img :src="require('../assets/logo_nombre.png')" alt="logo" />
+    <img :src="require('../../assets/logo_nombre.png')" alt="logo" />
 
     <button @click="openModalCompanyEvent() ">
       ACCESO
@@ -36,11 +36,11 @@ export default {
 <style scoped>
 @font-face {
   font-family: "serif";
-  src: url("../assets/LibreBaskerville-Regular.ttf");
+  src: url("../../assets/LibreBaskerville-Regular.ttf");
 }
 @font-face {
   font-family: "sansSerif";
-  src: url("../assets/Ubuntu-Regular.ttf");
+  src: url("../../assets/Ubuntu-Regular.ttf");
 }
 #home {
   background-color: #00909e;

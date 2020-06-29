@@ -1,6 +1,6 @@
 <template>
   <div class="candidatures">
-    <vue-headful title="Candidatures Page" description="You can see your candidatures" />
+    <vue-headful title="Ver candidaturas" description="You can see your candidatures" />
 
     <!-- COMPONENTE MENÚ -->
 
@@ -28,7 +28,7 @@ import Swal from "sweetalert2";
 /* Componente de Footer */
 import FooterCustom from "@/components/FooterCustom.vue";
 import CandidaturesCard from "@/components/CandidaturesCard.vue";
-import MenuLoggedCoder from "@/components/MenuLoggedCoder.vue";
+import MenuLoggedCoder from "../../components/menus/MenuLoggedCoder.vue";
 
 /* IMPORTAMOS FUNCIONES */
 import { clearLogin } from "@/api/utils";

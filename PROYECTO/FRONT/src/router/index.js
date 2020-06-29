@@ -2,6 +2,8 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Error from "../views/Error.vue";
+import axios from "axios";
+import Swal from "sweetalert2";
 
 /* importamos funciones */
 
@@ -11,6 +13,10 @@ import { checkCompanyRole } from "../api/utils";
 import { checkCoderRole } from "../api/utils";
 
 Vue.use(VueRouter);
+
+axios.defaults.headers.common["Authorization"] = localStorage.getItem(
+  "authorization"
+);
 
 const routes = [
   /* #### ALL USERS #### */

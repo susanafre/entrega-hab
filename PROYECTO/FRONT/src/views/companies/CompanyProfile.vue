@@ -71,7 +71,7 @@
         </p>
         <p>
           <label for="photo">FOTO:</label>
-          <input type="file" placeholder="Imagen" />
+          <input type="file" id="file" ref="file" @change="onFileSelected" placeholder="Imagen" />
         </p>
 
         <button class="updateprofile" @click="closeModal()">ACTUALIZAR PERFIL</button>
@@ -116,7 +116,7 @@ import Swal from "sweetalert2";
 
 /* IMPORTAMOS COMPONENTES */
 import FooterCustom from "@/components/FooterCustom.vue";
-import MenuLoggedCompany from "@/components/MenuLoggedCompany.vue";
+import MenuLoggedCompany from "../../components/menus/MenuLoggedCompany.vue";
 
 /* IMPORTAMOS FUNCIONES DE UTILS.JS */
 import { getRole } from "../../api/utils";
@@ -151,7 +151,8 @@ export default {
       newProvince: "",
       web: "",
       newWeb: "",
-      selectedFile: null,
+      file: null,
+
       /* Variables para cambiar la contraseña */
       oldPassword: "",
       newOldPassword: "",
@@ -167,9 +168,9 @@ export default {
   methods: {
     /*  #### FUNCIONES PRINCIPALES #### */
 
-    onFileSelected(event) {
-      console.log("Esto es event", event.target.files);
-      this.newPhoto = event.target.files[0];
+    onFileSelected() {
+      console.log("Esto es event", this.$refs.file.files[0]);
+      this.file = this.$refs.file.files[0];
     },
 
     /* Obtener los datos del perfil de la empresa */
@@ -202,7 +203,7 @@ export default {
       this.newDescription = data.description;
       this.newEmail = data.email;
       this.newPhone = data.phone_number;
-      this.newPhoto = data.photo;
+      this.file = data.photo;
       this.newProvince = data.province;
       this.newWeb = data.web;
     },
@@ -211,16 +212,22 @@ export default {
 
     updateCompany() {
       var self = this;
+
+      let photoFormData = new FormData();
+
+      photoFormData.append("name", this.newName);
+      photoFormData.append("description", this.newDescription);
+      photoFormData.append("email", this.newEmail);
+      photoFormData.append("phone_number", this.newPhone);
+      photoFormData.append("province", this.newProvince);
+      photoFormData.append("web", this.newWeb);
+
+      if (this.file != null) {
+        photoFormData.append("photo", this.file);
+      }
+
       axios
-        .put("http://localhost:3000/companies/" + this.id, {
-          name: this.newName,
-          description: this.newDescription,
-          email: this.newEmail,
-          phone_number: this.newPhone,
-          /* photo: this.newPhoto, */
-          province: this.newProvince,
-          web: this.newWeb
-        })
+        .put(`http://localhost:3000/companies/${this.id}`, photoFormData)
         //Si sale bien
         .then(async function(response) {
           await Swal.fire("Se ha modificado el cliente");

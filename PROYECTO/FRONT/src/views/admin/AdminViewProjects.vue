@@ -1,5 +1,6 @@
 <template>
   <div class="projects">
+    <vue-headful title="Ver Proyectos" description="You can see all projects" />
     <!-- IMPORTAMOS COMPONENTE MENÚ -->
     <MenuLoggedAdmin :username="username" v-on:logout="logoutUser"></MenuLoggedAdmin>
 
@@ -17,7 +18,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 
 /* IMPORTAMOS COMPONENTES */
-import MenuLoggedAdmin from "@/components/MenuLoggedAdmin.vue";
+import MenuLoggedAdmin from "../../components/menus/MenuLoggedAdmin.vue";
 import FooterCustom from "@/components/FooterCustom.vue";
 import AdminProjectsCard from "@/components/AdminProjectsCard.vue";
 

@@ -1,5 +1,6 @@
 <template>
   <div class="companies">
+    <vue-headful title="Ver candidaturas" description="You can see your candidatures" />
     <!-- IMPORTAMOS COMPONENTE DE MENÚ -->
     <MenuLoggedAdmin :username="username" v-on:logout="logoutUser"></MenuLoggedAdmin>
 
@@ -17,7 +18,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 
 /* IMPORTAMOS COMPONENTES */
-import MenuLoggedAdmin from "@/components/MenuLoggedAdmin.vue";
+import MenuLoggedAdmin from "../../components/menus/MenuLoggedAdmin.vue";
 import FooterCustom from "@/components/FooterCustom.vue";
 import AdminCandidaturesCard from "@/components/AdminCandidaturesCard.vue";
 

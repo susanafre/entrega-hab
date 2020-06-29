@@ -1,5 +1,6 @@
 <template>
   <div class="coders">
+    <vue-headful title="Ver Coders" description="You can see coders" />
     <!-- IMPORTAMOS COMPONENTE MENÚ -->
     <MenuLoggedAdmin :username="username" v-on:logout="logoutUser"></MenuLoggedAdmin>
 
@@ -17,7 +18,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 
 /* IMPORTAMOS COMPONENTES */
-import MenuLoggedAdmin from "@/components/MenuLoggedAdmin.vue";
+import MenuLoggedAdmin from "../../components/menus/MenuLoggedAdmin.vue";
 import FooterCustom from "@/components/FooterCustom.vue";
 import AdminCodersCard from "@/components/AdminCodersCard.vue";
 

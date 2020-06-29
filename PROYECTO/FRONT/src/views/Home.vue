@@ -53,7 +53,7 @@
           y otro para limpiar los resultado-->
 
           <button class="buttonfilter" @click="filterProjects()">BUSCAR</button>
-          <button class="buttonclean" @click="clearSearch()">LIMPIAR</button>
+          <button class="buttonclean" @click="clearSearch()">Limpiar búsqueda</button>
         </div>
       </div>
     </div>
@@ -184,12 +184,12 @@ import axios from "axios";
 import Swal from "sweetalert2";
 /* IMPORTAMOS COMPONENTES */
 /* Componente de menú principal */
-import MenuPrincipal from "@/components/MenuPrincipal.vue";
+import MenuPrincipal from "../components/menus/MenuPrincipal.vue";
 /* Componente que muestra un menú u otro según el usuario */
 /* es coder, company o admin */
-import MenuLoggedCoder from "@/components/MenuLoggedCoder.vue";
-import MenuLoggedCompany from "@/components/MenuLoggedCompany.vue";
-import MenuLoggedAdmin from "@/components/MenuLoggedAdmin.vue";
+import MenuLoggedCoder from "../components/menus/MenuLoggedCoder.vue";
+import MenuLoggedCompany from "../components/menus/MenuLoggedCompany.vue";
+import MenuLoggedAdmin from "../components/menus/MenuLoggedAdmin.vue";
 /* Componente de Footer */
 import FooterCustom from "@/components/FooterCustom.vue";
 /* Componente para los proyectos filtrados */
@@ -233,6 +233,7 @@ export default {
           icono: "icono6.png"
         }
       ],
+      img: "@/assets/lupa.png",
       /* Arrays para la lista de empresas y proyectos */
       companies: [],
       projects: [],

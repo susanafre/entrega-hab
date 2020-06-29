@@ -1,7 +1,7 @@
 <template>
   <div class="viewprofile">
     <vue-headful
-      title="Ver perfil desarrollador"
+      title="Perfil desarrollador"
       description="Página para ver perfil de un desarrollador"
     />
 
@@ -91,6 +91,10 @@
           <tr>
             <h2 class="space">Datos técnicos</h2>
           </tr>
+          <p>
+            <label for="photo">FOTO:</label>
+            <input type="file" id="file" ref="file" @change="onFileSelected" placeholder="Imagen" />
+          </p>
           <tr>
             <label for="architecture">ARQUITECTURA:</label>
             <input v-model="newArchitecture" placeholder="Arquitectura" />
@@ -151,8 +155,8 @@ import Swal from "sweetalert2";
 /* IMPORTAMOS COMPONENTES */
 
 import FooterCustom from "@/components/FooterCustom.vue";
-import MenuLoggedCoder from "@/components/MenuLoggedCoder.vue";
-import MenuLoggedAdmin from "@/components/MenuLoggedAdmin.vue";
+import MenuLoggedCoder from "../../components/menus/MenuLoggedCoder.vue";
+import MenuLoggedAdmin from "../../components/menus/MenuLoggedAdmin.vue";
 
 /* IMPORTAMOS FUNCIONES DE UTILS.JS */
 import { clearLogin } from "../../api/utils";
@@ -189,6 +193,7 @@ export default {
       technology: "",
       newLanguage: "",
       language: "",
+      file: null,
       /* Variables para cambiar la contraseña */
       oldPassword: "",
       newOldPassword: "",
@@ -206,6 +211,12 @@ export default {
   },
   methods: {
     /* #### FUNCIONES PRINCIPALES #### */
+
+    onFileSelected() {
+      console.log("Esto es event", this.$refs.file.files[0]);
+      this.file = this.$refs.file.files[0];
+    },
+
     /* Ver perfil coder */
     getCoders(id) {
       if (localStorage.id) {
@@ -247,21 +258,28 @@ export default {
 
     updateCoder() {
       var self = this;
+
+      let photoFormData = new FormData();
+
+      photoFormData.append("name", this.newName);
+      photoFormData.append("surname", this.newSurname);
+      photoFormData.append("email", this.newEmail);
+      photoFormData.append("architecture", this.newArchitecture);
+      photoFormData.append("phone_number", this.newPhone);
+      photoFormData.append("province", this.newProvince);
+      photoFormData.append("technology", this.newTechnology);
+      photoFormData.append("language", this.newLanguage);
+
+      if (this.file != null) {
+        photoFormData.append("photo", this.file);
+      }
+
       axios
-        .put("http://localhost:3000/coders/" + this.id, {
-          name: this.newName,
-          surname: this.newSurname,
-          architecture: this.newArchitecture,
-          email: this.newEmail,
-          phone_number: this.newPhone,
-          province: this.newProvince,
-          technology: this.newTechnology,
-          language: this.newLanguage
-        })
+        .put(`http://localhost:3000/coders/${this.id}`, photoFormData)
         //Si sale bien
         .then(async function(response) {
           await Swal.fire("Se ha modificado el cliente");
-          this.closeModal();
+          self.closeModal();
           location.reload();
         })
         //Si sale mal
@@ -432,7 +450,7 @@ input {
 }
 .editcoder td {
   display: inline-block;
-  margin: 1rem;
+  margin: 3rem;
 }
 
 /* BOTONES */
@@ -465,20 +483,35 @@ button:hover {
 }
 
 .updateprofile {
-  background-color: #00909e;
   color: #dae1e7;
+  background-color: #27496d;
+  font-weight: bold;
+  border: 2px solid #dae1e7;
+  box-shadow: 2px 2px #27496d;
+  padding: 0.3rem;
+  border-radius: 0.3rem;
+  margin: 1rem;
 }
 .updateprofile:hover {
-  font-size: 18px;
+  background: #dae1e7;
+  color: #27496d;
+}
+.cancel {
+  color: #27496d;
+  background-color: #dae1e7;
+  font-weight: bold;
+  border: 2px solid #27496d;
+  box-shadow: 2px 2px #27496d;
 }
 .cancel:hover {
-  font-size: 16px;
+  background-color: #27496d;
+  color: #dae1e7;
 }
 /* MODALES */
 .editcoder {
   padding-top: 2rem;
-  padding-bottom: 1rem;
-  margin: 20% auto;
+  padding-bottom: 0.5rem;
+  margin: 7% auto;
   width: 900px;
   background-color: #dae1e7;
 }
@@ -495,6 +528,7 @@ button:hover {
   padding-bottom: 1rem;
   margin: 0 auto;
   width: 800px;
+
   background-color: #dae1e7;
 }
 .modalpasswd {
