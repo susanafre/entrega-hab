@@ -58,6 +58,10 @@ La función loginCompanies permite loguearse a las empresas y devolverá un toke
 
 Permite a las empresas crear un perfil. Habrá varios campos obligatiorios y los que no son obligatorios podrán rellenarse una vez creado el perfil. Se enviará un mail para validar la cuenta y activarla.
 
+#### GET - /companies - se ejecutará la función "viewCompanies"
+
+Permite a cualquier usuario ver los datos de una empresa. Se usará para añadir información sobre la empresa a la que pertenece un proyecto.
+
 #### GET - /companies/:id - se ejecutará la función "searchCompanies"
 
 Permite a todos los usuarios (registrados o no) ver el perfil de una empresa.
@@ -92,6 +96,10 @@ Se podrá filtrar por nombre de proyecto, tecnologías, lenguaje o fecha de entr
 
 Esta función permite ver los proyectos pertenecientes a una empresa. No es necesario estar registrado.
 
+#### GET - /projects/companies/:id - se ejecutará la función "showProjects"
+
+Permite ver todos los proyectos de una empresa.
+
 #### PUT - /projects/:id - se ejecutará la función "editProjects"
 
 Permite a la empresa a la que pertenece el proyecto, modificar datos sobre el mismo.
@@ -122,6 +130,36 @@ Cambia a estado "cerrado" todas las candidaturas de un proyecto. Se enviará un 
 
 Esta función cambia a estado "cerrado" la candidatura de un usuario a un proyecto. Se enviará un mail al usuario informando del cierre de la candidatura.
 
+#### PUT - /companies/:id1/candidatures/interested/:id2/:id3
+
+Permite a una empresa cambiar el estado de una candidatura a interesado. En ese momento se enviará un mail al coder indicando que la empresa se pondrá en contacto en breves.
+
 #### DELETE - /candidatures/:id - se ejecutará la función "deleteCandidatures"
 
 Permite a un desarrollador borrar la candidatura a un proyecto.
+
+### ADMINISTRADOR
+
+#### GET - /all/coders - se ejecutará la función "seeAllCoders"
+
+Permite al administrador ver todos los desarrolladores.
+
+#### GET - /all/companies - se ejecutará la función "seeAllCompanies"
+
+Permite al administrador ver todas las empresas.
+
+#### GET - /all/projects - se ejecutará la función "seeAllProjects"
+
+Permite al administrador ver todos los proyectos.
+
+#### GET - /all/candidatures - se ejecutará la función "seeAllCandidatures"
+
+Permite al administrador ver todas las candidaturas.
+
+#### PUT - /account/coder/:id - se ejecutará la función "activateAccountCoder"
+
+Permite activar la cuenta de un usuario
+
+#### PUT - /account/company/:id - se ejecutará la función "activateAccountCompany"
+
+Permite activar la cuenta de una empresa.
