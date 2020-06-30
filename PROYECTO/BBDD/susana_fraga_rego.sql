@@ -2,7 +2,7 @@ CREATE DATABASE  IF NOT EXISTS `db_match_coder` /*!40100 DEFAULT CHARACTER SET l
 USE `db_match_coder`;
 -- MySQL dump 10.13  Distrib 5.7.30, for Linux (x86_64)
 --
--- Host: localhost    Database: db_match_coder
+-- Host: 127.0.0.1    Database: db_match_coder
 -- ------------------------------------------------------
 -- Server version	5.7.30-0ubuntu0.18.04.1
 
@@ -31,7 +31,7 @@ CREATE TABLE `candidatures` (
   `modification_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `FK_candidature_coder` int(11) DEFAULT NULL,
   `FK_candidature_project` int(11) DEFAULT NULL,
-  `candidature_state` enum('En curso','Cerrado','Interesado') DEFAULT 'En curso',
+  `candidature_state` enum('En curso','Candidatura cerrada','No sigues en el proceso','Sigues en el proceso') DEFAULT 'En curso',
   PRIMARY KEY (`PK_candidature`),
   KEY `FK_candidature_coder` (`FK_candidature_coder`),
   KEY `FK_candidature_project` (`FK_candidature_project`),
@@ -46,7 +46,7 @@ CREATE TABLE `candidatures` (
 
 LOCK TABLES `candidatures` WRITE;
 /*!40000 ALTER TABLE `candidatures` DISABLE KEYS */;
-INSERT INTO `candidatures` VALUES (1,'2020-06-25 17:50:27','2020-06-25 17:50:27','2020-06-25 17:50:27',1,3,'En curso'),(3,'2020-06-25 17:50:27','2020-06-25 17:50:27','2020-06-25 18:57:27',3,5,'En curso'),(7,'2020-06-29 09:51:47','2020-06-29 09:51:47','2020-06-29 09:51:47',2,1,'En curso'),(8,'2020-06-29 09:51:52','2020-06-29 09:51:52','2020-06-29 09:51:52',2,2,'En curso'),(9,'2020-06-29 09:51:57','2020-06-29 09:51:57','2020-06-29 09:51:57',2,3,'En curso'),(10,'2020-06-29 09:52:02','2020-06-29 09:52:02','2020-06-29 09:52:02',2,4,'En curso'),(11,'2020-06-29 09:52:08','2020-06-29 09:52:08','2020-06-29 09:52:08',2,5,'En curso'),(12,'2020-06-29 09:52:15','2020-06-29 09:52:15','2020-06-29 09:52:15',2,9,'En curso'),(13,'2020-06-29 09:52:28','2020-06-29 09:52:28','2020-06-29 09:52:28',2,6,'En curso'),(14,'2020-06-29 09:54:17','2020-06-29 09:54:17','2020-06-29 09:59:47',13,2,'Cerrado'),(17,'2020-06-30 13:13:21','2020-06-30 13:13:21','2020-06-30 13:13:21',14,3,'En curso');
+INSERT INTO `candidatures` VALUES (1,'2020-06-25 17:50:27','2020-06-25 17:50:27','2020-06-25 17:50:27',1,3,'En curso'),(3,'2020-06-25 17:50:27','2020-06-25 17:50:27','2020-06-25 18:57:27',3,5,'En curso'),(7,'2020-06-29 09:51:47','2020-06-29 09:51:47','2020-06-29 09:51:47',2,1,'En curso'),(8,'2020-06-29 09:51:52','2020-06-29 09:51:52','2020-06-29 09:51:52',2,2,'En curso'),(9,'2020-06-29 09:51:57','2020-06-29 09:51:57','2020-06-29 09:51:57',2,3,'En curso'),(10,'2020-06-29 09:52:02','2020-06-29 09:52:02','2020-06-29 09:52:02',2,4,'En curso'),(11,'2020-06-29 09:52:08','2020-06-29 09:52:08','2020-06-29 09:52:08',2,5,'En curso'),(12,'2020-06-29 09:52:15','2020-06-29 09:52:15','2020-06-29 09:52:15',2,9,'En curso'),(13,'2020-06-29 09:52:28','2020-06-29 09:52:28','2020-06-29 09:52:28',2,6,'En curso'),(14,'2020-06-29 09:54:17','2020-06-29 09:54:17','2020-06-29 09:59:47',13,2,'En curso'),(17,'2020-06-30 13:13:21','2020-06-30 13:13:21','2020-06-30 13:13:21',14,3,'En curso');
 /*!40000 ALTER TABLE `candidatures` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -172,4 +172,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-06-30 18:12:46
+-- Dump completed on 2020-06-30 23:03:35
