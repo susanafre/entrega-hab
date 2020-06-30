@@ -105,12 +105,23 @@ export default {
 h1 {
   font-family: "serif";
 }
+ul {
+  list-style: none;
+  font-weight: normal;
 
+  column-count: 2;
+}
+
+li::before {
+  /* Añadimos contenido antes de cada elemento de la lista */
+  content: "\2A"; /* Insertamos el marcador */
+  padding-right: 4px; /* Establecemos el espacio entre las viñetas y el list item */
+  color: #00909e; /* Coloreamos la viñeta */
+}
 ul > li {
   margin: 0 auto;
   width: 20%;
   padding: 1rem;
-  list-style: none;
 }
 a {
   text-decoration: none;

@@ -52,6 +52,7 @@ export default {
           //console.log(response.data);
 
           this.coders = response.data.data;
+
           console.log("Esto es coders:", this.coders);
         })
         //SI SALE MAL

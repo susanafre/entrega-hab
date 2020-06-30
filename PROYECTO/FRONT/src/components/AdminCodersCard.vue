@@ -2,6 +2,12 @@
   <div class="coders">
     <div class="profile" v-for="(coder,index) in coders" :key="coder.id">
       <h1>{{coder.name}} {{coder.surname}}</h1>
+
+      <div class="active" v-if="(coder.active === 0)">
+        <p>CUENTA NO ACTIVADA</p>
+        <button @click="activateAccountEvent(index)">ACTIVAR CUENTA</button>
+      </div>
+
       <td>
         <tr>
           <p>EMAIL: {{coder.email}}</p>
@@ -11,9 +17,6 @@
         </tr>
         <tr>
           <p>PROVINCIA: {{coder.province}}</p>
-        </tr>
-        <tr>
-          <p>ACTIVO:{{coder.active}}</p>
         </tr>
       </td>
 
@@ -32,7 +35,6 @@
           <p>FECHA DE ALTA:{{coder.creation_date | moment("YYYY-M-D")}}</p>
         </tr>
       </td>
-      <button @click="activateAccountEvent(index)">ACTIVAR CUENTA</button>
     </div>
   </div>
 </template>
@@ -62,14 +64,16 @@ export default {
   src: url("../assets/Ubuntu-Regular.ttf");
 }
 .coders {
-  padding-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  grid-gap: 1.5rem;
+  padding: 2rem;
   color: #27496d;
   background-color: #00909e;
 }
 .profile {
   background-color: #dae1e7;
-  width: 60%;
-  margin: 0 auto;
 }
 h1 {
   padding-top: 1rem;

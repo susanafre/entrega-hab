@@ -35,6 +35,10 @@ export default {
   src: url("../assets/Ubuntu-Regular.ttf");
 }
 .candidatures {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1.5rem;
+  padding: 2rem;
   padding: 2rem;
   color: #27496d;
   background-color: #00909e;

@@ -35,14 +35,17 @@ export default {
   src: url("../assets/Ubuntu-Regular.ttf");
 }
 .projects {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1.5rem;
+  padding: 2rem;
+
   color: #27496d;
   background-color: #00909e;
 }
 .profile {
   background-color: #dae1e7;
-  width: 60%;
+
   margin: 2rem auto;
   padding: 1rem;
 }

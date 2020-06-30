@@ -1,5 +1,5 @@
 <template>
-  <div class="options">
+  <div class="optionsmain">
     <h1>¿Que puedes encontrar aquí?</h1>
 
     <td class="options" v-for="option in options" :key="option.id">
@@ -8,11 +8,11 @@
       </tr>
 
       <tr class="titulo">
-        <p>{{option.titulo}}</p>
+        <p>{{ option.titulo }}</p>
       </tr>
 
       <tr class="cuerpo">
-        <p>{{option.cuerpo}}</p>
+        <p>{{ option.cuerpo }}</p>
       </tr>
     </td>
   </div>
@@ -22,27 +22,33 @@
 export default {
   name: "ShowOptions",
   props: {
-    options: Array
-  }
+    options: Array,
+  },
 };
 </script>
 
 <style scoped>
 /* TABLA */
+
 h1 {
   font-family: "serif";
   text-decoration: underline;
 }
 .options {
-  margin: 1rem;
+  margin: 3rem;
+  display: inline-block;
 }
 td {
-  width: 600px;
-  display: inline-block;
-  margin: 0 auto;
+  width: 40%;
+  height: 40%;
+  text-align: center;
+  margin: 2rem;
 }
 .titulo {
   font-family: "serif";
   font-weight: bold;
+}
+.cuerpo {
+  text-align: justify;
 }
 </style>

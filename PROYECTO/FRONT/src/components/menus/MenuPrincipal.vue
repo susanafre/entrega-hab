@@ -2,16 +2,14 @@
   <div id="home">
     <!-- MENÚ PRINCIPAL CON LOS LINKS A LAS PÁGINAS Y LOS BOTONES DE LOGIN -->
 
-    <button @click=" openModalCoderEvent()">
-      ACCESO
-      CODERS
+    <button @click="openModalCoderEvent()">
+      ACCESO CODERS
     </button>
 
-    <img :src="require('../../assets/logo_nombre.png')" alt="logo" />
+    <img :src="require('../../assets/logo_solo.png')" alt="logo" />
 
-    <button @click="openModalCompanyEvent() ">
-      ACCESO
-      EMPRESAS
+    <button @click="openModalCompanyEvent()">
+      ACCESO EMPRESAS
     </button>
   </div>
 </template>
@@ -28,8 +26,8 @@ export default {
     //MÉTODO QUE ABRE EL MODAL DE LOGIN COMPANY
     openModalCompanyEvent() {
       this.$emit("modalcompany");
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -46,7 +44,7 @@ export default {
   background-color: #00909e;
   display: flex;
   justify-content: center;
-  height: 30px;
+  height: 80px;
   opacity: 0.8;
 }
 
@@ -60,15 +58,15 @@ button {
   font-family: "serif";
   margin-left: 0.7rem;
   margin-right: 0.7rem;
+  font-size: 20px;
 }
 
 button:hover {
-  background-color: #dae1e7;
-  color: #00909e;
-  border: 1.5px solid #142850;
+  color: #dae1e7;
+  border-bottom: 2px solid #dae1e7;
 }
 img {
-  height: 30px;
-  width: 80px;
+  height: 80px;
+  width: 260px;
 }
 </style>

@@ -28,6 +28,45 @@ const routes = [
     meta: {
       allowAnonymous: true,
     },
+    beforeEnter: (to, from, next) => {
+      if (to.meta.allowAnonymous === true && checkCoderRole()) {
+        next({
+          path: "/home-coder",
+          query: { redirect: to.fullPath },
+        });
+      } else {
+        next();
+      }
+    },
+    beforeEnter: (to, from, next) => {
+      if (to.meta.allowAnonymous === true && checkCompanyRole()) {
+        next({
+          path: "/projects",
+          query: { redirect: to.fullPath },
+        });
+      } else {
+        next();
+      }
+    },
+  },
+  {
+    path: "/home-coder",
+    name: "HomeCoder",
+    component: () => import("../views/coders/HomeCoder.vue"),
+    meta: {
+      allowAnonymous: false,
+      allowNoCompany: true,
+    },
+    beforeEnter: (to, from, next) => {
+      if (to.meta.allowNoCompany === false && !checkCompanyRole()) {
+        next({
+          path: "/",
+          query: { redirect: to.fullPath },
+        });
+      } else {
+        next();
+      }
+    },
   },
   {
     path: "/register-coder",
@@ -146,6 +185,26 @@ const routes = [
     },
   },
 
+  {
+    path: "/createprojects",
+    name: "CreateProjects",
+
+    component: () => import("../views/companies/CreateProject.vue"),
+    meta: {
+      allowAnonymous: false,
+      allowNoCompany: false,
+    },
+    beforeEnter: (to, from, next) => {
+      if (to.meta.allowNoCompany === false && !checkCompanyRole()) {
+        next({
+          path: "/",
+          query: { redirect: to.fullPath },
+        });
+      } else {
+        next();
+      }
+    },
+  },
   /* #### ADMIN #### */
 
   {

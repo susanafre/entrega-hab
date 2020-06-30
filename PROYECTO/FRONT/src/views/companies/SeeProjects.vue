@@ -1,92 +1,19 @@
 <template>
   <div class="projects">
-    <vue-headful title="Ver proyectos" description="Página para ver proyectos" />
+    <vue-headful
+      title="Ver proyectos"
+      description="Página para ver proyectos"
+    />
 
     <!-- IMPORTAMOS EL COMPONENTE MENÚ -->
-    <MenuLoggedCompany :username="username" v-on:logout="logoutUser"></MenuLoggedCompany>
+    <MenuLoggedCompany
+      :username="username"
+      v-on:logout="logoutUser"
+    ></MenuLoggedCompany>
 
     <!-- SE MUESTRAN LOS PROYECTOS DE LA EMPRESA -->
 
     <h1>MIS PROYECTOS</h1>
-
-    <!-- AÑADIMOS UN BOTÓN PARA CREAR PROYECTOS -->
-
-    <button @click="openModalCreateProject()">CREAR PROYECTO</button>
-
-    <!-- CREAR PROYECTOS -->
-
-    <!-- Será un modal -->
-
-    <div class="createproject" v-show="modalcreateproject">
-      <div class="create">
-        <h1>PÁGINA PARA CREAR PROYECTOS</h1>
-        <p>
-          <label for="name">Introduce el nombre del proyecto</label>
-        </p>
-        <p>
-          <input type="text" name="name" v-model="name" />
-        </p>
-
-        <p>
-          <label for="description">Añade una descripción al proyecto</label>
-        </p>
-
-        <p>
-          <textarea
-            name="description"
-            id
-            cols="30"
-            rows="10"
-            placeholder="Mínimo 20 caracteres"
-            v-model="description"
-          ></textarea>
-        </p>
-
-        <p>
-          <label for="delivery_date">Añade la fecha de finalización del proyecto</label>
-        </p>
-
-        <p>
-          <input
-            type="text"
-            name="delivery_date"
-            placeholder="Formato aaaa-mm-dd"
-            v-model="delivery_date"
-          />
-        </p>
-        <label for="province">Añade la provincia</label>
-        <p>
-          <input type="text" name="province" v-model="province" />
-        </p>
-        <label for="language">Introduce el lenguaje</label>
-        <p>
-          <input type="text" name="language" v-model="language" />
-        </p>
-        <label for="technology">Introduce la/s tecnología/s</label>
-        <p>
-          <input type="text" name="technology" v-model="technology" />
-        </p>
-        <label for="architecture">Añade la arquitectura</label>
-        <p>
-          <input type="text" name="architecture" v-model="architecture" />
-        </p>
-
-        <p>
-          <button
-            @click="addProject(
-      name,
-      description,
-      delivery_date,
-      province,
-      language,
-      technology,
-      architecture
-    ) "
-          >AÑADIR PROYECTO</button>
-          <button @click="closeModalCreateProject()">CANCELAR</button>
-        </p>
-      </div>
-    </div>
 
     <!-- COMPONENTE QUE MUESTRA LOS PROYECTOS -->
 
@@ -113,20 +40,22 @@
 
     <div class="modal" v-show="modalProfileCoder">
       <div class="profile">
-        <img src="'../../../../BACK/controllers/static/uploads/' + coders.photo" />
-        <h1>{{coders.name}} {{coders.surname}}</h1>
+        <img
+          src="'../../../../BACK/controllers/static/uploads/' + coders.photo"
+        />
+        <h1>{{ coders.name }} {{ coders.surname }}</h1>
         <td>
           <tr>
             <h2>Datos personales</h2>
           </tr>
           <tr>
-            <p>EMAIL: {{coders.email}}</p>
+            <p>EMAIL: {{ coders.email }}</p>
           </tr>
           <tr>
-            <p>TELÉFONO: {{coders.phone_number}}</p>
+            <p>TELÉFONO: {{ coders.phone_number }}</p>
           </tr>
           <tr>
-            <p>PROVINCIA: {{coders.province}}</p>
+            <p>PROVINCIA: {{ coders.province }}</p>
           </tr>
         </td>
 
@@ -135,13 +64,13 @@
             <h2 class="space">Datos técnicos</h2>
           </tr>
           <tr>
-            <p>ARCHITECTURE: {{coders.architecture}}</p>
+            <p>ARCHITECTURE: {{ coders.architecture }}</p>
           </tr>
           <tr>
-            <p>LENGUAJE: {{coders.language}}</p>
+            <p>LENGUAJE: {{ coders.language }}</p>
           </tr>
           <tr>
-            <p>TECHNOLOGY: {{coders.technology}}</p>
+            <p>TECHNOLOGY: {{ coders.technology }}</p>
           </tr>
         </td>
 
@@ -164,7 +93,13 @@
 
         <p>
           <label class="description" for="description">DESCRIPCIÓN:</label>
-          <input v-model="newDescription" placeholder="Descripción" />
+          <textarea
+            name="description"
+            cols="30"
+            rows="10"
+            v-model="newDescription"
+            placeholder="Descripción"
+          ></textarea>
         </p>
 
         <p>
@@ -216,7 +151,7 @@ export default {
     closeCandidaturesCard,
 
     MenuLoggedCompany,
-    FooterCustom
+    FooterCustom,
   },
   data() {
     return {
@@ -258,7 +193,7 @@ export default {
       modalCandidature: false,
       emptyProjects: false,
       modalcreateproject: false,
-      modalProfileCoder: false
+      modalProfileCoder: false,
     };
   },
   methods: {
@@ -279,52 +214,6 @@ export default {
       } else {
         this.correctData = true; //SÍ ENVIAR
         this.required = false;
-      }
-    },
-
-    /* Crear proyecto */
-
-    addProject(
-      name,
-      description,
-      delivery_date,
-      province,
-      language,
-      technology,
-      architecture
-    ) {
-      if (localStorage.id) {
-        this.id = localStorage.id;
-      }
-
-      this.validatingData(); //VALIDANDO DATOS DEL FORMULARIO
-      if (this.correctData === true) {
-        let self = this;
-        axios
-          .post("http://localhost:3000/projects/" + this.id, {
-            name: self.name,
-            description: self.description,
-            delivery_date: self.delivery_date,
-            province: self.province,
-            language: self.language,
-            technology: self.technology,
-            architecture: self.architecture
-          })
-          .then(async function(response) {
-            await Swal.fire("Se ha creado el proyecto correctamente");
-            self.emptyFields(); //VACIAR CAMPOS
-            console.log(response);
-            this.closeModalCreateProject();
-          })
-          .catch(function(error) {
-            console.log(error);
-          });
-      } else {
-        Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: "Algo ha ido mal"
-        });
       }
     },
 
@@ -360,7 +249,7 @@ export default {
           {
             id1: this.id1,
             id2: this.id2,
-            id3: this.id3
+            id3: this.id3,
           }
         )
         .then(async function(response) {
@@ -392,7 +281,7 @@ export default {
           {
             id1: this.id1,
             id2: this.id2,
-            id3: this.id3
+            id3: this.id3,
           }
         )
         .then(async function(response) {
@@ -420,7 +309,7 @@ export default {
             "/all",
           {
             id1: this.id1,
-            id2: this.id2
+            id2: this.id2,
           }
         )
         .then(async function(response) {
@@ -449,10 +338,10 @@ export default {
             this.id1,
           {
             id1: this.id1,
-            id2: this.id2
+            id2: this.id2,
           }
         )
-        .then(response => {
+        .then((response) => {
           console.log(response.data);
           console.log(
             "este es el response de candidatures",
@@ -465,7 +354,7 @@ export default {
         .catch(function(error) {
           Swal.fire({
             icon: "error",
-            text: "No hay candidaturas para este proyecto"
+            text: "No hay candidaturas para este proyecto",
           });
         });
     },
@@ -475,10 +364,10 @@ export default {
       if (localStorage.id) this.id1 = localStorage.id;
       axios
         .get("http://localhost:3000/projects/companies/" + this.id1, {
-          id1: this.id1
+          id1: this.id1,
         })
         //SI SALE BIEN
-        .then(response => {
+        .then((response) => {
           console.log(response.data);
 
           this.projects = response.data.data;
@@ -518,7 +407,7 @@ export default {
           province: this.newProvince,
           language: this.NewLanguage,
           technology: this.newTechnology,
-          architecture: this.newArchitecture
+          architecture: this.newArchitecture,
         })
         //Si sale bien
         .then(async function(response) {
@@ -539,7 +428,7 @@ export default {
       this.id = data.PK_project;
       axios
         .delete("http://localhost:3000/projects/" + this.id, {
-          id: this.id
+          id: this.id,
         })
         //SI SALE BIEN
         .then(async function(response) {
@@ -558,7 +447,7 @@ export default {
         .get("http://localhost:3000/coders/" + this.id)
 
         //SI SALE BIEN
-        .then(response => {
+        .then((response) => {
           this.modalCandidature = false;
           this.modalProfileCoder = true;
           this.coders = response.data.data;
@@ -605,17 +494,16 @@ export default {
     },
     closeModalProfileCoder() {
       this.modalProfileCoder = false;
-    }
+    },
   },
   mounted() {
     if (localStorage.name) this.username = localStorage.name;
   },
   created() {
     this.viewProjects();
-  }
+  },
 };
 </script>
-
 
 <style scoped>
 @font-face {

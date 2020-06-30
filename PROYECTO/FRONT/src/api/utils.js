@@ -110,6 +110,7 @@ export function clearLogin() {
   clearRole();
   clearName();
   clearId();
+  clearPhoto();
 }
 
 /* BORRAR ROL DEL USUARIO */

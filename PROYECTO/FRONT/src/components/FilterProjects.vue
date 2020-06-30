@@ -1,25 +1,36 @@
 <template>
   <div class="home">
-    <div class="projects" v-for="(project, index) in projects" :key="project.id">
-      <p class="name">{{ project.project_name }}</p>
-      <p>{{ project.description }}</p>
-      <p>EMPRESA: {{ project.company_name }}</p>
-      <p>{{ project.language }}</p>
-      <p>{{ project.technology }}</p>
+    <div
+      class="projects"
+      v-for="(project, index) in projects"
+      :key="project.id"
+    >
+      <p class="name">
+        {{ project.project_name }}
+      </p>
+      <p class="description">{{ project.description }}</p>
+      <div class="botones">
+        EMPRESA:
+        <button @click="showCompaniesEvent(index)">
+          {{ project.company_name }}
+        </button>
+      </div>
+
+      <p>Arquitectura: {{ project.architecture }}</p>
+      <p>Lenguaje: {{ project.language }}</p>
+      <p>Tecnología: {{ project.technology }}</p>
       <p>
         Fecha de entrega:
         {{ project.delivery_date | moment("D/M/YYYY") }}
       </p>
 
-      <div class="botones">
-        <button @click="showCompaniesEvent(index)">Ver empresa</button>
-      </div>
-
       <div class="botoncandidatura" v-if="roleCoder">
         <button
           class="presentarcandidatura"
           @click="createCandidatureEvent(index)"
-        >Presentar candidatura</button>
+        >
+          Presentar candidatura
+        </button>
       </div>
     </div>
   </div>
@@ -31,7 +42,7 @@ export default {
   props: {
     projects: Array,
 
-    roleCoder: Boolean
+    roleCoder: Boolean,
   },
   methods: {
     showCompaniesEvent(index) {
@@ -43,8 +54,8 @@ export default {
       let data2 = this.projects[index].PK_project;
       console.log("Esto es data2", data2);
       this.$emit("crear", data2);
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -61,15 +72,32 @@ export default {
   background-color: #00909e;
   font-family: "sansSerif";
 }
+
+@keyframes aparition {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 .projects {
+  animation-duration: 2s;
+  animation-name: aparition;
   display: inline-block;
-  width: 50%;
+  width: 40%;
+
   background-color: #dae1e7;
   padding: 1rem;
   margin: 2rem;
-  border-radius: 2rem;
+  box-shadow: 3px 3px #27496d;
 }
-button {
+.description {
+  text-align: justify;
+}
+.presentarcandidatura {
   color: #dae1e7;
   background-color: #27496d;
   font-weight: bold;
@@ -79,17 +107,6 @@ button {
   border-radius: 0.3rem;
   margin: 1rem;
 }
-button:hover {
-  background: #dae1e7;
-  color: #27496d;
-}
-.presentarcandidatura {
-  color: #27496d;
-  background-color: #dae1e7;
-  font-weight: bold;
-  border: 2px solid #27496d;
-  box-shadow: 2px 2px #27496d;
-}
 .presentarcandidatura:hover {
   background-color: #27496d;
   color: #dae1e7;
@@ -98,5 +115,17 @@ button:hover {
   font-family: "serif";
   font-weight: bold;
   font-size: 25px;
+}
+.botones > button {
+  background-color: #dae1e7;
+  border: none;
+  box-shadow: none;
+  color: #27496d;
+  font-family: "sansSerif";
+  font-size: 20px;
+  text-decoration: underline;
+}
+.botones > button:hover {
+  color: #00909e;
 }
 </style>

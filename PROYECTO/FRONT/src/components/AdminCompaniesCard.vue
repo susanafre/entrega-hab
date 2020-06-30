@@ -3,6 +3,12 @@
     <div class="profile" v-for="(company,index) in companies" :key="company.id">
       <h1>{{company.name}}</h1>
       <p>{{company.description}}</p>
+
+      <div class="active" v-if="(company.active === 0)">
+        <p>CUENTA NO ACTIVADA</p>
+        <button @click="activateAccountEvent(index)">ACTIVAR CUENTA</button>
+      </div>
+
       <td>
         <tr>
           <p>EMAIL: {{company.email}}</p>
@@ -19,15 +25,11 @@
         <tr>
           <p>WEB: {{company.web}}</p>
         </tr>
-        <tr>
-          <p>ACTIVO:{{company.active}}</p>
-        </tr>
 
         <tr>
           <p>FECHA DE ALTA:{{company.creation_date | moment("YYYY-M-D")}}</p>
         </tr>
       </td>
-      <button @click="activateAccountEvent(index)">ACTIVAR CUENTA</button>
     </div>
   </div>
 </template>
@@ -57,16 +59,17 @@ export default {
   src: url("../assets/Ubuntu-Regular.ttf");
 }
 .companies {
-  padding-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1.5rem;
+  padding: 2rem;
+
   color: #27496d;
   background-color: #00909e;
 }
 .profile {
   background-color: #dae1e7;
-  width: 50%;
-  margin: 0 auto;
-  padding-right: 2rem;
-  padding-left: 2rem;
+
   box-shadow: 4px 4px #27496d;
 }
 h1 {

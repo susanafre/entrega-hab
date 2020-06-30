@@ -48,7 +48,7 @@ async function closeAllCandidatures(req, res, next) {
     const [
       candidatures,
     ] = await connection.query(
-      "UPDATE candidatures ca inner join projects po on ca.FK_candidature_project=po.PK_project inner join companies co on po.FK_project_company=co.PK_company SET ca.candidature_state='Cerrado',ca.modification_date=? WHERE po.FK_project_company=? and ca.FK_candidature_project=?",
+      "UPDATE candidatures ca inner join projects po on ca.FK_candidature_project=po.PK_project inner join companies co on po.FK_project_company=co.PK_company SET ca.candidature_state='Proceso cerrado',ca.modification_date=? WHERE po.FK_project_company=? and ca.FK_candidature_project=?",
       [date, id1, id2]
     );
 

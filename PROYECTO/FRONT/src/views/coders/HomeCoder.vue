@@ -1,79 +1,38 @@
 <template>
   <div class="Home">
     <vue-headful
-      title="Página principal"
+      title="Página principal coder"
       description="Página principal de la plataforma"
     />
 
     <!-- ########## MENÚ ########## -->
 
-    <!-- IMPORTAMOS EL MENÚ DONDE APARECERÁ EL LOGIN -->
-    <!-- Al clickar en alguno de los botones, se abrirá un modal para loguearse -->
+    <MenuLoggedCoder
+      :username="username"
+      v-on:logout="logoutUser"
+    ></MenuLoggedCoder>
 
-    <div class="background">
-      <div v-show="usernotloged" class="usernotloged">
-        <MenuPrincipal
-          v-on:modalcoder="openModalLogCoder"
-          v-on:modalcompany="openModalLogCompany"
-        ></MenuPrincipal>
-      </div>
+    <!-- ########### FILTRAR PROYECTOS ########## -->
 
-      <!-- SE CREA UN MENÚ PARA CUANDO UN USUARIO ESTÁ LOGUEADO Y ES CODER -->
+    <!-- CREAMOS UN INPUT PARA INTRODUCIR LOS PARÁMETROS DE BÚSQUEDA -->
 
-      <div v-show="roleCoder" class="userloged">
-        <MenuLoggedCoder
-          :username="username"
-          v-on:logout="logoutUser"
-        ></MenuLoggedCoder>
-      </div>
+    <div class="filter">
+      <div class="filtersmall">
+        <p>
+          <label for="bySearch">BUSCA AQUÍ TU PROYECTO</label>
+        </p>
 
-      <!-- SE CREA UN MENÚ PARA CUANDO UN USUARIO ESTÁ LOGUEADO Y ES COMPANY -->
+        <input
+          v-model="search"
+          id="search"
+          name="bySearch"
+          type="search"
+          placeholder="Nombre, tecnologías,lenguaje..."
+        />
 
-      <div v-show="roleCompany" class="userloged">
-        <MenuLoggedCompany
-          :username="username"
-          v-on:logout="logoutUser"
-        ></MenuLoggedCompany>
-      </div>
-
-      <!-- SE CREA UN MENÚ PARA CUANDO UN USUARIO ESTÁ LOGUEADO Y ES ADMIN -->
-
-      <div v-show="roleAdmin" class="userloged">
-        <MenuLoggedAdmin
-          :username="username"
-          v-on:logout="logoutUser"
-        ></MenuLoggedAdmin>
-      </div>
-
-      <!-- ########### FILTRAR PROYECTOS ########## -->
-
-      <!-- CREAMOS UN INPUT PARA INTRODUCIR LOS PARÁMETROS DE BÚSQUEDA -->
-
-      <div class="filter">
-        <div class="filtersmall">
-          <p>
-            <label for="bySearch">BUSCA AQUÍ TU PROYECTO</label>
-          </p>
-
-          <input
-            v-model="search"
-            id="search"
-            name="bySearch"
-            type="search"
-            placeholder="Nombre, tecnologías,lenguaje..."
-          />
-
-          <!-- AÑADIMOS DOS BOTONES -->
-          <!-- Un botón será para que ejecute la búsqueda
+        <!-- AÑADIMOS DOS BOTONES -->
+        <!-- Un botón será para que ejecute la búsqueda
           y otro para limpiar los resultado-->
-
-          <button class="buttonfilter" @click="filterProjects()">
-            Buscar
-          </button>
-          <button class="buttonclean" @click="clearSearch()">
-            Limpiar búsqueda
-          </button>
-        </div>
       </div>
     </div>
 
@@ -116,90 +75,6 @@
       </div>
     </div>
 
-    <!-- ######### LOGIN CODER ############ -->
-
-    <!-- MODAL PARA LOGIN CODER -->
-
-    <div v-show="modal" class="modal">
-      <div class="modalBox">
-        <h1>Inicia sesión</h1>
-
-        <!-- INPUT PARA EMAIL Y CONTRASEÑA -->
-        <label for="name">Correo electrónico</label>
-        <p>
-          <input type="text" name="email" placeholder="" v-model="email" />
-        </p>
-        <label for="password">Contraseña</label>
-        <p>
-          <input
-            type="password"
-            name="password"
-            placeholder=""
-            v-model="password"
-          />
-        </p>
-
-        <!-- BOTONES DE CERRAR EL MODAL Y DE HACER LOGIN -->
-
-        <button class="logCoder" @click="logCoder()">Acceder</button>
-        <button class="closelogCoder" @click="closeModal()">Cerrar</button>
-
-        <!-- SI NO ESTÁ REGISTRADO, LLEVA AL ÁREA DE REGISTRO -->
-
-        <p>
-          ¿No estás registrado? Haz click
-          <router-link to="/register-coder">AQUÍ</router-link>
-        </p>
-      </div>
-    </div>
-
-    <!-- ########### LOGIN COMPANY ############# -->
-
-    <!-- MODAL PARA LOGIN COMPANY -->
-
-    <div v-show="modallogincompany" class="modallogincompany">
-      <div class="modalBox">
-        <h1>Inicia sesión</h1>
-        <label for="name">Correo electrónico</label>
-        <p>
-          <input
-            type="text"
-            name="email"
-            placeholder="Introduce aquí tu email"
-            v-model="email"
-          />
-        </p>
-
-        <label for="password">Contraseña</label>
-        <p>
-          <input
-            type="password"
-            name="password"
-            placeholder="Introduce aquí tu contraseña"
-            v-model="password"
-          />
-        </p>
-
-        <!-- ESTO HACE LOGIN O CIERRA EL MODAL -->
-
-        <button class="logCompany" @click="logCompany()">LOGIN</button>
-        <button class="closelogCompany" @click="closeModalLogCompany()">
-          CERRAR
-        </button>
-
-        <!-- SI NO ESTÁ REGISTRADO, LLEVA A LA VENTANA DE REGISTRO -->
-
-        <h2>
-          ¿No estás registrado? Haz click
-          <router-link to="/register-company">AQUÍ</router-link>
-        </h2>
-      </div>
-    </div>
-
-    <!-- AQUÍ APARECEN LAS OPCIONES EXPORTANDO EL COMPONENTE SHOWOPTIONS -->
-
-    <ShowOptions :options="options"></ShowOptions>
-
     <!-- COMPONENTE PARA FOOTER -->
 
     <FooterCustom></FooterCustom>
@@ -211,56 +86,31 @@
 import axios from "axios";
 import Swal from "sweetalert2";
 /* IMPORTAMOS COMPONENTES */
-/* Componente de menú principal */
-import MenuPrincipal from "../components/menus/MenuPrincipal.vue";
-/* Componente que muestra un menú u otro según el usuario */
-/* es coder, company o admin */
-import MenuLoggedCoder from "../components/menus/MenuLoggedCoder.vue";
-import MenuLoggedCompany from "../components/menus/MenuLoggedCompany.vue";
-import MenuLoggedAdmin from "../components/menus/MenuLoggedAdmin.vue";
+
+import MenuLoggedCoder from "../../components/menus/MenuLoggedCoder.vue";
+
 /* Componente de Footer */
-import FooterCustom from "@/components/FooterCustom.vue";
+import FooterCustom from "../../components/FooterCustom.vue";
 /* Componente para los proyectos filtrados */
-import FilterProjects from "@/components/FilterProjects.vue";
-/* Componente para mostrar las opciones */
-import ShowOptions from "@/components/ShowOptions.vue";
+import FilterProjects from "../../components/FilterProjects.vue";
 
 /* IMPORTAMOS FUNCIONES DE UTILS.JS */
-import { clearLogin } from "../api/utils";
-import { loginCoders } from "../api/utils";
-import { loginCompanies } from "../api/utils";
-import { getRole } from "../api/utils";
-import { isLoggedIn } from "../api/utils";
+import { clearLogin } from "../../api/utils";
+import { loginCoders } from "../../api/utils";
+
+import { isLoggedIn } from "../../api/utils";
 
 export default {
-  name: "Home",
+  name: "HomeCoder",
   components: {
     FooterCustom,
     FilterProjects,
-    MenuPrincipal,
+
     MenuLoggedCoder,
-    MenuLoggedCompany,
-    MenuLoggedAdmin,
-    ShowOptions,
   },
 
   data() {
     return {
-      /* Array para la descripción de la web */
-      options: [
-        {
-          titulo: "Si eres desarrollador...",
-          cuerpo:
-            "En FI.Coder trabajamos para que los desarrolladores puedan encontrar “el proyecto” con el que trabajar. Puedes filtrar los proyectos en la barra de búsqueda y presentar tu candidatura al que creas más afín a tus posibilidades.Esta plataforma ha ayudado a muchos desarrolladores a encontrar su proyecto perfecto y ha ayudado a muchas empresas.Sólo necesitas registrarte para poder presentar tu candidatura y ver el progreso de las mismas.¡Busca tu oportunidad!",
-          icono: "icono5.png",
-        },
-        {
-          titulo: "Para las empresas",
-          cuerpo:
-            "Si tienes un proyecto en mente pero necesitas ayuda para llevarlo a cabo, has llegado al lugar ideal. En FI.Coder podrás encontrar un desarrollador para tu proyecto. Sólo necesitas registrarte y publicar tu proyecto. Deberás indicar los requisitos de tu proyecto y en qué consiste, cuanta más información, más fácil será el proceso. Los desarrolladores que estén interesados presentarán su candidatura y podrás decidir a cual escoger. ",
-          icono: "icono6.png",
-        },
-      ],
       image:
         "https://www.google.com/url?sa=i&url=https%3A%2F%2Fgrupohereda.com%2Fes%2Fgenealogia-sucesoria%2Ficono-lupa%2F&psig=AOvVaw3qSoSuOdq4syBkqGkoDWm-&ust=1593549797471000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJDv5Pzxp-oCFQAAAAAdAAAAABAD",
       /* Arrays para la lista de empresas y proyectos */
@@ -298,6 +148,7 @@ export default {
   },
   /* CREATED */
   created() {
+    this.filterProjects();
     this.checkLogin();
     this.checkCoderRole();
     this.checkCompanyRole();
@@ -329,43 +180,6 @@ export default {
         .catch(function(error) {
           console.log(error);
         });
-    },
-
-    /* LOGIN PARA CODERS */
-    /* LoginCoders.js */
-    async logCoder() {
-      try {
-        //INTENTO HACER LOGIN
-        await loginCoders(this.email, this.password);
-        this.email = "";
-        this.password = "";
-        //location.reload();
-        this.closeModal();
-
-        location.reload();
-        this.$router.push("/home-coder");
-
-        //SI HAY LOGIN, QUE ME LLEVE AL HOME
-      } catch (err) {
-        alert(`Error: ${err}`);
-      }
-    },
-
-    /* LOGIN PARA EMPRESAS */
-    /* LoginCompanies.js */
-    async logCompany() {
-      try {
-        //INTENTO HACER LOGIN
-        await loginCompanies(this.email, this.password);
-        this.email = "";
-        this.password = "";
-        location.reload();
-        this.closeModalLogCompany();
-
-        //SI HAY LOGIN, QUE ME LLEVE AL HOME
-      } catch (err) {
-        alert(`Error: ${err}`);
-      }
     },
 
     /* VER MÁS INFORMACIÓN SOBRE UNA EMPRESA */
@@ -519,11 +333,11 @@ export default {
 /* ESTILOS */
 @font-face {
   font-family: "serif";
-  src: url("../assets/LibreBaskerville-Regular.ttf");
+  src: url("../../assets/LibreBaskerville-Regular.ttf");
 }
 @font-face {
   font-family: "sansSerif";
-  src: url("../assets/Ubuntu-Regular.ttf");
+  src: url("../../assets/Ubuntu-Regular.ttf");
 }
 .Home {
   background-color: #dae1e7;
@@ -589,33 +403,24 @@ input {
   color: #27496d;
 }
 
-.background {
-  background-image: url("https://www.sosmatic.es/wp-content/uploads/2019/08/ilya-pavlov-wbXdGS_D17U-unsplash.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100%;
-}
 /* FILTER */
 
 .filter {
-  margin-top: 4rem;
   padding: 2rem;
   font-weight: bold;
   font-size: 1.5rem;
 
-  height: 400px;
   color: #dae1e7;
 }
 
 .filtersmall {
   background-color: #dae1e7;
   opacity: 0.9;
-  padding-top: 5px;
+
   padding-bottom: 1.5rem;
   width: 700px;
 
   margin: 0 auto;
-  margin-top: 4rem;
 }
 .filtersmall > p > label {
   font-family: "serif";

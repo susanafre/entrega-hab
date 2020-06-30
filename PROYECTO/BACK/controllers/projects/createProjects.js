@@ -51,7 +51,7 @@ async function createProjects(req, res, next) {
         technology,
         architecture,
         date,
-        id,
+        id1,
       ]
     );
 
@@ -69,7 +69,7 @@ async function createProjects(req, res, next) {
         technology,
         architecture,
         date,
-        FK_project_company: id,
+        FK_project_company: id1,
       },
     });
   } catch (error) {

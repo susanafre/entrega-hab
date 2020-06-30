@@ -1,20 +1,28 @@
 <template>
   <div class="menu">
     <button>
-      <router-link :to="{name:'Home'}">HOME</router-link>
+      <router-link :to="{ name: 'CreateProjects' }">CREAR PROYECTO</router-link>
     </button>
     <button>
-      <router-link :to="{name:'ProfileCompany'}">PERFIL</router-link>
+      <router-link :to="{ name: 'ProjectsCompany' }">MIS PROYECTOS</router-link>
     </button>
 
-    <img class="logo" :src="require('../../assets/logo_nombre.png')" alt="logo" />
+    <img
+      class="logo"
+      :src="require('../../assets/logo_nombre.png')"
+      alt="logo"
+    />
 
     <button>
-      <router-link :to="{name:'ProjectsCompany'}">MIS PROYECTOS</router-link>
+      <router-link :to="{ name: 'ProfileCompany' }">PERFIL</router-link>
     </button>
 
     <button @click="logoutUserEvent()">LOG OUT</button>
-    <img class="user" :src="require('../../assets/usuario.png')" alt="usuario" />
+    <img
+      class="user"
+      :src="require('../../assets/usuario.png')"
+      alt="usuario"
+    />
     <h1>{{ username }}</h1>
   </div>
 </template>
@@ -23,13 +31,13 @@
 export default {
   name: "MenuLoggedCoder",
   props: {
-    username: String
+    username: String,
   },
   methods: {
     logoutUserEvent() {
       this.$emit("logout");
-    }
-  }
+    },
+  },
 };
 </script>
 

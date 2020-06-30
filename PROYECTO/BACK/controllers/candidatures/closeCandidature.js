@@ -53,7 +53,7 @@ async function closeCandidature(req, res, next) {
     const [
       candidatures,
     ] = await connection.query(
-      "UPDATE candidatures SET candidature_state='Cerrado',modification_date=? WHERE FK_candidature_coder=? and FK_candidature_project=?",
+      "UPDATE candidatures SET candidature_state='No sigues en el proceso',modification_date=? WHERE FK_candidature_coder=? and FK_candidature_project=?",
       [date, id3, id2]
     );
 
