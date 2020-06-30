@@ -128,7 +128,7 @@ async function main() {
     //Companies
     await connection.query(`
     INSERT INTO companies(name,description,province,phone_number,email,password,photo,role,web,lastPasswordUpdate,active) 
-      VALUES ("Administrador","Administrator user","Lugo","605037965","sfraga@gmail.com","${password}","f8cabd50-b7a3-11ea-9666-b565c5d4c11d.jpg","admin","",NOW(),true),
+      VALUES 
       ("Dentipol","Somos un equipo humano de dentistas liderado por el Doctor D. Eliseo Ferrán que trabajamos con el fin de ofrecer a nuestros pacientes la mejor atención odontológica y el asesoramiento necesario para guiar sus tratamientos. Contamos además con una sólida estructura que nos permite ofrecerte la mejor solución adaptada a cada caso, de manera inmediata. En Dentipol brindamos la mejor atención al paciente con experiencia de más de 20 años en el sector dental y profesionales cualificados que te ayudarán y guiarán a lo largo de tu tratamiento. En Dentipol nuestro objetivo es ofrecer a nuestros pacientes la mejor calidad en los tratamientos más innovadores para todas las áreas de la odontología: cirugía, ortodoncia, implantología, periodoncia, estética y blanqueamientos, endodoncia, etc. Buscando siempre como objetivo la solución que más se adapte a tus necesidades, contando siempre con alta tecnología en equipamiento médico. Dentipol pone a tu disposición las mejores clínicas dentales cerca de ti. Puedes encontrarnos a lo largo de todo el país, incluso en Italia y Portugal. Además tendrás la posibilidad de obtener una primera consulta gratuita. Queremos que nuestros pacientes se sientan a gusto, en un entorno de cuidado y calidad de servicio. Nuestra prioridad es tu salud dental y la de tu familia.","A Coruña",615890861,"kiseppotty-6384@yopmail.com","${await bcrypt.hash(
         "",
         10
@@ -145,13 +145,13 @@ En nuestra peluquería trabajamos con los mejores productos para conseguir excel
     INSERT INTO projects(name,description,province,delivery_date,language,technology, architecture,FK_project_company) 
       VALUES ("Crear aplicación de recetas","Crear aplicación de recetas","A Coruña","2020-12-31","HTML, CSS, Javascript","Angular","FrontEnd",1),
       ("Cambio de página web","Cambio de página web","A Coruña","2020-10-20","HTML, CSS, Javascript","React JS","Front End",2),
-      ("Crear base de datos de clientes","Crear base de datos de clientes","A Coruña","2020-07-10","SQL","MySQL Workbench","FrontEnd",3),
+      ("Crear base de datos de clientes","Crear base de datos de clientes","A Coruña","2020-07-10","SQL","MySQL Workbench","FrontEnd",1),
       ("Creación de página web de empresa","Creación de página web de empresa","A Coruña","2021-01-01","HTML, CSS, Javascript","Bootstrap","Front End",1),
       ("Aplicación de mensajes para empresa de mensajería","Aplicación de mensajes para empresa de mensajería","A Coruña","2020-09-30","HTML, CSS, Javascript","Redux","Front End",2),
-      ("Creación de un videojuego de arcade","Creación de un videojuego de arcade","A Coruña","2022-01-01","Python","Django","Back End",3),
+      ("Creación de un videojuego de arcade","Creación de un videojuego de arcade","A Coruña","2022-01-01","Python","Django","Back End",2),
       ("Crear nueva página web Back","Crear nueva página web Back","A Coruña","2020-10-01","Javascript node","Node js","Back End",1),
       ("Crear nueva página web End","Crear nueva página web End","A Coruña","2020-10-01","HTML, CSS, Javascript","Vue js","Front End",2),
-      ("Crear aplicación de subida de archivos a nube","Crear aplicación de subida de archivos a nube","A Coruña","2022-03-01","Python","Django","Back End",3),
+      ("Crear aplicación de subida de archivos a nube","Crear aplicación de subida de archivos a nube","A Coruña","2022-03-01","Python","Django","Back End",1),
       ("Crear tienda online","Crear tienda online","A Coruña","2020-10-01","PHP","Laravel","Back End",3)`);
 
     //Candidatures
