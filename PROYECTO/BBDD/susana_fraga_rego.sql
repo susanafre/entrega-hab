@@ -31,7 +31,7 @@ CREATE TABLE `candidatures` (
   `modification_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `FK_candidature_coder` int(11) DEFAULT NULL,
   `FK_candidature_project` int(11) DEFAULT NULL,
-  `candidature_state` enum('En curso','Candidatura cerrada','No sigues en el proceso','Sigues en el proceso') DEFAULT 'En curso',
+  `candidature_state` enum('En curso','Proceso cerrado','No sigues en el proceso','Sigues en el proceso') DEFAULT 'En curso',
   PRIMARY KEY (`PK_candidature`),
   KEY `FK_candidature_coder` (`FK_candidature_coder`),
   KEY `FK_candidature_project` (`FK_candidature_project`),
@@ -172,4 +172,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-06-30 23:03:35
+-- Dump completed on 2020-06-30 23:07:55
