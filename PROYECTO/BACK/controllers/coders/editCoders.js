@@ -29,6 +29,7 @@ async function editCoders(req, res, next) {
       language,
       technology,
       architecture,
+      photo,
     } = req.body;
 
     const { id } = req.params;
@@ -50,6 +51,8 @@ async function editCoders(req, res, next) {
       throw generateError(`The entry with id ${id} does not exist`, 404);
     }
 
+    console.log("esto es req.auth", req.auth);
+
     //Check if the user id is the same as the authorized
 
     /* if (current[0].PK_coder !== req.auth.id && req.auth.role !== "admin") {
@@ -60,14 +63,14 @@ async function editCoders(req, res, next) {
 
     let savedFileName;
 
-    console.log("esto es req.files", req.files);
+    console.log("Esto es req.files", req);
 
     if (req.files && req.files.photo) {
       try {
         savedFileName = await processAndSavePhoto(req.files.photo);
 
-        if (current && current.image) {
-          await deletePhoto(current.image);
+        if (current && current.photo) {
+          await deletePhoto(current.photo);
         }
       } catch (error) {
         const imageError = new Error(
@@ -99,13 +102,75 @@ async function editCoders(req, res, next) {
       ]
     );
 
+    if (name) {
+      await connection.query("UPDATE coders SET name=? WHERE PK_coder=?", [
+        name,
+        id,
+      ]);
+    }
+    if (surname) {
+      await connection.query("UPDATE coders SET surname=? WHERE PK_coder=?", [
+        surname,
+        id,
+      ]);
+    }
+
+    if (phone_number) {
+      await connection.query(
+        "UPDATE coders SET phone_number=? WHERE PK_coder=?",
+        [phone_number, id]
+      );
+    }
+
+    if (province) {
+      await connection.query("UPDATE coders SET province=? WHERE PK_coder=?", [
+        province,
+        id,
+      ]);
+    }
+    if (email) {
+      await connection.query("UPDATE coders SET email=? WHERE PK_coder=?", [
+        email,
+        id,
+      ]);
+    }
+
+    if (language) {
+      await connection.query("UPDATE coders SET language=? WHERE PK_coder=?", [
+        language,
+        id,
+      ]);
+    }
+
+    if (technology) {
+      await connection.query(
+        "UPDATE coders SET technology=? WHERE PK_coder=?",
+        [technology, id]
+      );
+    }
+
+    if (architecture) {
+      await connection.query(
+        "UPDATE coders SET architecture=? WHERE PK_coder=?",
+        [architecture, id]
+      );
+    }
+
+    console.log("Esto es req.files", req.files);
+    if (req.files && req.files.photo) {
+      await connection.query("UPDATE coders SET photo=? WHERE PK_coder=?", [
+        savedFileName,
+        id,
+      ]);
+    }
+
     connection.release();
 
     res.send({
       status: "ok",
       message: "The information has been updated",
 
-      data: {
+      /* data: {
         PK_coder: id,
         name,
         surname,
@@ -117,7 +182,7 @@ async function editCoders(req, res, next) {
         technology,
         architecture,
         modification_date: date,
-      },
+      }, */
     });
   } catch (error) {
     next(error);

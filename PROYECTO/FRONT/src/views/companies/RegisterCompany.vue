@@ -37,6 +37,7 @@
           id="description"
           cols="30"
           rows="10"
+          v-model="description"
         ></textarea>
       </p>
       <!-- PROVINCIA -->
@@ -149,6 +150,7 @@ export default {
             web: self.web
           })
           .then(async function(response) {
+            console.log(response);
             await Swal.fire(
               "Se ha creado el perfil. Revisa tu bandeja de correo y valida tu cuenta."
             );

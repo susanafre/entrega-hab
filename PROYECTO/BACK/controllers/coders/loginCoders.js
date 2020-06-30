@@ -24,7 +24,7 @@ async function loginCoders(req, res, next) {
     const [
       dbCoder,
     ] = await connection.query(
-      "SELECT PK_coder,email,password,role,name from coders where email=? AND active=1",
+      "SELECT PK_coder,email,password,role,name,photo from coders where email=? AND active=1",
       [email]
     );
 
@@ -60,7 +60,12 @@ async function loginCoders(req, res, next) {
     //If all is correct, respond with the token
 
     // Build jsonwebtoken
-    const tokenPayload = { id: coder.PK_coder, role: coder.role };
+    const tokenPayload = {
+      id: coder.PK_coder,
+      role: coder.role,
+      name: coder.name,
+      photo: coder.photo,
+    };
 
     const token = jwt.sign(tokenPayload, process.env.SECRET, {
       expiresIn: "30d",
@@ -78,6 +83,7 @@ async function loginCoders(req, res, next) {
         role: coder.role,
         id: coder.PK_coder,
         name: coder.name,
+        photo: coder.photo,
       },
     });
   } catch (error) {

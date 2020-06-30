@@ -20,13 +20,13 @@ async function filterProjects(req, res, next) {
       await searchSchema.validateAsync(search);
 
       result = await connection.query(
-        `SELECT p.name as project_name,p.description,co.name as company_name,p.language as language,p.technology as technology,p.delivery_date as delivery_date, p.PK_project as PK_project FROM projects p INNER JOIN companies co ON p.FK_project_company=co.PK_company WHERE p.language LIKE ? OR p.name LIKE ? OR p.technology LIKE ? OR p.delivery_date LIKE ?
+        `SELECT p.name as project_name,p.description,co.name as company_name,co.PK_company as PK_company,p.language as language,p.technology as technology,p.delivery_date as delivery_date, p.PK_project as PK_project FROM projects p INNER JOIN companies co ON p.FK_project_company=co.PK_company WHERE p.language LIKE ? OR p.name LIKE ? OR p.technology LIKE ? OR p.delivery_date LIKE ?
         ORDER BY p.creation_date DESC`,
         [`%${search}%`, `%${search}%`, `%${search}%`, `%${search}%`]
       );
     } else {
       result = await connection.query(
-        `SELECT p.name as project_name,p.description,co.name as company_name,p.language as language,p.technology as technology,p.delivery_date as delivery_date,p.PK_project as PK_project  FROM projects p INNER JOIN companies co ON p.FK_project_company=co.PK_company ORDER BY p.creation_date DESC`
+        `SELECT p.name as project_name,p.description,co.name as company_name,co.PK_company as PK_company,co.photo as photo,p.language as language,p.technology as technology,p.delivery_date as delivery_date,p.PK_project as PK_project  FROM projects p INNER JOIN companies co ON p.FK_project_company=co.PK_company ORDER BY p.creation_date DESC`
       );
     }
 

@@ -11,7 +11,7 @@
         {{ project.delivery_date | moment("D/M/YYYY") }}
       </p>
 
-      <div class="botones" v-if="userloged">
+      <div class="botones">
         <button @click="showCompaniesEvent(index)">Ver empresa</button>
       </div>
 
@@ -30,14 +30,13 @@ export default {
   name: "FilterProjects",
   props: {
     projects: Array,
-    companies: Array,
-    userloged: Boolean,
+
     roleCoder: Boolean
   },
   methods: {
     showCompaniesEvent(index) {
       console.log("Esto es data", data);
-      let data = this.companies[index];
+      let data = this.projects[index].PK_company;
       this.$emit("mostrar", data);
     },
     createCandidatureEvent(index) {

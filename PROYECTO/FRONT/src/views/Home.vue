@@ -52,7 +52,7 @@
           <!-- Un botón será para que ejecute la búsqueda
           y otro para limpiar los resultado-->
 
-          <button class="buttonfilter" @click="filterProjects()">BUSCAR</button>
+          <button class="buttonfilter" @click="filterProjects()">Buscar</button>
           <button class="buttonclean" @click="clearSearch()">Limpiar búsqueda</button>
         </div>
       </div>
@@ -65,7 +65,7 @@
       :companies="companies"
       :userloged="userloged"
       :roleCoder="roleCoder"
-      v-on:mostrar="showEditText"
+      v-on:mostrar="viewCompanyProfile"
       v-on:crear="createCandidature"
     ></FilterProjects>
 
@@ -76,17 +76,15 @@
     <div v-show="modalcompany" class="modalcompany">
       <div class="modalBox">
         <!--  <p>
-          <img
-            src="require(`../../../BACK/controllers/static/uploads/${photo}`)"
-          />
+          <img :src="require(`../../../BACK/controllers/static/uploads/${companies.photo}`)" />
         </p>-->
-        <p class="namecompany">{{ nameCompany }}</p>
-        <p>{{ description }}</p>
-        <p>TELÉFONO: {{ phone_number }}</p>
+        <p class="namecompany">{{ companies.name }}</p>
+        <p>{{ companies.description }}</p>
+        <p>TELÉFONO: {{ companies.phone_number }}</p>
 
         <!-- <p>FOTO: {{ photo }}</p> -->
-        <p>PROVINCIA: {{ province }}</p>
-        <p>WEB: {{ web }}</p>
+        <p>PROVINCIA: {{ companies.province }}</p>
+        <p>WEB: {{ companies.web }}</p>
         <button class="cerrarverempresa" @click="closeModalCompany()">CERRAR</button>
       </div>
     </div>
@@ -233,7 +231,8 @@ export default {
           icono: "icono6.png"
         }
       ],
-      img: "@/assets/lupa.png",
+      image:
+        "https://www.google.com/url?sa=i&url=https%3A%2F%2Fgrupohereda.com%2Fes%2Fgenealogia-sucesoria%2Ficono-lupa%2F&psig=AOvVaw3qSoSuOdq4syBkqGkoDWm-&ust=1593549797471000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJDv5Pzxp-oCFQAAAAAdAAAAABAD",
       /* Arrays para la lista de empresas y proyectos */
       companies: [],
       projects: [],
@@ -256,13 +255,7 @@ export default {
       /* Variables para v-show  */
       userloged: false,
       usernotloged: true,
-      /* Variables para devolver los datos de las empresas */
-      nameCompany: "",
-      description: "",
-      phone_number: "",
-      photo: "",
-      province: "",
-      web: "",
+
       /* Variables que checkean el rol del usuario */
       roleCoder: false,
       roleCompany: false,
@@ -275,7 +268,6 @@ export default {
   },
   /* CREATED */
   created() {
-    this.getCompanies();
     this.checkLogin();
     this.checkCoderRole();
     this.checkCompanyRole();
@@ -345,9 +337,7 @@ export default {
 
     /* VER MÁS INFORMACIÓN SOBRE UNA EMPRESA */
     /* searchCompanies.js */
-    viewCompanyProfile(id) {
-      let data = this.companies[index];
-
+    viewCompanyProfile(data) {
       this.id = data;
 
       axios
@@ -357,26 +347,11 @@ export default {
 
         //SI SALE BIEN
         .then(response => {
+          this.openModalCompany();
           console.log(response.data);
 
           this.companies = response.data.data;
-          console.log(this.companies);
-        })
-        //SI SALE MAL
-        .catch(function(error) {
-          console.log(error);
-        });
-    },
-
-    /* NOS DEVUELVE LAS CUATRO PRIMERAS EMPRESAS */
-    /* viewCompanies.js */
-    getCompanies() {
-      axios
-        .get("http://localhost:3000/companies")
-        //SI SALE BIEN
-        .then(response => {
-          console.log(response);
-          this.companies = response.data.data;
+          console.log("Esto es this.companies", this.companies);
         })
         //SI SALE MAL
         .catch(function(error) {
@@ -400,18 +375,6 @@ export default {
         .catch(function(error) {
           console.log(error);
         });
-    },
-
-    /* FUNCIÓN QUE DEVUELVE LOS DATOS DE LA EMPRESA */
-
-    showEditText(data) {
-      this.openModalCompany();
-      this.nameCompany = data.name;
-      this.description = data.description;
-      this.phone_number = data.phone_number;
-      this.photo = data.photo;
-      this.province = data.province;
-      this.web = data.web;
     },
 
     /* #### FUNCIONES "AUXILIARES" #### */

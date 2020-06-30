@@ -25,7 +25,7 @@ async function loginCompanies(req, res, next) {
     const [
       dbCompany,
     ] = await connection.query(
-      "SELECT PK_company, email, password, role,name from companies where email=? AND active=1",
+      "SELECT PK_company, email, password, role,name,photo from companies where email=? AND active=1",
       [email]
     );
 
@@ -33,7 +33,7 @@ async function loginCompanies(req, res, next) {
     const [
       dbCoder,
     ] = await connection.query(
-      "SELECT PK_coder, email, password, role from coders where email=?",
+      "SELECT PK_coder, email, password, role,photo from coders where email=?",
       [email]
     );
 
@@ -61,7 +61,11 @@ async function loginCompanies(req, res, next) {
     //If all is correct, respond with the token
 
     // Build jsonwebtoken
-    const tokenPayload = { id: company.PK_company, role: company.role };
+    const tokenPayload = {
+      id: company.PK_company,
+      role: company.role,
+      photo: company.photo,
+    };
     const token = jwt.sign(tokenPayload, process.env.SECRET, {
       expiresIn: "30d",
     });
@@ -75,6 +79,7 @@ async function loginCompanies(req, res, next) {
         role: company.role,
         id: company.PK_company,
         name: company.name,
+        photo: company.photo,
       },
     });
   } catch (error) {

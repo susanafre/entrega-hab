@@ -61,7 +61,9 @@ async function userIsCoder(req, res, next) {
 
     // Add token payload to request
     req.auth = decoded;
+
     console.log(req.auth);
+
     if (!req.auth || req.auth.role === "company") {
       const error = new Error(
         "You do not have admin privileges to access this resource"

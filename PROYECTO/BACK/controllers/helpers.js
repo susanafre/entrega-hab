@@ -12,7 +12,7 @@ const sgMail = require("@sendgrid/mail");
 
 //Path for uploaded images
 const imageUploadPath = path.join(__dirname, process.env.UPLOADS_DIR);
-
+const PATH = "../../../../BACK/controllers/static/uploads/";
 ///////////////FormatDateToDB//////////////////
 // Format a date to DB
 function formatDateToDB(creation_date) {
@@ -72,7 +72,7 @@ async function sendEmailValidation({ email, title, content }) {
 
   const msg = {
     to: email,
-    from: "sfraga2009@gmail.com",
+    from: "sfraga@oesia.com",
     subject: title,
     text: content,
     html: `<div>
@@ -91,7 +91,7 @@ async function sendEmailCandidature({ email, title, content }) {
 
   const msg = {
     to: email,
-    from: "sfraga2009@gmail.com",
+    from: "sfraga@oesia.com",
     subject: title,
     text: content,
     html: `<div>
@@ -110,7 +110,7 @@ async function sendEmailCloseCandidature({ email, title, content }) {
 
   const msg = {
     to: email,
-    from: "sfraga2009@gmail.com",
+    from: "sfraga@oesia.com",
     subject: title,
     text: content,
     html: `<div>
@@ -129,7 +129,7 @@ async function sendEmailInterested({ email, title, content }) {
 
   const msg = {
     to: email,
-    from: "sfraga2009@gmail.com",
+    from: "sfraga@oesia.com",
     subject: title,
     text: content,
     html: `<div>
