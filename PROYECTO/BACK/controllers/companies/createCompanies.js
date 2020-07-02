@@ -96,8 +96,8 @@ async function createCompanies(req, res, next) {
     try {
       await sendEmailValidation({
         email: email,
-        title: "Validate your account for the app match coder",
-        content: `Please paste the following link into your browser: ${validationURL}`,
+        title: "Valida tu cuenta para poder acceder a la aplicación FI.Coder",
+        content: `Pega este link en tu navegador: ${validationURL}`,
       });
     } catch (error) {
       console.error(error.response.body);

@@ -56,8 +56,8 @@ async function closeAllCandidatures(req, res, next) {
       try {
         await sendEmailCloseCandidature({
           email: coder.email,
-          title: "The selection process has been closed",
-          content: `The company has closed this process`,
+          title: "El proceso de selección ha terminado",
+          content: `La empresa ha cerrado este proceso`,
         });
       } catch (error) {
         console.error(error.response.body);

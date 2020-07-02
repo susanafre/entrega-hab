@@ -16,7 +16,7 @@ async function seeAllProjects(req, res, next) {
     connection = await getConnection();
 
     const [projects] = await connection.query(
-      "SELECT po.name as name_project, po.description as description, co.name as company_name, po.creation_date as creation_date,po.architecture as architecture, po.language as language,po.province as province,po.delivery_date as delivery_date from projects po inner join companies co on po.FK_project_company=co.PK_company"
+      "SELECT po.PK_project as id,po.name as name_project, po.description as description, co.name as company_name, po.creation_date as creation_date,po.architecture as architecture, po.language as language,po.technology as technology,po.province as province,po.delivery_date as delivery_date from projects po inner join companies co on po.FK_project_company=co.PK_company"
     );
 
     if (!projects.length) {

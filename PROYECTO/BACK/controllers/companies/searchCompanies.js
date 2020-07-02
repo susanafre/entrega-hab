@@ -31,7 +31,7 @@ async function searchCompanies(req, res, next) {
 
     const [companyData] = companies;
 
-    const payload = {
+    /* const payload = {
       name: companyData.name,
       description: companyData.description,
       province: companyData.province,
@@ -40,11 +40,11 @@ async function searchCompanies(req, res, next) {
       photo: companyData.photo,
       role: companyData.role,
       email: companyData.email,
-    };
+    }; */
 
     res.send({
       status: "ok",
-      data: payload,
+      data: companyData,
     });
   } catch (error) {
     next(error);

@@ -59,8 +59,9 @@ async function interestedCandidature(req, res, next) {
     try {
       await sendEmailInterested({
         email: coder[0].email,
-        title: "La empresa está interesada en tu perfil",
-        content: `En breves se pondrán en contacto contigo para poder darte más información.`,
+        title: "Tu candidatura ha cambiado de estado",
+        content: `La empresa ha decidido que tu candidatura sigue en el proceso.
+        En breves se pondrán en contacto contigo`,
       });
     } catch (error) {
       console.error(error.response.body);

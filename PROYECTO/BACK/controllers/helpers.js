@@ -72,7 +72,7 @@ async function sendEmailValidation({ email, title, content }) {
 
   const msg = {
     to: email,
-    from: "sfraga@oesia.com",
+    from: "fi.coder@outlook.es",
     subject: title,
     text: content,
     html: `<div>
@@ -91,7 +91,7 @@ async function sendEmailCandidature({ email, title, content }) {
 
   const msg = {
     to: email,
-    from: "sfraga@oesia.com",
+    from: "fi.coder@outlook.es",
     subject: title,
     text: content,
     html: `<div>
@@ -110,7 +110,7 @@ async function sendEmailCloseCandidature({ email, title, content }) {
 
   const msg = {
     to: email,
-    from: "sfraga@oesia.com",
+    from: "fi.coder@outlook.es",
     subject: title,
     text: content,
     html: `<div>
@@ -129,11 +129,11 @@ async function sendEmailInterested({ email, title, content }) {
 
   const msg = {
     to: email,
-    from: "sfraga@oesia.com",
+    from: "fi.coder@outlook.es",
     subject: title,
     text: content,
     html: `<div>
-    <h1>La empresa está interesada en tu perfil</h1>
+    <h1>Tu candidatura ha cambiado de estado</h1>
     <p>${content}</p>
     </div>`,
   };

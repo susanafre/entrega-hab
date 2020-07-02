@@ -169,7 +169,7 @@ app.delete("/coders/candidatures/:id1", deleteCandidatures);
 app.get("/all/coders", seeAllCoders);
 app.get("/all/companies", seeAllCompanies);
 app.get("/all/projects", seeAllProjects);
-app.get("/all/candidatures", seeAllCandidatures);
+app.get("/all/candidatures/:id", seeAllCandidatures);
 app.put("/account/coder/:id", activateAccountCoder);
 app.put("/account/company/:id", activateAccountCompany);
 
