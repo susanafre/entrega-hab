@@ -2,6 +2,8 @@
   <div class="registercompany">
     <vue-headful title="Registro empresa" description="Página de registro para empresas" />
 
+    <MenuPrincipal v-on:modalcoder="openModalLogCoder" v-on:modalcompany="openModalLogCompany"></MenuPrincipal>
+
     <header>
       <h1>PÁGINA DE REGISTRO PARA COMPAÑÍAS</h1>
     </header>
@@ -83,14 +85,98 @@
         <button class="cancel" @click="cancelButton()">Cancelar</button>
       </p>
     </div>
+
+    <!-- ######### LOGIN CODER ############ -->
+
+    <!-- MODAL PARA LOGIN CODER -->
+
+    <div v-show="modal" class="modal">
+      <div class="modalBox">
+        <h1>Inicia sesión</h1>
+
+        <!-- INPUT PARA EMAIL Y CONTRASEÑA -->
+        <label for="name">Correo electrónico</label>
+        <p>
+          <input type="text" name="email" placeholder v-model="email" />
+        </p>
+        <label for="password">Contraseña</label>
+        <p>
+          <input type="password" name="password" placeholder v-model="password" />
+        </p>
+
+        <!-- BOTONES DE CERRAR EL MODAL Y DE HACER LOGIN -->
+
+        <button class="logCoder" @click="logCoder()">Acceder</button>
+        <button class="closelogCoder" @click="closeModal()">Cerrar</button>
+
+        <!-- SI NO ESTÁ REGISTRADO, LLEVA AL ÁREA DE REGISTRO -->
+
+        <p>
+          ¿No estás registrado? Haz click
+          <router-link to="/register-coder">AQUÍ</router-link>
+        </p>
+      </div>
+    </div>
+
+    <!-- ########### LOGIN COMPANY ############# -->
+
+    <!-- MODAL PARA LOGIN COMPANY -->
+
+    <div v-show="modallogincompany" class="modallogincompany">
+      <div class="modalBox">
+        <h1>Inicia sesión</h1>
+        <label for="name">Correo electrónico</label>
+        <p>
+          <input type="text" name="email" placeholder="Introduce aquí tu email" v-model="email" />
+        </p>
+
+        <label for="password">Contraseña</label>
+        <p>
+          <input
+            type="password"
+            name="password"
+            placeholder="Introduce aquí tu contraseña"
+            v-model="password"
+          />
+        </p>
+
+        <!-- ESTO HACE LOGIN O CIERRA EL MODAL -->
+
+        <button class="login" @click="logCompany()">LOGIN</button>
+        <button class="closelogin" @click="closeModalLogCompany()">CERRAR</button>
+
+        <!-- SI NO ESTÁ REGISTRADO, LLEVA A LA VENTANA DE REGISTRO -->
+
+        <h2>
+          ¿No estás registrado? Haz click
+          <router-link to="/register-company">AQUÍ</router-link>
+        </h2>
+      </div>
+    </div>
+
+    <FooterCustom></FooterCustom>
   </div>
 </template>
 
 <script>
+/* IMPORTAMOS MÓDULOS */
 import axios from "axios";
 import Swal from "sweetalert2";
+
+import MenuPrincipal from "../../components/menus/MenuPrincipal";
+
+/* Componente de Footer */
+import FooterCustom from "@/components/FooterCustom.vue";
+
+import { loginCoders } from "../../api/utils";
+import { loginCompanies } from "../../api/utils";
+
 export default {
   name: "RegisterCompany",
+  components: {
+    MenuPrincipal,
+    FooterCustom
+  },
   data() {
     return {
       name: "",
@@ -101,7 +187,11 @@ export default {
       password: "",
       web: "",
       correctData: false,
-      required: false
+      required: false,
+      /* Variables para los modales */
+      modal: false,
+      modallogincompany: false,
+      modalcompany: false
     };
   },
   methods: {
@@ -183,6 +273,69 @@ export default {
     },
     cancelButton() {
       this.$router.push("/");
+    },
+
+    /* LOGIN PARA CODERS */
+    /* LoginCoders.js */
+    async logCoder() {
+      try {
+        //INTENTO HACER LOGIN
+        await loginCoders(this.email, this.password);
+        this.email = "";
+        this.password = "";
+        //location.reload();
+        this.closeModal();
+
+        location.reload();
+        this.$router.push("/home-coder");
+
+        //SI HAY LOGIN, QUE ME LLEVE AL HOME
+      } catch (err) {
+        alert(`Error: ${err}`);
+      }
+    },
+
+    /* LOGIN PARA EMPRESAS */
+    /* LoginCompanies.js */
+    async logCompany() {
+      try {
+        //INTENTO HACER LOGIN
+        await loginCompanies(this.email, this.password);
+        this.email = "";
+        this.password = "";
+        location.reload();
+        this.closeModalLogCompany();
+
+        //SI HAY LOGIN, QUE ME LLEVE AL HOME
+      } catch (err) {
+        alert(`Error: ${err}`);
+      }
+    },
+    /* FUNCIONES QUE ABREN Y CIERRAN MODALES */
+
+    closeModal() {
+      this.email = "";
+      this.password = "";
+
+      this.modal = false;
+    },
+    openModalLogCoder() {
+      this.modal = true;
+    },
+    closeModalCompany() {
+      this.modalcompany = false;
+    },
+    openModalCompany() {
+      this.modalcompany = true;
+    },
+    openModalLogCompany() {
+      this.modallogincompany = true;
+    },
+    closeModalLogCompany() {
+      this.email = "";
+      this.password = "";
+
+      this.modallogincompany = false;
     }
   }
 };
@@ -198,13 +351,11 @@ export default {
   src: url("../../assets/Ubuntu-Regular.ttf");
 }
 header {
-  background-color: #00909e;
-  color: #dae1e7;
-  padding: 1.5rem;
+  color: #27496d;
 }
 .registercompany {
   font-family: "sansSerif";
-  background-image: url("https://images.unsplash.com/photo-1510511498717-4326639c999c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
+  background-image: url("https://www.sosmatic.es/wp-content/uploads/2019/08/ilya-pavlov-wbXdGS_D17U-unsplash.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
@@ -219,20 +370,24 @@ header {
 .companies {
   background: #00909e;
   color: #dae1e7;
-  margin: 1.1% auto;
+  margin: 1.2% auto;
   padding: 20px;
   border: 1px solid #888;
   width: 50%;
   background-size: 25%;
-  border-radius: 1rem;
+  box-shadow: 1rem 1rem 1rem #27496d;
 }
 button {
   background: #27496d;
   color: #dae1e7;
   font-weight: bold;
   padding: 0.3rem;
-  border-radius: 0.3rem;
+
   margin: 3px;
+}
+button:hover {
+  background-color: #dae1e7;
+  color: #00909e;
 }
 h1 {
   font-family: "serif";
@@ -251,9 +406,8 @@ textarea {
   background-color: #dae1e7;
   color: #27496d;
 }
-button:hover {
-  background-color: #dae1e7;
-  color: #00909e;
-  font-size: 1rem;
+.cancel:hover {
+  background-color: #27496d;
+  color: #dae1e7;
 }
 </style>

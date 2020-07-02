@@ -5,7 +5,7 @@
     <!-- COMPONENTE MENÚ -->
 
     <MenuLoggedCoder :username="username" v-on:logout="logoutUser"></MenuLoggedCoder>
-    <h1>TUS CANDIDATURAS</h1>
+    <h1>MIS CANDIDATURAS</h1>
 
     <h1 class="candidaturavacia" v-show="emptyCandidature">No tienes ninguna candidatura</h1>
 

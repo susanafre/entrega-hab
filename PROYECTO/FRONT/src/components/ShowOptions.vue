@@ -1,6 +1,6 @@
 <template>
   <div class="optionsmain">
-    <h1>¿Que puedes encontrar aquí?</h1>
+    <h1>¿Quiénes somos?</h1>
 
     <td class="options" v-for="option in options" :key="option.id">
       <tr>

@@ -1,19 +1,11 @@
 <template>
   <div class="home">
-    <div
-      class="projects"
-      v-for="(project, index) in projects"
-      :key="project.id"
-    >
-      <p class="name">
-        {{ project.project_name }}
-      </p>
+    <div class="projects" v-for="(project, index) in projects" :key="project.id">
+      <p class="name">{{ project.project_name }}</p>
       <p class="description">{{ project.description }}</p>
       <div class="botones">
         EMPRESA:
-        <button @click="showCompaniesEvent(index)">
-          {{ project.company_name }}
-        </button>
+        <button @click="showCompaniesEvent(index)">{{ project.company_name }}</button>
       </div>
 
       <p>Arquitectura: {{ project.architecture }}</p>
@@ -28,9 +20,7 @@
         <button
           class="presentarcandidatura"
           @click="createCandidatureEvent(index)"
-        >
-          Presentar candidatura
-        </button>
+        >Presentar candidatura</button>
       </div>
     </div>
   </div>
@@ -42,7 +32,7 @@ export default {
   props: {
     projects: Array,
 
-    roleCoder: Boolean,
+    roleCoder: Boolean
   },
   methods: {
     showCompaniesEvent(index) {
@@ -54,8 +44,8 @@ export default {
       let data2 = this.projects[index].PK_project;
       console.log("Esto es data2", data2);
       this.$emit("crear", data2);
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -100,16 +90,17 @@ export default {
 .presentarcandidatura {
   color: #dae1e7;
   background-color: #27496d;
-  font-weight: bold;
-  border: 2px solid #dae1e7;
+
+  border: 1px solid #dae1e7;
   box-shadow: 2px 2px #27496d;
   padding: 0.3rem;
-  border-radius: 0.3rem;
+
   margin: 1rem;
 }
 .presentarcandidatura:hover {
-  background-color: #27496d;
-  color: #dae1e7;
+  background-color: #dae1e7;
+  color: #27496d;
+  border: 1px solid #27496d;
 }
 .name {
   font-family: "serif";

@@ -5,8 +5,10 @@
       <h1>{{candidature.name_project}}</h1>
 
       <p>{{candidature.description_project}}</p>
+      <p>Fecha candidatura: {{candidature.creation_date | moment("YYYY-M-D")}}</p>
       <p class="state">ESTADO: {{candidature.estado}}</p>
-      <button @click="deleteCandidatureEvent(index)">CANCELAR CANDIDATURA</button>
+
+      <button @click="deleteCandidatureEvent(index)">Cancelar</button>
     </div>
   </div>
 </template>
@@ -54,16 +56,17 @@ h1 {
 button {
   color: #dae1e7;
   background-color: #27496d;
-  font-weight: bold;
-  border: 2px solid #dae1e7;
+
+  border: 1px solid #dae1e7;
   box-shadow: 2px 2px #27496d;
   padding: 0.3rem;
-  border-radius: 0.3rem;
+
   margin: 1rem;
 }
 button:hover {
-  background: #dae1e7;
+  background-color: #dae1e7;
   color: #27496d;
+  border: 1px solid #27496d;
 }
 .state {
   font-weight: bold;

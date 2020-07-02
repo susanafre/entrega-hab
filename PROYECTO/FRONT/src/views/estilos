@@ -1,5 +1,42 @@
 ../../../../BACK/controllers/static/uploads/779156d0-ba38-11ea-8655-d3256f924861.jpg
 
+.updateprofile {
+  color: #dae1e7;
+  background-color: #27496d;
+
+  border: 1px solid #dae1e7;
+  box-shadow: 2px 2px #27496d;
+  padding: 0.3rem;
+
+  margin: 1rem;
+}
+.updateprofile:hover {
+  background-color: #dae1e7;
+  color: #27496d;
+  border: 1px solid #27496d;
+}
+.cancel {
+  color: #27496d;
+  background-color: #dae1e7;
+
+  border: 1px solid #27496d;
+  box-shadow: 2px 2px #27496d;
+  padding: 0.3rem;
+
+  margin: 1rem;
+}
+.cancel:hover {
+  background-color: #27496d;
+  color: #dae1e7;
+  border: 1px solid #dae1e7;
+}
+
+
+
+
+
+
+
 
 
 BOTON PRINCIPAL

@@ -2,7 +2,7 @@
   <div class="about">
     <vue-headful title="Sobre nosotros" description="Página sobre nosotros" />
 
-    <MenuLoggedAdmin :username="username" v-on:logout="logoutUser"></MenuLoggedAdmin>
+    <MenuLoggedAdmin :username="username" v-on:cambiar="changeLocation" v-on:logout="logoutUser"></MenuLoggedAdmin>
 
     <h1>
       Proyecto Match Coder creado por
@@ -76,7 +76,20 @@ export default {
   },
   methods: {
     /* FUNCIÓN QUE DESLOGUEA AL USUARIO */
-
+    changeLocation(event) {
+      console.log(event.target.value);
+      if (event.target.value === "coders") {
+        this.$router.push("/view-coders");
+      } else if (event.target.value === "projects") {
+        this.$router.push("/view-projects");
+      } else if (event.target.value === "candidatures") {
+        this.$router.push("/view-candidatures");
+      } else if (event.target.value === "companies") {
+        this.$router.push("/view-companies");
+      } else if (event.target.value === "about") {
+        this.$router.push("/about");
+      }
+    },
     logoutUser() {
       return clearLogin(location.reload());
     }

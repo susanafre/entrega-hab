@@ -2,11 +2,67 @@
   <div class="coders">
     <vue-headful title="Ver Coders" description="You can see coders" />
     <!-- IMPORTAMOS COMPONENTE MENÚ -->
-    <MenuLoggedAdmin :username="username" v-on:logout="logoutUser"></MenuLoggedAdmin>
+    <MenuLoggedAdmin :username="username" v-on:cambiar="changeLocation" v-on:logout="logoutUser"></MenuLoggedAdmin>
 
     <!-- IMPORTAMOS COMPONENTE PARA VER LOS CODERS -->
-    <AdminCodersCard :coders="coders" v-on:activar="activateAccount"></AdminCodersCard>
+    <AdminCodersCard
+      :coders="coders"
+      v-on:activar="activateAccount"
+      v-on:editar="showeditText"
+      v-on:borrar="deleteCoder"
+    ></AdminCodersCard>
+    <!-- MODAL PARA EDITAR DATOS DEL USUARIO -->
+    <div v-show="modal" class="editprofile">
+      <div class="editcoder">
+        <h1>EDITAR PERFIL CODER</h1>
+        <h2>
+          <input v-model="newName" placeholder="Nombre" />
+          <input v-model="newSurname" placeholder="Apellidos" />
+        </h2>
 
+        <h2>Datos personales</h2>
+        <p>
+          <label for="email">EMAIL:</label>
+          <input v-model="newEmail" placeholder="Email" />
+        </p>
+
+        <p>
+          <label for="phone">TELÉFONO:</label>
+          <input v-model="newPhone" placeholder="Teléfono" />
+        </p>
+        <p>
+          <label for="province">PROVINCE:</label>
+          <input v-model="newProvince" placeholder="Provincia" />
+        </p>
+
+        <h2 class="space">Datos técnicos</h2>
+
+        <p>
+          <label for="photo">FOTO:</label>
+          <input type="file" id="file" ref="file" @change="onFileSelected" placeholder="Imagen" />
+        </p>
+
+        <p>
+          <label for="architecture">ARQUITECTURA:</label>
+          <input v-model="newArchitecture" placeholder="Arquitectura" />
+        </p>
+        <p>
+          <label for="language">LENGUAJE:</label>
+          <input v-model="newLanguage" placeholder="Lenguaje" />
+        </p>
+
+        <p>
+          <label for="technology">TECHNOLOGY:</label>
+          <input v-model="newTechnology" placeholder="Tecnología" />
+        </p>
+
+        <!-- BOTÓN PARA ACTUALIZAR DATOS Y CERRAR EL MODAL -->
+        <p>
+          <button class="updateprofile" @click="closeModal()">ACTUALIZAR PERFIL</button>
+          <button class="cancel" @click="closeModalAux()">CANCELAR</button>
+        </p>
+      </div>
+    </div>
     <!-- IMPORTAMOS FOOTER -->
     <FooterCustom></FooterCustom>
   </div>
@@ -36,11 +92,111 @@ export default {
     return {
       coders: [],
       username: "",
-      id: null
+      id: null,
+      /* Variables para editar el perfil */
+      username: "",
+      newName: "",
+      name: "",
+      newSurname: "",
+      surname: "",
+      newEmail: "",
+      email: "",
+      newArchitecture: "",
+      architecture: "",
+      newPhone: "",
+      phone_number: "",
+      newProvince: "",
+      province: "",
+      newTechnology: "",
+      technology: "",
+      newLanguage: "",
+      language: "",
+      file: null,
+      /* Variables para modales */
+      modal: false
     };
   },
   methods: {
     /* #### FUNCIONES PRINCIPALES #### */
+    /* Editar perfil */
+    /* Eliminar perfil coder */
+
+    deleteCoder(data) {
+      this.id = data.PK_coder;
+      axios
+        .delete("http://localhost:3000/coders/" + this.id)
+        //SI SALE BIEN
+        .then(async function(response) {
+          await Swal.fire("Se ha borrado el cliente");
+          location.reload();
+        })
+        //SI SALE MAL
+        .catch(function(error) {
+          console.log(error);
+        });
+    },
+    updateCoder() {
+      console.log("Esto es this.id", this.id);
+      let photoFormData = new FormData();
+
+      photoFormData.append("name", this.newName);
+      photoFormData.append("surname", this.newSurname);
+      photoFormData.append("email", this.newEmail);
+      photoFormData.append("architecture", this.newArchitecture);
+      photoFormData.append("phone_number", this.newPhone);
+      photoFormData.append("province", this.newProvince);
+      photoFormData.append("technology", this.newTechnology);
+      photoFormData.append("language", this.newLanguage);
+
+      if (this.file != null) {
+        photoFormData.append("photo", this.file);
+      }
+
+      axios
+        .put(`http://localhost:3000/coders/${this.id}`, photoFormData)
+        //Si sale bien
+        .then(async function(response) {
+          await Swal.fire("Se ha modificado el cliente");
+          this.closeModal();
+          location.reload();
+        })
+        //Si sale mal
+        .catch(function(error) {
+          console.log(error);
+        });
+    },
+    onFileSelected() {
+      console.log("Esto es event", this.$refs.file.files[0]);
+      this.file = this.$refs.file.files[0];
+    },
+    showeditText(data) {
+      this.openModal();
+      console.log("esto es data", data);
+      this.id = data.PK_coder;
+      this.newName = data.name;
+      this.newSurname = data.surname;
+      this.newEmail = data.email;
+      this.newArchitecture = data.architecture;
+      this.newPhone = data.phone_number;
+      this.newProvince = data.province;
+      this.newTechnology = data.technology;
+      this.newLanguage = data.language;
+    },
+
+    changeLocation(event) {
+      console.log(event.target.value);
+      if (event.target.value === "coders") {
+        this.$router.push("/view-coders");
+      } else if (event.target.value === "projects") {
+        this.$router.push("/view-projects");
+      } else if (event.target.value === "candidatures") {
+        this.$router.push("/view-candidatures");
+      } else if (event.target.value === "companies") {
+        this.$router.push("/view-companies");
+      } else if (event.target.value === "about") {
+        this.$router.push("/about");
+      }
+    },
     /* Ver perfil coder */
     getCoders() {
       axios
@@ -75,6 +231,17 @@ export default {
           console.log(error);
         });
     },
+    openModal() {
+      this.modal = true;
+    },
+    closeModal() {
+      this.updateCoder();
+
+      this.modal = false;
+    },
+    closeModalAux() {
+      this.modal = false;
+    },
 
     /* FUNCIÓN QUE DESLOGUEA AL USUARIO */
 
@@ -93,4 +260,46 @@ export default {
 </script>
 
 <style scoped>
+@font-face {
+  font-family: "serif";
+  src: url("../../assets/LibreBaskerville-Regular.ttf");
+}
+@font-face {
+  font-family: "sansSerif";
+  src: url("../../assets/Ubuntu-Regular.ttf");
+}
+button {
+  color: #dae1e7;
+  background-color: #27496d;
+  font-weight: bold;
+  border: 2px solid #dae1e7;
+  box-shadow: 2px 2px #27496d;
+  padding: 0.3rem;
+
+  margin: 1rem;
+}
+button:hover {
+  background: #dae1e7;
+  color: #27496d;
+}
+.editcoder {
+  padding-top: 2rem;
+  padding-bottom: 0.5rem;
+  margin: 7% auto;
+  width: 900px;
+  background-color: #00909e;
+  color: #dae1e7;
+  box-shadow: 1px 1px 1px #dae1e7;
+}
+.editcoder > h1 {
+  color: #dae1e7;
+}
+.editprofile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+}
 </style>

@@ -1,16 +1,10 @@
 <template>
   <div class="Home">
-    <vue-headful
-      title="Página principal coder"
-      description="Página principal de la plataforma"
-    />
+    <vue-headful title="Página principal coder" description="Página principal de la plataforma" />
 
     <!-- ########## MENÚ ########## -->
 
-    <MenuLoggedCoder
-      :username="username"
-      v-on:logout="logoutUser"
-    ></MenuLoggedCoder>
+    <MenuLoggedCoder :username="username" v-on:logout="logoutUser"></MenuLoggedCoder>
 
     <!-- ########### FILTRAR PROYECTOS ########## -->
 
@@ -18,10 +12,6 @@
 
     <div class="filter">
       <div class="filtersmall">
-        <p>
-          <label for="bySearch">BUSCA AQUÍ TU PROYECTO</label>
-        </p>
-
         <input
           v-model="search"
           id="search"
@@ -32,7 +22,7 @@
 
         <!-- AÑADIMOS DOS BOTONES -->
         <!-- Un botón será para que ejecute la búsqueda
-          y otro para limpiar los resultado-->
+        y otro para limpiar los resultado-->
       </div>
     </div>
 
@@ -58,20 +48,16 @@
             :src="
               require(`../../../BACK/controllers/static/uploads/${companies.photo}`)
             "
-          /> -->
+          />-->
         </p>
-        <p class="namecompany">
-          {{ companies.name }}
-        </p>
+        <p class="namecompany">{{ companies.name }}</p>
         <p>{{ companies.description }}</p>
         <p>TELÉFONO: {{ companies.phone_number }}</p>
 
         <!-- <p>FOTO: {{ photo }}</p> -->
         <p>PROVINCIA: {{ companies.province }}</p>
         <p>WEB: {{ companies.web }}</p>
-        <button class="cerrarverempresa" @click="closeModalCompany()">
-          CERRAR
-        </button>
+        <button class="cerrarverempresa" @click="closeModalCompany()">CERRAR</button>
       </div>
     </div>
 
@@ -106,7 +92,7 @@ export default {
     FooterCustom,
     FilterProjects,
 
-    MenuLoggedCoder,
+    MenuLoggedCoder
   },
 
   data() {
@@ -139,7 +125,7 @@ export default {
       /* Variables que checkean el rol del usuario */
       roleCoder: false,
       roleCompany: false,
-      roleAdmin: false,
+      roleAdmin: false
     };
   },
   /* MOUNTED */
@@ -170,7 +156,7 @@ export default {
             this.id2,
           {
             id1: this.id,
-            id2: this.id2,
+            id2: this.id2
           }
         )
         .then(async function(response) {
@@ -178,7 +164,15 @@ export default {
           location.reload();
         })
         .catch(function(error) {
-          console.log(error);
+          if ((error = 404)) {
+            Swal.fire({
+              icon: "error",
+
+              text: "Ya existe esta candidatura"
+            });
+          } else {
+            console.log(error);
+          }
         });
     },
 
@@ -189,11 +183,11 @@ export default {
 
       axios
         .get("http://localhost:3000/companies/" + this.id, {
-          id: this.id,
+          id: this.id
         })
 
         //SI SALE BIEN
-        .then((response) => {
+        .then(response => {
           this.openModalCompany();
           console.log(response.data);
 
@@ -212,7 +206,7 @@ export default {
       axios
         .get("http://localhost:3000/projects/")
         //SI SALE BIEN
-        .then((response) => {
+        .then(response => {
           console.log(response);
 
           this.projects = response.data.data;
@@ -300,7 +294,7 @@ export default {
       this.password = "";
 
       this.modallogincompany = false;
-    },
+    }
   },
   computed: {
     /* FUNCIÓN PARA FILTRAR LOS PROYECTOS */
@@ -314,7 +308,7 @@ export default {
       console.log(this.search);
 
       return this.projects.filter(
-        (project) =>
+        project =>
           project.project_name
             .toLowerCase()
             .includes(this.search.toLowerCase()) ||
@@ -324,8 +318,8 @@ export default {
             .includes(this.search.toLowerCase()) ||
           project.delivery_date.includes(this.search)
       );
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -360,11 +354,7 @@ button:hover {
   background: #dae1e7;
   color: #27496d;
 }
-.filter > button {
-  background: #27496d;
-  color: #dae1e7;
-  font-weight: bold;
-}
+
 /* BOTONES FILTRAR PROYECTOS */
 
 .buttonclean {
@@ -409,17 +399,15 @@ input {
   padding: 2rem;
   font-weight: bold;
   font-size: 1.5rem;
-
+  background: #00909e;
   color: #dae1e7;
 }
 
 .filtersmall {
-  background-color: #dae1e7;
   opacity: 0.9;
-
+  padding-top: 1rem;
   padding-bottom: 1.5rem;
-  width: 700px;
-
+  width: 500px;
   margin: 0 auto;
 }
 .filtersmall > p > label {

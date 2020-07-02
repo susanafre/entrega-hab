@@ -1,9 +1,6 @@
 <template>
   <div class="Home">
-    <vue-headful
-      title="Página principal"
-      description="Página principal de la plataforma"
-    />
+    <vue-headful title="Página principal" description="Página principal de la plataforma" />
 
     <!-- ########## MENÚ ########## -->
 
@@ -12,28 +9,19 @@
 
     <div class="background">
       <div v-show="usernotloged" class="usernotloged">
-        <MenuPrincipal
-          v-on:modalcoder="openModalLogCoder"
-          v-on:modalcompany="openModalLogCompany"
-        ></MenuPrincipal>
+        <MenuPrincipal v-on:modalcoder="openModalLogCoder" v-on:modalcompany="openModalLogCompany"></MenuPrincipal>
       </div>
 
       <!-- SE CREA UN MENÚ PARA CUANDO UN USUARIO ESTÁ LOGUEADO Y ES CODER -->
 
       <div v-show="roleCoder" class="userloged">
-        <MenuLoggedCoder
-          :username="username"
-          v-on:logout="logoutUser"
-        ></MenuLoggedCoder>
+        <MenuLoggedCoder :username="username" v-on:logout="logoutUser"></MenuLoggedCoder>
       </div>
 
       <!-- SE CREA UN MENÚ PARA CUANDO UN USUARIO ESTÁ LOGUEADO Y ES COMPANY -->
 
       <div v-show="roleCompany" class="userloged">
-        <MenuLoggedCompany
-          :username="username"
-          v-on:logout="logoutUser"
-        ></MenuLoggedCompany>
+        <MenuLoggedCompany :username="username" v-on:logout="logoutUser"></MenuLoggedCompany>
       </div>
 
       <!-- SE CREA UN MENÚ PARA CUANDO UN USUARIO ESTÁ LOGUEADO Y ES ADMIN -->
@@ -41,6 +29,7 @@
       <div v-show="roleAdmin" class="userloged">
         <MenuLoggedAdmin
           :username="username"
+          v-on:cambiar="changeLocation"
           v-on:logout="logoutUser"
         ></MenuLoggedAdmin>
       </div>
@@ -52,7 +41,7 @@
       <div class="filter">
         <div class="filtersmall">
           <p>
-            <label for="bySearch">BUSCA AQUÍ TU PROYECTO</label>
+            <label for="bySearch">ENCUENTRA AQUÍ TU PROYECTO</label>
           </p>
 
           <input
@@ -67,12 +56,8 @@
           <!-- Un botón será para que ejecute la búsqueda
           y otro para limpiar los resultado-->
 
-          <button class="buttonfilter" @click="filterProjects()">
-            Buscar
-          </button>
-          <button class="buttonclean" @click="clearSearch()">
-            Limpiar búsqueda
-          </button>
+          <button class="buttonfilter" @click="filterProjects()">Buscar</button>
+          <button class="buttonclean" @click="clearSearch()">Limpiar búsqueda</button>
         </div>
       </div>
     </div>
@@ -94,25 +79,17 @@
 
     <div v-show="modalcompany" class="modalcompany">
       <div class="modalBox">
-        <p>
-          <!--  <img
-            :src="
-              require(`../../../BACK/controllers/static/uploads/${companies.photo}`)
-            "
-          /> -->
-        </p>
-        <p class="namecompany">
-          {{ companies.name }}
-        </p>
+        <!--  <p>
+          <img :src="require(`../../../BACK/controllers/static/uploads/${companies.photo}`)" />
+        </p>-->
+        <p class="namecompany">{{ companies.name }}</p>
         <p>{{ companies.description }}</p>
         <p>TELÉFONO: {{ companies.phone_number }}</p>
 
         <!-- <p>FOTO: {{ photo }}</p> -->
         <p>PROVINCIA: {{ companies.province }}</p>
         <p>WEB: {{ companies.web }}</p>
-        <button class="cerrarverempresa" @click="closeModalCompany()">
-          CERRAR
-        </button>
+        <button class="cerrarverempresa" @click="closeModalCompany()">CERRAR</button>
       </div>
     </div>
 
@@ -127,22 +104,17 @@
         <!-- INPUT PARA EMAIL Y CONTRASEÑA -->
         <label for="name">Correo electrónico</label>
         <p>
-          <input type="text" name="email" placeholder="" v-model="email" />
+          <input type="text" name="email" placeholder v-model="email" />
         </p>
         <label for="password">Contraseña</label>
         <p>
-          <input
-            type="password"
-            name="password"
-            placeholder=""
-            v-model="password"
-          />
+          <input type="password" name="password" placeholder v-model="password" />
         </p>
 
         <!-- BOTONES DE CERRAR EL MODAL Y DE HACER LOGIN -->
 
-        <button class="logCoder" @click="logCoder()">Acceder</button>
-        <button class="closelogCoder" @click="closeModal()">Cerrar</button>
+        <button class="login" @click="logCoder()">Acceder</button>
+        <button class="closelogin" @click="closeModal()">Cerrar</button>
 
         <!-- SI NO ESTÁ REGISTRADO, LLEVA AL ÁREA DE REGISTRO -->
 
@@ -162,43 +134,32 @@
         <h1>Inicia sesión</h1>
         <label for="name">Correo electrónico</label>
         <p>
-          <input
-            type="text"
-            name="email"
-            placeholder="Introduce aquí tu email"
-            v-model="email"
-          />
+          <input type="text" name="email" placeholder v-model="email" />
         </p>
 
         <label for="password">Contraseña</label>
         <p>
-          <input
-            type="password"
-            name="password"
-            placeholder="Introduce aquí tu contraseña"
-            v-model="password"
-          />
+          <input type="password" name="password" placeholder v-model="password" />
         </p>
 
         <!-- ESTO HACE LOGIN O CIERRA EL MODAL -->
 
-        <button class="logCompany" @click="logCompany()">LOGIN</button>
-        <button class="closelogCompany" @click="closeModalLogCompany()">
-          CERRAR
-        </button>
+        <button class="login" @click="logCompany()">Acceder</button>
+        <button class="closelogin" @click="closeModalLogCompany()">Cerrar</button>
 
         <!-- SI NO ESTÁ REGISTRADO, LLEVA A LA VENTANA DE REGISTRO -->
 
-        <h2>
+        <p>
           ¿No estás registrado? Haz click
           <router-link to="/register-company">AQUÍ</router-link>
-        </h2>
+        </p>
       </div>
     </div>
 
     <!-- AQUÍ APARECEN LAS OPCIONES EXPORTANDO EL COMPONENTE SHOWOPTIONS -->
-
-    <ShowOptions :options="options"></ShowOptions>
+    <div v-show="showOptions">
+      <ShowOptions :options="options"></ShowOptions>
+    </div>
 
     <!-- COMPONENTE PARA FOOTER -->
 
@@ -241,7 +202,7 @@ export default {
     MenuLoggedCoder,
     MenuLoggedCompany,
     MenuLoggedAdmin,
-    ShowOptions,
+    ShowOptions
   },
 
   data() {
@@ -252,14 +213,14 @@ export default {
           titulo: "Si eres desarrollador...",
           cuerpo:
             "En FI.Coder trabajamos para que los desarrolladores puedan encontrar “el proyecto” con el que trabajar. Puedes filtrar los proyectos en la barra de búsqueda y presentar tu candidatura al que creas más afín a tus posibilidades.Esta plataforma ha ayudado a muchos desarrolladores a encontrar su proyecto perfecto y ha ayudado a muchas empresas.Sólo necesitas registrarte para poder presentar tu candidatura y ver el progreso de las mismas.¡Busca tu oportunidad!",
-          icono: "icono5.png",
+          icono: "icono5.png"
         },
         {
           titulo: "Para las empresas",
           cuerpo:
             "Si tienes un proyecto en mente pero necesitas ayuda para llevarlo a cabo, has llegado al lugar ideal. En FI.Coder podrás encontrar un desarrollador para tu proyecto. Sólo necesitas registrarte y publicar tu proyecto. Deberás indicar los requisitos de tu proyecto y en qué consiste, cuanta más información, más fácil será el proceso. Los desarrolladores que estén interesados presentarán su candidatura y podrás decidir a cual escoger. ",
-          icono: "icono6.png",
-        },
+          icono: "icono6.png"
+        }
       ],
       image:
         "https://www.google.com/url?sa=i&url=https%3A%2F%2Fgrupohereda.com%2Fes%2Fgenealogia-sucesoria%2Ficono-lupa%2F&psig=AOvVaw3qSoSuOdq4syBkqGkoDWm-&ust=1593549797471000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJDv5Pzxp-oCFQAAAAAdAAAAABAD",
@@ -282,6 +243,7 @@ export default {
       modal: false,
       modallogincompany: false,
       modalcompany: false,
+      showOptions: true,
       /* Variables para v-show  */
       userloged: false,
       usernotloged: true,
@@ -289,7 +251,7 @@ export default {
       /* Variables que checkean el rol del usuario */
       roleCoder: false,
       roleCompany: false,
-      roleAdmin: false,
+      roleAdmin: false
     };
   },
   /* MOUNTED */
@@ -305,7 +267,20 @@ export default {
   },
   methods: {
     /* #### FUNCIONES PRINCIPALES #### */
-
+    changeLocation(event) {
+      console.log(event.target.value);
+      if (event.target.value === "coders") {
+        this.$router.push("/view-coders");
+      } else if (event.target.value === "projects") {
+        this.$router.push("/view-projects");
+      } else if (event.target.value === "candidatures") {
+        this.$router.push("/view-candidatures");
+      } else if (event.target.value === "companies") {
+        this.$router.push("/view-companies");
+      } else if (event.target.value === "about") {
+        this.$router.push("/about");
+      }
+    },
     /* CREA CANDIDATURAS */
     /* CreateCandidature.js */
     createCandidature(data2) {
@@ -319,7 +294,7 @@ export default {
             this.id2,
           {
             id1: this.id,
-            id2: this.id2,
+            id2: this.id2
           }
         )
         .then(async function(response) {
@@ -375,11 +350,11 @@ export default {
 
       axios
         .get("http://localhost:3000/companies/" + this.id, {
-          id: this.id,
+          id: this.id
         })
 
         //SI SALE BIEN
-        .then((response) => {
+        .then(response => {
           this.openModalCompany();
           console.log(response.data);
 
@@ -398,9 +373,9 @@ export default {
       axios
         .get("http://localhost:3000/projects/")
         //SI SALE BIEN
-        .then((response) => {
+        .then(response => {
           console.log(response);
-
+          this.showOptions = false;
           this.projects = response.data.data;
           console.log("Esto es projects", this.projects);
         })
@@ -458,6 +433,7 @@ export default {
 
     clearSearch() {
       this.project = [];
+      this.showOptions = true;
       location.reload();
     },
 
@@ -486,7 +462,7 @@ export default {
       this.password = "";
 
       this.modallogincompany = false;
-    },
+    }
   },
   computed: {
     /* FUNCIÓN PARA FILTRAR LOS PROYECTOS */
@@ -500,7 +476,7 @@ export default {
       console.log(this.search);
 
       return this.projects.filter(
-        (project) =>
+        project =>
           project.project_name
             .toLowerCase()
             .includes(this.search.toLowerCase()) ||
@@ -510,8 +486,8 @@ export default {
             .includes(this.search.toLowerCase()) ||
           project.delivery_date.includes(this.search)
       );
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -563,6 +539,11 @@ button:hover {
 .buttonclean:hover {
   background-color: #27496d;
   color: #dae1e7;
+}
+a {
+  text-decoration: underline;
+  color: #dae1e7;
+  font-weight: bold;
 }
 /* LABEL */
 
@@ -646,6 +627,7 @@ input {
   border: 1px solid #888;
   width: 50%;
   background-size: 25%;
+  box-shadow: 1rem 1rem 1rem #27496d;
 }
 
 .modalBox > h1 {
@@ -654,22 +636,22 @@ input {
 
   opacity: 0.9;
 }
-.logCoder {
+.login {
   font-size: 1rem;
   border: 1px solid #dae1e7;
   box-shadow: 2px 2px #dae1e7;
 }
-.logCoder:hover {
+.login:hover {
   background-color: #dae1e7;
-  color: #00909e;
+  color: #27496d;
 }
-.closelogCoder {
+.closelogin {
   background-color: #dae1e7;
-  color: #00909e;
+  color: #27496d;
   font-size: 12px;
   border: 1px solid #27496d;
 }
-.closelogCoder:hover {
+.closelogin:hover {
   background: #27496d;
   color: #dae1e7;
   border: 1px solid #dae1e7;

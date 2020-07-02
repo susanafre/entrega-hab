@@ -8,33 +8,22 @@
         <button @click="activateAccountEvent(index)">ACTIVAR CUENTA</button>
       </div>
 
-      <td>
-        <tr>
-          <p>EMAIL: {{coder.email}}</p>
-        </tr>
-        <tr>
-          <p>TELÉFONO: {{coder.phone_number}}</p>
-        </tr>
-        <tr>
-          <p>PROVINCIA: {{coder.province}}</p>
-        </tr>
-      </td>
+      <p>EMAIL: {{coder.email}}</p>
 
-      <td>
-        <tr>
-          <p>ARCHITECTURE: {{coder.architecture}}</p>
-        </tr>
-        <tr>
-          <p>LENGUAJE: {{coder.language}}</p>
-        </tr>
-        <tr>
-          <p>TECHNOLOGY: {{coder.technology}}</p>
-        </tr>
+      <p>TELÉFONO: {{coder.phone_number}}</p>
 
-        <tr>
-          <p>FECHA DE ALTA:{{coder.creation_date | moment("YYYY-M-D")}}</p>
-        </tr>
-      </td>
+      <p>PROVINCIA: {{coder.province}}</p>
+
+      <p>ARCHITECTURE: {{coder.architecture}}</p>
+
+      <p>LENGUAJE: {{coder.language}}</p>
+
+      <p>TECHNOLOGY: {{coder.technology}}</p>
+
+      <p>FECHA DE ALTA:{{coder.creation_date | moment("YYYY-M-D")}}</p>
+
+      <button @click="editProfileEvent(index)">EDITAR PERFIL</button>
+      <button @click="deleteProfileEvent(index)">ELIMINAR PERFIL</button>
     </div>
   </div>
 </template>
@@ -49,6 +38,14 @@ export default {
     activateAccountEvent(index) {
       let data = this.coders[index];
       this.$emit("activar", data);
+    },
+    editProfileEvent(index) {
+      let data = this.coders[index];
+      this.$emit("editar", data);
+    },
+    deleteProfileEvent(index) {
+      let data = this.coders[index];
+      this.$emit("borrar", data);
     }
   }
 };
@@ -63,40 +60,41 @@ export default {
   font-family: "sansSerif";
   src: url("../assets/Ubuntu-Regular.ttf");
 }
-.coders {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+@keyframes aparition {
+  from {
+    opacity: 0;
+  }
 
-  grid-gap: 1.5rem;
-  padding: 2rem;
-  color: #27496d;
-  background-color: #00909e;
-}
-.profile {
-  background-color: #dae1e7;
-}
-h1 {
-  padding-top: 1rem;
-  color: #27496d;
-  font-family: "serif";
-}
-
-.profile td {
-  display: inline-block;
-  margin: 2rem;
+  to {
+    opacity: 1;
+  }
 }
 button {
   color: #dae1e7;
   background-color: #27496d;
-  font-weight: bold;
-  border: 2px solid #dae1e7;
+
+  border: 1px solid #dae1e7;
   box-shadow: 2px 2px #27496d;
   padding: 0.3rem;
-  border-radius: 0.3rem;
+
   margin: 1rem;
 }
 button:hover {
   background-color: #dae1e7;
+  color: #27496d;
+  border: 1px solid #27496d;
+}
+.coders {
+  background-color: #00909e;
+}
+.profile {
+  animation-duration: 2s;
+  animation-name: aparition;
+  background-color: #dae1e7;
+  display: inline-block;
+  padding: 2rem;
+  margin: 1rem;
+  box-shadow: 3px 3px #27496d;
   color: #27496d;
 }
 </style>

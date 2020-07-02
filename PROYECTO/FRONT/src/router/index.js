@@ -34,14 +34,14 @@ const routes = [
           path: "/home-coder",
           query: { redirect: to.fullPath },
         });
-      } else {
-        next();
-      }
-    },
-    beforeEnter: (to, from, next) => {
-      if (to.meta.allowAnonymous === true && checkCompanyRole()) {
+      } else if (to.meta.allowAnonymous === true && checkCompanyRole()) {
         next({
           path: "/projects",
+          query: { redirect: to.fullPath },
+        });
+      } else if (to.meta.allowAnonymous === true && checkAdminRole()) {
+        next({
+          path: "/view-coder-profile",
           query: { redirect: to.fullPath },
         });
       } else {
@@ -264,25 +264,7 @@ const routes = [
       }
     },
   },
-  {
-    path: "/view-candidatures",
-    name: "AdminViewCandidatures",
-    component: () => import("../views/admin/AdminViewCandidatures.vue"),
-    meta: {
-      allowAnonymous: false,
-      allowNoAdmin: false,
-    },
-    beforeEnter: (to, from, next) => {
-      if (to.meta.allowNoAdmin === false && !checkAdminRole()) {
-        next({
-          path: "/",
-          query: { redirect: to.fullPath },
-        });
-      } else {
-        next();
-      }
-    },
-  },
+
   {
     path: "/about",
     name: "About",

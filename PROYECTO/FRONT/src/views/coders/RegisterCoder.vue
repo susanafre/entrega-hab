@@ -4,9 +4,13 @@
       title="Registro desarrollador"
       description="Página de registro para desarrolladores"
     />
+
+    <MenuPrincipal v-on:modalcoder="openModalLogCoder" v-on:modalcompany="openModalLogCompany"></MenuPrincipal>
+
     <header>
       <h1>PÁGINA DE REGISTRO PARA DESARROLLADORES</h1>
     </header>
+
     <div class="coders">
       <h2>Datos de acceso a FI.Coder</h2>
 
@@ -121,6 +125,75 @@
         <button class="cancel" @click="cancelButton()">Cancelar</button>
       </p>
     </div>
+    <!-- ######### LOGIN CODER ############ -->
+
+    <!-- MODAL PARA LOGIN CODER -->
+
+    <div v-show="modal" class="modal">
+      <div class="modalBox">
+        <h1>Inicia sesión</h1>
+
+        <!-- INPUT PARA EMAIL Y CONTRASEÑA -->
+        <label for="name">Correo electrónico</label>
+        <p>
+          <input type="text" name="email" placeholder v-model="email" />
+        </p>
+        <label for="password">Contraseña</label>
+        <p>
+          <input type="password" name="password" placeholder v-model="password" />
+        </p>
+
+        <!-- BOTONES DE CERRAR EL MODAL Y DE HACER LOGIN -->
+
+        <button class="logCoder" @click="logCoder()">Acceder</button>
+        <button class="closelogCoder" @click="closeModal()">Cerrar</button>
+
+        <!-- SI NO ESTÁ REGISTRADO, LLEVA AL ÁREA DE REGISTRO -->
+
+        <p>
+          ¿No estás registrado? Haz click
+          <router-link to="/register-coder">AQUÍ</router-link>
+        </p>
+      </div>
+    </div>
+
+    <!-- ########### LOGIN COMPANY ############# -->
+
+    <!-- MODAL PARA LOGIN COMPANY -->
+
+    <div v-show="modallogincompany" class="modallogincompany">
+      <div class="modalBox">
+        <h1>Inicia sesión</h1>
+        <label for="name">Correo electrónico</label>
+        <p>
+          <input type="text" name="email" placeholder="Introduce aquí tu email" v-model="email" />
+        </p>
+
+        <label for="password">Contraseña</label>
+        <p>
+          <input
+            type="password"
+            name="password"
+            placeholder="Introduce aquí tu contraseña"
+            v-model="password"
+          />
+        </p>
+
+        <!-- ESTO HACE LOGIN O CIERRA EL MODAL -->
+
+        <button class="login" @click="logCompany()">LOGIN</button>
+        <button class="closelogin" @click="closeModalLogCompany()">CERRAR</button>
+
+        <!-- SI NO ESTÁ REGISTRADO, LLEVA A LA VENTANA DE REGISTRO -->
+
+        <h2>
+          ¿No estás registrado? Haz click
+          <router-link to="/register-company">AQUÍ</router-link>
+        </h2>
+      </div>
+    </div>
+
+    <FooterCustom></FooterCustom>
   </div>
 </template>
 
@@ -129,8 +202,19 @@
 import axios from "axios";
 import Swal from "sweetalert2";
 
+import MenuPrincipal from "../../components/menus/MenuPrincipal";
+/* Componente de Footer */
+import FooterCustom from "@/components/FooterCustom.vue";
+
+import { loginCoders } from "../../api/utils";
+import { loginCompanies } from "../../api/utils";
+
 export default {
   name: "RegisterCoder",
+  components: {
+    MenuPrincipal,
+    FooterCustom
+  },
 
   data() {
     return {
@@ -144,7 +228,11 @@ export default {
       technology: "",
       architecture: "",
       correctData: false,
-      required: false
+      required: false,
+      /* Variables para los modales */
+      modal: false,
+      modallogincompany: false,
+      modalcompany: false
     };
   },
 
@@ -234,6 +322,67 @@ export default {
     },
     cancelButton() {
       this.$router.push("/");
+    },
+    /* LOGIN PARA CODERS */
+    /* LoginCoders.js */
+    async logCoder() {
+      try {
+        //INTENTO HACER LOGIN
+        await loginCoders(this.email, this.password);
+        this.email = "";
+        this.password = "";
+        //location.reload();
+        this.closeModal();
+        this.$router.push("/home-coder");
+        location.reload();
+
+        //SI HAY LOGIN, QUE ME LLEVE AL HOME
+      } catch (err) {
+        alert(`Error: ${err}`);
+      }
+    },
+
+    /* LOGIN PARA EMPRESAS */
+    /* LoginCompanies.js */
+    async logCompany() {
+      try {
+        //INTENTO HACER LOGIN
+        await loginCompanies(this.email, this.password);
+        this.email = "";
+        this.password = "";
+        location.reload();
+        this.closeModalLogCompany();
+
+        //SI HAY LOGIN, QUE ME LLEVE AL HOME
+      } catch (err) {
+        alert(`Error: ${err}`);
+      }
+    },
+    /* FUNCIONES QUE ABREN Y CIERRAN MODALES */
+
+    closeModal() {
+      this.email = "";
+      this.password = "";
+
+      this.modal = false;
+    },
+    openModalLogCoder() {
+      this.modal = true;
+    },
+    closeModalCompany() {
+      this.modalcompany = false;
+    },
+    openModalCompany() {
+      this.modalcompany = true;
+    },
+    openModalLogCompany() {
+      this.modallogincompany = true;
+    },
+    closeModalLogCompany() {
+      this.email = "";
+      this.password = "";
+
+      this.modallogincompany = false;
     }
   }
 };
@@ -249,13 +398,11 @@ export default {
   src: url("../../assets/Ubuntu-Regular.ttf");
 }
 header {
-  background-color: #00909e;
-  color: #dae1e7;
-  padding: 2rem;
+  color: #27496d;
 }
 .registercoder {
   font-family: "sansSerif";
-  background-image: url("https://images.unsplash.com/photo-1510511498717-4326639c999c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
+  background-image: url("https://www.sosmatic.es/wp-content/uploads/2019/08/ilya-pavlov-wbXdGS_D17U-unsplash.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
@@ -275,15 +422,19 @@ header {
   border: 1px solid #888;
   width: 50%;
   background-size: 25%;
-  border-radius: 1rem;
+  box-shadow: 1rem 1rem 1rem #27496d;
 }
 button {
   background: #27496d;
   color: #dae1e7;
   font-weight: bold;
   padding: 0.3rem;
-  border-radius: 0.3rem;
+
   margin: 3px;
+}
+button:hover {
+  background-color: #dae1e7;
+  color: #00909e;
 }
 h1 {
   font-family: "serif";
@@ -299,11 +450,7 @@ input {
   background-color: #dae1e7;
   color: #27496d;
 }
-button:hover {
-  background-color: #dae1e7;
-  color: #00909e;
-  font-size: 1rem;
-}
+
 td {
   display: inline-block;
   margin-left: 1rem;
@@ -311,5 +458,88 @@ td {
 
 .inputdata {
   width: 150px;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+}
+.modalBox {
+  background: #27496d;
+  color: #dae1e7;
+  margin: 13% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+  background-size: 25%;
+}
+
+.modalBox > h1 {
+  font-family: "serif";
+  font-size: 2rem;
+
+  opacity: 0.9;
+}
+.logCoder {
+  font-size: 1rem;
+  border: 1px solid #dae1e7;
+  box-shadow: 2px 2px #dae1e7;
+}
+.logCoder:hover {
+  background-color: #dae1e7;
+  color: #00909e;
+}
+.closelogCoder {
+  background-color: #dae1e7;
+  color: #00909e;
+  font-size: 12px;
+  border: 1px solid #27496d;
+}
+.closelogCoder:hover {
+  background: #27496d;
+  color: #dae1e7;
+  border: 1px solid #dae1e7;
+}
+.login {
+  font-size: 1rem;
+  box-shadow: 2px 2px #dae1e7;
+}
+.login:hover {
+  background-color: #dae1e7;
+  color: #00909e;
+}
+.closelogin {
+  background-color: #dae1e7;
+  color: #00909e;
+  font-size: 12px;
+  box-shadow: 2px 2px #27496d;
+}
+.closelogin:hover {
+  background: #27496d;
+  color: #dae1e7;
+}
+.modalcompany {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+}
+.modallogincompany {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+}
+.cancel:hover {
+  background-color: #27496d;
+  color: #dae1e7;
 }
 </style>

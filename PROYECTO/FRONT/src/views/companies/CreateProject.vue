@@ -1,21 +1,13 @@
 <template>
   <div class="project">
-    <vue-headful
-      title="Ver proyectos"
-      description="Página para ver proyectos"
-    />
+    <vue-headful title="Ver proyectos" description="Página para ver proyectos" />
 
     <!-- IMPORTAMOS EL COMPONENTE MENÚ -->
-    <MenuLoggedCompany
-      :username="username"
-      v-on:logout="logoutUser"
-    ></MenuLoggedCompany>
-
+    <MenuLoggedCompany :username="username" v-on:logout="logoutUser"></MenuLoggedCompany>
+    <h1>Crea un proyecto nuevo</h1>
     <!-- CREAR PROYECTOS -->
 
     <div class="create">
-      <h1>PÁGINA PARA CREAR PROYECTOS</h1>
-
       <p>
         <label for="name">Introduce el nombre del proyecto</label>
       </p>
@@ -39,9 +31,7 @@
       </p>
 
       <p>
-        <label for="delivery_date"
-          >Añade la fecha de finalización del proyecto</label
-        >
+        <label for="delivery_date">Añade la fecha de finalización del proyecto</label>
       </p>
 
       <p>
@@ -82,9 +72,7 @@
               architecture
             )
           "
-        >
-          AÑADIR PROYECTO
-        </button>
+        >Añadir</button>
       </p>
     </div>
 
@@ -108,7 +96,7 @@ export default {
   name: "CreateProject",
   components: {
     MenuLoggedCompany,
-    FooterCustom,
+    FooterCustom
   },
   data() {
     return {
@@ -135,7 +123,7 @@ export default {
       newArchitecture: "",
       /* Variable para crear proyectos */
       correctData: false,
-      required: false,
+      required: false
     };
   },
   methods: {
@@ -185,7 +173,7 @@ export default {
             province: self.province,
             language: self.language,
             technology: self.technology,
-            architecture: self.architecture,
+            architecture: self.architecture
           })
           .then(async function(response) {
             await Swal.fire("Se ha creado el proyecto correctamente");
@@ -199,7 +187,7 @@ export default {
         Swal.fire({
           icon: "error",
           title: "Oops...",
-          text: "Algo ha ido mal",
+          text: "Algo ha ido mal"
         });
       }
     },
@@ -221,11 +209,11 @@ export default {
     /* Desloguearse */
     logoutUser() {
       return clearLogin(location.reload());
-    },
+    }
   },
   mounted() {
     if (localStorage.name) this.username = localStorage.name;
-  },
+  }
 };
 </script>
 
@@ -240,19 +228,21 @@ export default {
 }
 .project {
   font-family: "sansSerif";
-  background-color: #00909e;
+  background-image: url("https://www.sosmatic.es/wp-content/uploads/2019/08/ilya-pavlov-wbXdGS_D17U-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
   color: #dae1e7;
 }
 .create {
-  padding-top: 2rem;
-  padding-bottom: 1rem;
-  margin: 6% auto;
   width: 900px;
-  background-color: #dae1e7;
+  padding-top: 0.5rem;
+  margin: 3% auto;
+  background: #00909e;
+  color: #dae1e7;
 }
 h1 {
   font-family: "serif";
-  padding: 1rem;
   text-decoration: underline;
   color: #27496d;
 }
@@ -260,22 +250,24 @@ h1 {
 label {
   font-weight: bold;
   margin: 0.5rem;
-  color: #27496d;
 }
 input {
   text-align: center;
   color: #27496d;
 }
 button {
-  background: #27496d;
   color: #dae1e7;
-  font-weight: bold;
+  background-color: #27496d;
+
+  border: 1px solid #dae1e7;
+  box-shadow: 2px 2px #27496d;
   padding: 0.3rem;
-  border-radius: 0.3rem;
+
   margin: 1rem;
 }
 button:hover {
-  background: #dae1e7;
+  background-color: #dae1e7;
   color: #27496d;
+  border: 1px solid #27496d;
 }
 </style>

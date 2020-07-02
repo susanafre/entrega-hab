@@ -11,7 +11,7 @@
     </div>
 
     <div v-show="roleAdmin" class="userloged">
-      <MenuLoggedAdmin :username="username" v-on:logout="logoutUser"></MenuLoggedAdmin>
+      <MenuLoggedAdmin :username="username" v-on:cambiar="changeLocation" v-on:logout="logoutUser"></MenuLoggedAdmin>
     </div>
 
     <!-- VER PERFIL DESARROLLADOR -->
@@ -64,62 +64,59 @@
     <!-- MODAL PARA EDITAR DATOS DEL USUARIO -->
     <div v-show="modal" class="editprofile">
       <div class="editcoder">
-        <h1>
+        <h1>EDITA TU PERFIL</h1>
+        <h2>
           <input v-model="newName" placeholder="Nombre" />
           <input v-model="newSurname" placeholder="Apellidos" />
-        </h1>
+        </h2>
 
-        <td>
-          <tr>
-            <h2>Datos personales</h2>
-          </tr>
-          <tr>
-            <label for="email">EMAIL:</label>
-            <input v-model="newEmail" placeholder="Email" />
-          </tr>
-          <tr>
-            <label for="phone">TELÉFONO:</label>
-            <input v-model="newPhone" placeholder="Teléfono" />
-          </tr>
-          <tr>
-            <label for="province">PROVINCE:</label>
-            <input v-model="newProvince" placeholder="Provincia" />
-          </tr>
-        </td>
+        <h2>Datos personales</h2>
+        <p>
+          <label for="email">EMAIL:</label>
+          <input v-model="newEmail" placeholder="Email" />
+        </p>
 
-        <td>
-          <tr>
-            <h2 class="space">Datos técnicos</h2>
-          </tr>
-          <p>
-            <label for="photo">FOTO:</label>
-            <input type="file" id="file" ref="file" @change="onFileSelected" placeholder="Imagen" />
-          </p>
-          <tr>
-            <label for="architecture">ARQUITECTURA:</label>
-            <input v-model="newArchitecture" placeholder="Arquitectura" />
-          </tr>
-          <tr>
-            <label for="language">LENGUAJE:</label>
-            <input v-model="newLanguage" placeholder="Lenguaje" />
-          </tr>
-          <tr>
-            <label for="technology">TECHNOLOGY:</label>
-            <input v-model="newTechnology" placeholder="Tecnología" />
-          </tr>
-        </td>
+        <p>
+          <label for="phone">TELÉFONO:</label>
+          <input v-model="newPhone" placeholder="Teléfono" />
+        </p>
+        <p>
+          <label for="province">PROVINCE:</label>
+          <input v-model="newProvince" placeholder="Provincia" />
+        </p>
+
+        <h2 class="space">Datos técnicos</h2>
+
+        <p>
+          <label for="photo">FOTO:</label>
+          <input type="file" id="file" ref="file" @change="onFileSelected" placeholder="Imagen" />
+        </p>
+
+        <p>
+          <label for="architecture">ARQUITECTURA:</label>
+          <input v-model="newArchitecture" placeholder="Arquitectura" />
+        </p>
+        <p>
+          <label for="language">LENGUAJE:</label>
+          <input v-model="newLanguage" placeholder="Lenguaje" />
+        </p>
+
+        <p>
+          <label for="technology">TECHNOLOGY:</label>
+          <input v-model="newTechnology" placeholder="Tecnología" />
+        </p>
 
         <!-- BOTÓN PARA ACTUALIZAR DATOS Y CERRAR EL MODAL -->
         <p>
-          <button class="updateprofile" @click="closeModal()">ACTUALIZAR PERFIL</button>
-          <button class="cancel" @click="closeModalAux()">CANCELAR</button>
+          <button class="updateprofile" @click="closeModal()">Actualizar perfil</button>
+          <button class="cancel" @click="closeModalAux()">Cancelar</button>
         </p>
       </div>
     </div>
     <!-- MODAL PARA CAMBIAR LA CONTRASEÑA -->
     <div v-show="modalpasswd" class="modalpasswd">
       <div class="modalBox">
-        <h1>CAMBIO DE CONTRASEÑA</h1>
+        <h1>Cambiar contraseña</h1>
         <p>
           <input type="password" v-model="newOldPassword" placeholder="Antigua Contraseña" />
         </p>
@@ -212,6 +209,20 @@ export default {
   methods: {
     /* #### FUNCIONES PRINCIPALES #### */
 
+    changeLocation(event) {
+      console.log(event.target.value);
+      if (event.target.value === "coders") {
+        this.$router.push("/view-coders");
+      } else if (event.target.value === "projects") {
+        this.$router.push("/view-projects");
+      } else if (event.target.value === "candidatures") {
+        this.$router.push("/view-candidatures");
+      } else if (event.target.value === "companies") {
+        this.$router.push("/view-companies");
+      } else if (event.target.value === "about") {
+        this.$router.push("/about");
+      }
+    },
     onFileSelected() {
       console.log("Esto es event", this.$refs.file.files[0]);
       this.file = this.$refs.file.files[0];
@@ -457,63 +468,78 @@ input {
 button {
   color: #dae1e7;
   background-color: #27496d;
-  font-weight: bold;
-  border: 2px solid #dae1e7;
+
+  border: 1px solid #dae1e7;
   box-shadow: 2px 2px #27496d;
   padding: 0.3rem;
-  border-radius: 0.3rem;
+
   margin: 1rem;
 }
 button:hover {
-  background: #dae1e7;
+  background-color: #dae1e7;
   color: #27496d;
+  border: 1px solid #27496d;
 }
 /* BOTONES PERFIL */
 
 .eliminar {
   color: #27496d;
   background-color: #dae1e7;
-  font-weight: bold;
-  border: 2px solid #27496d;
-  box-shadow: 2px 2px #27496d;
+
+  border: 1px solid #27496d;
+  box-shadow: 2px 2px #dae1e7;
+  padding: 0.3rem;
+
+  margin: 1rem;
 }
 .eliminar:hover {
   background-color: #27496d;
   color: #dae1e7;
+  border: 1px solid #dae1e7;
 }
 
 .updateprofile {
   color: #dae1e7;
   background-color: #27496d;
-  font-weight: bold;
-  border: 2px solid #dae1e7;
+
+  border: 1px solid #dae1e7;
   box-shadow: 2px 2px #27496d;
   padding: 0.3rem;
-  border-radius: 0.3rem;
+
   margin: 1rem;
 }
 .updateprofile:hover {
-  background: #dae1e7;
+  background-color: #dae1e7;
   color: #27496d;
+  border: 1px solid #27496d;
 }
 .cancel {
   color: #27496d;
   background-color: #dae1e7;
-  font-weight: bold;
-  border: 2px solid #27496d;
-  box-shadow: 2px 2px #27496d;
+
+  border: 1px solid #27496d;
+  box-shadow: 2px 2px #dae1e7;
+  padding: 0.3rem;
+
+  margin: 1rem;
 }
 .cancel:hover {
   background-color: #27496d;
   color: #dae1e7;
+  border: 1px solid #dae1e7;
 }
 /* MODALES */
 .editcoder {
   padding-top: 2rem;
   padding-bottom: 0.5rem;
-  margin: 7% auto;
+  margin: 3% auto;
   width: 900px;
-  background-color: #dae1e7;
+  background-color: #00909e;
+  color: #dae1e7;
+  box-shadow: 1px 1px 1px #dae1e7;
+}
+.editcoder > h1 {
+  color: #dae1e7;
 }
 .editprofile {
   position: fixed;
@@ -523,6 +549,14 @@ button:hover {
   background: rgba(0, 0, 0, 0.5);
   width: 100%;
 }
+h2 > input {
+  height: 2rem;
+  font-size: 20px;
+}
+#file {
+  color: #dae1e7;
+}
+
 .modal {
   padding-top: 2rem;
   padding-bottom: 1rem;
@@ -541,9 +575,11 @@ button:hover {
 }
 .modalBox {
   padding-top: 2rem;
-  padding-bottom: 1rem;
-  margin: 20% auto;
-  width: 600px;
-  background-color: #dae1e7;
+  padding-bottom: 0.5rem;
+  margin: 17% auto;
+  width: 900px;
+  background-color: #00909e;
+  color: #dae1e7;
+  box-shadow: 1px 1px 1px #dae1e7;
 }
 </style>

@@ -1,15 +1,9 @@
 <template>
   <div class="projects">
-    <vue-headful
-      title="Ver proyectos"
-      description="Página para ver proyectos"
-    />
+    <vue-headful title="Ver proyectos" description="Página para ver proyectos" />
 
     <!-- IMPORTAMOS EL COMPONENTE MENÚ -->
-    <MenuLoggedCompany
-      :username="username"
-      v-on:logout="logoutUser"
-    ></MenuLoggedCompany>
+    <MenuLoggedCompany :username="username" v-on:cambiar="changeState" v-on:logout="logoutUser"></MenuLoggedCompany>
 
     <!-- SE MUESTRAN LOS PROYECTOS DE LA EMPRESA -->
 
@@ -17,12 +11,7 @@
 
     <!-- COMPONENTE QUE MUESTRA LOS PROYECTOS -->
 
-    <showProjects
-      :projects="projects"
-      v-on:editar="showEditText"
-      v-on:borrar="deleteProject"
-      v-on:mostrar="viewCandidatures"
-    ></showProjects>
+    <showProjects :projects="projects" v-on:opciones="selectOptions"></showProjects>
 
     <!-- COMPONENTE QUE ELIMINA LAS CANDIDATURAS QUE DECIDA EL USUARIO -->
 
@@ -31,18 +20,14 @@
       :modalCandidature="modalCandidature"
       v-on:mostrarPerfil="getProfileCoder"
       v-on:cerrarModal="closeModalCandidatures"
-      v-on:cerrar="closeCandidatures"
-      v-on:interesado="interestedCandidatures"
-      v-on:cerrarTodo="closeAllCandidature"
+      v-on:cambiar="changeState"
     ></closeCandidaturesCard>
 
     <!-- MODAL QUE MUESTRA EL PERFIL DE LOS CODERS QUE HAN PRESENTADO SU CANDIDATURA A UN PROYECTO -->
 
     <div class="modal" v-show="modalProfileCoder">
       <div class="profile">
-        <img
-          src="'../../../../BACK/controllers/static/uploads/' + coders.photo"
-        />
+        <img src="'../../../../BACK/controllers/static/uploads/' + coders.photo" />
         <h1>{{ coders.name }} {{ coders.surname }}</h1>
         <td>
           <tr>
@@ -87,12 +72,12 @@
         <h1>EDITAR PROYECTO</h1>
 
         <p>
-          <label for="name">NOMBRE:</label>
+          <label for="name">Nombre:</label>
           <input v-model="newName" placeholder="Nombre" />
         </p>
 
         <p>
-          <label class="description" for="description">DESCRIPCIÓN:</label>
+          <label class="description" for="description">Descripción:</label>
           <textarea
             name="description"
             cols="30"
@@ -103,27 +88,27 @@
         </p>
 
         <p>
-          <label for="province">PROVINCIA:</label>
+          <label for="province">Provincia:</label>
           <input v-model="newProvince" placeholder="Provincia" />
         </p>
 
         <p>
-          <label for="language">LENGUAJE:</label>
+          <label for="language">Lenguaje:</label>
           <input v-model="NewLanguage" placeholder="Lenguaje" />
         </p>
 
         <p>
-          <label for="technology">TECNOLOGÍA:</label>
+          <label for="technology">Tecnología:</label>
           <input v-model="newTechnology" placeholder="Tencología" />
         </p>
 
         <p>
-          <label for="architecture">ARQUITECTURA:</label>
+          <label for="architecture">Arquitectura:</label>
           <input v-model="newArchitecture" placeholder="Arquitectura" />
         </p>
 
-        <button @click="updateProject()">ACTUALIZAR</button>
-        <button @click="closeModal()">CANCELAR</button>
+        <button @click="updateProject()">Actualizar</button>
+        <button @click="closeModal()">Cancelar</button>
       </div>
     </div>
 
@@ -151,7 +136,7 @@ export default {
     closeCandidaturesCard,
 
     MenuLoggedCompany,
-    FooterCustom,
+    FooterCustom
   },
   data() {
     return {
@@ -193,7 +178,7 @@ export default {
       modalCandidature: false,
       emptyProjects: false,
       modalcreateproject: false,
-      modalProfileCoder: false,
+      modalProfileCoder: false
     };
   },
   methods: {
@@ -229,145 +214,183 @@ export default {
       this.architecture = "";
     },
 
-    /* Cerrar una candidatura */
+    /* SELECT */
+    selectOptions(event, data) {
+      console.log(event.target.value);
 
-    closeCandidatures(dataCand) {
-      if (localStorage.id) this.id1 = localStorage.id;
-      console.log("esto es id1", this.id1);
-      console.log("esto es id2", this.id2);
-      console.log("esto es id3", this.id3);
-      console.log("Esto es dataCand", dataCand);
-      this.id3 = dataCand.id_coder;
-      axios
-        .put(
-          "http://localhost:3000/companies/" +
-            this.id1 +
-            "/candidatures/" +
-            this.id2 +
-            "/" +
-            this.id3,
-          {
-            id1: this.id1,
-            id2: this.id2,
-            id3: this.id3,
-          }
-        )
-        .then(async function(response) {
-          await Swal.fire("Se ha cerrado la candidatura a este proyecto");
-          location.reload();
-        })
-        .catch(function(error) {
-          console.log(error);
-        });
-    },
+      /* EDITAR PROYECTO */
 
-    /* Indicar que estamos interesados en un coder */
+      if (event.target.value === "editar") {
+        /* Editar datos de un proyecto */
 
-    interestedCandidatures(dataCand) {
-      if (localStorage.id) this.id1 = localStorage.id;
-      console.log("esto es id1", this.id1);
-      console.log("esto es id2", this.id2);
-      console.log("esto es id3", this.id3);
-      console.log("Esto es dataCand", dataCand);
-      this.id3 = dataCand.id_coder;
-      axios
-        .put(
-          "http://localhost:3000/companies/" +
-            this.id1 +
-            "/candidatures/interested/" +
-            this.id2 +
-            "/" +
-            this.id3,
-          {
-            id1: this.id1,
-            id2: this.id2,
-            id3: this.id3,
-          }
-        )
-        .then(async function(response) {
-          await Swal.fire(
-            "Se ha enviado un mail al coder y se ha cambiado el estado de la candidatura"
-          );
-          location.reload();
-        })
-        .catch(function(error) {
-          console.log(error);
-        });
-    },
+        this.openModal();
+        this.newName = data.name;
+        this.newDescription = data.description;
 
-    /* Cerrar todas las candidaturas de un proyecto */
+        this.newDelivery = data.delivery_date;
+        this.newProvince = data.province;
+        this.NewLanguage = data.language;
+        this.newTechnology = data.technology;
+        this.newArchitecture = data.architecture;
+        this.id = data.PK_project;
 
-    closeAllCandidature() {
-      if (localStorage.id) this.id1 = localStorage.id;
+        /* VER CANDIDATURAS */
+      } else if (event.target.value === "candidaturas") {
+        if (localStorage.id) this.id1 = localStorage.id;
 
-      axios
-        .put(
-          "http://localhost:3000/companies/" +
-            this.id1 +
-            "/candidatures/" +
-            this.id2 +
-            "/all",
-          {
-            id1: this.id1,
-            id2: this.id2,
-          }
-        )
-        .then(async function(response) {
-          await Swal.fire(
-            "Se han cerrado todas las candidaturas de este proyecto"
-          );
-          location.reload();
-        })
-        .catch(function(error) {
-          console.log(error);
-        });
-    },
+        console.log("Esto es data", data.PK_project);
+        this.id2 = data.PK_project;
+        axios
+          .get(
+            "http://localhost:3000/companies/" +
+              this.id2 +
+              "/candidatures/" +
+              this.id1,
+            {
+              id1: this.id1,
+              id2: this.id2
+            }
+          )
+          .then(response => {
+            console.log(response.data);
+            console.log(
+              "este es el response de candidatures",
+              response.data.data
+            );
+            this.candidatures = response.data.data;
 
-    /* Ver candidaturas a un proyecto */
-
-    viewCandidatures(data) {
-      if (localStorage.id) this.id1 = localStorage.id;
-
-      console.log("Esto es data", data.PK_project);
-      this.id2 = data.PK_project;
-      axios
-        .get(
-          "http://localhost:3000/companies/" +
-            this.id2 +
-            "/candidatures/" +
-            this.id1,
-          {
-            id1: this.id1,
-            id2: this.id2,
-          }
-        )
-        .then((response) => {
-          console.log(response.data);
-          console.log(
-            "este es el response de candidatures",
-            response.data.data
-          );
-          this.candidatures = response.data.data;
-
-          this.modalCandidature = true;
-        })
-        .catch(function(error) {
-          Swal.fire({
-            icon: "error",
-            text: "No hay candidaturas para este proyecto",
+            this.modalCandidature = true;
+          })
+          .catch(function(error) {
+            Swal.fire({
+              icon: "error",
+              text: "No hay candidaturas para este proyecto"
+            });
           });
-        });
+
+        /* CERRAR PROCESO */
+      } else if (event.target.value === "cerrar") {
+        if (localStorage.id) this.id1 = localStorage.id;
+        this.id2 = data.PK_project;
+        axios
+          .put(
+            "http://localhost:3000/companies/" +
+              this.id1 +
+              "/candidatures/" +
+              this.id2 +
+              "/all",
+            {
+              id1: this.id1,
+              id2: this.id2
+            }
+          )
+          .then(async function(response) {
+            await Swal.fire(
+              "Se han cerrado todas las candidaturas de este proyecto"
+            );
+            location.reload();
+          })
+          .catch(function(error) {
+            console.log(error);
+          });
+
+        /* ELIMINAR PROYECTO */
+      } else if (event.target.value === "eliminar") {
+        console.log("Esto es data", data.PK_project);
+        this.id = data.PK_project;
+        axios
+          .delete("http://localhost:3000/projects/" + this.id, {
+            id: this.id
+          })
+          //SI SALE BIEN
+          .then(async function(response) {
+            await Swal.fire("Se ha borrado el proyecto");
+
+            location.reload();
+          })
+          //SI SALE MAL
+          .catch(function(error) {
+            console.log(error);
+          });
+      }
     },
+    /* SELECT PARA CAMBIAR EL ESTADO DE LA CANDIDATURA */
+    /* Indicar que estamos interesados en un coder */
+    changeState(event, dataCand) {
+      console.log(event.target.value);
+      /* Cambiar candidatura a sigues en el proceso */
+      if (event.target.value === "interested") {
+        if (localStorage.id) this.id1 = localStorage.id;
+        console.log("esto es id1", this.id1);
+        console.log("esto es id2", this.id2);
+        console.log("esto es id3", this.id3);
+        console.log("Esto es dataCand", dataCand);
+        this.id3 = dataCand.id_coder;
+        axios
+          .put(
+            "http://localhost:3000/companies/" +
+              this.id1 +
+              "/candidatures/interested/" +
+              this.id2 +
+              "/" +
+              this.id3,
+            {
+              id1: this.id1,
+              id2: this.id2,
+              id3: this.id3
+            }
+          )
+          .then(async function(response) {
+            await Swal.fire(
+              "Se ha enviado un mail al desarrollador y se ha cambiado el estado de la candidatura"
+            );
+            location.reload();
+          })
+          .catch(function(error) {
+            console.log(error);
+          });
+        /* Cambiar candidatura a no sigues en el proceso */
+      } else if (event.target.value === "closed") {
+        if (localStorage.id) this.id1 = localStorage.id;
+        console.log("esto es id1", this.id1);
+        console.log("esto es id2", this.id2);
+        console.log("esto es id3", this.id3);
+        console.log("Esto es dataCand", dataCand);
+        this.id3 = dataCand.id_coder;
+        axios
+          .put(
+            "http://localhost:3000/companies/" +
+              this.id1 +
+              "/candidatures/" +
+              this.id2 +
+              "/" +
+              this.id3,
+            {
+              id1: this.id1,
+              id2: this.id2,
+              id3: this.id3
+            }
+          )
+          .then(async function(response) {
+            await Swal.fire("Se ha cerrado la candidatura a este proyecto");
+            location.reload();
+          })
+          .catch(function(error) {
+            console.log(error);
+          });
+      }
+    },
+
     /* Ver proyectos */
 
     viewProjects() {
       if (localStorage.id) this.id1 = localStorage.id;
       axios
         .get("http://localhost:3000/projects/companies/" + this.id1, {
-          id1: this.id1,
+          id1: this.id1
         })
         //SI SALE BIEN
-        .then((response) => {
+        .then(response => {
           console.log(response.data);
 
           this.projects = response.data.data;
@@ -382,21 +405,6 @@ export default {
 
     /* Editar datos de un proyecto */
 
-    showEditText(data) {
-      this.openModal();
-      this.newName = data.name;
-      this.newDescription = data.description;
-
-      this.newDelivery = data.delivery_date;
-      this.newProvince = data.province;
-      this.NewLanguage = data.language;
-      this.newTechnology = data.technology;
-      this.newArchitecture = data.architecture;
-      this.id = data.PK_project;
-    },
-
-    /* Editar datos de un proyecto */
-
     updateProject() {
       var self = this;
       axios
@@ -407,7 +415,7 @@ export default {
           province: this.newProvince,
           language: this.NewLanguage,
           technology: this.newTechnology,
-          architecture: this.newArchitecture,
+          architecture: this.newArchitecture
         })
         //Si sale bien
         .then(async function(response) {
@@ -421,33 +429,13 @@ export default {
         });
     },
 
-    /* Eliminar un proyecto */
-
-    deleteProject(data) {
-      console.log("Esto es data", data.PK_project);
-      this.id = data.PK_project;
-      axios
-        .delete("http://localhost:3000/projects/" + this.id, {
-          id: this.id,
-        })
-        //SI SALE BIEN
-        .then(async function(response) {
-          await Swal.fire("Se ha borrado el proyecto");
-
-          location.reload();
-        })
-        //SI SALE MAL
-        .catch(function(error) {
-          console.log(error);
-        });
-    },
     getProfileCoder(dataCand) {
       this.id = dataCand.id_coder;
       axios
         .get("http://localhost:3000/coders/" + this.id)
 
         //SI SALE BIEN
-        .then((response) => {
+        .then(response => {
           this.modalCandidature = false;
           this.modalProfileCoder = true;
           this.coders = response.data.data;
@@ -494,14 +482,14 @@ export default {
     },
     closeModalProfileCoder() {
       this.modalProfileCoder = false;
-    },
+    }
   },
   mounted() {
     if (localStorage.name) this.username = localStorage.name;
   },
   created() {
     this.viewProjects();
-  },
+  }
 };
 </script>
 
@@ -543,16 +531,19 @@ input {
 /* BOTONES */
 
 button {
-  background: #27496d;
   color: #dae1e7;
-  font-weight: bold;
+  background-color: #27496d;
+
+  border: 1px solid #dae1e7;
+  box-shadow: 2px 2px #27496d;
   padding: 0.3rem;
-  border-radius: 0.3rem;
+
   margin: 1rem;
 }
 button:hover {
-  background: #dae1e7;
+  background-color: #dae1e7;
   color: #27496d;
+  border: 1px solid #27496d;
 }
 
 /* MODALES */
@@ -570,7 +561,14 @@ button:hover {
   padding-bottom: 1rem;
   margin: 10% auto;
   width: 900px;
-  background-color: #dae1e7;
+  background-color: #00909e;
+  box-shadow: 0.5rem 0.5rem 0.5rem #dae1e7;
+}
+.modalBox > h1 {
+  color: #dae1e7;
+}
+.modalBox > p > label {
+  color: #dae1e7;
 }
 .createproject {
   position: fixed;

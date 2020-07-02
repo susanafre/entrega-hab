@@ -1,32 +1,17 @@
 <template>
   <div class="menu">
-    <img class="logo" :src="require('../../assets/logo_nombre.png')" alt="logo" />
-    <button>
-      <router-link :to="{name:'Home'}">HOME</router-link>
-    </button>
+    <router-link :to="{ name: 'ProfileCoder' }">
+      <img class="logo" :src="require('../../assets/logo_nombre.png')" alt="logo" />
+    </router-link>
 
-    <button>
-      <router-link :to="{name:'ProfileCoder'}">PERFIL</router-link>
-    </button>
+    <select name="submenu" id="submenu" @change="changeLocationEvent($event)">
+      <option disabled selected>MENÚ</option>
+      <option value="coders">CODERS</option>
+      <option value="projects">PROYECTOS</option>
 
-    <button>
-      <router-link :to="{name:'AdminViewCoders'}">CODERS</router-link>
-    </button>
-
-    <button>
-      <router-link :to="{name:'AdminViewProjects'}">PROYECTOS</router-link>
-    </button>
-
-    <button>
-      <router-link :to="{name:'AdminViewCandidatures'}">CANDIDATURAS</router-link>
-    </button>
-
-    <button>
-      <router-link :to="{name:'AdminViewCompanies'}">EMPRESAS</router-link>
-    </button>
-    <button>
-      <router-link :to="{name:'About'}">ABOUT</router-link>
-    </button>
+      <option value="companies">EMPRESAS</option>
+      <option value="about">ABOUT</option>
+    </select>
 
     <button @click="logoutUserEvent()">LOG OUT</button>
     <img class="user" :src="require('../../assets/usuario.png')" alt="usuario" />
@@ -43,6 +28,9 @@ export default {
   methods: {
     logoutUserEvent() {
       this.$emit("logout");
+    },
+    changeLocationEvent($event) {
+      this.$emit("cambiar", $event);
     }
   }
 };
@@ -63,7 +51,7 @@ export default {
   display: flex;
   display: flex;
   justify-content: center;
-  height: 30px;
+  height: 40px;
 }
 a {
   border: none;
@@ -76,6 +64,15 @@ a {
   margin-left: 0.7rem;
   margin-right: 0.7rem;
   margin-top: 9px;
+}
+select {
+  font-family: "serif";
+  background-color: #142850;
+  color: #00909e;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  border: none;
+  width: 80px;
 }
 button {
   border: none;
@@ -112,8 +109,8 @@ a.router-link-exact-active {
 .user {
   height: 25px;
   width: 25px;
-  margin-top: 2.5px;
-  margin-right: 2px;
+  margin-top: 3.5px;
+  margin-right: 7px;
   margin-left: 1rem;
 }
 </style>

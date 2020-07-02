@@ -10,12 +10,12 @@
       <p>ESTADO CANDIDATURA: {{candidature.finalizado}}</p>
 
       <button @click="getProfleCoderEvent(index)">Ver perfil candidato</button>
-      <button class="closecand" @click="closeCandidatureEvent(index)">Cerrar candidatura</button>
-      <button @click="interestedCandidaturesEvent(index)">Nos interesa</button>
-      <button
-        class="closeallcand"
-        @click="closeAllCandidaturesEvent()"
-      >Cerrar todas las candidaturas</button>
+
+      <select name="option" id="option" @change="changeStateEvent($event,index)">
+        <option disabled selected>Cambiar estado</option>
+        <option value="interested">Sigue en el proceso</option>
+        <option value="closed">No sigue en el proceso</option>
+      </select>
     </div>
   </div>
 </template>
@@ -29,6 +29,10 @@ export default {
     modalCandidature: Boolean
   },
   methods: {
+    changeStateEvent($event, index) {
+      let dataCand = this.candidatures[index];
+      this.$emit("cambiar", $event, dataCand);
+    },
     getProfleCoderEvent(index) {
       let dataCand = this.candidatures[index];
 
@@ -46,9 +50,6 @@ export default {
       let dataCand = this.candidatures[index];
 
       this.$emit("interesado", dataCand);
-    },
-    closeAllCandidaturesEvent() {
-      this.$emit("cerrarTodo");
     }
   }
 };
@@ -68,56 +69,46 @@ export default {
   padding-bottom: 1rem;
   margin: 0 auto;
   width: 900px;
-  background-color: #dae1e7;
-  color: #27496d;
+  background-color: #27496d;
+  box-shadow: 2px 2px #dae1e7;
+  color: #dae1e7;
 }
 button {
-  color: #dae1e7;
-  background-color: #27496d;
-  font-weight: bold;
-  border: 2px solid #dae1e7;
-  box-shadow: 2px 2px #27496d;
+  color: #27496d;
+  background-color: #dae1e7;
+
+  border: 1px solid #27496d;
+  box-shadow: 2px 2px #dae1e7;
   padding: 0.3rem;
-  border-radius: 0.3rem;
+
   margin: 1rem;
 }
 
 button:hover {
-  background: #dae1e7;
-  color: #27496d;
+  background-color: #27496d;
+  color: #dae1e7;
+  border: 1px solid #dae1e7;
 }
-.closecand {
+select {
   color: #27496d;
   background-color: #dae1e7;
   font-weight: bold;
-  border: 2px solid #27496d;
-  box-shadow: 2px 2px #27496d;
+  border: 2px solid #dae1e7;
 }
-.closecand:hover {
-  background-color: #27496d;
-  color: #dae1e7;
-}
-.closeallcand {
-  color: #27496d;
-  background-color: #dae1e7;
-  font-weight: bold;
-  border: 2px solid #27496d;
-  box-shadow: 2px 2px #27496d;
-}
-.closeallcand:hover {
-  background-color: #27496d;
-  color: #dae1e7;
-}
+
 .closemodal {
   color: #27496d;
   background-color: #dae1e7;
-  font-weight: bold;
-  border: 2px solid #27496d;
-  box-shadow: 2px 2px #27496d;
-  margin-top: 16rem;
+
+  border: 1px solid #27496d;
+  box-shadow: 2px 2px #dae1e7;
+  padding: 0.3rem;
+
+  margin: 3rem;
 }
 .closemodal:hover {
   background-color: #27496d;
   color: #dae1e7;
+  border: 1px solid #dae1e7;
 }
 </style>

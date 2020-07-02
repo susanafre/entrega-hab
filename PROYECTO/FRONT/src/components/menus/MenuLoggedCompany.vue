@@ -1,28 +1,21 @@
 <template>
   <div class="menu">
     <button>
-      <router-link :to="{ name: 'CreateProjects' }">CREAR PROYECTO</router-link>
+      <router-link :to="{ name: 'CreateProjects' }">NUEVO PROYECTO</router-link>
     </button>
-    <button>
-      <router-link :to="{ name: 'ProjectsCompany' }">MIS PROYECTOS</router-link>
-    </button>
-
-    <img
-      class="logo"
-      :src="require('../../assets/logo_nombre.png')"
-      alt="logo"
-    />
 
     <button>
       <router-link :to="{ name: 'ProfileCompany' }">PERFIL</router-link>
     </button>
+    <router-link :to="{ name: 'ProjectsCompany' }">
+      <img class="logo" :src="require('../../assets/logo_nombre.png')" alt="logo" />
+    </router-link>
+    <button>
+      <router-link :to="{ name: 'ProjectsCompany' }">MIS PROYECTOS</router-link>
+    </button>
 
     <button @click="logoutUserEvent()">LOG OUT</button>
-    <img
-      class="user"
-      :src="require('../../assets/usuario.png')"
-      alt="usuario"
-    />
+    <img class="user" :src="require('../../assets/usuario.png')" alt="usuario" />
     <h1>{{ username }}</h1>
   </div>
 </template>
@@ -31,13 +24,13 @@
 export default {
   name: "MenuLoggedCoder",
   props: {
-    username: String,
+    username: String
   },
   methods: {
     logoutUserEvent() {
       this.$emit("logout");
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -56,7 +49,7 @@ export default {
   display: flex;
   display: flex;
   justify-content: center;
-  height: 30px;
+  height: 40px;
 }
 a {
   border: none;
@@ -83,11 +76,13 @@ button {
 }
 button:hover {
   opacity: 0.5;
-  border: 1px solid #142850;
+  border-bottom: 1px solid #142850;
 }
 .logo {
   height: 30px;
   width: 80px;
+  margin: 0;
+  padding: 0;
 }
 h1 {
   margin-top: 7px;
@@ -98,10 +93,10 @@ h1 {
 }
 a.router-link-exact-active {
   margin-top: 5px;
-  text-decoration: underline;
+  border-bottom: 2px solid #dae1e7;
   color: #dae1e7;
   font-weight: bolder;
-  font-size: 15px;
+  font-size: 12px;
 }
 .user {
   height: 25px;

@@ -22,11 +22,11 @@
 
         <!-- BOTONES PARA ABRIR MODALES -->
 
-        <button class="editar" @click="showeditText()">EDITAR PERFIL</button>
+        <button class="editar" @click="showeditText()">Editar perfil</button>
 
-        <button class="eliminar" @click="openPasswdModal()">CAMBIAR CONTRASEÑA</button>
+        <button class="cambiarpasswd" @click="openPasswdModal()">Cambiar contraseña</button>
 
-        <button class="cambiarpasswd" @click="deleteCompany()">ELIMINAR PERFIL</button>
+        <button class="eliminar" @click="deleteCompany()">Eliminar perfil</button>
       </div>
     </div>
 
@@ -34,15 +34,16 @@
 
     <div v-show="modal" class="editprofile">
       <div class="editcompany">
-        <h1>
+        <h1>EDITA EL PERFIL DE TU EMPRESA</h1>
+        <h2>
           <input v-model="newName" placeholder="Nombre" />
-        </h1>
+        </h2>
         <label for="descripcion">DESCRIPCIÓN:</label>
         <p>
           <textarea
             name="description"
             id
-            cols="30"
+            cols="50"
             rows="10"
             v-model="newDescription"
             placeholder="Descripción"
@@ -74,8 +75,8 @@
           <input type="file" id="file" ref="file" @change="onFileSelected" placeholder="Imagen" />
         </p>
 
-        <button class="updateprofile" @click="closeModal()">ACTUALIZAR PERFIL</button>
-        <button class="cancel" @click="closeModalAux()">CANCELAR</button>
+        <button class="updateprofile" @click="closeModal()">Actualizar perfil</button>
+        <button class="cancel" @click="closeModalAux()">Cancelar</button>
       </div>
     </div>
 
@@ -101,8 +102,8 @@
           />
         </p>
 
-        <button class="cambiarpasswd" @click="changePassword()">CAMBIAR CONTRASEÑA</button>
-        <button class="cancel" @click="closePasswdModal()">CANCELAR</button>
+        <button class="cambiarpasswd" @click="changePassword()">Cambiar contraseña</button>
+        <button class="cancel" @click="closePasswdModal()">Cancelar</button>
       </div>
     </div>
     <FooterCustom></FooterCustom>
@@ -344,6 +345,7 @@ export default {
   margin: 0 auto;
   width: 800px;
   background-color: #dae1e7;
+  box-shadow: 0.2rem 0.2rem 0.2rem #27496d;
 }
 
 /* GENERAL */
@@ -375,53 +377,47 @@ input {
 button {
   color: #dae1e7;
   background-color: #27496d;
-  font-weight: bold;
-  border: 2px solid #dae1e7;
+
+  border: 1px solid #dae1e7;
   box-shadow: 2px 2px #27496d;
   padding: 0.3rem;
-  border-radius: 0.3rem;
+
   margin: 1rem;
+}
+button:hover {
+  background-color: #dae1e7;
+  color: #27496d;
+  border: 1px solid #27496d;
 }
 /* BOTONES PERFIL */
-.editar {
-  color: #dae1e7;
-  background-color: #27496d;
-  font-weight: bold;
-  border: 2px solid #dae1e7;
+.eliminar {
+  color: #27496d;
+  background-color: #dae1e7;
+
+  border: 1px solid #27496d;
   box-shadow: 2px 2px #27496d;
   padding: 0.3rem;
-  border-radius: 0.3rem;
+  font-weight: normal;
   margin: 1rem;
-}
-.editar:hover {
-  background: #dae1e7;
-  color: #27496d;
 }
 
 .eliminar:hover {
+  background-color: #27496d;
+  color: #dae1e7;
+  border: 1px solid #dae1e7;
+}
+
+.updateprofile:hover {
   background: #dae1e7;
   color: #27496d;
 }
-.cambiarpasswd {
+.cancel {
+  background: #dae1e7;
   color: #27496d;
-  background-color: #dae1e7;
-  font-weight: bold;
-  border: 2px solid #27496d;
-  box-shadow: 2px 2px #27496d;
-}
-.cambiarpasswd:hover {
-  background-color: #27496d;
-  color: #dae1e7;
-}
-.updateprofile {
-  background-color: #00909e;
-  color: #dae1e7;
-}
-.updateprofile:hover {
-  font-size: 18px;
 }
 .cancel:hover {
-  font-size: 16px;
+  background-color: #27496d;
+  color: #dae1e7;
 }
 
 /* DESCRIPCION PERFIL */
@@ -435,7 +431,7 @@ button {
   text-decoration: underline;
 }
 /* EDITAR PERFIL */
-.editcoder > h1 > input {
+.editcompany > h1 > input {
   font-size: 20px;
   font-weight: bold;
 }
@@ -443,10 +439,19 @@ button {
 /* MODALES */
 .editcompany {
   padding-top: 2rem;
-  padding-bottom: 1rem;
-  margin: 20% auto;
+  padding-bottom: 0.5rem;
+  margin: 8% auto;
   width: 900px;
-  background-color: #dae1e7;
+  background-color: #00909e;
+  color: #dae1e7;
+  box-shadow: 1px 1px 1px #dae1e7;
+}
+.editcompany > h1 {
+  color: #dae1e7;
+}
+h2 > input {
+  height: 2rem;
+  font-size: 20px;
 }
 .editprofile {
   position: fixed;
@@ -473,9 +478,11 @@ button {
 }
 .modalBox {
   padding-top: 2rem;
-  padding-bottom: 1rem;
-  margin: 20% auto;
-  width: 600px;
-  background-color: #dae1e7;
+  padding-bottom: 0.5rem;
+  margin: 17% auto;
+  width: 900px;
+  background-color: #00909e;
+  color: #dae1e7;
+  box-shadow: 1px 1px 1px #dae1e7;
 }
 </style>

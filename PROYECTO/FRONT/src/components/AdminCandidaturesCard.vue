@@ -1,5 +1,7 @@
 <template>
-  <div class="candidatures">
+  <div class="candidatures" v-show="modalCandidature">
+    <button class="closemodal" @click="closeModalCandidaturesEvent()">Cerrar ventana</button>
+
     <div class="profile" v-for="candidature in candidatures" :key="candidature.id">
       <h1>
         <p>{{candidature.name_coder}} {{candidature.surname_coder}}</p>
@@ -20,7 +22,13 @@
 export default {
   name: "AdminCandidaturesCard",
   props: {
-    candidatures: Array
+    candidatures: Array,
+    modalCandidature: Boolean
+  },
+  methods: {
+    closeModalCandidaturesEvent() {
+      this.$emit("cerrarModal");
+    }
   }
 };
 </script>
@@ -35,21 +43,39 @@ export default {
   src: url("../assets/Ubuntu-Regular.ttf");
 }
 .candidatures {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 1.5rem;
-  padding: 2rem;
-  padding: 2rem;
-  color: #27496d;
-  background-color: #00909e;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  width: 100%;
 }
 .profile {
-  background-color: #dae1e7;
-  width: 60%;
-  margin: 2rem auto;
-  padding: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin: 0 auto;
+  width: 900px;
+  background-color: #27496d;
+  box-shadow: 2px 2px #dae1e7;
+  color: #dae1e7;
 }
 h1 {
   font-family: "serif";
+}
+button {
+  color: #27496d;
+  background-color: #dae1e7;
+
+  border: 1px solid #27496d;
+  box-shadow: 2px 2px #dae1e7;
+  padding: 0.3rem;
+
+  margin: 1rem;
+}
+
+button:hover {
+  background-color: #27496d;
+  color: #dae1e7;
+  border: 1px solid #dae1e7;
 }
 </style>
