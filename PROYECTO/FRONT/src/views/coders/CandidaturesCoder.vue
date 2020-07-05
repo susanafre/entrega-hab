@@ -5,8 +5,9 @@
     <!-- COMPONENTE MENÚ -->
 
     <MenuLoggedCoder :username="username" v-on:logout="logoutUser"></MenuLoggedCoder>
-    <h1>MIS CANDIDATURAS</h1>
-
+    <div class="explanation">
+      <p>* Aquí puedes ver tus candidaturas, el estado de las mismas o eliminarlas*</p>
+    </div>
     <h1 class="candidaturavacia" v-show="emptyCandidature">No tienes ninguna candidatura</h1>
 
     <!-- COMPONENTE PARA VER LAS CANDIDATURAS -->
@@ -79,7 +80,8 @@ export default {
     /* Eliminar candidatura */
 
     deleteCandidatures(data) {
-      this.id1 = data;
+      console.log("Esto es data", data);
+      this.id1 = data.PK_candidature;
       axios
         .delete("http://localhost:3000/coders/candidatures/" + this.id1, {
           id1: this.id1
@@ -122,8 +124,19 @@ export default {
 }
 .candidatures {
   font-family: "sansSerif";
+  background: url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjEyMDd9");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #dae1e7;
+  min-height: 700px;
+}
+.explanation {
   background-color: #00909e;
   color: #dae1e7;
+  padding: 1.5rem;
+  border-bottom: 1px solid #dae1e7;
+  opacity: 0.8;
 }
 h1 {
   font-family: "serif";

@@ -8,6 +8,10 @@
 
     <!-- ########### FILTRAR PROYECTOS ########## -->
 
+    <div class="explanation">
+      <p>* Aquí puedes filtrar los proyectos por nombre, tecnologías, lenguaje o fecha de entrega. *</p>
+    </div>
+
     <!-- CREAMOS UN INPUT PARA INTRODUCIR LOS PARÁMETROS DE BÚSQUEDA -->
 
     <div class="filter">
@@ -52,11 +56,20 @@
         </p>
         <p class="namecompany">{{ companies.name }}</p>
         <p>{{ companies.description }}</p>
-        <p>TELÉFONO: {{ companies.phone_number }}</p>
+        <p>
+          <b>TELÉFONO:</b>
+          {{ companies.phone_number }}
+        </p>
 
         <!-- <p>FOTO: {{ photo }}</p> -->
-        <p>PROVINCIA: {{ companies.province }}</p>
-        <p>WEB: {{ companies.web }}</p>
+        <p>
+          <b>PROVINCIA:</b>
+          {{ companies.province }}
+        </p>
+        <p>
+          <b>WEB:</b>
+          {{ companies.web }}
+        </p>
         <button class="cerrarverempresa" @click="closeModalCompany()">CERRAR</button>
       </div>
     </div>
@@ -334,47 +347,30 @@ export default {
   src: url("../../assets/Ubuntu-Regular.ttf");
 }
 .Home {
-  background-color: #dae1e7;
-  color: #27496d;
+  background-color: #00909e;
+  color: #dae1e7;
   font-family: "sans-serif";
 }
-
-/* BOTONES */
-
-button {
+.explanation {
+  background-color: #00909e;
   color: #dae1e7;
-  background-color: #27496d;
-  font-weight: bold;
-  height: 2rem;
-  border: 0;
-  margin-right: 1rem;
-  box-shadow: 2px 2px #27496d;
+  padding: 1.5rem;
+  opacity: 0.8;
 }
-button:hover {
+
+/* FILTER */
+
+.filter {
+  border-top: 1px solid #dae1e7;
   background: #dae1e7;
-  color: #27496d;
-}
-
-/* BOTONES FILTRAR PROYECTOS */
-
-.buttonclean {
-  color: #27496d;
-  background-color: #dae1e7;
+  padding: 2rem;
   font-weight: bold;
-  border: 2px solid #27496d;
-  box-shadow: 2px 2px #27496d;
-}
-.buttonclean:hover {
-  background-color: #27496d;
+  font-size: 1.5rem;
+
   color: #dae1e7;
 }
-/* LABEL */
 
-label {
-  font-weight: bold;
-}
-
-/* INPUT */
+/* INPUT FILTRAR PROYECTOS */
 
 input {
   background: #dae1e7;
@@ -393,27 +389,6 @@ input {
   color: #27496d;
 }
 
-/* FILTER */
-
-.filter {
-  padding: 2rem;
-  font-weight: bold;
-  font-size: 1.5rem;
-  background: #00909e;
-  color: #dae1e7;
-}
-
-.filtersmall {
-  opacity: 0.9;
-  padding-top: 1rem;
-  padding-bottom: 1.5rem;
-  width: 500px;
-  margin: 0 auto;
-}
-.filtersmall > p > label {
-  font-family: "serif";
-  color: #27496d;
-}
 .namecompany {
   font-family: "serif";
   font-weight: bold;
@@ -423,7 +398,7 @@ input {
 
 /* MODAL */
 
-.modal {
+.modalcompany {
   position: fixed;
   top: 0;
   left: 0;
@@ -436,9 +411,11 @@ input {
   color: #dae1e7;
   margin: 13% auto;
   padding: 20px;
-  border: 1px solid #888;
+
   width: 50%;
   background-size: 25%;
+  box-shadow: 6px 6px 6px #142850;
+  border-radius: 0.5rem;
 }
 
 .modalBox > h1 {
@@ -447,69 +424,18 @@ input {
 
   opacity: 0.9;
 }
-.logCoder {
-  font-size: 1rem;
-  border: 1px solid #dae1e7;
-  box-shadow: 2px 2px #dae1e7;
-}
-.logCoder:hover {
-  background-color: #dae1e7;
-  color: #00909e;
-}
-.closelogCoder {
-  background-color: #dae1e7;
-  color: #00909e;
-  font-size: 12px;
-  border: 1px solid #27496d;
-}
-.closelogCoder:hover {
-  background: #27496d;
-  color: #dae1e7;
-  border: 1px solid #dae1e7;
-}
-.logCompany {
-  font-size: 1rem;
-  box-shadow: 2px 2px #dae1e7;
-}
-.logCompany:hover {
-  background-color: #dae1e7;
-  color: #00909e;
-}
-.closelogCompany {
-  background-color: #dae1e7;
-  color: #00909e;
-  font-size: 12px;
-  box-shadow: 2px 2px #27496d;
-}
-.closelogCompany:hover {
-  background: #27496d;
-  color: #dae1e7;
-}
-.cerrarverempresa {
-  background-color: #dae1e7;
-  color: #27496d;
 
-  border: 1px solid #27496d;
+.cerrarverempresa {
+  color: #27496d;
+  background-color: #dae1e7;
+  border: 1px solid #dae1e7;
+  padding: 0.3rem;
+  border-radius: 5px;
+  margin: 1rem;
+  font-weight: bold;
 }
 .cerrarverempresa:hover {
-  background: #27496d;
+  background-color: #00909e;
   color: #dae1e7;
-  border: 1px solid #dae1e7;
-}
-.modalcompany {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  width: 100%;
-}
-.modallogincompany {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  width: 100%;
 }
 </style>

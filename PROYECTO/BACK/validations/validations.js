@@ -53,7 +53,7 @@ const entrySchemaCoder = Joi.object().keys({
     .error(
       new Error("The field email is required and must have a correct format")
     ),
-  /* photo: Joi.string(), */
+
   language: Joi.string()
     .min(2)
     .required()
@@ -130,7 +130,7 @@ const editSchemaCoder = Joi.object().keys({
     .error(
       new Error("The field Email is required and must have a correct format")
     ),
-  /*  photo: Joi.string(), */
+
   language: Joi.string()
     .required()
     .min(2)
@@ -198,7 +198,7 @@ const entrySchemaCompany = Joi.object().keys({
   web: Joi.string()
     .uri()
     .error(new Error("The field Web must have the following format: https://")),
-  /*  photo: Joi.string(), */
+
   password: Joi.string()
     .min(6)
     .max(100)
@@ -243,7 +243,6 @@ const editSchemaCompany = Joi.object().keys({
   web: Joi.string()
     .uri()
     .error(new Error("The field Web must have the following format: https://")),
-  /*  photo: Joi.string(), */
 });
 
 ////////////////////Project////////////////////////////////////////////

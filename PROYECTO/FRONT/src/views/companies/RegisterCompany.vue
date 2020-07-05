@@ -11,63 +11,97 @@
     <div class="companies">
       <h2>Datos de acceso a FI.Coder</h2>
 
-      <!-- EMAIL -->
+      <div class="register">
+        <div>
+          <!-- NOMBRE -->
 
-      <label for="email">Introduce el email de la empresa</label>
-      <p>
-        <input type="text" name="email" v-model="email" />
-      </p>
-      <!-- CONTRASEÑA -->
+          <label for="name">Introduce el nombre de la empresa</label>
+          <p>
+            <input
+              type="text"
+              name="name"
+              placeholder="Introduce el nombre de tu empresa"
+              v-model="name"
+            />
+          </p>
 
-      <label for="password">Crea tu contraseña</label>
-      <p>
-        <input type="password" name="password" placeholder="Mínimo 8 caracteres" v-model="password" />
-      </p>
-      <!-- NOMBRE -->
+          <!-- EMAIL -->
+          <label for="email">Introduce el email</label>
+          <p>
+            <input
+              type="text"
+              name="email"
+              placeholder="Introduce el correo electrónico"
+              v-model="email"
+            />
+          </p>
+          <!-- CONTRASEÑA -->
 
-      <label for="name">Introduce el nombre de la empresa</label>
-      <p>
-        <input type="text" name="name" placeholder="Introduce tu nombre" v-model="name" />
-      </p>
-      <!-- DESCRIPCIÓN -->
+          <label for="password">Crea tu contraseña</label>
+          <p>
+            <input
+              type="password"
+              name="password"
+              placeholder="Mínimo 8 caracteres"
+              v-model="password"
+            />
+          </p>
 
-      <label for="description">Descripción de la empresa</label>
-      <p>
-        <textarea
-          name="description"
-          placeholder="Mínimo 20 caracteres"
-          id="description"
-          cols="30"
-          rows="10"
-          v-model="description"
-        ></textarea>
-      </p>
-      <!-- PROVINCIA -->
+          <!-- REPETIR CONTRASEÑA -->
 
-      <label for="province">Introduce la provincia</label>
-      <p>
-        <input type="text" name="province" v-model="province" />
-      </p>
-      <!-- TELÉFONO -->
+          <label for="password">Repite la contraseña contraseña</label>
+          <p>
+            <input type="password" name="password" placeholder="Repite la contraseña" />
+          </p>
+        </div>
 
-      <label for="phone_number">Introduce el teléfono</label>
-      <p>
-        <input
-          type="text"
-          name="phone_number"
-          placeholder="Mínimo 9 dígitos"
-          v-model="phone_number"
-        />
-      </p>
-      <!-- WEB -->
+        <div>
+          <!-- DESCRIPCIÓN -->
 
-      <label for="web">Introduce la web de la empresa</label>
+          <label for="description">Descripción de la empresa</label>
+          <p>
+            <textarea
+              name="description"
+              placeholder="Mínimo 20 caracteres"
+              id="description"
+              cols="30"
+              rows="10"
+              v-model="description"
+            ></textarea>
+          </p>
+          <!-- PROVINCIA -->
 
-      <p>
-        <input type="text" name="web" placeholder="http://www.nombreWeb.com" v-model="web" />
-      </p>
+          <label for="province">Introduce la provincia</label>
+          <p>
+            <input
+              type="text"
+              name="province"
+              placeholder="Introduce la provincia"
+              v-model="province"
+            />
+          </p>
+          <!-- TELÉFONO -->
 
-      <p>
+          <label for="phone_number">Introduce el teléfono</label>
+          <p>
+            <input
+              type="text"
+              name="phone_number"
+              placeholder="Mínimo 9 dígitos"
+              v-model="phone_number"
+            />
+          </p>
+          <!-- WEB -->
+
+          <label for="web">Introduce la web de la empresa</label>
+
+          <p>
+            <input type="text" name="web" placeholder="http://www.nombreWeb.com" v-model="web" />
+          </p>
+        </div>
+      </div>
+
+      <div class="botones">
         <button
           class="register"
           @click="
@@ -79,11 +113,10 @@
               email,
               password,
               web
-            )
-          "
+            )"
         >Registrar</button>
         <button class="cancel" @click="cancelButton()">Cancelar</button>
-      </p>
+      </div>
     </div>
 
     <!-- ######### LOGIN CODER ############ -->
@@ -97,11 +130,16 @@
         <!-- INPUT PARA EMAIL Y CONTRASEÑA -->
         <label for="name">Correo electrónico</label>
         <p>
-          <input type="text" name="email" placeholder v-model="email" />
+          <input type="text" name="email" placeholder="Introduce aquí tu email" v-model="email" />
         </p>
         <label for="password">Contraseña</label>
         <p>
-          <input type="password" name="password" placeholder v-model="password" />
+          <input
+            type="password"
+            name="password"
+            placeholder="Introduce aquí tu contraseña"
+            v-model="password"
+          />
         </p>
 
         <!-- BOTONES DE CERRAR EL MODAL Y DE HACER LOGIN -->
@@ -364,31 +402,48 @@ header {
   top: 0;
   left: 0;
   bottom: 0;
-  /*  background: rgba(0, 0, 0, 0.5); */
   width: 100%;
 }
 .companies {
-  background: #00909e;
+  background: #27496d;
   color: #dae1e7;
-  margin: 1.2% auto;
+  margin: 2.1% auto;
   padding: 20px;
   border: 1px solid #888;
   width: 50%;
+  height: 65%;
   background-size: 25%;
-  box-shadow: 1rem 1rem 1rem #27496d;
+  box-shadow: 6px 6px 6px #142850;
+  border-radius: 0.5rem;
 }
+/* Botones */
 button {
-  background: #27496d;
-  color: #dae1e7;
-  font-weight: bold;
+  color: #27496d;
+  background-color: #dae1e7;
+  border: 1px solid #dae1e7;
   padding: 0.3rem;
-
-  margin: 3px;
+  border-radius: 5px;
+  margin: 1rem;
+  font-weight: bold;
 }
 button:hover {
+  background-color: #00909e;
+  color: #dae1e7;
+}
+
+.cancel {
+  color: #dae1e7;
+  background-color: #27496d;
+  border: 1px solid #dae1e7;
+  padding: 0.3rem;
+  margin: 1rem;
+}
+.cancel:hover {
   background-color: #dae1e7;
   color: #00909e;
+  border: 1px solid #dae1e7;
 }
+
 h1 {
   font-family: "serif";
 }
@@ -396,18 +451,28 @@ label {
   margin: 0;
 }
 input {
-  box-shadow: 2px 2px #dae1e7;
   width: 300px;
+  height: 30px;
+  border-radius: 0.4rem;
+  text-align: center;
+}
+::-webkit-input-placeholder {
+  color: #27496d;
+  text-align: center;
+}
+::placeholder {
+  color: #27496d;
 }
 textarea {
   border: 1.5px solid #27496d;
 }
-.cancel {
-  background-color: #dae1e7;
-  color: #27496d;
+.register {
+  display: grid;
+  grid-template-columns: repeat(2, 50% 50%);
+  align-items: center;
 }
-.cancel:hover {
-  background-color: #27496d;
-  color: #dae1e7;
+.botones {
+  margin-top: 2rem;
+  display: inline-flex;
 }
 </style>

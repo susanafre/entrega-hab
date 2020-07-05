@@ -53,10 +53,11 @@ export default {
 .profile {
   padding-top: 1rem;
   padding-bottom: 1rem;
-  margin: 0 auto;
+  margin: 3% auto;
   width: 900px;
   background-color: #27496d;
-  box-shadow: 2px 2px #dae1e7;
+  box-shadow: 6px 6px 6px #142850;
+  border-radius: 0.5rem;
   color: #dae1e7;
 }
 h1 {
@@ -65,17 +66,14 @@ h1 {
 button {
   color: #27496d;
   background-color: #dae1e7;
-
-  border: 1px solid #27496d;
-  box-shadow: 2px 2px #dae1e7;
-  padding: 0.3rem;
-
-  margin: 1rem;
-}
-
-button:hover {
-  background-color: #27496d;
-  color: #dae1e7;
   border: 1px solid #dae1e7;
+  padding: 0.3rem;
+  border-radius: 5px;
+  margin: 1rem;
+  font-weight: bold;
+}
+button:hover {
+  background-color: #00909e;
+  color: #dae1e7;
 }
 </style>

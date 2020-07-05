@@ -62,6 +62,8 @@ async function createCompanies(req, res, next) {
         imageError.httpCode = 400;
         throw imageError;
       }
+    } else {
+      savedFileName = "avatar.png";
     }
 
     //Date

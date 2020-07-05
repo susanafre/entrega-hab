@@ -14,6 +14,9 @@
       <MenuLoggedAdmin :username="username" v-on:cambiar="changeLocation" v-on:logout="logoutUser"></MenuLoggedAdmin>
     </div>
 
+    <div class="explanation">
+      <p>* Aquí puedes ver tu perfil, editarlo o cambiar la contraseña *</p>
+    </div>
     <!-- VER PERFIL DESARROLLADOR -->
 
     <div class="profile">
@@ -26,13 +29,22 @@
             <h2>Datos personales</h2>
           </tr>
           <tr>
-            <p>EMAIL: {{coders.email}}</p>
+            <p>
+              <b>EMAIL:</b>
+              {{coders.email}}
+            </p>
           </tr>
           <tr>
-            <p>TELÉFONO: {{coders.phone_number}}</p>
+            <p>
+              <b>TELÉFONO:</b>
+              {{coders.phone_number}}
+            </p>
           </tr>
           <tr>
-            <p>PROVINCIA: {{coders.province}}</p>
+            <p>
+              <b>PROVINCIA:</b>
+              {{coders.province}}
+            </p>
           </tr>
         </td>
 
@@ -41,23 +53,41 @@
             <h2 class="space">Datos técnicos</h2>
           </tr>
           <tr>
-            <p>ARQUITECTURA: {{coders.architecture}}</p>
+            <p></p>
+            <div class="architecture">
+              Arquitectura:
+              <div
+                class="arch"
+                :class="{frontend: coders.architecture === 'FrontEnd' | coders.architecture === 'Front End',backend:coders.architecture === 'BackEnd' | coders.architecture === 'Back End'}"
+              >#{{ coders.architecture }}</div>
+            </div>
           </tr>
           <tr>
-            <p>LENGUAJE: {{coders.language}}</p>
+            <div class="language">
+              Lenguaje:
+              <div
+                class="lang"
+                :class="{html:coders.language === 'HTML, CSS, Javascript',python:coders.language === 'Python',node:coders.language === 'Javascript node',php:coders.language === 'PHP',sql:coders.language === 'SQL'}"
+              >#{{ coders.language }}</div>
+            </div>
           </tr>
           <tr>
-            <p>TECNOLOGÍA: {{coders.technology}}</p>
+            <div class="technology">
+              Tecnología:
+              <div
+                class="tech"
+                :class="{react:coders.technology === 'React JS',angular:coders.technology === 'Angular',bootstrap:coders.technology === 'Bootstrap',redux:coders.technology === 'Redux',django:coders.technology === 'Django',vue:coders.technology === 'Vue js',node:coders.technology === 'Node js',laravel:coders.technology === 'Laravel',workbench:coders.technology === 'MySQL Workbench'}"
+              >#{{ coders.technology }}</div>
+            </div>
           </tr>
         </td>
 
         <!-- BOTONES PARA ABRIR MODALES -->
         <p>
           <button class="editar" @click="showeditText()">Editar perfil</button>
-
-          <button class="cambiarpasswd" @click="openPasswdModal()">Cambiar contraseña</button>
+          <button class="eliminar" @click="deleteCoder()">Eliminar perfil</button>
         </p>
-        <button class="eliminar" @click="deleteCoder()">Eliminar perfil</button>
+        <button class="changepasswd" @click="openPasswdModal()">¿Quieres cambiar la contraseña?</button>
       </div>
     </div>
 
@@ -116,10 +146,17 @@
     <!-- MODAL PARA CAMBIAR LA CONTRASEÑA -->
     <div v-show="modalpasswd" class="modalpasswd">
       <div class="modalBox">
-        <h1>Cambiar contraseña</h1>
+        <label for="password">Introduzca su contraseña actual</label>
         <p>
-          <input type="password" v-model="newOldPassword" placeholder="Antigua Contraseña" />
+          <input
+            type="password"
+            placeholder="Introduce la contraseña actual"
+            v-model="newOldPassword"
+          />
         </p>
+
+        <label for="password">Introduzca la nueva contraseña</label>
+
         <p>
           <input
             type="password"
@@ -127,6 +164,7 @@
             placeholder="Introduce la nueva contraseña"
           />
         </p>
+        <label for="password">Repite la nueva contraseña</label>
         <p>
           <input
             type="password"
@@ -201,6 +239,7 @@ export default {
       /* Variables para modales */
       modal: false,
       modalpasswd: false,
+
       /* Variables que checkean el rol del usuario */
       roleCoder: false,
       roleAdmin: false
@@ -407,25 +446,37 @@ export default {
 .viewprofile {
   font-family: "sansSerif";
   background-color: #dae1e7;
-  color: #27496d;
+  color: #dae1e7;
 }
-/* DIV VER PERFIL */
 .profile {
-  background: #00909e;
+  background: url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjEyMDd9");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   padding: 3rem;
 }
+.explanation {
+  background-color: #00909e;
+  color: #dae1e7;
+  padding: 1.5rem;
+  border-bottom: 1px solid #dae1e7;
+  opacity: 0.8;
+}
+/* DIV VER PERFIL */
 
 .coder {
   padding-top: 2rem;
   padding-bottom: 1rem;
   margin: 0 auto;
-  width: 800px;
-  background-color: #dae1e7;
+  width: 700px;
+  background-color: #27496d;
+  box-shadow: 6px 6px 6px #142850;
+  border-radius: 0.5rem;
 }
 
 /* GENERAL */
 h1 {
-  color: #27496d;
+  color: #dae1e7;
   font-family: "serif";
 }
 h2 {
@@ -434,7 +485,7 @@ h2 {
 }
 img {
   border-radius: 50%;
-  border: 8px solid #27496d;
+  border: 8px solid #dae1e7;
 
   width: 150px;
 }
@@ -446,97 +497,116 @@ h1 > input {
   font-family: "serif";
   font-size: 20px;
   font-weight: bold;
+  height: 30px;
 }
 input {
   text-align: center;
   color: #27496d;
 }
+::-webkit-input-placeholder {
+  color: #27496d;
+  text-align: center;
+}
+::placeholder {
+  color: #27496d;
+}
 .editcoder input {
   margin: 0.5rem;
+  border-radius: 0.4rem;
 }
 
 .coder td {
   display: inline-block;
-  margin: 4rem;
-}
-.editcoder td {
-  display: inline-block;
-  margin: 3rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
 }
 
 /* BOTONES */
 button {
-  color: #dae1e7;
-  background-color: #27496d;
-
+  color: #27496d;
+  background-color: #dae1e7;
   border: 1px solid #dae1e7;
-  box-shadow: 2px 2px #27496d;
   padding: 0.3rem;
-
+  border-radius: 5px;
   margin: 1rem;
+  font-weight: bold;
 }
 button:hover {
-  background-color: #dae1e7;
-  color: #27496d;
-  border: 1px solid #27496d;
+  background-color: #00909e;
+  color: #dae1e7;
 }
 /* BOTONES PERFIL */
 
 .eliminar {
-  color: #27496d;
-  background-color: #dae1e7;
-
-  border: 1px solid #27496d;
-  box-shadow: 2px 2px #dae1e7;
+  color: #dae1e7;
+  background-color: #27496d;
+  border: 1px solid #dae1e7;
   padding: 0.3rem;
-
   margin: 1rem;
 }
 .eliminar:hover {
-  background-color: #27496d;
-  color: #dae1e7;
+  background-color: #dae1e7;
+  color: #00909e;
   border: 1px solid #dae1e7;
 }
-
-.updateprofile {
+.cambiarpasswd {
+  color: #27496d;
+  background-color: #dae1e7;
+  border: 1px solid #dae1e7;
+  padding: 0.3rem;
+  border-radius: 5px;
+  margin: 1rem;
+  font-weight: bold;
+}
+.cambiarpasswd:hover {
+  background-color: #00909e;
+  color: #dae1e7;
+}
+.changepasswd {
   color: #dae1e7;
   background-color: #27496d;
-
+  border: none;
+}
+.changepasswd:hover {
+  color: #dae1e7;
+  background-color: #27496d;
+  border: none;
+}
+.updateprofile {
+  color: #27496d;
+  background-color: #dae1e7;
   border: 1px solid #dae1e7;
-  box-shadow: 2px 2px #27496d;
   padding: 0.3rem;
-
+  border-radius: 5px;
   margin: 1rem;
+  font-weight: bold;
 }
 .updateprofile:hover {
-  background-color: #dae1e7;
-  color: #27496d;
-  border: 1px solid #27496d;
+  background-color: #00909e;
+  color: #dae1e7;
 }
 .cancel {
-  color: #27496d;
-  background-color: #dae1e7;
-
-  border: 1px solid #27496d;
-  box-shadow: 2px 2px #dae1e7;
+  color: #dae1e7;
+  background-color: #27496d;
+  border: 1px solid #dae1e7;
   padding: 0.3rem;
-
   margin: 1rem;
 }
 .cancel:hover {
-  background-color: #27496d;
-  color: #dae1e7;
+  background-color: #dae1e7;
+  color: #00909e;
   border: 1px solid #dae1e7;
 }
 /* MODALES */
 .editcoder {
   padding-top: 2rem;
   padding-bottom: 0.5rem;
-  margin: 3% auto;
+  margin: 9.5% auto;
   width: 900px;
-  background-color: #00909e;
+  background-color: #27496d;
   color: #dae1e7;
-  box-shadow: 1px 1px 1px #dae1e7;
+  box-shadow: 6px 6px 6px #142850;
+  border-radius: 0.5rem;
 }
 .editcoder > h1 {
   color: #dae1e7;
@@ -578,8 +648,196 @@ h2 > input {
   padding-bottom: 0.5rem;
   margin: 17% auto;
   width: 900px;
-  background-color: #00909e;
+  background-color: #27496d;
   color: #dae1e7;
-  box-shadow: 1px 1px 1px #dae1e7;
+  box-shadow: 6px 6px 6px #142850;
+  border-radius: 0.5rem;
+}
+
+.architecture {
+  display: inline-flex;
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+.frontend {
+  font-weight: bold;
+  color: #142850;
+  background: #dae1e7;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  padding: 4px;
+  border-radius: 20px;
+}
+.backend {
+  font-weight: bold;
+  color: #00909e;
+  background: #dae1e7;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  padding: 4px;
+  border-radius: 20px;
+}
+
+.language {
+  display: inline-flex;
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+.html {
+  font-weight: bold;
+  color: orange;
+  background: #dae1e7;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  padding: 4px;
+  border-radius: 20px;
+}
+.python {
+  font-weight: bold;
+  color: yellow;
+  background: #4a7aa5;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  padding: 4px;
+  border-radius: 20px;
+}
+.node {
+  font-weight: bold;
+  color: white;
+  background: #5bcf51;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  padding: 4px;
+  border-radius: 20px;
+}
+.php {
+  font-weight: bold;
+  color: white;
+  background: #8f6cb6;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  padding: 4px;
+  border-radius: 20px;
+}
+.sql {
+  font-weight: bold;
+  color: #e5a609;
+  background: #398eb0;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  padding: 4px;
+  border-radius: 20px;
+}
+.technology {
+  display: inline-flex;
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-bottom: 0.3rem;
+}
+.react {
+  font-weight: bold;
+  color: #398eb0;
+  background: black;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  padding: 4px;
+  border-radius: 20px;
+}
+.angular {
+  font-weight: bold;
+  color: red;
+  background: white;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  padding: 4px;
+  border-radius: 20px;
+}
+.bootstrap {
+  font-weight: bold;
+  color: white;
+  background: #4126b2;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  padding: 4px;
+  border-radius: 20px;
+}
+.redux {
+  font-weight: bold;
+  color: #4126b2;
+  background: white;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  padding: 4px;
+  border-radius: 20px;
+}
+.django {
+  font-weight: bold;
+  color: white;
+  background: #4126b2;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  padding: 4px;
+  border-radius: 20px;
+}
+.vue {
+  font-weight: bold;
+  color: #59b686;
+  background: #434e68;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  padding: 4px;
+  border-radius: 20px;
+}
+.laravel {
+  font-weight: bold;
+  color: white;
+  background: #e15518;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  padding: 4px;
+  border-radius: 20px;
+}
+.workbench {
+  font-weight: bold;
+  color: #e5a609;
+  background: #398eb0;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  padding: 4px;
+  border-radius: 20px;
 }
 </style>

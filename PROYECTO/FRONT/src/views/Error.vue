@@ -1,8 +1,13 @@
 <template>
   <div class="error">
     <vue-headful title="Paǵina de error" description="Página de error" />
+
     <h1>ERROR 404</h1>
     <h2>Page not found</h2>
+
+    <div class="boton">
+      <router-link :to="{ name: 'Home' }">Volver</router-link>
+    </div>
   </div>
 </template>
 
@@ -42,5 +47,9 @@ h1 {
 h2 {
   color: #dae1e7;
   font-size: 4rem;
+}
+a {
+  color: #dae1e7;
+  font-size: 30px;
 }
 </style>

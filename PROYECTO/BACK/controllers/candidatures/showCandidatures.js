@@ -31,7 +31,7 @@ async function showCandidatures(req, res, next) {
     const [
       candidature,
     ] = await connection.query(
-      "SELECT ca.creation_date as creation_date,p.name as name_project,p.description as description_project,ca.candidature_state as estado,c.PK_coder as PK_coder,c.role as role,ca.PK_candidature as PK_candidature, ca.FK_candidature_project as candidature from candidatures ca INNER JOIN projects p ON ca.FK_candidature_project=p.PK_project INNER JOIN coders c ON ca.FK_candidature_coder=c.PK_coder WHERE c.PK_coder=?",
+      "SELECT ca.PK_candidature as PK_candidature,cod.name as name_coder,cod.surname as surname_coder,po.description as description, po.name as project_name,co.name as company_name,po.PK_project as PK_project, ca.candidature_state as state, ca.creation_date as creation_date from candidatures ca inner join projects po on ca.FK_candidature_project=po.PK_project inner join companies co on po.FK_project_company=co.PK_company inner join coders cod on ca.FK_candidature_coder=cod.PK_coder where cod.PK_coder=?",
       [id]
     );
     console.log("Esto es Coder de Back", candidature);

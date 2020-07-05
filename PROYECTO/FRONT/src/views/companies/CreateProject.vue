@@ -4,60 +4,95 @@
 
     <!-- IMPORTAMOS EL COMPONENTE MENÚ -->
     <MenuLoggedCompany :username="username" v-on:logout="logoutUser"></MenuLoggedCompany>
-    <h1>Crea un proyecto nuevo</h1>
+
+    <div class="explanation">
+      <p>* Aquí puedes crear un nuevo proyecto. *</p>
+    </div>
+
     <!-- CREAR PROYECTOS -->
 
     <div class="create">
-      <p>
-        <label for="name">Introduce el nombre del proyecto</label>
-      </p>
-      <p>
-        <input type="text" name="name" v-model="name" />
-      </p>
+      <h1>AÑADE UN NUEVO PROYECTO</h1>
+      <div class="columnas">
+        <div>
+          <label for="name">Introduce el nombre del proyecto</label>
 
-      <p>
-        <label for="description">Añade una descripción al proyecto</label>
-      </p>
+          <p>
+            <input
+              type="text"
+              name="name"
+              placeholder="Introduce el nombre del proyecto"
+              v-model="name"
+            />
+          </p>
 
-      <p>
-        <textarea
-          name="description"
-          id
-          cols="30"
-          rows="10"
-          placeholder="Mínimo 20 caracteres"
-          v-model="description"
-        ></textarea>
-      </p>
+          <label for="description">Añade una descripción al proyecto</label>
 
-      <p>
-        <label for="delivery_date">Añade la fecha de finalización del proyecto</label>
-      </p>
+          <p>
+            <textarea
+              name="description"
+              id
+              cols="30"
+              rows="10"
+              placeholder="Mínimo 20 caracteres"
+              v-model="description"
+            ></textarea>
+          </p>
+        </div>
 
-      <p>
-        <input
-          type="text"
-          name="delivery_date"
-          placeholder="Formato aaaa-mm-dd"
-          v-model="delivery_date"
-        />
-      </p>
-      <label for="province">Añade la provincia</label>
-      <p>
-        <input type="text" name="province" v-model="province" />
-      </p>
-      <label for="language">Introduce el lenguaje</label>
-      <p>
-        <input type="text" name="language" v-model="language" />
-      </p>
-      <label for="technology">Introduce la/s tecnología/s</label>
-      <p>
-        <input type="text" name="technology" v-model="technology" />
-      </p>
-      <label for="architecture">Añade la arquitectura</label>
-      <p>
-        <input type="text" name="architecture" v-model="architecture" />
-      </p>
+        <div>
+          <label for="delivery_date">Añade la fecha de finalización del proyecto</label>
+
+          <p>
+            <input
+              type="text"
+              name="delivery_date"
+              placeholder="Formato aaaa-mm-dd"
+              v-model="delivery_date"
+            />
+          </p>
+
+          <label for="province">Añade la provincia</label>
+          <p>
+            <input
+              type="text"
+              name="province"
+              placeholder="Introduce la provincia"
+              v-model="province"
+            />
+          </p>
+
+          <label for="language">Introduce el lenguaje</label>
+          <p>
+            <input
+              type="text"
+              name="language"
+              placeholder="Introduce el lenguaje"
+              v-model="language"
+            />
+          </p>
+
+          <label for="technology">Introduce la/s tecnología/s</label>
+          <p>
+            <input
+              type="text"
+              name="technology"
+              placeholder="Introduce la/s tecnología/s"
+              v-model="technology"
+            />
+          </p>
+
+          <label for="architecture">Añade la arquitectura</label>
+          <p>
+            <input
+              type="text"
+              name="architecture"
+              placeholder="Introduce la arquitectura"
+              v-model="architecture"
+            />
+          </p>
+        </div>
+      </div>
 
       <p>
         <button
@@ -228,23 +263,39 @@ export default {
 }
 .project {
   font-family: "sansSerif";
-  background-image: url("https://www.sosmatic.es/wp-content/uploads/2019/08/ilya-pavlov-wbXdGS_D17U-unsplash.jpg");
-  background-repeat: no-repeat;
+  background: url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjEyMDd9");
   background-position: center;
-  background-size: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
   color: #dae1e7;
 }
 .create {
-  width: 900px;
-  padding-top: 0.5rem;
+  padding-top: 2rem;
+  padding-bottom: 0.5rem;
   margin: 3% auto;
-  background: #00909e;
+  width: 900px;
+  background-color: #27496d;
   color: #dae1e7;
+  box-shadow: 6px 6px 6px #142850;
+  border-radius: 0.5rem;
+}
+.explanation {
+  background-color: #00909e;
+  color: #dae1e7;
+  padding: 1.5rem;
+  border-bottom: 1px solid #dae1e7;
+  opacity: 0.8;
+}
+.columnas {
+  display: grid;
+  grid-template-columns: repeat(2, 40% 40%);
+  align-items: center;
+  margin-left: 9rem;
 }
 h1 {
   font-family: "serif";
   text-decoration: underline;
-  color: #27496d;
+  color: #dae1e7;
 }
 
 label {
@@ -256,18 +307,16 @@ input {
   color: #27496d;
 }
 button {
-  color: #dae1e7;
-  background-color: #27496d;
-
+  color: #27496d;
+  background-color: #dae1e7;
   border: 1px solid #dae1e7;
-  box-shadow: 2px 2px #27496d;
-  padding: 0.3rem;
-
+  padding: 0.5rem;
+  border-radius: 5px;
   margin: 1rem;
+  font-weight: bold;
 }
 button:hover {
-  background-color: #dae1e7;
-  color: #27496d;
-  border: 1px solid #27496d;
+  background-color: #00909e;
+  color: #dae1e7;
 }
 </style>

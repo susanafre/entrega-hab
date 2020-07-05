@@ -1,39 +1,49 @@
 ../../../../BACK/controllers/static/uploads/779156d0-ba38-11ea-8655-d3256f924861.jpg
-
-.updateprofile {
-  color: #dae1e7;
-  background-color: #27496d;
-
+OSCURO
+button {
+  color: #27496d;
+  background-color: #dae1e7;
   border: 1px solid #dae1e7;
-  box-shadow: 2px 2px #27496d;
   padding: 0.3rem;
-
+  border-radius: 5px;
   margin: 1rem;
+  font-weight: bold;
 }
-.updateprofile:hover {
-  background-color: #dae1e7;
-  color: #27496d;
-  border: 1px solid #27496d;
-}
-.cancel {
-  color: #27496d;
-  background-color: #dae1e7;
-
-  border: 1px solid #27496d;
-  box-shadow: 2px 2px #27496d;
-  padding: 0.3rem;
-
-  margin: 1rem;
-}
-.cancel:hover {
-  background-color: #27496d;
+button:hover {
+  background-color: #00909e;
   color: #dae1e7;
+}
+.eliminar {
+  color: #dae1e7;
+  background-color: #27496d;
+  border: 1px solid #dae1e7;
+  border-radius: 5px;
+  padding: 0.3rem;
+  margin: 1rem;
+}
+.eliminar:hover {
+  background-color: #dae1e7;
+  color: #00909e;
   border: 1px solid #dae1e7;
 }
 
+cajas{
+  box-shadow: 6px 6px 6px #142850;
+  border-radius: 0.5rem;
+}
 
 
+VERDE
+#00909e
 
+VERDE MÁS CLARO
+#00b4c6
+
+AZUL
+#142850
+
+BLANCO
+#dae1e7
 
 
 

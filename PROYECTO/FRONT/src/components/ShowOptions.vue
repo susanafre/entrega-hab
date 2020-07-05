@@ -22,8 +22,8 @@
 export default {
   name: "ShowOptions",
   props: {
-    options: Array,
-  },
+    options: Array
+  }
 };
 </script>
 

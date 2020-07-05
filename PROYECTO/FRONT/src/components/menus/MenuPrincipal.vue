@@ -41,7 +41,7 @@ export default {
   background-color: #00909e;
   display: flex;
   justify-content: center;
-  height: 40px;
+  height: 60px;
   opacity: 0.8;
 }
 
@@ -63,7 +63,7 @@ button:hover {
   border-bottom: 2px solid #dae1e7;
 }
 img {
-  height: 40px;
+  height: 60px;
   width: 120px;
 }
 </style>

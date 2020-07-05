@@ -48,7 +48,7 @@ async function editCompanies(req, res, next) {
     if (!current.length) {
       throw generateError(`The entry with id ${id} does not exist`, 404);
     }
-
+    console.log("Esto es current.photo", current[0].photo);
     console.log("esto es req.auth", req.auth);
 
     //Check if the user id is the same as the authorized
@@ -58,7 +58,7 @@ async function editCompanies(req, res, next) {
 
     //Process photo
     let savedFileName;
-    console.log("Esto es req.files", req);
+    console.log("Esto es req.files", req.files);
 
     if (req.files && req.files.photo) {
       try {
@@ -75,7 +75,7 @@ async function editCompanies(req, res, next) {
         throw imageError;
       }
     } else {
-      savedFileName = current.photo;
+      savedFileName = current[0].photo;
     }
 
     const date = formatDateToDB(new Date());
@@ -126,12 +126,16 @@ async function editCompanies(req, res, next) {
         "UPDATE companies SET photo=? WHERE PK_company=?",
         [savedFileName, id]
       );
+    } else {
+      savedFileName = current[0].photo;
     }
 
     connection.release();
 
     res.send({
       status: "ok",
+      message: "The information has been updated",
+
       /* data: {
         PK_company: id,
         name,

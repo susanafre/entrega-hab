@@ -5,6 +5,10 @@
 
     <MenuLoggedCompany :username="username" v-on:logout="logoutUser"></MenuLoggedCompany>
 
+    <div class="explanation">
+      <p>* Aquí puedes ver el perfil de tu empresa, editarlo o cambiar la contraseña *</p>
+    </div>
+
     <!--  VER PERFIL EMPRESA -->
 
     <div class="profile">
@@ -24,12 +28,14 @@
 
         <button class="editar" @click="showeditText()">Editar perfil</button>
 
-        <button class="cambiarpasswd" @click="openPasswdModal()">Cambiar contraseña</button>
-
         <button class="eliminar" @click="deleteCompany()">Eliminar perfil</button>
+
+        <p>
+          <button class="changepasswd" @click="openPasswdModal()">¿Quieres cambiar la contraseña?</button>
+        </p>
       </div>
     </div>
-
+    <FooterCustom></FooterCustom>
     <!-- MODAL PARA EDITAR DATOS DEL USUARIO-->
 
     <div v-show="modal" class="editprofile">
@@ -83,10 +89,15 @@
     <!-- MODAL PARA CAMBIAR LA CONTRASEÑA -->
     <div v-show="modalpasswd" class="modalpasswd">
       <div class="modalBox">
-        <h1>CAMBIO DE CONTRASEÑA</h1>
+        <label for="passwd">Introduzca su contraseña actual</label>
         <p>
-          <input type="password" v-model="newOldPassword" placeholder="Antigua Contraseña" />
+          <input
+            type="password"
+            v-model="newOldPassword"
+            placeholder="Introduce la contraseña actual"
+          />
         </p>
+        <label for="passwd">Introduzca la nueva contraseña</label>
         <p>
           <input
             type="password"
@@ -94,6 +105,7 @@
             placeholder="Introduce la nueva contraseña"
           />
         </p>
+        <label for="passwd">Repite la nueva contraseña</label>
         <p>
           <input
             type="password"
@@ -106,7 +118,6 @@
         <button class="cancel" @click="closePasswdModal()">Cancelar</button>
       </div>
     </div>
-    <FooterCustom></FooterCustom>
   </div>
 </template>
 
@@ -204,7 +215,7 @@ export default {
       this.newDescription = data.description;
       this.newEmail = data.email;
       this.newPhone = data.phone_number;
-      this.file = data.photo;
+
       this.newProvince = data.province;
       this.newWeb = data.web;
     },
@@ -328,30 +339,42 @@ export default {
 }
 /* DIV GENERAL */
 .viewprofile {
-  background-color: #dae1e7;
-  color: #27496d;
   font-family: "sansSerif";
+  background-color: #dae1e7;
+  color: #dae1e7;
 }
 
 /* DIV DE PERFIL */
 
 .profile {
-  background: #00909e;
+  padding: 3rem;
+  background: url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjEyMDd9");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   padding: 3rem;
 }
 .companies {
   padding-top: 2rem;
   padding-bottom: 1rem;
   margin: 0 auto;
-  width: 800px;
-  background-color: #dae1e7;
-  box-shadow: 0.2rem 0.2rem 0.2rem #27496d;
+  width: 700px;
+  background-color: #27496d;
+  box-shadow: 6px 6px 6px #142850;
+  border-radius: 0.5rem;
+}
+.explanation {
+  background-color: #00909e;
+  color: #dae1e7;
+  padding: 1.5rem;
+  border-bottom: 1px solid #dae1e7;
+  opacity: 0.8;
 }
 
 /* GENERAL */
 
 h1 {
-  color: #27496d;
+  color: #dae1e7;
   font-family: "serif";
 }
 h2 {
@@ -360,9 +383,9 @@ h2 {
 }
 img {
   border-radius: 50%;
-  border: 8px solid #27496d;
-  height: 180px;
-  width: 200px;
+  border: 8px solid #dae1e7;
+
+  width: 250px;
 }
 label {
   font-weight: bold;
@@ -372,58 +395,96 @@ input {
   text-align: center;
   color: #27496d;
 }
+::-webkit-input-placeholder {
+  color: #27496d;
+  text-align: center;
+}
+::placeholder {
+  color: #27496d;
+}
 
 /* BOTONES */
 button {
-  color: #dae1e7;
-  background-color: #27496d;
-
+  color: #27496d;
+  background-color: #dae1e7;
   border: 1px solid #dae1e7;
-  box-shadow: 2px 2px #27496d;
   padding: 0.3rem;
-
+  border-radius: 5px;
   margin: 1rem;
+  font-weight: bold;
 }
 button:hover {
-  background-color: #dae1e7;
-  color: #27496d;
-  border: 1px solid #27496d;
+  background-color: #00909e;
+  color: #dae1e7;
 }
 /* BOTONES PERFIL */
-.eliminar {
-  color: #27496d;
-  background-color: #dae1e7;
 
-  border: 1px solid #27496d;
-  box-shadow: 2px 2px #27496d;
+.eliminar {
+  color: #dae1e7;
+  background-color: #27496d;
+  border: 1px solid #dae1e7;
+  border-radius: 5px;
   padding: 0.3rem;
-  font-weight: normal;
   margin: 1rem;
 }
-
 .eliminar:hover {
-  background-color: #27496d;
-  color: #dae1e7;
+  background-color: #dae1e7;
+  color: #00909e;
   border: 1px solid #dae1e7;
 }
-
-.updateprofile:hover {
-  background: #dae1e7;
+.cambiarpasswd {
   color: #27496d;
+  background-color: #dae1e7;
+  border: 1px solid #dae1e7;
+  padding: 0.3rem;
+  border-radius: 5px;
+  margin: 1rem;
+  font-weight: bold;
 }
-.cancel {
-  background: #dae1e7;
-  color: #27496d;
-}
-.cancel:hover {
-  background-color: #27496d;
+.cambiarpasswd:hover {
+  background-color: #00909e;
   color: #dae1e7;
 }
-
+.updateprofile {
+  color: #27496d;
+  background-color: #dae1e7;
+  border: 1px solid #dae1e7;
+  padding: 0.3rem;
+  border-radius: 5px;
+  margin: 1rem;
+  font-weight: bold;
+}
+.updateprofile:hover {
+  background-color: #00909e;
+  color: #dae1e7;
+}
+.cancel {
+  color: #dae1e7;
+  background-color: #27496d;
+  border: 1px solid #dae1e7;
+  padding: 0.3rem;
+  margin: 1rem;
+}
+.cancel:hover {
+  background-color: #dae1e7;
+  color: #00909e;
+  border: 1px solid #dae1e7;
+}
+.changepasswd {
+  color: #dae1e7;
+  background-color: #27496d;
+  border: none;
+}
+.changepasswd:hover {
+  color: #dae1e7;
+  background-color: #27496d;
+  border: none;
+}
 /* DESCRIPCION PERFIL */
 .description {
   width: 600px;
   margin: 0 auto;
+  text-align: justify;
 }
 
 .name {
@@ -440,13 +501,21 @@ button:hover {
 .editcompany {
   padding-top: 2rem;
   padding-bottom: 0.5rem;
-  margin: 8% auto;
+  margin: 5% auto;
   width: 900px;
-  background-color: #00909e;
+  background-color: #27496d;
   color: #dae1e7;
-  box-shadow: 1px 1px 1px #dae1e7;
+  box-shadow: 6px 6px 6px #142850;
+  border-radius: 0.5rem;
 }
 .editcompany > h1 {
+  color: #dae1e7;
+}
+.editcompany input {
+  margin: 0.5rem;
+  border-radius: 0.4rem;
+}
+#file {
   color: #dae1e7;
 }
 h2 > input {
@@ -481,8 +550,9 @@ h2 > input {
   padding-bottom: 0.5rem;
   margin: 17% auto;
   width: 900px;
-  background-color: #00909e;
+  background-color: #27496d;
   color: #dae1e7;
-  box-shadow: 1px 1px 1px #dae1e7;
+  box-shadow: 6px 6px 6px #142850;
+  border-radius: 0.5rem;
 }
 </style>

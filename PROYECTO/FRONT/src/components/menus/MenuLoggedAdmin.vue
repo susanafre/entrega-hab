@@ -1,5 +1,9 @@
 <template>
   <div class="menu">
+    <button>
+      <router-link :to="{ name: 'ProfileCoder' }">MI PERFIL</router-link>
+    </button>
+
     <router-link :to="{ name: 'ProfileCoder' }">
       <img class="logo" :src="require('../../assets/logo_nombre.png')" alt="logo" />
     </router-link>
@@ -13,9 +17,12 @@
       <option value="about">ABOUT</option>
     </select>
 
-    <button @click="logoutUserEvent()">LOG OUT</button>
     <img class="user" :src="require('../../assets/usuario.png')" alt="usuario" />
     <h1>{{ username }}</h1>
+
+    <div class="boton">
+      <button class="logout" @click="logoutUserEvent()">LOG OUT</button>
+    </div>
   </div>
 </template>
 
@@ -46,71 +53,96 @@ export default {
   src: url("../../assets/Ubuntu-Regular.ttf");
 }
 .menu {
-  background-color: #142850;
+  background-color: #00909e;
   padding-left: 20rem;
   display: flex;
-  display: flex;
+  opacity: 0.8;
+  font-family: "serif";
   justify-content: center;
-  height: 40px;
+  height: 60px;
 }
 a {
   border: none;
   text-decoration: none;
-  background-color: #142850;
-  color: #00909e;
+  background-color: #00909e;
+  color: #142850;
   font-weight: bold;
   font-size: 10px;
   font-family: "serif";
   margin-left: 0.7rem;
   margin-right: 0.7rem;
-  margin-top: 9px;
+  font-size: 15px;
 }
 select {
   font-family: "serif";
-  background-color: #142850;
-  color: #00909e;
+  background-color: #00909e;
+  color: #142850;
   margin-left: 1rem;
   margin-right: 1rem;
   border: none;
   width: 80px;
+  color: #dae1e7;
+  font-weight: bold;
+}
+select > option {
+  color: #dae1e7;
+  margin: 0.5rem;
 }
 button {
   border: none;
-  background-color: #142850;
-  color: #00909e;
+
+  background-color: #00909e;
+  color: #142850;
   font-weight: bold;
   font-size: 10px;
   font-family: "serif";
-  margin-left: 0.4rem;
-  margin-right: 0.4rem;
+  margin-left: 0.7rem;
+  margin-right: 0.7rem;
+  font-size: 15px;
 }
 button:hover {
-  opacity: 0.5;
-  border: 1px solid #142850;
+  color: #dae1e7;
+  border-bottom: 2px solid #dae1e7;
 }
 .logo {
-  height: 30px;
-  width: 80px;
+  height: 60px;
+  width: 120px;
+  margin: 0;
+  padding: 0;
 }
 h1 {
-  margin-top: 7px;
+  margin-top: 1.3rem;
   font-size: 13px;
   margin-left: 0;
-  margin-right: 1rem;
-  color: #00909e;
+  color: #dae1e7;
   font-family: "serif";
 }
 a.router-link-exact-active {
   margin-top: 5px;
-  text-decoration: underline;
+  font-weight: bold;
   color: #dae1e7;
   font-weight: bolder;
 }
 .user {
   height: 25px;
   width: 25px;
-  margin-top: 3.5px;
-  margin-right: 7px;
+  margin-top: 1rem;
+  margin-right: 5px;
+  margin-left: 10rem;
+}
+.logout {
+  margin-top: 1.1rem;
   margin-left: 1rem;
+  font-size: 10px;
+  border: 1px solid #142850;
+  background: #142850;
+  color: #dae1e7;
+  padding: 4px;
+  border-radius: 4px;
+}
+.logout:hover {
+  background: #dae1e7;
+  color: #142850;
+  border: 0;
 }
 </style>

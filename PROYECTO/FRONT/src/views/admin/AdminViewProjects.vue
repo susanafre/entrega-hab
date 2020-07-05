@@ -4,6 +4,10 @@
     <!-- IMPORTAMOS COMPONENTE MENÚ -->
     <MenuLoggedAdmin :username="username" v-on:cambiar="changeLocation" v-on:logout="logoutUser"></MenuLoggedAdmin>
 
+    <div class="explanation">
+      <p>* Aquí puedes ver proyectos, editarlos, eliminarlos o ver sus candidaturas. *</p>
+    </div>
+
     <!-- IMPORTAMOS COMPONENTE PARA VER LOS PROYECTOS -->
     <AdminProjectsCard
       :projects="projects"
@@ -26,7 +30,7 @@
 
         <p>
           <label for="name">NOMBRE:</label>
-          <input v-model="newName" placeholder="Nombre" />
+          <input class="namemain" v-model="newName" placeholder="Nombre" />
         </p>
 
         <p>
@@ -52,7 +56,7 @@
 
         <p>
           <label for="technology">TECNOLOGÍA:</label>
-          <input v-model="newTechnology" placeholder="Tencología" />
+          <input v-model="newTechnology" placeholder="Tecnología" />
         </p>
 
         <p>
@@ -146,6 +150,8 @@ export default {
 
     editProject(data) {
       this.openModal();
+      console.log("esto es data", data.id);
+
       this.newName = data.name_project;
       this.newDescription = data.description;
 
@@ -154,12 +160,12 @@ export default {
       this.NewLanguage = data.language;
       this.newTechnology = data.technology;
       this.newArchitecture = data.architecture;
-      this.id = data.PK_project;
+      this.id = data.id;
     },
     /* Editar datos de un proyecto */
 
     updateProject() {
-      var self = this;
+      console.log("esto es this.id", this.id);
       axios
         .put("http://localhost:3000/projects/" + this.id, {
           name: this.newName,
@@ -173,8 +179,9 @@ export default {
         //Si sale bien
         .then(async function(response) {
           await Swal.fire("Se ha modificado el proyecto");
-          self.closeModal();
+
           location.reload();
+          this.closeModal();
         })
         //Si sale mal
         .catch(function(error) {
@@ -265,7 +272,18 @@ export default {
   font-family: "sansSerif";
   src: url("../../assets/Ubuntu-Regular.ttf");
 }
-
+.projects {
+  font-family: "sansSerif";
+}
+h1 {
+  font-family: "serif";
+}
+.explanation {
+  background-color: #00909e;
+  color: #dae1e7;
+  padding: 1.5rem;
+  opacity: 0.8;
+}
 /* MODALES */
 .modal {
   position: fixed;
@@ -279,40 +297,56 @@ export default {
 .modalBox {
   padding-top: 2rem;
   padding-bottom: 0.5rem;
-  margin: 17% auto;
+  margin: 9.5% auto;
   width: 900px;
-  background-color: #00909e;
+  background-color: #27496d;
   color: #dae1e7;
-  box-shadow: 1px 1px 1px #dae1e7;
+  box-shadow: 6px 6px 6px #142850;
+  border-radius: 0.5rem;
 }
 button {
-  color: #dae1e7;
-  background-color: #27496d;
-
+  color: #27496d;
+  background-color: #dae1e7;
   border: 1px solid #dae1e7;
-  box-shadow: 2px 2px #27496d;
   padding: 0.3rem;
-
+  border-radius: 5px;
   margin: 1rem;
+  font-weight: bold;
 }
 button:hover {
-  background-color: #dae1e7;
-  color: #27496d;
-  border: 1px solid #27496d;
+  background-color: #00909e;
+  color: #dae1e7;
 }
 .eliminar {
-  color: #27496d;
-  background-color: #dae1e7;
-
-  border: 1px solid #27496d;
-  box-shadow: 2px 2px #27496d;
+  color: #dae1e7;
+  background-color: #27496d;
+  border: 1px solid #dae1e7;
   padding: 0.3rem;
-
   margin: 1rem;
 }
 .eliminar:hover {
-  background-color: #27496d;
-  color: #dae1e7;
+  background-color: #dae1e7;
+  color: #00909e;
   border: 1px solid #dae1e7;
+}
+label {
+  font-weight: bold;
+  margin: 1.5rem;
+}
+input {
+  margin: 0.5rem;
+  border-radius: 0.4rem;
+  text-align: center;
+}
+::-webkit-input-placeholder {
+  color: #27496d;
+  text-align: center;
+}
+::placeholder {
+  color: #27496d;
+}
+.namemain {
+  height: 30px;
+  width: 300px;
 }
 </style>

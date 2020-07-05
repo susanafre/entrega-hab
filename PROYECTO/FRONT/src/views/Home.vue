@@ -78,7 +78,7 @@
     <!-- AQUÍ SE MUESTRA MÁS INFORMACIÓN SOBRE LAS EMPRESAS -->
 
     <div v-show="modalcompany" class="modalcompany">
-      <div class="modalBox">
+      <div class="modalShowCompany">
         <!--  <p>
           <img :src="require(`../../../BACK/controllers/static/uploads/${companies.photo}`)" />
         </p>-->
@@ -101,27 +101,37 @@
       <div class="modalBox">
         <h1>Inicia sesión</h1>
 
-        <!-- INPUT PARA EMAIL Y CONTRASEÑA -->
-        <label for="name">Correo electrónico</label>
-        <p>
-          <input type="text" name="email" placeholder v-model="email" />
-        </p>
-        <label for="password">Contraseña</label>
-        <p>
-          <input type="password" name="password" placeholder v-model="password" />
-        </p>
+        <div class="imagelogo">
+          <img :src="require('@/assets/logo_solo.png')" alt="logo" />
+        </div>
+        <div class="inputlogin">
+          <!-- INPUT PARA EMAIL Y CONTRASEÑA -->
+          <label class="inputname" for="name">Correo electrónico</label>
+          <p>
+            <input type="text" name="email" placeholder="Introduce tu mail" v-model="email" />
+          </p>
+          <label for="password">Contraseña</label>
+          <p>
+            <input
+              type="password"
+              name="password"
+              placeholder="Introduce tu contraseña"
+              v-model="password"
+            />
+          </p>
 
-        <!-- BOTONES DE CERRAR EL MODAL Y DE HACER LOGIN -->
+          <!-- BOTONES DE CERRAR EL MODAL Y DE HACER LOGIN -->
 
-        <button class="login" @click="logCoder()">Acceder</button>
-        <button class="closelogin" @click="closeModal()">Cerrar</button>
+          <button class="login" @click="logCoder()">Acceder</button>
+          <button class="closelogin" @click="closeModal()">Cerrar</button>
 
-        <!-- SI NO ESTÁ REGISTRADO, LLEVA AL ÁREA DE REGISTRO -->
+          <!-- SI NO ESTÁ REGISTRADO, LLEVA AL ÁREA DE REGISTRO -->
 
-        <p>
-          ¿No estás registrado? Haz click
-          <router-link to="/register-coder">AQUÍ</router-link>
-        </p>
+          <p>
+            ¿No estás registrado? Haz click
+            <router-link to="/register-coder">AQUÍ</router-link>
+          </p>
+        </div>
       </div>
     </div>
 
@@ -132,27 +142,38 @@
     <div v-show="modallogincompany" class="modallogincompany">
       <div class="modalBox">
         <h1>Inicia sesión</h1>
-        <label for="name">Correo electrónico</label>
-        <p>
-          <input type="text" name="email" placeholder v-model="email" />
-        </p>
 
-        <label for="password">Contraseña</label>
-        <p>
-          <input type="password" name="password" placeholder v-model="password" />
-        </p>
+        <div class="imagelogo">
+          <img :src="require('@/assets/logo_solo.png')" alt="logo" />
+        </div>
+        <div class="inputlogin">
+          <label for="name">Correo electrónico</label>
+          <p>
+            <input type="text" name="email" placeholder="Introduce tu mail" v-model="email" />
+          </p>
 
-        <!-- ESTO HACE LOGIN O CIERRA EL MODAL -->
+          <label for="password">Contraseña</label>
+          <p>
+            <input
+              type="password"
+              name="password"
+              placeholder="Introduce tu contraseña"
+              v-model="password"
+            />
+          </p>
 
-        <button class="login" @click="logCompany()">Acceder</button>
-        <button class="closelogin" @click="closeModalLogCompany()">Cerrar</button>
+          <!-- ESTO HACE LOGIN O CIERRA EL MODAL -->
 
-        <!-- SI NO ESTÁ REGISTRADO, LLEVA A LA VENTANA DE REGISTRO -->
+          <button class="login" @click="logCompany()">Acceder</button>
+          <button class="closelogin" @click="closeModalLogCompany()">Cerrar</button>
 
-        <p>
-          ¿No estás registrado? Haz click
-          <router-link to="/register-company">AQUÍ</router-link>
-        </p>
+          <!-- SI NO ESTÁ REGISTRADO, LLEVA A LA VENTANA DE REGISTRO -->
+
+          <p>
+            ¿No estás registrado? Haz click
+            <router-link to="/register-company">AQUÍ</router-link>
+          </p>
+        </div>
       </div>
     </div>
 
@@ -587,7 +608,9 @@ input {
   height: 400px;
   color: #dae1e7;
 }
-
+.buttonfilter:hover {
+  border-radius: 0;
+}
 .filtersmall {
   background-color: #dae1e7;
   opacity: 0.9;
@@ -622,14 +645,37 @@ input {
 .modalBox {
   background: #27496d;
   color: #dae1e7;
-  margin: 13% auto;
+  margin: 10% auto;
   padding: 20px;
-  border: 1px solid #888;
-  width: 50%;
-  background-size: 25%;
-  box-shadow: 1rem 1rem 1rem #27496d;
-}
 
+  width: 50%;
+  height: 400px;
+  background-size: 25%;
+  box-shadow: 6px 6px 6px #142850;
+  border-radius: 0.5rem;
+  columns: 2;
+}
+.modalShowCompany {
+  background: #27496d;
+  color: #dae1e7;
+  margin: 10% auto;
+  padding: 20px;
+
+  width: 50%;
+  height: 60%;
+  background-size: 25%;
+  box-shadow: 6px 6px 6px #142850;
+  border-radius: 0.5rem;
+}
+.imagelogo {
+  border-right: 1px solid #dae1e7;
+}
+.imagelogo > img {
+  height: 300px;
+}
+.inputlogin {
+  padding-top: 5rem;
+}
 .modalBox > h1 {
   font-family: "serif";
   font-size: 2rem;
@@ -637,23 +683,29 @@ input {
   opacity: 0.9;
 }
 .login {
-  font-size: 1rem;
+  color: #27496d;
+  background-color: #dae1e7;
   border: 1px solid #dae1e7;
-  box-shadow: 2px 2px #dae1e7;
+  padding: 0.3rem;
+  border-radius: 5px;
+  margin: 1rem;
+  font-weight: bold;
 }
 .login:hover {
-  background-color: #dae1e7;
-  color: #27496d;
+  background-color: #00909e;
+  color: #dae1e7;
 }
 .closelogin {
-  background-color: #dae1e7;
-  color: #27496d;
-  font-size: 12px;
-  border: 1px solid #27496d;
+  color: #dae1e7;
+  background-color: #27496d;
+  border: 1px solid #dae1e7;
+  border-radius: 5px;
+  padding: 0.3rem;
+  margin: 1rem;
 }
 .closelogin:hover {
-  background: #27496d;
-  color: #dae1e7;
+  background-color: #dae1e7;
+  color: #00909e;
   border: 1px solid #dae1e7;
 }
 .logCompany {

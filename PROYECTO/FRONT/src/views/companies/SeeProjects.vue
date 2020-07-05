@@ -7,40 +7,53 @@
 
     <!-- SE MUESTRAN LOS PROYECTOS DE LA EMPRESA -->
 
-    <h1>MIS PROYECTOS</h1>
+    <div class="explanation">
+      <p>* Aquí puedes ver tus proyectos, las candidaturas de cada uno y gestionar el estado de las candidaturas. *</p>
+    </div>
 
     <!-- COMPONENTE QUE MUESTRA LOS PROYECTOS -->
 
-    <showProjects :projects="projects" v-on:opciones="selectOptions"></showProjects>
-
-    <!-- COMPONENTE QUE ELIMINA LAS CANDIDATURAS QUE DECIDA EL USUARIO -->
-
-    <closeCandidaturesCard
+    <showProjects
+      :projects="projects"
       :candidatures="candidatures"
-      :modalCandidature="modalCandidature"
+      :vercandidaturas="vercandidaturas"
+      v-on:opciones="selectOptions"
       v-on:mostrarPerfil="getProfileCoder"
       v-on:cerrarModal="closeModalCandidatures"
       v-on:cambiar="changeState"
-    ></closeCandidaturesCard>
+      v-on:cerrarCandidaturas="closeCandidatures"
+    ></showProjects>
+
+    <!-- COMPONENTE QUE ELIMINA LAS CANDIDATURAS QUE DECIDA EL USUARIO -->
 
     <!-- MODAL QUE MUESTRA EL PERFIL DE LOS CODERS QUE HAN PRESENTADO SU CANDIDATURA A UN PROYECTO -->
 
     <div class="modal" v-show="modalProfileCoder">
       <div class="profile">
-        <img src="'../../../../BACK/controllers/static/uploads/' + coders.photo" />
+        <!--   <img :src="require(`../../../../BACK/controllers/static/uploads/${coders.photo}`)" /> -->
+
         <h1>{{ coders.name }} {{ coders.surname }}</h1>
         <td>
           <tr>
             <h2>Datos personales</h2>
           </tr>
           <tr>
-            <p>EMAIL: {{ coders.email }}</p>
+            <p>
+              <b>EMAIL:</b>
+              {{ coders.email }}
+            </p>
           </tr>
           <tr>
-            <p>TELÉFONO: {{ coders.phone_number }}</p>
+            <p>
+              <b>TELÉFONO:</b>
+              {{ coders.phone_number }}
+            </p>
           </tr>
           <tr>
-            <p>PROVINCIA: {{ coders.province }}</p>
+            <p>
+              <b>PROVINCIA:</b>
+              {{ coders.province }}
+            </p>
           </tr>
         </td>
 
@@ -49,18 +62,36 @@
             <h2 class="space">Datos técnicos</h2>
           </tr>
           <tr>
-            <p>ARCHITECTURE: {{ coders.architecture }}</p>
+            <div class="architecture">
+              Arquitectura:
+              <div
+                class="arch"
+                :class="{frontend: coders.architecture === 'FrontEnd' | coders.architecture === 'Front End',backend:coders.architecture === 'BackEnd' | coders.architecture === 'Back End'}"
+              >#{{ coders.architecture }}</div>
+            </div>
           </tr>
           <tr>
-            <p>LENGUAJE: {{ coders.language }}</p>
+            <div class="language">
+              Lenguaje:
+              <div
+                class="lang"
+                :class="{html:coders.language === 'HTML, CSS, Javascript',python:coders.language === 'Python',node:coders.language === 'Javascript node',php:coders.language === 'PHP',sql:coders.language === 'SQL'}"
+              >#{{ coders.language }}</div>
+            </div>
           </tr>
           <tr>
-            <p>TECHNOLOGY: {{ coders.technology }}</p>
+            <div class="technology">
+              Tecnología:
+              <div
+                class="tech"
+                :class="{react:coders.technology === 'React JS',angular:coders.technology === 'Angular',bootstrap:coders.technology === 'Bootstrap',redux:coders.technology === 'Redux',django:coders.technology === 'Django',vue:coders.technology === 'Vue js',node:coders.technology === 'Node js',laravel:coders.technology === 'Laravel',workbench:coders.technology === 'MySQL Workbench'}"
+              >#{{ coders.technology }}</div>
+            </div>
           </tr>
         </td>
 
         <p>
-          <button @click="closeModalProfileCoder()">Cerrar ventana</button>
+          <button class="closemodal" @click="closeModalProfileCoder()">Cerrar ventana</button>
         </p>
       </div>
     </div>
@@ -69,10 +100,10 @@
 
     <div class="modal" v-show="modal">
       <div class="modalBox">
-        <h1>EDITAR PROYECTO</h1>
+        <h1>EDITA TU PROYECTO</h1>
 
-        <p>
-          <label for="name">Nombre:</label>
+        <p class="name">
+          <label for="name">Nombre</label>
           <input v-model="newName" placeholder="Nombre" />
         </p>
 
@@ -99,7 +130,7 @@
 
         <p>
           <label for="technology">Tecnología:</label>
-          <input v-model="newTechnology" placeholder="Tencología" />
+          <input v-model="newTechnology" placeholder="Tecnología" />
         </p>
 
         <p>
@@ -108,10 +139,9 @@
         </p>
 
         <button @click="updateProject()">Actualizar</button>
-        <button @click="closeModal()">Cancelar</button>
+        <button class="closemodal" @click="closeModal()">Cancelar</button>
       </div>
     </div>
-
     <FooterCustom></FooterCustom>
   </div>
 </template>
@@ -125,7 +155,6 @@ import Swal from "sweetalert2";
 import showProjects from "@/components/showProjects.vue";
 import MenuLoggedCompany from "../../components/menus/MenuLoggedCompany.vue";
 import FooterCustom from "@/components/FooterCustom.vue";
-import closeCandidaturesCard from "@/components/closeCandidaturesCard.vue";
 
 import { clearLogin } from "../../api/utils";
 
@@ -133,8 +162,6 @@ export default {
   name: "SeeProjects",
   components: {
     showProjects,
-    closeCandidaturesCard,
-
     MenuLoggedCompany,
     FooterCustom
   },
@@ -178,7 +205,8 @@ export default {
       modalCandidature: false,
       emptyProjects: false,
       modalcreateproject: false,
-      modalProfileCoder: false
+      modalProfileCoder: false,
+      vercandidaturas: false
     };
   },
   methods: {
@@ -236,6 +264,7 @@ export default {
 
         /* VER CANDIDATURAS */
       } else if (event.target.value === "candidaturas") {
+        this.vercandidaturas = true;
         if (localStorage.id) this.id1 = localStorage.id;
 
         console.log("Esto es data", data.PK_project);
@@ -482,6 +511,9 @@ export default {
     },
     closeModalProfileCoder() {
       this.modalProfileCoder = false;
+    },
+    closeCandidatures() {
+      this.vercandidaturas = false;
     }
   },
   mounted() {
@@ -506,11 +538,23 @@ export default {
   font-family: "sansSerif";
   background-color: #00909e;
   color: #dae1e7;
+  background: url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjEyMDd9");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 600px;
+  width: 100%;
+}
+.explanation {
+  background-color: #00909e;
+  color: #dae1e7;
+  padding: 1.5rem;
+  opacity: 0.8;
 }
 h1 {
   font-family: "serif";
   padding: 1rem;
-  text-decoration: underline;
+
   color: #27496d;
 }
 
@@ -523,6 +567,13 @@ input {
   text-align: center;
   color: #27496d;
 }
+::-webkit-input-placeholder {
+  color: #27496d;
+  text-align: center;
+}
+::placeholder {
+  color: #27496d;
+}
 .profile td {
   display: inline-block;
   margin: 2rem;
@@ -531,19 +582,17 @@ input {
 /* BOTONES */
 
 button {
-  color: #dae1e7;
-  background-color: #27496d;
-
+  color: #27496d;
+  background-color: #dae1e7;
   border: 1px solid #dae1e7;
-  box-shadow: 2px 2px #27496d;
   padding: 0.3rem;
-
+  border-radius: 5px;
   margin: 1rem;
+  font-weight: bold;
 }
 button:hover {
-  background-color: #dae1e7;
-  color: #27496d;
-  border: 1px solid #27496d;
+  background-color: #00909e;
+  color: #dae1e7;
 }
 
 /* MODALES */
@@ -559,16 +608,41 @@ button:hover {
 .modalBox {
   padding-top: 2rem;
   padding-bottom: 1rem;
-  margin: 10% auto;
+  margin: 9.5% auto;
   width: 900px;
-  background-color: #00909e;
-  box-shadow: 0.5rem 0.5rem 0.5rem #dae1e7;
+  background-color: #27496d;
+  color: #dae1e7;
+  box-shadow: 6px 6px 6px #142850;
+  border-radius: 0.5rem;
 }
 .modalBox > h1 {
   color: #dae1e7;
 }
 .modalBox > p > label {
   color: #dae1e7;
+}
+.modalBox input {
+  border-radius: 4px;
+  border: 0;
+  height: 30px;
+  width: 300px;
+}
+.modalBox textarea {
+  border-radius: 4px;
+  border: 0;
+}
+.cancel {
+  background-color: #dae1e7;
+  color: #27496d;
+}
+.cancel:hover {
+  background-color: #27496d;
+  color: #dae1e7;
+  border: 1px solid #dae1e7;
+}
+.name input {
+  width: 300px;
+  margin: auto;
 }
 .createproject {
   position: fixed;
@@ -591,7 +665,209 @@ button:hover {
   padding-bottom: 1rem;
   margin: 10% auto;
   width: 900px;
+  background-color: #27496d;
+  color: #dae1e7;
+}
+.profile h1 {
+  color: #dae1e7;
+}
+.closemodal {
+  color: #dae1e7;
+  background-color: #27496d;
+  border: 1px solid #dae1e7;
+  border-radius: 5px;
+  padding: 0.3rem;
+  margin: 1rem;
+}
+.closemodal:hover {
   background-color: #dae1e7;
-  color: #27496d;
+  color: #00909e;
+  border: 1px solid #dae1e7;
+}
+
+.architecture {
+  display: inline-flex;
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.frontend {
+  font-weight: bold;
+  color: #142850;
+  background: #dae1e7;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  padding: 4px;
+  border-radius: 20px;
+}
+.backend {
+  font-weight: bold;
+  color: #00909e;
+  background: #dae1e7;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  padding: 4px;
+  border-radius: 20px;
+}
+
+.language {
+  display: inline-flex;
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.html {
+  font-weight: bold;
+  color: orange;
+  background: #dae1e7;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  padding: 4px;
+  border-radius: 20px;
+}
+.python {
+  font-weight: bold;
+  color: yellow;
+  background: #4a7aa5;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  padding: 4px;
+  border-radius: 20px;
+}
+.node {
+  font-weight: bold;
+  color: white;
+  background: #5bcf51;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  padding: 4px;
+  border-radius: 20px;
+}
+.php {
+  font-weight: bold;
+  color: white;
+  background: #8f6cb6;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  padding: 4px;
+  border-radius: 20px;
+}
+.sql {
+  font-weight: bold;
+  color: #e5a609;
+  background: #398eb0;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  padding: 4px;
+  border-radius: 20px;
+}
+.technology {
+  display: inline-flex;
+  font-weight: bold;
+  margin-top: 0.8rem;
+}
+.react {
+  font-weight: bold;
+  color: #398eb0;
+  background: black;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  padding: 4px;
+  border-radius: 20px;
+}
+.angular {
+  font-weight: bold;
+  color: red;
+  background: white;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  padding: 4px;
+  border-radius: 20px;
+}
+.bootstrap {
+  font-weight: bold;
+  color: white;
+  background: #4126b2;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  padding: 4px;
+  border-radius: 20px;
+}
+.redux {
+  font-weight: bold;
+  color: #4126b2;
+  background: white;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  padding: 4px;
+  border-radius: 20px;
+}
+.django {
+  font-weight: bold;
+  color: white;
+  background: #4126b2;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  padding: 4px;
+  border-radius: 20px;
+}
+.vue {
+  font-weight: bold;
+  color: #59b686;
+  background: #434e68;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  padding: 4px;
+  border-radius: 20px;
+}
+.laravel {
+  font-weight: bold;
+  color: white;
+  background: #e15518;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  padding: 4px;
+  border-radius: 20px;
+}
+.workbench {
+  font-weight: bold;
+  color: #e5a609;
+  background: #398eb0;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  padding: 4px;
+  border-radius: 20px;
 }
 </style>

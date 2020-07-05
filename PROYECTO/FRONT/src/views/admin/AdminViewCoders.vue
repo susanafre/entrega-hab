@@ -4,6 +4,10 @@
     <!-- IMPORTAMOS COMPONENTE MENÚ -->
     <MenuLoggedAdmin :username="username" v-on:cambiar="changeLocation" v-on:logout="logoutUser"></MenuLoggedAdmin>
 
+    <div class="explanation">
+      <p>* Aquí puedes ver los desarrolladores registrados, editarlos o eliminarlos. *</p>
+    </div>
+
     <!-- IMPORTAMOS COMPONENTE PARA VER LOS CODERS -->
     <AdminCodersCard
       :coders="coders"
@@ -157,8 +161,9 @@ export default {
         //Si sale bien
         .then(async function(response) {
           await Swal.fire("Se ha modificado el cliente");
-          this.closeModal();
+
           location.reload();
+          this.closeModal();
         })
         //Si sale mal
         .catch(function(error) {
@@ -268,31 +273,60 @@ export default {
   font-family: "sansSerif";
   src: url("../../assets/Ubuntu-Regular.ttf");
 }
-button {
+.coders {
+  background: url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjEyMDd9");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.explanation {
+  background-color: #00909e;
   color: #dae1e7;
-  background-color: #27496d;
-  font-weight: bold;
-  border: 2px solid #dae1e7;
-  box-shadow: 2px 2px #27496d;
+  padding: 1.5rem;
+  opacity: 0.8;
+}
+button {
+  color: #27496d;
+  background-color: #dae1e7;
+  border: 1px solid #dae1e7;
   padding: 0.3rem;
-
+  border-radius: 5px;
   margin: 1rem;
+  font-weight: bold;
 }
 button:hover {
-  background: #dae1e7;
-  color: #27496d;
+  background-color: #00909e;
+  color: #dae1e7;
 }
 .editcoder {
   padding-top: 2rem;
   padding-bottom: 0.5rem;
-  margin: 7% auto;
+  margin: 9.5% auto;
   width: 900px;
-  background-color: #00909e;
+  background-color: #27496d;
   color: #dae1e7;
-  box-shadow: 1px 1px 1px #dae1e7;
+  box-shadow: 6px 6px 6px #142850;
+  border-radius: 0.5rem;
 }
 .editcoder > h1 {
   color: #dae1e7;
+}
+.editcoder h2 input {
+  height: 2rem;
+  font-size: 15px;
+  margin: 3px;
+}
+.editcoder input {
+  border-radius: 0.3rem;
+  border: none;
+  text-align: center;
+}
+::-webkit-input-placeholder {
+  color: #27496d;
+  text-align: center;
+}
+::placeholder {
+  color: #27496d;
 }
 .editprofile {
   position: fixed;
@@ -301,5 +335,25 @@ button:hover {
   bottom: 0;
   background: rgba(0, 0, 0, 0.5);
   width: 100%;
+}
+.cancel {
+  color: #dae1e7;
+  background-color: #27496d;
+  border: 1px solid #dae1e7;
+  border-radius: 5px;
+  padding: 0.3rem;
+  margin: 1rem;
+}
+.cancel:hover {
+  background-color: #dae1e7;
+  color: #00909e;
+  border: 1px solid #dae1e7;
+}
+label {
+  font-weight: bold;
+  margin: 1.5rem;
+}
+h1 {
+  font-family: "serif";
 }
 </style>

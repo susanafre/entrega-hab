@@ -13,7 +13,7 @@ async function editProjects(req, res, next) {
       name,
       description,
       province,
-      delivery_date,
+
       language,
       technology,
       architecture,
@@ -44,17 +44,8 @@ async function editProjects(req, res, next) {
     } */
     const date = formatDateToDB(new Date());
     await connection.query(
-      "UPDATE projects SET name=?,description=?,province=?,delivery_date=?,language=?,technology=?,architecture=? WHERE PK_project=?",
-      [
-        name,
-        description,
-        province,
-        delivery_date,
-        language,
-        technology,
-        architecture,
-        id,
-      ]
+      "UPDATE projects SET name=?,description=?,province=?,language=?,technology=?,architecture=? WHERE PK_project=?",
+      [name, description, province, language, technology, architecture, id]
     );
 
     connection.release();
@@ -66,7 +57,7 @@ async function editProjects(req, res, next) {
         name,
         description,
         province,
-        delivery_date,
+
         language,
         technology,
         architecture,

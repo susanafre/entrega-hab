@@ -47,6 +47,8 @@ async function editCoders(req, res, next) {
       [id]
     );
 
+    console.log("Esto es current.photo", current[0].photo);
+
     if (!current.length) {
       throw generateError(`The entry with id ${id} does not exist`, 404);
     }
@@ -63,7 +65,7 @@ async function editCoders(req, res, next) {
 
     let savedFileName;
 
-    console.log("Esto es req.files", req);
+    console.log("Esto es req.files", req.files);
 
     if (req.files && req.files.photo) {
       try {
@@ -80,7 +82,7 @@ async function editCoders(req, res, next) {
         throw imageError;
       }
     } else {
-      savedFileName = current.photo;
+      savedFileName = current[0].photo;
     }
 
     const date = formatDateToDB(new Date());
@@ -162,6 +164,8 @@ async function editCoders(req, res, next) {
         savedFileName,
         id,
       ]);
+    } else {
+      savedFileName = current[0].photo;
     }
 
     connection.release();

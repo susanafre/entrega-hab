@@ -13,99 +13,128 @@
 
     <div class="coders">
       <h2>Datos de acceso a FI.Coder</h2>
+      <div class="register">
+        <div>
+          <!-- NOMBRE -->
 
-      <!-- EMAIL -->
+          <label for="name">Introduce tu nombre</label>
 
-      <p>
-        <label for="email">Introduce tu email</label>
-      </p>
-      <p>
-        <input type="text" name="email" placeholder v-model="email" />
-      </p>
-
-      <!-- CONTRASEÑA -->
-
-      <p>
-        <label for="password">Crea una contraseña</label>
-      </p>
-      <p>
-        <input type="password" name="password" placeholder="Mínimo 8 caracteres" v-model="password" />
-      </p>
-      <!-- NOMBRE -->
-      <td>
-        <tr>
           <p>
-            <label for="name">Introduce tu nombre</label>
+            <input
+              class="inputdata"
+              type="text"
+              name="nombre"
+              placeholder="Introduce tu nombre"
+              v-model="name"
+            />
           </p>
-        </tr>
-        <tr>
+
+          <!-- APELLIDOS -->
+
+          <label for="surname">Introduce tus apellidos</label>
+
           <p>
-            <input class="inputdata" type="text" name="nombre" placeholder v-model="name" />
+            <input
+              class="inputdata"
+              type="text"
+              name="surname"
+              placeholder="Introduce tus apellidos"
+              v-model="surname"
+            />
           </p>
-        </tr>
-      </td>
-      <!-- APELLIDOS -->
-      <td>
-        <tr>
+
+          <!-- EMAIL -->
+          <label for="email">Introduce tu email</label>
+
           <p>
-            <label for="surname">Introduce tus apellidos</label>
+            <input type="text" name="email" placeholder="Introduce tu email" v-model="email" />
           </p>
-        </tr>
 
-        <tr>
+          <!-- CONTRASEÑA -->
+
+          <label for="password">Crea una contraseña</label>
+
           <p>
-            <input class="inputdata" type="text" name="surname" v-model="surname" />
+            <input
+              type="password"
+              name="password"
+              placeholder="Mínimo 8 caracteres"
+              v-model="password"
+            />
           </p>
-        </tr>
-      </td>
 
-      <!-- TELÉFONO -->
+          <!-- REPETIR CONTRASEÑA -->
 
-      <p>
-        <label for="phone">Introduce tu teléfono</label>
-      </p>
-      <p>
-        <input
-          type="text"
-          name="phone_number"
-          placeholder="Mínimo 9 dígitos"
-          v-model="phone_number"
-        />
-      </p>
+          <label for="password">Repite la contraseña</label>
 
-      <!-- PROVINCIA -->
+          <p>
+            <input type="password" name="password" placeholder="Repite la contraseña" />
+          </p>
+        </div>
 
-      <label for="province">Introduce tu provincia</label>
+        <div>
+          <!-- TELÉFONO -->
 
-      <p>
-        <input type="text" name="province" v-model="province" />
-      </p>
+          <label for="phone">Introduce tu teléfono</label>
 
-      <!-- LENGUAJE -->
+          <p>
+            <input
+              type="text"
+              name="phone_number"
+              placeholder="Mínimo 9 dígitos"
+              v-model="phone_number"
+            />
+          </p>
 
-      <label for="language">Introduce lenguaje</label>
+          <!-- PROVINCIA -->
 
-      <p>
-        <input type="text" name="language" v-model="language" />
-      </p>
+          <label for="province">Introduce tu provincia</label>
 
-      <!-- TECNOLOGÍA -->
+          <p>
+            <input
+              type="text"
+              name="province"
+              placeholder="Introduce tu provincia"
+              v-model="province"
+            />
+          </p>
 
-      <label for="technology">Introduce tecnología</label>
+          <!-- LENGUAJE -->
 
-      <p>
-        <input type="text" name="technology" v-model="technology" />
-      </p>
+          <label for="language">Introduce lenguaje</label>
 
-      <!-- ARQUITECTURA -->
+          <p>
+            <input type="text" name="language" placeholder="Introduce lenguaje" v-model="language" />
+          </p>
 
-      <label for="architecture">Introduce arquitectura</label>
+          <!-- TECNOLOGÍA -->
 
-      <p>
-        <input type="text" name="architecture" v-model="architecture" />
-      </p>
+          <label for="technology">Introduce tecnología</label>
 
-      <p>
+          <p>
+            <input
+              type="text"
+              name="technology"
+              placeholder="Introduce tecnología/s"
+              v-model="technology"
+            />
+          </p>
+
+          <!-- ARQUITECTURA -->
+
+          <label for="architecture">Introduce arquitectura</label>
+
+          <p>
+            <input
+              type="text"
+              name="architecture"
+              placeholder="Introduce arquitecturaa"
+              v-model="architecture"
+            />
+          </p>
+        </div>
+      </div>
+      <div class="botones">
         <button
           class="register"
           @click="
@@ -123,7 +152,7 @@
           "
         >Registrar</button>
         <button class="cancel" @click="cancelButton()">Cancelar</button>
-      </p>
+      </div>
     </div>
     <!-- ######### LOGIN CODER ############ -->
 
@@ -136,11 +165,16 @@
         <!-- INPUT PARA EMAIL Y CONTRASEÑA -->
         <label for="name">Correo electrónico</label>
         <p>
-          <input type="text" name="email" placeholder v-model="email" />
+          <input type="text" name="email" placeholder="Introduce el email" v-model="email" />
         </p>
         <label for="password">Contraseña</label>
         <p>
-          <input type="password" name="password" placeholder v-model="password" />
+          <input
+            type="password"
+            name="password"
+            placeholder="Introduce la contraseña"
+            v-model="password"
+          />
         </p>
 
         <!-- BOTONES DE CERRAR EL MODAL Y DE HACER LOGIN -->
@@ -415,26 +449,50 @@ header {
   width: 100%;
 }
 .coders {
-  background: #00909e;
+  background: #27496d;
   color: #dae1e7;
-  margin: 1.2% auto;
+  margin: 4.6% auto;
   padding: 20px;
   border: 1px solid #888;
   width: 50%;
+  height: 60%;
   background-size: 25%;
-  box-shadow: 1rem 1rem 1rem #27496d;
+  box-shadow: 6px 6px 6px #142850;
+  border-radius: 0.5rem;
 }
+.register {
+  display: grid;
+  grid-template-columns: repeat(2, 50% 50%);
+}
+.botones {
+  display: inline-flex;
+  margin-top: 2rem;
+}
+/* Botones registro */
 button {
-  background: #27496d;
-  color: #dae1e7;
-  font-weight: bold;
+  color: #27496d;
+  background-color: #dae1e7;
+  border: 1px solid #dae1e7;
   padding: 0.3rem;
-
-  margin: 3px;
+  border-radius: 5px;
+  margin: 1rem;
+  font-weight: bold;
 }
 button:hover {
+  background-color: #00909e;
+  color: #dae1e7;
+}
+.cancel {
+  color: #dae1e7;
+  background-color: #27496d;
+  border: 1px solid #dae1e7;
+  padding: 0.3rem;
+  margin: 1rem;
+}
+.cancel:hover {
   background-color: #dae1e7;
   color: #00909e;
+  border: 1px solid #dae1e7;
 }
 h1 {
   font-family: "serif";
@@ -443,21 +501,21 @@ label {
   margin: 0;
 }
 input {
-  box-shadow: 2px 2px #dae1e7;
   width: 300px;
+  height: 30px;
+  border-radius: 0.4rem;
+  text-align: center;
 }
-.cancel {
-  background-color: #dae1e7;
+::-webkit-input-placeholder {
+  color: #27496d;
+  text-align: center;
+}
+::placeholder {
   color: #27496d;
 }
-
 td {
   display: inline-block;
   margin-left: 1rem;
-}
-
-.inputdata {
-  width: 150px;
 }
 
 .modal {
@@ -537,9 +595,5 @@ td {
   bottom: 0;
   background: rgba(0, 0, 0, 0.5);
   width: 100%;
-}
-.cancel:hover {
-  background-color: #27496d;
-  color: #dae1e7;
 }
 </style>

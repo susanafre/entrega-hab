@@ -4,6 +4,10 @@
     <!-- IMPORTAMOS COMPONENTE MENÚ -->
     <MenuLoggedAdmin :username="username" v-on:cambiar="changeLocation" v-on:logout="logoutUser"></MenuLoggedAdmin>
 
+    <div class="explanation">
+      <p>* Aquí puedes ver las empresas registradas, editarlas o eliminarlas. *</p>
+    </div>
+
     <!-- IMPORTAMOS COMPONENTE PARA VER LAS EMPRESAS -->
     <AdminCompaniesCard
       :companies="companies"
@@ -158,7 +162,7 @@ export default {
       this.newDescription = data.description;
       this.newEmail = data.email;
       this.newPhone = data.phone_number;
-      this.file = data.photo;
+
       this.newProvince = data.province;
       this.newWeb = data.web;
     },
@@ -264,14 +268,39 @@ export default {
 }
 .editcompany {
   padding-top: 2rem;
-  padding-bottom: 0.5rem;
-  margin: 5% auto;
+  padding-bottom: 1rem;
+  margin: 10% auto;
   width: 700px;
+  background-color: #27496d;
+  box-shadow: 6px 6px 6px #142850;
+  border-radius: 0.5rem;
+  color: #dae1e7;
+}
+label {
+  font-weight: bold;
+  margin: 1.5rem;
+}
+h1 {
+  font-family: "serif";
+}
+input {
+  border-radius: 0.3rem;
+  border: none;
+  text-align: center;
+}
+::-webkit-input-placeholder {
+  color: #27496d;
+  text-align: center;
+}
+::placeholder {
+  color: #27496d;
+}
+.explanation {
   background-color: #00909e;
   color: #dae1e7;
-  box-shadow: 1px 1px 1px #dae1e7;
+  padding: 1.5rem;
+  opacity: 0.8;
 }
-
 .editcompany > h1 {
   color: #dae1e7;
 }
@@ -310,33 +339,29 @@ h2 > input {
   background-color: #dae1e7;
 }
 button {
-  color: #dae1e7;
-  background-color: #27496d;
-
+  color: #27496d;
+  background-color: #dae1e7;
   border: 1px solid #dae1e7;
-  box-shadow: 2px 2px #27496d;
   padding: 0.3rem;
-
+  border-radius: 5px;
   margin: 1rem;
+  font-weight: bold;
 }
 button:hover {
-  background-color: #dae1e7;
-  color: #27496d;
-  border: 1px solid #27496d;
+  background-color: #00909e;
+  color: #dae1e7;
 }
 .cancel {
-  color: #27496d;
-  background-color: #dae1e7;
-
-  border: 1px solid #27496d;
-  box-shadow: 2px 2px #27496d;
+  color: #dae1e7;
+  background-color: #27496d;
+  border: 1px solid #dae1e7;
+  border-radius: 5px;
   padding: 0.3rem;
-
   margin: 1rem;
 }
 .cancel:hover {
-  background-color: #27496d;
-  color: #dae1e7;
+  background-color: #dae1e7;
+  color: #00909e;
   border: 1px solid #dae1e7;
 }
 </style>

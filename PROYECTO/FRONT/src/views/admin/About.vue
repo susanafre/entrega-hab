@@ -4,57 +4,73 @@
 
     <MenuLoggedAdmin :username="username" v-on:cambiar="changeLocation" v-on:logout="logoutUser"></MenuLoggedAdmin>
 
-    <h1>
-      Proyecto Match Coder creado por
-      <a
-        href="https://www.linkedin.com/in/susanafragasoporte/"
-      >Susana Fraga Rego</a>
-    </h1>
+    <div class="view">
+      <h1>
+        Proyecto Match Coder creado por
+        <a
+          href="https://www.linkedin.com/in/susanafragasoporte/"
+        >Susana Fraga Rego</a>
+      </h1>
 
-    <h2>
-      Se han usado las siguientes librerías para hacer posible esta plataforma:
-      <ul>
-        <li>
-          <a href="https://www.npmjs.com/package/axios">Axios</a>
-        </li>
-        <li>
-          <a href="https://sweetalert2.github.io/">Sweet Alert</a>
-        </li>
+      <img src="../../assets/emoji.jpg" alt="imagen" />
 
-        <li>
-          <a href="https://www.npmjs.com/package/vue-moment">Vue-Moment</a>
-        </li>
+      <div class="aboutme">
+        <div class="columna1">
+          <h1>¿Quién soy?</h1>
 
-        <li>
-          <a href="https://www.npmjs.com/package/vue-headful">Vue-headful</a>
-        </li>
+          <div class="texto">
+            Soy Administradora de sistemas y actualmente me dedico al soporte de aplicaciones para el área de comercial y distribución de Inditex en Oesía.
+            <br />Me considero una persona con afán por seguir formándome lo que me ha llevado a cursar un bootcamp de programación compaginándolo con el trabajo.
+            <br />Siempre he tenido debilidad por la informática aunque también tengo estudios en idiomas.
+          </div>
 
-        <li>
-          <a href="https://expressjs.com/">Express</a>
-        </li>
-        <li>
-          <a href="https://www.npmjs.com/package/mysql2">Mysql2</a>
-        </li>
-        <li>
-          <a href="https://www.npmjs.com/package/morgan">Morgan</a>
-        </li>
-        <li>
-          <a href="https://www.npmjs.com/package/bcrypt">Bcrypt</a>
-        </li>
-        <li>
-          <a href="https://github.com/lovell/sharp">Sharp</a>
-        </li>
-        <li>
-          <a href="https://www.npmjs.com/package/jwt-decode">Jwt-decode</a>
-        </li>
-        <li>
-          <a href="https://www.npmjs.com/package/jsonwebtoken">JsonWebToken</a>
-        </li>
-        <li>
-          <a href="https://www.npmjs.com/package/nodemon">Nodemon</a>
-        </li>
-      </ul>
-    </h2>
+          <h1>¿Por qué estoy aquí?</h1>
+
+          <div class="texto">
+            Vine a Hack a Boss con la intención de aprender a programar.
+            <br />Ahora me gustaría dedicarme al desarrollo y poder seguir aprendiendo e incorporar la programación a mi día a día.
+          </div>
+        </div>
+
+        <div class="columna3">
+          <h1>¿Qué librerías he usado?</h1>
+          <div class="columna4">
+            <ul>
+              <li>
+                <a href="https://www.npmjs.com/package/axios">Axios</a>
+              </li>
+              <li>
+                <a href="https://sweetalert2.github.io/">Sweet Alert</a>
+              </li>
+
+              <li>
+                <a href="https://www.npmjs.com/package/vue-moment">Vue-Moment</a>
+              </li>
+
+              <li>
+                <a href="https://www.npmjs.com/package/vue-headful">Vue-headful</a>
+              </li>
+
+              <li>
+                <a href="https://expressjs.com/">Express</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/mysql2">Mysql2</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/morgan">Morgan</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/bcrypt">Bcrypt</a>
+              </li>
+              <li>
+                <a href="https://github.com/lovell/sharp">Sharp</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
     <FooterCustom></FooterCustom>
   </div>
 </template>
@@ -62,6 +78,9 @@
 <script>
 import MenuLoggedAdmin from "../../components/menus/MenuLoggedAdmin.vue";
 import FooterCustom from "@/components/FooterCustom.vue";
+
+/* IMPORTAMOS FUNCIONES */
+import { clearLogin } from "../../api/utils";
 
 export default {
   name: "About",
@@ -112,8 +131,27 @@ export default {
 }
 .about {
   font-family: "sansSerif";
-  background-color: #dae1e7;
+  background: url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjEyMDd9");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   color: #142850;
+}
+.view {
+  background-color: #27496d;
+  color: #dae1e7;
+  width: 900px;
+  padding: 1rem;
+  margin: 1% auto;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+
+  box-shadow: 6px 6px 6px #142850;
+  border-radius: 0.5rem;
+}
+img {
+  height: 200px;
+  border-radius: 50%;
 }
 h1 {
   font-family: "serif";
@@ -121,8 +159,10 @@ h1 {
 ul {
   list-style: none;
   font-weight: normal;
-
-  column-count: 2;
+}
+.aboutme {
+  display: grid;
+  grid-template-columns: repeat(2, 50% 50%);
 }
 
 li::before {
@@ -133,11 +173,21 @@ li::before {
 }
 ul > li {
   margin: 0 auto;
-  width: 20%;
+
   padding: 1rem;
 }
 a {
   text-decoration: none;
-  color: #142850;
+  color: #dae1e7;
+}
+.texto {
+  width: 300px;
+  margin: auto;
+}
+.columna1 {
+  margin: 1.5rem;
+}
+.columna4 {
+  columns: 2;
 }
 </style>
