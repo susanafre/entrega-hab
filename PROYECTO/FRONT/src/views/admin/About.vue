@@ -133,7 +133,7 @@ export default {
 .view {
   background-color: #27496d;
   color: #dae1e7;
-  width: 900px;
+  width: 1000px;
   padding: 1rem;
   margin: 1% auto;
   padding-top: 2rem;
@@ -156,6 +156,7 @@ ul {
 .aboutme {
   display: grid;
   grid-template-columns: repeat(3, 33% 33% 33%);
+  text-align: center;
 }
 
 li::before {

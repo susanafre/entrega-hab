@@ -662,7 +662,7 @@ input {
   padding: 20px;
 
   width: 50%;
-  height: 60%;
+  height: 50%;
   background-size: 25%;
   box-shadow: 6px 6px 6px #142850;
   border-radius: 0.5rem;

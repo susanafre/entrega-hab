@@ -7,13 +7,28 @@
         <p>{{candidature.name_coder}} {{candidature.surname_coder}}</p>
       </h1>
 
-      <p>EMPRESA: {{candidature.company_name}}</p>
+      <p>
+        <b>EMPRESA:</b>
+        {{candidature.company_name}}
+      </p>
 
-      <p>PROYECTO: {{candidature.project_name}}</p>
+      <p>
+        <b>PROYECTO:</b>
+        {{candidature.project_name}}
+      </p>
 
-      <p>ESTADO: {{candidature.state}}</p>
+      <div
+        class="state"
+        :class="{red: candidature.state === 'No sigues en el proceso' | candidature.state === 'Proceso cerrado'}"
+      >
+        <b>ESTADO:</b>
+        {{candidature.state}}
+      </div>
 
-      <p>FECHA DE SOLICITUD: {{candidature.creation_date | moment("YYYY-M-D")}}</p>
+      <p>
+        <b>FECHA DE SOLICITUD:</b>
+        {{candidature.creation_date | moment("YYYY-M-D")}}
+      </p>
     </div>
   </div>
 </template>
@@ -75,5 +90,16 @@ button {
 button:hover {
   background-color: #00909e;
   color: #dae1e7;
+}
+.state {
+  font-weight: bold;
+  color: #00909e;
+
+  font-size: 20px;
+}
+.red {
+  color: red;
+  font-weight: bold;
+  font-size: 20px;
 }
 </style>

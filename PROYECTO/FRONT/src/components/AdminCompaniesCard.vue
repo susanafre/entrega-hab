@@ -11,15 +11,30 @@
       </div>
 
       <div class="columna3">
-        <p>EMAIL: {{company.email}}</p>
+        <p>
+          <b>EMAIL:</b>
+          {{company.email}}
+        </p>
 
-        <p>TELÉFONO: {{company.phone_number}}</p>
+        <p>
+          <b>TELÉFONO:</b>
+          {{company.phone_number}}
+        </p>
 
-        <p>PROVINCIA: {{company.province}}</p>
+        <p>
+          <b>PROVINCIA:</b>
+          {{company.province}}
+        </p>
 
-        <p>WEB: {{company.web}}</p>
+        <p>
+          <b>WEB:</b>
+          {{company.web}}
+        </p>
 
-        <p>FECHA DE ALTA:{{company.creation_date | moment("D-M-YYYY")}}</p>
+        <p>
+          <b>FECHA DE ALTA:</b>
+          {{company.creation_date | moment("D-M-YYYY")}}
+        </p>
       </div>
 
       <div class="columna4">
@@ -127,5 +142,9 @@ button:hover {
 }
 .description {
   text-align: justify;
+}
+.active > p {
+  color: red;
+  font-weight: bold;
 }
 </style>

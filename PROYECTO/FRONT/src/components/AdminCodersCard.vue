@@ -1,28 +1,53 @@
 <template>
   <div class="coders">
     <div class="profile" v-for="(coder,index) in coders" :key="coder.id">
-      <h1>{{coder.name}} {{coder.surname}}</h1>
-      <div class="active" v-if="(coder.active === 0)">
-        <p>CUENTA NO ACTIVADA</p>
-        <button @click="activateAccountEvent(index)">ACTIVAR CUENTA</button>
-      </div>
+      <h1 class="name">{{coder.name}} {{coder.surname}}</h1>
 
       <div class="columna2">
-        <p>EMAIL: {{coder.email}}</p>
+        <div class="active" v-if="(coder.active === 0)">
+          <p>CUENTA NO ACTIVADA</p>
+          <button @click="activateAccountEvent(index)">ACTIVAR CUENTA</button>
+        </div>
 
-        <p>TELÉFONO: {{coder.phone_number}}</p>
+        <h2>* Datos personales *</h2>
+        <p>
+          <b>EMAIL:</b>
+          {{coder.email}}
+        </p>
 
-        <p>PROVINCIA: {{coder.province}}</p>
+        <p>
+          <b>TELÉFONO:</b>
+          {{coder.phone_number}}
+        </p>
 
-        <p>FECHA DE ALTA:{{coder.creation_date | moment("YYYY-M-D")}}</p>
+        <p>
+          <b>PROVINCIA:</b>
+          {{coder.province}}
+        </p>
 
-        <p>ARCHITECTURE: {{coder.architecture}}</p>
+        <p>
+          <b>FECHA DE ALTA:</b>
+          {{coder.creation_date | moment("YYYY-M-D")}}
+        </p>
 
-        <p>LENGUAJE: {{coder.language}}</p>
+        <h2>* Datos técnicos *</h2>
 
-        <p>TECHNOLOGY: {{coder.technology}}</p>
+        <p>
+          <b>ARCHITECTURE:</b>
+          {{coder.architecture}}
+        </p>
+
+        <p>
+          <b>LENGUAJE:</b>
+          {{coder.language}}
+        </p>
+
+        <p>
+          <b>TECHNOLOGY:</b>
+          {{coder.technology}}
+        </p>
       </div>
-      <div>
+      <div class="buttons">
         <button @click="editProfileEvent(index)">EDITAR PERFIL</button>
         <button class="delete" @click="deleteProfileEvent(index)">ELIMINAR PERFIL</button>
       </div>
@@ -77,7 +102,7 @@ button {
   border: 1px solid #dae1e7;
   padding: 0.3rem;
   border-radius: 5px;
-  margin: 1rem;
+
   font-weight: bold;
 }
 button:hover {
@@ -124,5 +149,22 @@ button:hover {
   background-color: #dae1e7;
   color: #00909e;
   border: 1px solid #dae1e7;
+}
+.name {
+  text-decoration: underline;
+}
+h2 {
+  margin: 2rem;
+}
+.active {
+  margin: 1rem;
+  padding: 1rem;
+}
+.active > p {
+  color: red;
+  font-weight: bold;
+}
+.buttons {
+  margin-top: 3rem;
 }
 </style>
