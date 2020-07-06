@@ -15,21 +15,14 @@
       <img src="../../assets/emoji.jpg" alt="imagen" />
 
       <div class="aboutme">
-        <div class="columna1">
-          <h1>¿Quién soy?</h1>
+        <div class="texto">
+          <h1>¿Quién soy?</h1>Soy Administradora de sistemas informáticos y me considero una persona con afán por seguir formándome lo que me ha llevado a cursar un bootcamp de programación compaginándolo con el trabajo.
+          <br />Siempre he tenido debilidad por la informática aunque también tengo estudios en idiomas.
+        </div>
 
-          <div class="texto">
-            Soy Administradora de sistemas y actualmente me dedico al soporte de aplicaciones para el área de comercial y distribución de Inditex en Oesía.
-            <br />Me considero una persona con afán por seguir formándome lo que me ha llevado a cursar un bootcamp de programación compaginándolo con el trabajo.
-            <br />Siempre he tenido debilidad por la informática aunque también tengo estudios en idiomas.
-          </div>
-
-          <h1>¿Por qué estoy aquí?</h1>
-
-          <div class="texto">
-            Vine a Hack a Boss con la intención de aprender a programar.
-            <br />Ahora me gustaría dedicarme al desarrollo y poder seguir aprendiendo e incorporar la programación a mi día a día.
-          </div>
+        <div class="texto">
+          <h1>¿Por qué estoy aquí?</h1>Vine a Hack a Boss con la intención de aprender a programar.
+          <br />Ahora me gustaría dedicarme al desarrollo y poder seguir aprendiendo e incorporar la programación a mi día a día.
         </div>
 
         <div class="columna3">
@@ -162,7 +155,7 @@ ul {
 }
 .aboutme {
   display: grid;
-  grid-template-columns: repeat(2, 50% 50%);
+  grid-template-columns: repeat(3, 33% 33% 33%);
 }
 
 li::before {
